@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal de Inteligência de Dados — Cabral &amp; Sousa. 50 anos construindo resultados. Dados em tempo real para decisões de excelência." />
+  <meta property="og:title" content="Portal de Dados C&amp;S — Cabral &amp; Sousa" />
+  <meta property="og:description" content="Portal corporativo de inteligência de dados. 6 setores monitorados, +40 KPIs rastreados, atualização em tempo real." />
+  <meta property="og:type" content="website" />
+  <title>Portal de Dados — Cabral &amp; Sousa</title>
+
+  <!-- Google Fonts: Inter (corpo) + JetBrains Mono (KPIs/relógio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       [1] HEADER FIXO
+  ══════════════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+
+      <!-- Logotipo -->
+      <div class="header-logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="9" fill="white" fill-opacity="0.12"/>
+            <text x="18" y="26" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="-0.5">C&amp;S</text>
+          </svg>
+        </div>
+        <div class="logo-info">
+          <span class="logo-name">Cabral &amp; Sousa</span>
+          <span class="logo-sub">Portal de Dados</span>
+        </div>
+        <span class="logo-badge" aria-label="50 anos — 1976 a 2026">50 Anos • 1976–2026</span>
+      </div>
+
+      <!-- Navegação principal -->
+      <nav class="header-nav" role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio"  class="nav-link">Início</a></li>
+          <li><a href="#setores" class="nav-link">Setores</a></li>
+          <li><a href="#kpis"    class="nav-link">KPIs</a></li>
+          <li><a href="#sobre"   class="nav-link">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <!-- Relógio digital em tempo real -->
+      <div class="header-clock" role="status" aria-live="polite" aria-label="Hora atual">
+        <span id="clock-time" class="clock-time">--:--:--</span>
+        <span id="clock-date" class="clock-date">--/--/----</span>
+      </div>
+
+    </div>
+    <!-- Barra de progresso decorativa vermelha escura -->
+    <div class="header-progress-bar" aria-hidden="true"></div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════════
+         [2] HERO SECTION
+    ══════════════════════════════════════════════════════════ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <!-- Fundo: grade de pontos + gradiente radial -->
+      <div class="hero-bg-grid"   aria-hidden="true"></div>
+      <div class="hero-radial"    aria-hidden="true"></div>
+      <!-- Anéis decorativos -->
+      <div class="hero-ring hero-ring--1" aria-hidden="true"></div>
+      <div class="hero-ring hero-ring--2" aria-hidden="true"></div>
+      <div class="hero-ring hero-ring--3" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Sistema operacional — dados sincronizados
+        </p>
+
+        <h1 class="hero-title" id="hero-title">
+          Portal de Inteligência<br />
+          <span class="hero-title-accent">de Dados</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          50 anos construindo resultados.<br />
+          Dados em tempo real para decisões de excelência.
+        </p>
+
+        <!-- 3 badges animados -->
+        <div class="hero-badges" role="list">
+          <span class="hero-badge" role="listitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor" opacity="0.7"/>
+              <rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor" opacity="0.4"/>
+              <rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor" opacity="0.4"/>
+              <rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor" opacity="0.7"/>
+            </svg>
+            6 Setores Monitorados
+          </span>
+          <span class="hero-badge" role="listitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <polyline points="22,12 18,12 15,21 9,3 6,12 2,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            +40 KPIs Rastreados
+          </span>
+          <span class="hero-badge" role="listitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <polygon points="13,2 3,14 12,14 11,22 21,10 12,10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Atualização em Tempo Real
+          </span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#setores" class="btn btn-white" tabindex="0">
+            Explorar Dashboards
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <polyline points="12,5 19,12 12,19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#sobre" class="btn btn-outline-white" tabindex="0">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         [3] TICKER DE ALERTAS
+    ══════════════════════════════════════════════════════════ -->
+    <div class="ticker-bar" role="status" aria-live="polite" aria-label="Alertas do sistema">
+      <div class="ticker-icon" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+          <polygon points="13,2 3,14 12,14 11,22 21,10 12,10" fill="var(--red)"/>
+        </svg>
+        ALERTAS
+      </div>
+      <div class="ticker-content">
+        <span class="ticker-message" id="ticker-msg">✅ Sistema online — Dados sincronizados com Winthor/Oracle</span>
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         [4] GRID DE SETORES / KPIs
+    ══════════════════════════════════════════════════════════ -->
+    <section class="sectors-section" id="setores" aria-labelledby="sectors-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Monitoramento em Tempo Real</p>
+        <h2 class="section-title" id="sectors-title">
+          Painéis por <span class="red">Setor</span>
+        </h2>
+        <p class="section-desc">Indicadores-chave de desempenho consolidados por área de negócio.</p>
+      </div>
+
+      <div class="kpi-grid" id="kpis" role="list">
+
+        <!-- ── Card 1: VENDAS / FATURAMENTO ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Vendas e Faturamento">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--red" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="13" width="4" height="9" rx="1" fill="var(--red)" opacity="0.5"/>
+                <rect x="8" y="9"  width="4" height="13" rx="1" fill="var(--red)" opacity="0.75"/>
+                <rect x="14" y="5" width="4" height="17" rx="1" fill="var(--red)"/>
+                <polyline points="2,10 9,4 15,7 22,2" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Vendas &amp; Faturamento</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target" data-sector="vendas">R$ 3,7M</span>
+            <span class="kpi-trend trend-up" aria-label="Tendência positiva: mais 8,4%">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="18,15 12,9 6,15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              +8,4%
+            </span>
+          </div>
+          <p class="kpi-label">Faturamento Mensal</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">Ticket Médio</span>
+              <span class="sub-value">R$ 487</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Pedidos</span>
+              <span class="sub-value">7.604</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,38 15,30 30,26 45,20 60,22 75,14 90,10 105,6 120,4 120,40 0,40" fill="url(#sg1)"/>
+              <polyline points="0,38 15,30 30,26 45,20 60,22 75,14 90,10 105,6 120,4" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: K_VENDA / DTFATURAMENTO</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+
+        <!-- ── Card 2: FINANCEIRO ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Financeiro">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--blue" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#2563EB" stroke-width="1.5"/>
+                <path d="M12 7v1m0 8v1M9.5 9.5C9.5 8.4 10.6 8 12 8s2.5.9 2.5 2c0 2-5 2-5 4 0 1.1 1.1 2 2.5 2s2.5-.4 2.5-1.5" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Financeiro</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target" data-sector="financeiro">28,3 dias</span>
+            <span class="kpi-trend trend-warn" aria-label="Atenção: mais 1,2 dias">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              +1,2 dias
+            </span>
+          </div>
+          <p class="kpi-label">PMR — Prazo Médio de Recebimento</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">Inadimplência</span>
+              <span class="sub-value">2,1%</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Liquidez</span>
+              <span class="sub-value">1,87×</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,20 15,22 30,18 45,25 60,20 75,28 90,24 105,30 120,26 120,40 0,40" fill="url(#sg2)"/>
+              <polyline points="0,20 15,22 30,18 45,25 60,20 75,28 90,24 105,30 120,26" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: Contas a Receber / Oracle ERP</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+
+        <!-- ── Card 3: LOGÍSTICA — C&S LOG ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Logística">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--green" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="1" y="8" width="14" height="10" rx="1.5" stroke="#16A34A" stroke-width="1.5"/>
+                <path d="M15 11h4l3 3v4h-7V11Z" stroke="#16A34A" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="5.5" cy="19.5" r="1.5" fill="#16A34A"/>
+                <circle cx="18.5" cy="19.5" r="1.5" fill="#16A34A"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Logística — C&amp;S LOG</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target" data-sector="logistica">96,2%</span>
+            <span class="kpi-trend trend-up" aria-label="Tendência positiva: mais 0,8%">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="18,15 12,9 6,15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              +0,8%
+            </span>
+          </div>
+          <p class="kpi-label">Order Fill Rate</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">OTIF</span>
+              <span class="sub-value">91,4%</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Devoluções</span>
+              <span class="sub-value">0,9%</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#16A34A" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#16A34A" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,30 15,26 30,28 45,22 60,18 75,16 90,12 105,10 120,8 120,40 0,40" fill="url(#sg3)"/>
+              <polyline points="0,30 15,26 30,28 45,22 60,18 75,16 90,12 105,10 120,8" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: Rotina Winthor 1700</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+
+        <!-- ── Card 4: RECURSOS HUMANOS ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Recursos Humanos">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--purple" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="9" cy="7" r="3" stroke="#7C3AED" stroke-width="1.5"/>
+                <path d="M3 21v-2a6 6 0 0 1 6-6" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="17" cy="7" r="3" stroke="#7C3AED" stroke-width="1.5" stroke-opacity="0.5"/>
+                <path d="M21 21v-2a6 6 0 0 0-5-5.93" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Recursos Humanos</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target" data-sector="rh">2,3%</span>
+            <span class="kpi-trend trend-up" aria-label="Tendência positiva: menos 0,4%">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="18,15 12,9 6,15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              −0,4%
+            </span>
+          </div>
+          <p class="kpi-label">Turnover Mensal</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">Headcount</span>
+              <span class="sub-value">312</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Absenteísmo</span>
+              <span class="sub-value">1,8%</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,32 15,28 30,30 45,24 60,22 75,18 90,16 105,14 120,12 120,40 0,40" fill="url(#sg4)"/>
+              <polyline points="0,32 15,28 30,30 45,24 60,22 75,18 90,16 105,14 120,12" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: Folha de Pagamento / RH</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+
+        <!-- ── Card 5: OPERAÇÕES ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Operações">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--orange" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="3" stroke="#EA580C" stroke-width="1.5"/>
+                <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Operações</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target" data-sector="operacoes">148 un/h</span>
+            <span class="kpi-trend trend-up" aria-label="Tendência positiva: mais 12 un/h">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="18,15 12,9 6,15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              +12 un/h
+            </span>
+          </div>
+          <p class="kpi-label">Produtividade Operacional</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">OEE</span>
+              <span class="sub-value">78,3%</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">SLA Interno</span>
+              <span class="sub-value">94,1%</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg5" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#EA580C" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#EA580C" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,28 15,24 30,26 45,20 60,16 75,20 90,14 105,10 120,8 120,40 0,40" fill="url(#sg5)"/>
+              <polyline points="0,28 15,24 30,26 45,20 60,16 75,20 90,14 105,10 120,8" fill="none" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: WMS / Rotinas Operacionais</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+
+        <!-- ── Card 6: COMPRAS ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Compras">
+          <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
+          <div class="card-header">
+            <div class="card-icon card-icon--amber" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
+                <line x1="3" y1="6" x2="21" y2="6" stroke="#D97706" stroke-width="1.5"/>
+                <path d="M16 10a4 4 0 0 1-8 0" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Compras</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+
+          <div class="card-kpi-main">
+            <span class="kpi-value kpi-value--warn skeleton-target" data-sector="compras">4,7%</span>
+            <span class="kpi-trend trend-warn" aria-label="Atenção: menos 1,2% de ruptura">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              −1,2%
+            </span>
+          </div>
+          <p class="kpi-label">Ruptura de Estoque</p>
+
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">Giro Estoque</span>
+              <span class="sub-value">6,2×</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Lead Time</span>
+              <span class="sub-value">4,1 dias</span>
+            </span>
+          </div>
+
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sg6" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D97706" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,10 15,14 30,10 45,16 60,12 75,18 90,22 105,20 120,24 120,40 0,40" fill="url(#sg6)"/>
+              <polyline points="0,10 15,14 30,10 45,16 60,12 75,18 90,22 105,20 120,24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="card-footer">
+            <span class="footer-source">Fonte: PCMETA / Rotina 200 Winthor</span>
+            <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+        </article>
+
+      </div><!-- /.kpi-grid -->
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         [5] SOBRE O PORTAL — TIMELINE
+    ══════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="sobre" aria-labelledby="about-title">
+      <div class="section-header">
+        <p class="section-eyebrow">Nossa Trajetória</p>
+        <h2 class="section-title" id="about-title">50 Anos de <span class="red">História</span></h2>
+      </div>
+
+      <div class="timeline" role="list">
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-year">1976</div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h4>Fundação</h4>
+            <p>Início das operações no segmento de distribuição. Primeiros clientes no mercado regional.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-year">2000</div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h4>Expansão Regional</h4>
+            <p>Abertura de novos centros de distribuição. Implantação do ERP Winthor para gestão integrada.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-year">2010</div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h4>C&amp;S LOG</h4>
+            <p>Criação do braço logístico C&amp;S LOG. Frota própria e operações multimodais.</p>
+          </div>
+        </div>
+        <div class="timeline-item" role="listitem" tabindex="0">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h4>Transformação Digital</h4>
+            <p>Início do programa de analytics e BI. Integração Oracle com dashboards em tempo real.</p>
+          </div>
+        </div>
+        <div class="timeline-item timeline-item--red" role="listitem" tabindex="0">
+          <div class="timeline-year timeline-year--red">2026</div>
+          <div class="timeline-dot timeline-dot--red" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h4>50 Anos — Nova Era</h4>
+            <p>Lançamento do Portal de Inteligência de Dados. Uma nova era para os próximos 50 anos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-closing">
+        <blockquote>
+          "50 anos de história. Uma nova era de dados para os próximos 50."
+        </blockquote>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       [6] FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo-cs">C&amp;S</span>
+        <p class="footer-tagline">Inteligência de Dados desde 1976</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="#inicio"  class="footer-link">Início</a>
+        <a href="#setores" class="footer-link">Setores</a>
+        <a href="#kpis"    class="footer-link">KPIs</a>
+        <a href="#sobre"   class="footer-link">Sobre</a>
+      </nav>
+
+      <div class="footer-legal">
+        <p class="lgpd-notice">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Este portal não coleta dados pessoais. Os dados exibidos são fictícios para fins de demonstração.
+        </p>
+        <p class="footer-copy">© 2026 Cabral &amp; Sousa. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
