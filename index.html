@@ -24,18 +24,12 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
 
-      <!-- Logotipo -->
+      <!-- Logotipo real C&S -->
       <div class="header-logo">
-        <div class="logo-icon" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="9" fill="white" fill-opacity="0.12"/>
-            <text x="18" y="26" text-anchor="middle" fill="white" font-family="Inter,sans-serif" font-size="14" font-weight="900" letter-spacing="-0.5">C&amp;S</text>
-          </svg>
-        </div>
-        <div class="logo-info">
-          <span class="logo-name">Cabral &amp; Sousa</span>
-          <span class="logo-sub">Portal de Dados</span>
-        </div>
+        <img src="logo-branco-h.png"
+             alt="Cabral &amp; Sousa"
+             class="logo-img"
+             height="36" />
         <span class="logo-badge" aria-label="50 anos — 1976 a 2026">50 Anos • 1976–2026</span>
       </div>
 
@@ -76,6 +70,10 @@
       <div class="hero-ring hero-ring--3" aria-hidden="true"></div>
 
       <div class="hero-content">
+        <img src="logo-branco-h.png"
+             alt="Cabral &amp; Sousa"
+             class="hero-logo"
+             height="48" />
         <p class="hero-eyebrow">
           <span class="eyebrow-dot" aria-hidden="true"></span>
           Sistema operacional — dados sincronizados
@@ -217,6 +215,9 @@
             <span class="footer-source">Fonte: K_VENDA / DTFATURAMENTO</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
+          <div class="card-action">
+            <span class="card-soon">Em breve</span>
+          </div>
         </article>
 
 
@@ -274,6 +275,15 @@
           <div class="card-footer">
             <span class="footer-source">Fonte: Contas a Receber / Oracle ERP</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+          <div class="card-action">
+            <a href="http://localhost:5050/dashboard/contas-pagar" class="card-link" target="_blank" rel="noopener">
+              Abrir Painel
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <polyline points="12,5 19,12 12,19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
           </div>
         </article>
 
@@ -335,6 +345,9 @@
             <span class="footer-source">Fonte: Rotina Winthor 1700</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
+          <div class="card-action">
+            <span class="card-soon">Em breve</span>
+          </div>
         </article>
 
 
@@ -395,6 +408,9 @@
             <span class="footer-source">Fonte: Folha de Pagamento / RH</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
+          <div class="card-action">
+            <span class="card-soon">Em breve</span>
+          </div>
         </article>
 
 
@@ -452,6 +468,9 @@
           <div class="card-footer">
             <span class="footer-source">Fonte: WMS / Rotinas Operacionais</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
+          </div>
+          <div class="card-action">
+            <span class="card-soon">Em breve</span>
           </div>
         </article>
 
@@ -512,6 +531,9 @@
             <span class="footer-source">Fonte: PCMETA / Rotina 200 Winthor</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
+          <div class="card-action">
+            <span class="card-soon">Em breve</span>
+          </div>
         </article>
 
       </div><!-- /.kpi-grid -->
@@ -524,7 +546,13 @@
     <section class="about-section" id="sobre" aria-labelledby="about-title">
       <div class="section-header">
         <p class="section-eyebrow">Nossa Trajetória</p>
-        <h2 class="section-title" id="about-title">50 Anos de <span class="red">História</span></h2>
+        <div class="about-title-row">
+          <h2 class="section-title" id="about-title">50 Anos de <span class="red">História</span></h2>
+          <img src="logo-50anos.png"
+               alt="50 Anos Cabral &amp; Sousa"
+               class="about-50anos"
+               height="96" />
+        </div>
       </div>
 
       <div class="timeline" role="list">
@@ -586,7 +614,10 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo-cs">C&amp;S</span>
+        <img src="logo-vermelho-h.png"
+             alt="Cabral &amp; Sousa"
+             class="footer-logo-img"
+             height="32" />
         <p class="footer-tagline">Inteligência de Dados desde 1976</p>
       </div>
 

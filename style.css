@@ -183,36 +183,16 @@ ul { list-style: none; }
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-shrink: 0;
 }
 
-.logo-icon {
-  flex-shrink: 0;
-  width: 36px;
+.logo-img {
   height: 36px;
-}
-
-.logo-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.logo-name {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.2px;
-  line-height: 1.2;
-}
-
-.logo-sub {
-  font-size: 0.62rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.7);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  width: auto;
+  display: block;
+  /* logo branca sobre fundo vermelho — sem filtro, PNG já é branco */
+  object-fit: contain;
 }
 
 .logo-badge {
@@ -349,6 +329,16 @@ ul { list-style: none; }
   max-width: 720px;
   text-align: center;
   animation: slideUp 0.7s var(--ease-spring) both;
+}
+
+.hero-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  margin: 0 auto 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 .hero-eyebrow {
@@ -776,6 +766,65 @@ ul { list-style: none; }
   color: var(--gray-lt);
 }
 
+/* Ação do card — link ativo ou badge Em breve */
+.card-action {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-lt);
+  display: flex;
+  align-items: center;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--red);
+  background: var(--red-dim);
+  border: 1px solid var(--red-ring);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.2px;
+}
+
+.card-link:hover {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+  box-shadow: var(--shadow-red);
+  transform: translateY(-1px);
+}
+
+.card-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-lt);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 0.3px;
+  cursor: default;
+}
+
+.card-soon::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gray-xlt);
+  flex-shrink: 0;
+}
+
 /* Skeleton loader */
 .skeleton {
   background: linear-gradient(90deg, var(--bg-2) 25%, var(--border) 50%, var(--bg-2) 75%);
@@ -884,6 +933,30 @@ ul { list-style: none; }
 
 .timeline-item--red .timeline-content h4 { color: var(--red); }
 
+/* Linha do título com selo 50 anos */
+.about-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-title-row .section-title {
+  margin-bottom: 0;
+}
+
+/* Selo 50 anos na seção de trajetória */
+.about-50anos {
+  height: 96px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(232,0,10,0.15));
+  animation: slideUp 0.6s var(--ease-spring) both;
+}
+
 /* Frase de encerramento */
 .about-closing {
   max-width: var(--max-w);
@@ -931,15 +1004,14 @@ ul { list-style: none; }
   gap: 40px;
 }
 
-.footer-brand { display: flex; flex-direction: column; gap: 6px; }
+.footer-brand { display: flex; flex-direction: column; gap: 8px; }
 
-.footer-logo-cs {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--red);
-  letter-spacing: -0.5px;
-  line-height: 1;
+.footer-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  /* logo vermelha sobre fundo branco — usa diretamente sem filtro */
 }
 
 .footer-tagline {
@@ -1019,7 +1091,7 @@ ul { list-style: none; }
 @media (max-width: 576px) {
   .header-inner { padding: 0 16px; gap: 12px; }
   .logo-badge { display: none; }
-  .logo-info .logo-sub { display: none; }
+  .logo-img { height: 28px; }
   .clock-date { display: none; }
   .hero-badges { gap: 8px; }
   .hero-badge { font-size: 0.72rem; padding: 7px 13px; }
