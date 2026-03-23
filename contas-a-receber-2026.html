@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contas a Receber 2026 — C&S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Roboto',sans-serif;background:#f4f6f9;color:#222;padding-top:40px}
+
+/* ── NAV BAR ── */
+#cs-portal-nav{position:fixed;top:0;left:0;right:0;z-index:99999;height:40px;background:#D93025;display:flex;align-items:center;padding:0 16px;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.18);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#cs-portal-nav a.cs-nav-home{color:#fff;text-decoration:none;font-size:13px;font-weight:600;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.18);white-space:nowrap}
+#cs-portal-nav a.cs-nav-home:hover{background:rgba(255,255,255,.30)}
+.cs-nav-div{width:1px;height:22px;background:rgba(255,255,255,.35);flex-shrink:0}
+#cs-portal-nav img{opacity:.92}
+.cs-nav-label{color:rgba(255,255,255,.75);font-size:12px;white-space:nowrap}
+.cs-nav-links{display:flex;gap:6px}
+a.cs-nav-dash{color:rgba(255,255,255,.85);text-decoration:none;font-size:12px;padding:3px 9px;border-radius:4px;border:1px solid rgba(255,255,255,.25);white-space:nowrap;transition:background .15s}
+a.cs-nav-dash:hover,a.cs-nav-dash.active{background:rgba(255,255,255,.22);color:#fff}
+
+/* ── HEADER ── */
+.hdr{background:#D93025;color:#fff;padding:20px 24px 16px;position:sticky;top:40px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hdr-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.hdr h1{font-size:20px;font-weight:700;letter-spacing:-.3px}
+.hdr-sub{font-size:12px;opacity:.8;margin-top:2px}
+.pill{background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px;font-size:11px;font-weight:500}
+
+/* ── KPI CARDS ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;padding:20px 20px 0}
+.kpi{background:#fff;border-radius:10px;padding:18px 20px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-left:4px solid #D93025}
+.kpi.verde{border-left-color:#1a7f3c}
+.kpi.azul{border-left-color:#1a73e8}
+.kpi.amarelo{border-left-color:#f9ab00}
+.kpi-label{font-size:11px;color:#666;font-weight:500;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.kpi-val{font-size:22px;font-weight:700;color:#1a1a1a}
+.kpi-sub{font-size:11px;color:#888;margin-top:4px}
+
+/* ── SECTION ── */
+.sec{padding:20px 20px 0}
+.sec-title{font-size:13px;font-weight:700;color:#444;text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.sec-title::after{content:'';flex:1;height:1px;background:#e0e0e0}
+
+/* ── CHARTS ROW ── */
+.charts-row{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+@media(max-width:800px){.charts-row{grid-template-columns:1fr}}
+.chart-card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.chart-title{font-size:12px;font-weight:600;color:#555;margin-bottom:14px}
+.chart-wrap{position:relative;height:220px}
+
+/* ── AGING ── */
+.aging-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:900px){.aging-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.aging-grid{grid-template-columns:repeat(2,1fr)}}
+.aging-card{background:#fff;border-radius:8px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);text-align:center}
+.aging-faixa{font-size:11px;font-weight:700;color:#555;margin-bottom:8px}
+.aging-val{font-size:16px;font-weight:700;color:#D93025}
+.aging-qtd{font-size:11px;color:#999;margin-top:4px}
+.aging-bar{height:4px;background:#f0f0f0;border-radius:2px;margin-top:8px;overflow:hidden}
+.aging-bar-fill{height:100%;background:#D93025;border-radius:2px}
+
+/* ── CLIENT CARDS ── */
+.cli-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;padding-bottom:30px}
+.cli-card{background:#fff;border-radius:10px;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.08);overflow:hidden;cursor:pointer;transition:box-shadow .2s}
+.cli-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.13)}
+.cli-head{padding:12px 14px 10px;border-bottom:1px solid #f0f0f0}
+.cli-rank{font-size:10px;font-weight:700;color:#D93025;margin-bottom:2px}
+.cli-nome{font-size:13px;font-weight:600;color:#1a1a1a;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cli-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;padding:10px 14px;gap:6px}
+.cli-met{text-align:center}
+.cli-met-label{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:.3px}
+.cli-met-val{font-size:13px;font-weight:700;color:#222;margin-top:2px}
+.cli-met-val.aberto{color:#D93025}
+.cli-met-val.recebido{color:#1a7f3c}
+.cli-prog-wrap{height:4px;background:#f0f0f0;margin:0 14px 12px}
+.cli-prog{height:100%;background:#1a7f3c;border-radius:2px}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:20px;font-size:11px;color:#aaa}
+</style>
+</head>
+<body>
+
+<!-- NAV BAR -->
+<div id="cs-portal-nav">
+  <a href="index.html" class="cs-nav-home">🏠 Portal</a>
+  <div class="cs-nav-div"></div>
+  <img src="logo-branco-h.png" height="20" onerror="this.style.display='none'">
+  <div class="cs-nav-div"></div>
+  <span class="cs-nav-label">Ver também:</span>
+  <nav class="cs-nav-links">
+    <a href="dashboard-comercial.html" id="csnav-comercial" class="cs-nav-dash">📊 Comercial</a>
+    <a href="contas-a-pagar-2026.html" id="csnav-cp" class="cs-nav-dash">📋 Contas a Pagar</a>
+    <a href="contas-a-receber-2026.html" id="csnav-cr" class="cs-nav-dash">📥 Contas a Receber</a>
+  </nav>
+</div>
+<script>
+(function(){
+  var p=location.pathname.split('/').pop()||'index.html';
+  document.querySelectorAll('.cs-nav-dash').forEach(function(a){
+    if(a.getAttribute('href')===p) a.classList.add('active');
+  });
+  var hdr=document.querySelector('.hdr');
+  if(hdr) hdr.style.top='40px';
+})();
+</script>
+
+<!-- DATA -->
+<script id="d-grand" type="application/json">{"faturado":4256251.23,"recebido":3585688.02,"aberto":670563.21,"percRecebido":84.26,"titulos":2929,"titulosAbertos":577}</script>
+<script id="d-mes" type="application/json">[{"mes":"Jan/26","faturado":2046028.47,"recebido":2009129.74,"aberto":36898.73},{"mes":"Fev/26","faturado":1319922.20,"recebido":1176966.11,"aberto":142956.09},{"mes":"Mar/26","faturado":890300.56,"recebido":399592.17,"aberto":490708.39}]</script>
+<script id="d-aging" type="application/json">[{"faixa":"0-7 dias","qtd":182,"valor":288667.37},{"faixa":"8-15 dias","qtd":87,"valor":102075.46},{"faixa":"16-30 dias","qtd":155,"valor":203907.21},{"faixa":"31-60 dias","qtd":110,"valor":57699.80},{"faixa":"+60 dias","qtd":43,"valor":18213.37}]</script>
+<script id="d-clientes" type="application/json">[{"id":425944,"nome":"DMA DISTRIBUIDORA SA","total":51003.91,"recebido":13168.10,"aberto":37835.81,"qtd":2},{"id":412537,"nome":"DMA DISTRIBUIDORA SA (fil.2)","total":90529.48,"recebido":56022.18,"aberto":34507.30,"qtd":8},{"id":411111,"nome":"EVILASIO SANTOS SILVA","total":63723.56,"recebido":34096.96,"aberto":29626.60,"qtd":4},{"id":456443,"nome":"DMA DISTRIBUIDORA SA (fil.3)","total":24992.09,"recebido":787.28,"aberto":24204.81,"qtd":2},{"id":453823,"nome":"COMODORO ALIMENTOS E EVENTOS LTDA","total":22425.48,"recebido":0,"aberto":22425.48,"qtd":1},{"id":454392,"nome":"DMA DISTRIBUIDORA SA (fil.4)","total":17303.31,"recebido":1972.94,"aberto":15330.37,"qtd":3},{"id":458030,"nome":"MICHELLY CAREN OLIVEIRA DE JESUS","total":26727.39,"recebido":11821.23,"aberto":14906.16,"qtd":6},{"id":461099,"nome":"GQUATRO LTDA","total":13301.56,"recebido":0,"aberto":13301.56,"qtd":2},{"id":470490,"nome":"MILSON ZAURISIO SARAIVA","total":12943.84,"recebido":0,"aberto":12943.84,"qtd":1},{"id":16137,"nome":"COM. PRODUTOS ALIMENTICIOS PEREIRA LTDA","total":14567.45,"recebido":2158.58,"aberto":12408.87,"qtd":6},{"id":469489,"nome":"AGIL E FACIL","total":15832.64,"recebido":4069.44,"aberto":11763.20,"qtd":5},{"id":470075,"nome":"ROBERVAL FELIPE GOMES","total":11322.00,"recebido":0,"aberto":11322.00,"qtd":1},{"id":451437,"nome":"MIX CHAPADAO EMPREENDIMENTOS LTDA","total":10871.10,"recebido":165.60,"aberto":10705.50,"qtd":2},{"id":429454,"nome":"ESQUINA GETULIO COM. DE EMBALAGENS LTDA","total":10578.00,"recebido":0,"aberto":10578.00,"qtd":1},{"id":388591,"nome":"JOELMA ALVES VILELA COSTA","total":14590.90,"recebido":4257.52,"aberto":10333.38,"qtd":8},{"id":469799,"nome":"TOP BEBIDAS ATACADO E VAREJO LTDA","total":9900.00,"recebido":0,"aberto":9900.00,"qtd":1},{"id":410610,"nome":"COM. PRODUTOS ALIMENTICIOS PEREIRA (fil.2)","total":10543.74,"recebido":2228.73,"aberto":8315.01,"qtd":7},{"id":427025,"nome":"LEONICE DE SOUSA CARVALHO","total":7193.61,"recebido":0,"aberto":7193.61,"qtd":1},{"id":455687,"nome":"PORTO COMERCIO DE ALIMENTOS PARA ANIMAIS","total":6907.90,"recebido":0,"aberto":6907.90,"qtd":1},{"id":464980,"nome":"JONATAS DE OLIVEIRA SILVA","total":14573.51,"recebido":7907.07,"aberto":6666.44,"qtd":5}]</script>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-row">
+    <div>
+      <h1>📥 Contas a Receber — 2026</h1>
+      <div class="hdr-sub">Créditos de clientes · Janeiro a Março de 2026</div>
+    </div>
+    <span class="pill" id="pill-upd">23/03/2026 —</span>
+  </div>
+</div>
+
+<!-- KPI CARDS -->
+<div class="kpi-grid">
+  <div class="kpi azul">
+    <div class="kpi-label">Total Faturado a Crédito</div>
+    <div class="kpi-val" id="kpi-fat">—</div>
+    <div class="kpi-sub" id="kpi-fat-sub">—</div>
+  </div>
+  <div class="kpi verde">
+    <div class="kpi-label">Total Recebido</div>
+    <div class="kpi-val" id="kpi-rec">—</div>
+    <div class="kpi-sub" id="kpi-rec-sub">—</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">Em Aberto</div>
+    <div class="kpi-val" id="kpi-ab">—</div>
+    <div class="kpi-sub" id="kpi-ab-sub">—</div>
+  </div>
+  <div class="kpi amarelo">
+    <div class="kpi-label">% Recebimento</div>
+    <div class="kpi-val" id="kpi-perc">—</div>
+    <div class="kpi-sub" id="kpi-perc-sub">—</div>
+  </div>
+</div>
+
+<!-- CHARTS -->
+<div class="sec">
+  <div class="sec-title">Evolução Mensal</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">Faturado × Recebido × Aberto (R$)</div>
+      <div class="chart-wrap"><canvas id="chartMes"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Composição do Faturado</div>
+      <div class="chart-wrap"><canvas id="chartPizza"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- AGING -->
+<div class="sec">
+  <div class="sec-title">Aging — Títulos em Aberto por Tempo</div>
+  <div class="aging-grid" id="aging-grid"></div>
+</div>
+
+<!-- CLIENTES -->
+<div class="sec">
+  <div class="sec-title">Clientes com Saldo em Aberto</div>
+  <div class="cli-grid" id="cli-grid"></div>
+</div>
+
+<div class="footer">Atualizado em <span id="foot-upd">—</span> · Fonte: Oracle Winthor · C&amp;S</div>
+
+<script>
+var G = JSON.parse(document.getElementById('d-grand').textContent);
+var MESES = JSON.parse(document.getElementById('d-mes').textContent);
+var AGING = JSON.parse(document.getElementById('d-aging').textContent);
+var CLIENTES = JSON.parse(document.getElementById('d-clientes').textContent);
+
+function fmt(v){
+  return 'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+function fmtK(v){
+  if(v>=1000000) return 'R$ '+(v/1000000).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' M';
+  if(v>=1000) return 'R$ '+(v/1000).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' K';
+  return fmt(v);
+}
+
+// KPIs
+document.getElementById('kpi-fat').textContent = fmtK(G.faturado);
+document.getElementById('kpi-fat-sub').textContent = G.titulos+' títulos em 2026';
+document.getElementById('kpi-rec').textContent = fmtK(G.recebido);
+document.getElementById('kpi-rec-sub').textContent = (G.titulos - G.titulosAbertos)+' títulos quitados';
+document.getElementById('kpi-ab').textContent = fmtK(G.aberto);
+document.getElementById('kpi-ab-sub').textContent = G.titulosAbertos+' títulos pendentes';
+document.getElementById('kpi-perc').textContent = G.percRecebido.toFixed(1)+'%';
+document.getElementById('kpi-perc-sub').textContent = (100-G.percRecebido).toFixed(1)+'% ainda pendente';
+document.getElementById('pill-upd').textContent = '23/03/2026 00:00';
+document.getElementById('foot-upd').textContent = '23/03/2026';
+
+// CHART MENSAL
+(function(){
+  var ctx = document.getElementById('chartMes').getContext('2d');
+  new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels: MESES.map(function(m){return m.mes;}),
+      datasets:[
+        {label:'Faturado',data:MESES.map(function(m){return m.faturado;}),backgroundColor:'rgba(26,115,232,.7)',borderRadius:4},
+        {label:'Recebido',data:MESES.map(function(m){return m.recebido;}),backgroundColor:'rgba(26,127,60,.7)',borderRadius:4},
+        {label:'Aberto',data:MESES.map(function(m){return m.aberto;}),backgroundColor:'rgba(217,48,37,.7)',borderRadius:4}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+fmt(c.raw);}}}},
+      scales:{y:{ticks:{callback:function(v){return 'R$ '+(v/1000).toFixed(0)+'K';},font:{size:10}},grid:{color:'#f0f0f0'}},x:{ticks:{font:{size:11}},grid:{display:false}}}
+    }
+  });
+})();
+
+// CHART PIZZA
+(function(){
+  var ctx = document.getElementById('chartPizza').getContext('2d');
+  new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Recebido','Em Aberto'],
+      datasets:[{data:[G.recebido, G.aberto],backgroundColor:['rgba(26,127,60,.8)','rgba(217,48,37,.8)'],borderWidth:2,borderColor:'#fff'}]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,cutout:'65%',
+      plugins:{
+        legend:{position:'bottom',labels:{font:{size:11},boxWidth:12}},
+        tooltip:{callbacks:{label:function(c){return c.label+': '+fmt(c.raw)+' ('+((c.raw/G.faturado)*100).toFixed(1)+'%)';}}}
+      }
+    }
+  });
+})();
+
+// AGING
+(function(){
+  var maxVal = Math.max.apply(null, AGING.map(function(a){return a.valor;}));
+  var colors = ['#1a73e8','#1a7f3c','#f9ab00','#e8710a','#D93025'];
+  var html = '';
+  AGING.forEach(function(a,i){
+    var pct = ((a.valor/maxVal)*100).toFixed(1);
+    html += '<div class="aging-card">';
+    html += '<div class="aging-faixa">'+a.faixa+'</div>';
+    html += '<div class="aging-val">'+fmtK(a.valor)+'</div>';
+    html += '<div class="aging-qtd">'+a.qtd+' título'+(a.qtd!==1?'s':'')+'</div>';
+    html += '<div class="aging-bar"><div class="aging-bar-fill" style="width:'+pct+'%;background:'+colors[i]+'"></div></div>';
+    html += '</div>';
+  });
+  document.getElementById('aging-grid').innerHTML = html;
+})();
+
+// CLIENTES
+(function(){
+  var html = '';
+  CLIENTES.forEach(function(c,i){
+    var percRec = c.total > 0 ? ((c.recebido/c.total)*100).toFixed(0) : 0;
+    html += '<div class="cli-card">';
+    html += '<div class="cli-head">';
+    html += '<div class="cli-rank">#'+(i+1)+' · '+(c.qtd)+' título'+(c.qtd!==1?'s':'')+'</div>';
+    html += '<div class="cli-nome" title="'+c.nome+'">'+c.nome+'</div>';
+    html += '</div>';
+    html += '<div class="cli-metrics">';
+    html += '<div class="cli-met"><div class="cli-met-label">Faturado</div><div class="cli-met-val">'+fmtK(c.total)+'</div></div>';
+    html += '<div class="cli-met"><div class="cli-met-label">Recebido</div><div class="cli-met-val recebido">'+fmtK(c.recebido)+'</div></div>';
+    html += '<div class="cli-met"><div class="cli-met-label">Em Aberto</div><div class="cli-met-val aberto">'+fmtK(c.aberto)+'</div></div>';
+    html += '</div>';
+    html += '<div class="cli-prog-wrap"><div class="cli-prog" style="width:'+percRec+'%"></div></div>';
+    html += '</div>';
+  });
+  document.getElementById('cli-grid').innerHTML = html;
+})();
+</script>
+</body>
+</html>
