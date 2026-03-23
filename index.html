@@ -227,6 +227,64 @@
         </article>
 
 
+        <!-- ── Card: VENDIDO ── -->
+        <article class="kpi-card" role="listitem" tabindex="0" aria-label="Vendido vs Faturado">
+          <div class="card-header">
+            <div class="card-icon card-icon--red" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="8" height="8" rx="1" fill="#1565C0" opacity="0.8"/>
+                <rect x="13" y="3" width="8" height="8" rx="1" fill="#6A1B9A" opacity="0.8"/>
+                <rect x="3" y="13" width="8" height="8" rx="1" fill="#1565C0" opacity="0.4"/>
+                <rect x="13" y="13" width="8" height="8" rx="1" fill="#1B7F3E" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="card-title-area">
+              <h3 class="card-title">Vendido vs Faturado</h3>
+              <span class="status-badge live" aria-label="Ao Vivo">
+                <span class="status-dot" aria-hidden="true"></span>Ao Vivo
+              </span>
+            </div>
+          </div>
+          <div class="card-kpi-main">
+            <span class="kpi-value skeleton-target">116,4M</span>
+            <span class="kpi-trend trend-up">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="18,15 12,9 6,15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              +0,8%
+            </span>
+          </div>
+          <p class="kpi-label">VB Vendido Fev/2026</p>
+          <div class="kpi-sub">
+            <span class="sub-item">
+              <span class="sub-label">VB Faturado</span>
+              <span class="sub-value">115,4M</span>
+            </span>
+            <span class="sub-item">
+              <span class="sub-label">Δ Diferença</span>
+              <span class="sub-value">+936K</span>
+            </span>
+          </div>
+          <div class="sparkline-wrap" aria-hidden="true">
+            <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
+              <polyline points="0,35 30,30 60,20 90,25 120,15" fill="none" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,36 30,32 60,22 90,28 120,18" fill="none" stroke="#6A1B9A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3,2"/>
+            </svg>
+          </div>
+          <div class="card-footer">
+            <span class="footer-source">Fonte: PCPEDI / PCPEDC — data emissão</span>
+            <span class="footer-time">Atualizado: Mar/2026</span>
+          </div>
+          <div class="card-action">
+            <a href="dashboard-vendido.html" class="card-link" target="_blank" rel="noopener">
+              Abrir Dashboard
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <polyline points="12,5 19,12 12,19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+
         <!-- ── Card 2: FINANCEIRO ── -->
         <article class="kpi-card" role="listitem" tabindex="0" aria-label="Setor Financeiro">
           <!-- TODO: Injetar via fetch() da API Oracle/Winthor -->
