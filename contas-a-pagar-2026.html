@@ -358,64 +358,55 @@ tfoot td:first-child,tfoot td:nth-child(2){text-align:left;}
 </head>
 <body>
 <!-- ═══ BARRA DE NAVEGAÇÃO DO PORTAL C&S ═══ -->
-<div id="cs-portal-nav" style="position:fixed;top:0;left:0;right:0;z-index:99999;height:38px;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid #D93025;display:flex;align-items:center;padding:0 18px;gap:0;box-shadow:0 2px 10px rgba(0,0,0,.10);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;">
-  <a href="index.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;margin-right:14px;flex-shrink:0;">
-    <img src="logo-vermelho-h.png" height="22" alt="C&amp;S" style="display:block;">
+<div id="cs-portal-nav" style="position:fixed;top:0;left:0;right:0;z-index:99999;height:40px;background:#D93025;display:flex;align-items:center;padding:0 16px;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.18);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;">
+  <!-- Voltar ao Portal -->
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap;transition:background .15s;flex-shrink:0;" onmouseover="this.style.background='rgba(255,255,255,.30)'" onmouseout="this.style.background='rgba(255,255,255,.18)'">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+    Portal
   </a>
-  <div style="width:1px;height:20px;background:#E0E4EA;margin-right:14px;flex-shrink:0;"></div>
-  <nav style="display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;">
-    <a href="index.html" id="csnav-home" class="cs-nav-link" style="font-size:.7rem;font-weight:700;color:#D93025;text-decoration:none;padding:5px 12px;border-radius:20px;white-space:nowrap;transition:background .15s;display:flex;align-items:center;gap:5px;">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-      Portal
-    </a>
-    <a href="dashboard-comercial.html" id="csnav-comercial" class="cs-nav-link" style="font-size:.7rem;font-weight:600;color:#4B5563;text-decoration:none;padding:5px 12px;border-radius:20px;white-space:nowrap;transition:background .15s;">
-      📊 Comercial
-    </a>
-    <a href="dashboard-financeiro.html" id="csnav-financeiro" class="cs-nav-link" style="font-size:.7rem;font-weight:600;color:#4B5563;text-decoration:none;padding:5px 12px;border-radius:20px;white-space:nowrap;transition:background .15s;">
-      💰 Financeiro
-    </a>
-    <a href="contas-a-pagar-2026.html" id="csnav-cp" class="cs-nav-link" style="font-size:.7rem;font-weight:600;color:#4B5563;text-decoration:none;padding:5px 12px;border-radius:20px;white-space:nowrap;transition:background .15s;">
-      📋 Contas a Pagar
-    </a>
+  <!-- Divisor -->
+  <div style="width:1px;height:20px;background:rgba(255,255,255,.3);flex-shrink:0;"></div>
+  <!-- Logo -->
+  <img src="logo-branco-h.png" height="20" alt="C&amp;S" style="display:block;opacity:.9;flex-shrink:0;">
+  <!-- Divisor -->
+  <div style="width:1px;height:20px;background:rgba(255,255,255,.3);flex-shrink:0;"></div>
+  <!-- Outros dashboards -->
+  <span style="font-size:.63rem;color:rgba(255,255,255,.6);white-space:nowrap;flex-shrink:0;">Ver também:</span>
+  <nav style="display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;">
+    <a href="dashboard-comercial.html" id="csnav-comercial" class="cs-nav-dash" style="font-size:.68rem;font-weight:600;color:rgba(255,255,255,.85);text-decoration:none;padding:4px 11px;border-radius:16px;white-space:nowrap;border:1px solid rgba(255,255,255,.25);transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='transparent'">📊 Comercial</a>
+    <a href="contas-a-pagar-2026.html" id="csnav-cp" class="cs-nav-dash" style="font-size:.68rem;font-weight:600;color:rgba(255,255,255,.85);text-decoration:none;padding:4px 11px;border-radius:16px;white-space:nowrap;border:1px solid rgba(255,255,255,.25);transition:all .15s;" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='transparent'">📋 Contas a Pagar</a>
   </nav>
 </div>
 <style>
-  .cs-nav-link:hover { background: #F3F4F6 !important; }
-  .cs-nav-link.cs-nav-active { background: #FDECEA !important; color: #D93025 !important; font-weight: 700 !important; }
   #cs-portal-nav nav::-webkit-scrollbar { display: none; }
+  .cs-nav-dash.cs-nav-active { background: rgba(255,255,255,.25) !important; color: #fff !important; border-color: rgba(255,255,255,.6) !important; }
 </style>
 <script>
-  (function(){
-    var path = window.location.pathname.split('/').pop() || 'index.html';
-    var map = {'index.html':'home','dashboard-comercial.html':'comercial','dashboard-financeiro.html':'financeiro','contas-a-pagar-2026.html':'cp'};
-    var active = map[path];
-    if(active){ var el=document.getElementById('csnav-'+active); if(el) el.classList.add('cs-nav-active'); }
-    // Empurra o conteúdo da página para baixo para não sobrepor
-    document.addEventListener('DOMContentLoaded', function(){
-      document.body.style.paddingTop = (parseInt(document.body.style.paddingTop)||0) + 38 + 'px';
-      // Ajusta headers sticky
-      ['hdr','site-header','header'].forEach(function(cls){
-        var el = document.querySelector('.'+cls) || document.querySelector(cls);
-        if(el){
-          var s = window.getComputedStyle(el);
-          if(s.position === 'sticky' || s.position === 'fixed'){
-            var cur = parseInt(s.top) || 0;
-            el.style.top = (cur + 38) + 'px';
-          }
-        }
-      });
-      // Ajusta nav bar (contas-a-pagar tem .nav sticky top:60px)
-      var nav = document.querySelector('.nav[style*="sticky"], .nav');
-      if(nav){
-        var s = window.getComputedStyle(nav);
-        if(s.position === 'sticky'){
-          var cur = parseInt(s.top) || 0;
-          nav.style.top = (cur + 38) + 'px';
-        }
+(function(){
+  var path = window.location.pathname.split('/').pop() || 'index.html';
+  var map = {'dashboard-comercial.html':'comercial','contas-a-pagar-2026.html':'cp'};
+  var active = map[path];
+  if(active){ var el=document.getElementById('csnav-'+active); if(el) el.classList.add('cs-nav-active'); }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.body.style.paddingTop = (parseInt(document.body.style.paddingTop)||0) + 40 + 'px';
+    // Ajusta sticky headers para ficarem abaixo da barra
+    document.querySelectorAll('.hdr,.header,.site-header,header').forEach(function(el){
+      var s = window.getComputedStyle(el);
+      if(s.position === 'sticky' || s.position === 'fixed'){
+        el.style.top = (parseInt(s.top)||0) + 40 + 'px';
       }
     });
-  })();
+    // Ajusta sub-nav (ex: .nav sticky abaixo do .hdr)
+    document.querySelectorAll('.nav').forEach(function(el){
+      var s = window.getComputedStyle(el);
+      if(s.position === 'sticky'){
+        el.style.top = (parseInt(s.top)||0) + 40 + 'px';
+      }
+    });
+  });
+})();
 </script>
+
 <script>document.addEventListener('DOMContentLoaded',function(){if(typeof Chart!=='undefined'){Chart.defaults.color='#6B7280';Chart.defaults.borderColor='#E0E4EA';}});</script>
 
 <!-- HEADER -->
