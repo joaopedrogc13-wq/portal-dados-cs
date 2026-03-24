@@ -9,10 +9,10 @@
   <meta property="og:type" content="website" />
   <title>Portal de Dados — Cabral &amp; Sousa</title>
 
-  <!-- Google Fonts: Inter (corpo) + JetBrains Mono (KPIs/relógio) -->
+  <!-- Google Fonts: Montserrat (títulos/nav) · Rajdhani (KPIs) · Inter (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -26,7 +26,7 @@
 
       <!-- Logotipo real C&S -->
       <div class="header-logo">
-        <img src="logo-branco-h.png"
+        <img src="logo-vermelho-h.png"
              alt="Cabral &amp; Sousa"
              class="logo-img"
              height="36" />
@@ -40,13 +40,10 @@
           <li><a href="#setores" class="nav-link">Setores</a></li>
           <li><a href="#kpis"    class="nav-link">KPIs</a></li>
           <li><a href="#sobre"   class="nav-link">Sobre</a></li>
-          <li style="border-left:1px solid rgba(255,255,255,.2);margin-left:12px;padding-left:12px;"><a href="dashboard-comercial.html"  class="nav-link" target="_blank" rel="noopener">📊 Comercial</a></li>
-          <li><a href="contas-a-pagar-2026.html"  class="nav-link" target="_blank" rel="noopener">📋 Contas a Pagar</a>
-          <a href="contas-a-receber-2026.html" class="dash-card" style="display:block;background:#fff;border-radius:12px;padding:20px;text-decoration:none;color:#222;box-shadow:0 1px 6px rgba(0,0,0,.1);border-top:4px solid #1a7f3c;transition:box-shadow .2s;">
-            <div style="font-size:22px;margin-bottom:8px;">📥</div>
-            <div style="font-weight:700;font-size:15px;margin-bottom:4px;">Contas a Receber</div>
-            <div style="font-size:12px;color:#666;">Títulos de clientes, aging e recebimentos 2026</div>
-          </a></li>
+          <li style="border-left:.5px solid rgba(0,0,0,.12);margin-left:12px;padding-left:12px;"><a href="dashboard-comercial.html"  class="nav-link" target="_blank" rel="noopener">Comercial</a></li>
+          <li><a href="contas-a-pagar-2026.html"  class="nav-link" target="_blank" rel="noopener">Contas a Pagar</a></li>
+          <li><a href="contas-a-receber-2026.html" class="nav-link" target="_blank" rel="noopener">Contas a Receber</a></li>
+          <li><a href="otif-2026.html" class="nav-link" target="_blank" rel="noopener">OTIF</a></li>
         </ul>
       </nav>
 
@@ -239,8 +236,8 @@
           <div class="card-header">
             <div class="card-icon card-icon--red" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="#2E7D32" stroke-width="1.5" fill="none"/>
-                <path d="M9 22V12h6v10" stroke="#2E7D32" stroke-width="1.5"/>
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="var(--red)" stroke-width="1.5" fill="none"/>
+                <path d="M9 22V12h6v10" stroke="var(--red)" stroke-width="1.5"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -290,8 +287,8 @@
           <div class="card-header">
             <div class="card-icon card-icon--blue" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="#2563EB" stroke-width="1.5"/>
-                <path d="M12 7v1m0 8v1M9.5 9.5C9.5 8.4 10.6 8 12 8s2.5.9 2.5 2c0 2-5 2-5 4 0 1.1 1.1 2 2.5 2s2.5-.4 2.5-1.5" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="9" stroke="var(--red)" stroke-width="1.5"/>
+                <path d="M12 7v1m0 8v1M9.5 9.5C9.5 8.4 10.6 8 12 8s2.5.9 2.5 2c0 2-5 2-5 4 0 1.1 1.1 2 2.5 2s2.5-.4 2.5-1.5" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -326,12 +323,12 @@
             <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <polygon points="0,20 15,22 30,18 45,25 60,20 75,28 90,24 105,30 120,26 120,40 0,40" fill="url(#sg2)"/>
-              <polyline points="0,20 15,22 30,18 45,25 60,20 75,28 90,24 105,30 120,26" fill="none" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,20 15,22 30,18 45,25 60,20 75,28 90,24 105,30 120,26" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
@@ -339,8 +336,8 @@
             <span class="footer-source">Fonte: Contas a Receber / Oracle ERP</span>
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
-          <div class="card-action" style="display:flex;gap:8px;flex-wrap:wrap;">
-            <a href="contas-a-pagar-2026.html" class="card-link" target="_blank" rel="noopener" style="background:#EFF6FF;color:#1D4ED8;border-color:#BFDBFE;">
+          <div class="card-action">
+            <a href="contas-a-pagar-2026.html" class="card-link" target="_blank" rel="noopener">
               Contas a Pagar 2026
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -357,10 +354,10 @@
           <div class="card-header">
             <div class="card-icon card-icon--green" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <rect x="1" y="8" width="14" height="10" rx="1.5" stroke="#16A34A" stroke-width="1.5"/>
-                <path d="M15 11h4l3 3v4h-7V11Z" stroke="#16A34A" stroke-width="1.5" stroke-linejoin="round"/>
-                <circle cx="5.5" cy="19.5" r="1.5" fill="#16A34A"/>
-                <circle cx="18.5" cy="19.5" r="1.5" fill="#16A34A"/>
+                <rect x="1" y="8" width="14" height="10" rx="1.5" stroke="var(--red)" stroke-width="1.5"/>
+                <path d="M15 11h4l3 3v4h-7V11Z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/>
+                <circle cx="5.5" cy="19.5" r="1.5" fill="var(--red)"/>
+                <circle cx="18.5" cy="19.5" r="1.5" fill="var(--red)"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -395,12 +392,12 @@
             <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#16A34A" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#16A34A" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <polygon points="0,30 15,26 30,28 45,22 60,18 75,16 90,12 105,10 120,8 120,40 0,40" fill="url(#sg3)"/>
-              <polyline points="0,30 15,26 30,28 45,22 60,18 75,16 90,12 105,10 120,8" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,30 15,26 30,28 45,22 60,18 75,16 90,12 105,10 120,8" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
@@ -409,7 +406,7 @@
             <span class="footer-time">Atualizado: --/--/---- --:--</span>
           </div>
           <div class="card-action">
-            <span class="card-soon">Em breve</span>
+            <a href="otif-2026.html" class="card-link" target="_blank" rel="noopener">Ver Dashboard <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </article>
 
@@ -420,10 +417,10 @@
           <div class="card-header">
             <div class="card-icon card-icon--purple" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="9" cy="7" r="3" stroke="#7C3AED" stroke-width="1.5"/>
-                <path d="M3 21v-2a6 6 0 0 1 6-6" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="17" cy="7" r="3" stroke="#7C3AED" stroke-width="1.5" stroke-opacity="0.5"/>
-                <path d="M21 21v-2a6 6 0 0 0-5-5.93" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
+                <circle cx="9" cy="7" r="3" stroke="var(--red)" stroke-width="1.5"/>
+                <path d="M3 21v-2a6 6 0 0 1 6-6" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="17" cy="7" r="3" stroke="var(--red)" stroke-width="1.5" stroke-opacity="0.5"/>
+                <path d="M21 21v-2a6 6 0 0 0-5-5.93" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.5"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -458,12 +455,12 @@
             <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <polygon points="0,32 15,28 30,30 45,24 60,22 75,18 90,16 105,14 120,12 120,40 0,40" fill="url(#sg4)"/>
-              <polyline points="0,32 15,28 30,30 45,24 60,22 75,18 90,16 105,14 120,12" fill="none" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,32 15,28 30,30 45,24 60,22 75,18 90,16 105,14 120,12" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
@@ -483,8 +480,8 @@
           <div class="card-header">
             <div class="card-icon card-icon--orange" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="3" stroke="#EA580C" stroke-width="1.5"/>
-                <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="3" stroke="var(--red)" stroke-width="1.5"/>
+                <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -519,12 +516,12 @@
             <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sg5" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#EA580C" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#EA580C" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <polygon points="0,28 15,24 30,26 45,20 60,16 75,20 90,14 105,10 120,8 120,40 0,40" fill="url(#sg5)"/>
-              <polyline points="0,28 15,24 30,26 45,20 60,16 75,20 90,14 105,10 120,8" fill="none" stroke="#EA580C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,28 15,24 30,26 45,20 60,16 75,20 90,14 105,10 120,8" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
@@ -544,9 +541,9 @@
           <div class="card-header">
             <div class="card-icon card-icon--amber" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
-                <line x1="3" y1="6" x2="21" y2="6" stroke="#D97706" stroke-width="1.5"/>
-                <path d="M16 10a4 4 0 0 1-8 0" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/>
+                <line x1="3" y1="6" x2="21" y2="6" stroke="var(--red)" stroke-width="1.5"/>
+                <path d="M16 10a4 4 0 0 1-8 0" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="card-title-area">
@@ -581,12 +578,12 @@
             <svg class="sparkline" viewBox="0 0 120 40" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="sg6" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#D97706" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
               <polygon points="0,10 15,14 30,10 45,16 60,12 75,18 90,22 105,20 120,24 120,40 0,40" fill="url(#sg6)"/>
-              <polyline points="0,10 15,14 30,10 45,16 60,12 75,18 90,22 105,20 120,24" fill="none" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,10 15,14 30,10 45,16 60,12 75,18 90,22 105,20 120,24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
