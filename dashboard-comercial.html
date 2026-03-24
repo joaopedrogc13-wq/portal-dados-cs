@@ -6,7 +6,7 @@
 <title>Resumo do Faturamento – Jan–Mar 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
 <style>
   :root{
     /* Tema claro — padrão C&S */
@@ -156,6 +156,17 @@
   .meta-g { background:#E8F5E9; color:#1B7F3E; }
   .meta-y { background:#FFF8E1; color:#C87A00; }
   .meta-r { background:#FDECEA; color:#C0392B; }
+</style>
+<style id="cs-pnav-css">
+#cs-portal-nav{position:fixed;top:0;left:0;right:0;z-index:99999;height:40px;background:#D93025;display:flex;align-items:center;padding:0 16px;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.2);font-family:'Roboto',system-ui,sans-serif}
+.cs-pnav-home{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:4px 13px;border-radius:20px;white-space:nowrap;flex-shrink:0;transition:background .15s}
+.cs-pnav-home:hover{background:rgba(255,255,255,.3)}
+.cs-pnav-sep{width:1px;height:20px;background:rgba(255,255,255,.3);flex-shrink:0}
+.cs-pnav-logo{display:block;opacity:.9;flex-shrink:0}
+.cs-pnav-links{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
+.cs-pnav-links::-webkit-scrollbar{display:none}
+.cs-pnav-lnk{font-size:11px;font-weight:600;color:rgba(255,255,255,.85);text-decoration:none;padding:4px 11px;border-radius:16px;border:1px solid rgba(255,255,255,.2);white-space:nowrap;transition:all .15s}
+.cs-pnav-lnk:hover,.cs-pnav-lnk.cs-pnav-active{background:rgba(255,255,255,.25);color:#fff;border-color:rgba(255,255,255,.5)}
 </style>
 </head>
 <body>
