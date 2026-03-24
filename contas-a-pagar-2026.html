@@ -499,17 +499,32 @@ var FORN  = JSON.parse(document.getElementById('d-forn').textContent);
 var MES   = JSON.parse(document.getElementById('d-mes').textContent);
 var GRAND = JSON.parse(document.getElementById('d-grand').textContent);
 
-// Expand compact FORN format → verbose fields used by all functions
+// Map verbose FORN format → fields used by all functions
+var MK={jan:'01',fev:'02',mar:'03',abr:'04',mai:'05',jun:'06',jul:'07',ago:'08',set:'09',out:'10',nov:'11',dez:'12'};
 FORN.forEach(function(f){
+  f.nm=f.nm||f.nome;
+  var oldComp=f.comp||{};
   f.comp={};
-  Object.keys(f.C||{}).forEach(function(m){var c=f.C[m];f.comp[m]={total:c[0],qtd:c[1],nfs:c[2].map(function(n){return{nf:n[0],serie:n[1],vl:n[2]};})};});
   f.tit={};
-  Object.keys(f.Ti||{}).forEach(function(m){var t=f.Ti[m];f.tit[m]={titulo:t[0],pago:t[1],aberto:t[2]};});
+  Object.keys(oldComp).forEach(function(mk){
+    var num=MK[mk]||mk;
+    var c=oldComp[mk];
+    f.comp[num]={total:c.tit||0,qtd:(c.nfs||[]).length,nfs:c.nfs||[]};
+    f.tit[num]={titulo:c.tit||0,pago:c.pago||0,aberto:(c.tit||0)-(c.pago||0)};
+  });
+  var oldDet=f.det||{};
   f.det={};
-  Object.keys(f.D||{}).forEach(function(nf){f.det[nf]={dupls:f.D[nf].map(function(d){return{venc:d[0],valor:d[1],vpago:d[2],pagto:d[3],duplic:d[4]};})};});
+  Object.keys(oldDet).forEach(function(nf){
+    f.det[nf]={dupls:(oldDet[nf].dupls||[]).map(function(du){
+      return{venc:du.venc,valor:du.valor,vpago:du.vpago,pagto:du.pagto,duplic:du.duplic||du.dup||'',dup:du.dup||du.duplic||''};
+    })};
+  });
   f.pag={};
-  Object.keys(f.P||{}).forEach(function(m){f.pag[m]={pago:f.P[m]};});
-  delete f.C;delete f.Ti;delete f.D;delete f.P;
+  Object.values(f.det).forEach(function(d){
+    (d.dupls||[]).forEach(function(du){
+      if(du.pagto&&du.vpago>0){var m=du.pagto.substr(5,2);if(!f.pag[m])f.pag[m]={pago:0};f.pag[m].pago+=du.vpago;}
+    });
+  });
 });
 var TODAY='2026-03-20';
 
