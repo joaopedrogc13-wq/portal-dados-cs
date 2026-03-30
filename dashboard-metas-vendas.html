@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Acompanhamento de Meta e Vendas – C&S</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --red:#D93025;--red2:#b71c1c;--green:#1b7e3e;--yellow:#e65100;--grey:#5f6368;
+  --bg:#f1f3f4;--card:#fff;--border:#dadce0;--radius:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:#202124;font-size:14px}
+
+/* HEADER */
+header{background:var(--red);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+header .brand{display:flex;align-items:center;gap:14px}
+header .logo{width:44px;height:44px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center}
+header .logo span{font-weight:900;color:var(--red);font-size:18px;letter-spacing:-1px}
+header h1{font-size:18px;font-weight:700;letter-spacing:.3px}
+header .sub{font-size:12px;opacity:.85;margin-top:2px}
+.pill-upd{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 12px;font-size:11.5px;white-space:nowrap}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid var(--border);padding:8px 24px;display:flex;gap:8px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--grey);font-size:12.5px;padding:5px 12px;border-radius:20px;white-space:nowrap;transition:background .15s}
+nav a:hover{background:var(--bg)}
+nav a.active{background:var(--red);color:#fff;font-weight:600}
+
+/* MAIN */
+main{max-width:1400px;margin:0 auto;padding:20px 20px 40px}
+
+/* SECTION TITLE */
+.sec-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.8px;margin:24px 0 12px;display:flex;align-items:center;gap:8px}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* CARDS GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;position:relative;overflow:hidden}
+.card .c-label{font-size:11px;color:var(--grey);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card .c-val{font-size:22px;font-weight:700;color:#202124;white-space:nowrap}
+.card .c-val.green{color:var(--green)}
+.card .c-val.yellow{color:#e65100}
+.card .c-val.red{color:var(--red)}
+.card .c-sub{font-size:11px;color:var(--grey);margin-top:3px}
+.card .c-bar{height:4px;background:#e8eaed;border-radius:2px;margin-top:8px;overflow:hidden}
+.card .c-bar-fill{height:100%;border-radius:2px;background:var(--green);transition:width .6s}
+.card.accent{border-top:3px solid var(--red)}
+.card.accent-green{border-top:3px solid var(--green)}
+
+/* DIAS BAR */
+.dias-row{display:flex;align-items:center;gap:10px;margin-top:6px}
+.dias-bar{flex:1;height:8px;background:#e8eaed;border-radius:4px;overflow:hidden}
+.dias-bar-fill{height:100%;border-radius:4px;background:var(--red)}
+.dias-label{font-size:11px;color:var(--grey);white-space:nowrap}
+
+/* GAUGE SECTION */
+.gauge-section{display:grid;grid-template-columns:320px 1fr;gap:16px;align-items:start}
+@media(max-width:860px){.gauge-section{grid-template-columns:1fr}}
+.gauge-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.gauge-card canvas{max-width:280px}
+.gauge-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.gauge-pct{font-size:42px;font-weight:800;margin-top:-10px}
+.gauge-pct.green{color:var(--green)}
+.gauge-pct.yellow{color:#e65100}
+.gauge-pct.red{color:var(--red)}
+.gauge-sub{font-size:12px;color:var(--grey);margin-top:4px}
+
+/* STATUS PILLS */
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.status-pill{border-radius:8px;padding:12px;text-align:center}
+.status-pill.verde{background:#e8f5e9;border:1px solid #a5d6a7}
+.status-pill.amarelo{background:#fff3e0;border:1px solid #ffcc80}
+.status-pill.vermelho{background:#ffebee;border:1px solid #ef9a9a}
+.status-pill .sp-num{font-size:28px;font-weight:800}
+.status-pill.verde .sp-num{color:var(--green)}
+.status-pill.amarelo .sp-num{color:#e65100}
+.status-pill.vermelho .sp-num{color:var(--red)}
+.status-pill .sp-label{font-size:11px;color:var(--grey);font-weight:600;text-transform:uppercase}
+
+/* CHARTS ROW */
+.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:860px){.charts-row{grid-template-columns:1fr}}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.chart-card h3{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+
+/* FILTERS */
+.filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.filters label{font-size:12px;color:var(--grey);font-weight:600}
+.filters input,.filters select{border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:12px;background:#fff;outline:none}
+.filters input:focus,.filters select:focus{border-color:var(--red)}
+.btn-filter{background:var(--red);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer}
+.btn-clear{background:#fff;color:var(--grey);border:1px solid var(--border);border-radius:6px;padding:6px 12px;font-size:12px;cursor:pointer}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+thead tr{background:var(--red);color:#fff}
+thead th{padding:10px 10px;text-align:right;font-weight:600;white-space:nowrap;cursor:pointer;user-select:none}
+thead th:first-child,thead th:nth-child(2){text-align:left}
+thead th:hover{background:var(--red2)}
+thead th .sort-arrow{margin-left:4px;opacity:.7}
+tbody tr{border-bottom:1px solid #e8eaed;transition:background .1s}
+tbody tr:hover{background:#f8f9fa}
+tbody td{padding:8px 10px;text-align:right;white-space:nowrap}
+tbody td:first-child{text-align:left;color:var(--grey);font-weight:600;width:36px}
+tbody td:nth-child(2){text-align:left;font-weight:500}
+tbody td.ating{font-weight:700}
+tbody td.ating.green{color:var(--green)}
+tbody td.ating.yellow{color:#e65100}
+tbody td.ating.red{color:var(--red)}
+tbody td.ating.noMeta{color:#aaa}
+.ating-bar-wrap{display:flex;align-items:center;gap:6px}
+.ating-bar{flex:1;height:6px;background:#e8eaed;border-radius:3px;min-width:60px;overflow:hidden}
+.ating-bar-fill{height:100%;border-radius:3px}
+.tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10.5px;font-weight:700}
+.tag.verde{background:#e8f5e9;color:var(--green)}
+.tag.amarelo{background:#fff3e0;color:#e65100}
+.tag.vermelho{background:#ffebee;color:var(--red)}
+.tag.grey{background:#f1f3f4;color:var(--grey)}
+tfoot tr{background:#f8f9fa;font-weight:700;border-top:2px solid var(--border)}
+tfoot td{padding:9px 10px;text-align:right}
+tfoot td:first-child,tfoot td:nth-child(2){text-align:left}
+
+/* COUNT BAR */
+.count-bar{font-size:11.5px;color:var(--grey);margin-bottom:8px}
+.count-bar span{font-weight:700;color:#202124}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#f1f3f4}
+::-webkit-scrollbar-thumb{background:#bdc1c6;border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- DATA -->
+<script id="d-cards" type="application/json">
+{"venda":68035279.37,"meta":70567000,"ating":96.4,"projecao":83154230.34,"cmv":63056037.32,"lucro":4979242.05,"lucro_pct":7.3,"tabela":83219448.31,"bon":1817019.19,"frete":2571.73,"desc":13367149.75,"peso":2579017.55,"mix_cli":12862,"pedidos":48949,"itens":414037,"prazo":21.3,"dias_totais":22,"dias_decorr":18}
+</script>
+
+<script id="d-sups" type="application/json">
+[{"COD":16,"NOME":"CABRAL & SOUSA","QTD_PED":96,"QTD_RCA":5,"MIX_CLI":16,"VL_VENDA":20178334.7,"VL_BON":0,"VL_TAB":24887160.32,"PESO":814302.65,"PRAZO":3.3,"MEDIA_ITENS":4,"QTD_ITENS":384,"VL_FRETE":0,"VL_DESP":0,"META":20000000,"ATING":100.9},{"COD":66,"NOME":"DIST. SALVADOR - ANTONIO FERNANDES","QTD_PED":483,"QTD_RCA":8,"MIX_CLI":210,"VL_VENDA":3323463.3,"VL_BON":33546.04,"VL_TAB":5162313.73,"PESO":156648.96,"PRAZO":46.5,"MEDIA_ITENS":5.1,"QTD_ITENS":2466,"VL_FRETE":0,"VL_DESP":0,"META":2170000,"ATING":153.2},{"COD":13,"NOME":"ATACADO - MASTER - LAFAETE","QTD_PED":496,"QTD_RCA":11,"MIX_CLI":288,"VL_VENDA":2571249.36,"VL_BON":510027.77,"VL_TAB":3059541.93,"PESO":86122.75,"PRAZO":26.8,"MEDIA_ITENS":5.9,"QTD_ITENS":2914,"VL_FRETE":0,"VL_DESP":0,"META":2450000,"ATING":104.9},{"COD":112,"NOME":"SUPERVISOR REDES","QTD_PED":119,"QTD_RCA":2,"MIX_CLI":86,"VL_VENDA":2050571.14,"VL_BON":0,"VL_TAB":2509003.18,"PESO":100524.64,"PRAZO":22.5,"MEDIA_ITENS":31.7,"QTD_ITENS":3770,"VL_FRETE":0,"VL_DESP":0,"META":2100000,"ATING":97.6},{"COD":114,"NOME":"ATACADO INTERNO","QTD_PED":90,"QTD_RCA":3,"MIX_CLI":26,"VL_VENDA":1921622.28,"VL_BON":0,"VL_TAB":2375791.88,"PESO":79282.41,"PRAZO":6.1,"MEDIA_ITENS":8.8,"QTD_ITENS":795,"VL_FRETE":0,"VL_DESP":0,"META":1000000,"ATING":192.2},{"COD":5,"NOME":"ATACADO - BALCAO - LAFAETE","QTD_PED":367,"QTD_RCA":3,"MIX_CLI":118,"VL_VENDA":1709541.11,"VL_BON":0,"VL_TAB":2092027.87,"PESO":81461.89,"PRAZO":16.9,"MEDIA_ITENS":4,"QTD_ITENS":1461,"VL_FRETE":0,"VL_DESP":0,"META":1650000,"ATING":103.6},{"COD":4,"NOME":"DIST. SERTAO - JOAO PEDRO","QTD_PED":1068,"QTD_RCA":21,"MIX_CLI":547,"VL_VENDA":1699774.88,"VL_BON":83427.06,"VL_TAB":2399530.88,"PESO":79665.63,"PRAZO":28.8,"MEDIA_ITENS":4.2,"QTD_ITENS":4516,"VL_FRETE":0,"VL_DESP":0,"META":1660000,"ATING":102.4},{"COD":43,"NOME":"MDLZ T.D. SUDOESTE - ISMAR PESSOA","QTD_PED":1096,"QTD_RCA":17,"MIX_CLI":528,"VL_VENDA":1607155.37,"VL_BON":111088.06,"VL_TAB":2270699.26,"PESO":59756.79,"PRAZO":28.5,"MEDIA_ITENS":5.5,"QTD_ITENS":6028,"VL_FRETE":0,"VL_DESP":0,"META":1630000,"ATING":98.6},{"COD":34,"NOME":"DIST EXC. PEPSICO - VICTOR","QTD_PED":2083,"QTD_RCA":12,"MIX_CLI":1003,"VL_VENDA":1499216.97,"VL_BON":3006.61,"VL_TAB":1939264.71,"PESO":117547.14,"PRAZO":21.1,"MEDIA_ITENS":3.3,"QTD_ITENS":6910,"VL_FRETE":0,"VL_DESP":0,"META":1480000,"ATING":101.3},{"COD":107,"NOME":"ATACADO - MASTER DIST. SSA","QTD_PED":284,"QTD_RCA":8,"MIX_CLI":149,"VL_VENDA":1489920.47,"VL_BON":0,"VL_TAB":1875540.44,"PESO":75684.53,"PRAZO":19.1,"MEDIA_ITENS":8.1,"QTD_ITENS":2300,"VL_FRETE":0,"VL_DESP":0,"META":3330000,"ATING":44.7},{"COD":42,"NOME":"MDLZ T.D. SERTAO - ALAN VIEIRA","QTD_PED":964,"QTD_RCA":15,"MIX_CLI":473,"VL_VENDA":1435200.93,"VL_BON":75628.85,"VL_TAB":2004839.37,"PESO":53316.47,"PRAZO":27.4,"MEDIA_ITENS":5.5,"QTD_ITENS":5314,"VL_FRETE":0,"VL_DESP":0,"META":1270000,"ATING":113.0},{"COD":8,"NOME":"ATACADO - CHECK OUT","QTD_PED":1009,"QTD_RCA":6,"MIX_CLI":393,"VL_VENDA":1285066.43,"VL_BON":0,"VL_TAB":1643183.31,"PESO":57264.9,"PRAZO":23.4,"MEDIA_ITENS":4.4,"QTD_ITENS":4476,"VL_FRETE":0,"VL_DESP":0,"META":1000000,"ATING":128.5},{"COD":71,"NOME":"MDLZ T.D NORTE - WALDEAN","QTD_PED":758,"QTD_RCA":12,"MIX_CLI":382,"VL_VENDA":1277239.04,"VL_BON":43819.52,"VL_TAB":1747019.3,"PESO":45988.49,"PRAZO":25.8,"MEDIA_ITENS":5.4,"QTD_ITENS":4100,"VL_FRETE":0,"VL_DESP":0,"META":890000,"ATING":143.5},{"COD":84,"NOME":"DIST EXC. MARS/NISSIN - CASSIO","QTD_PED":2375,"QTD_RCA":11,"MIX_CLI":1080,"VL_VENDA":1229206.8,"VL_BON":15887.2,"VL_TAB":1639754.78,"PESO":61893.35,"PRAZO":22.7,"MEDIA_ITENS":3.4,"QTD_ITENS":7983,"VL_FRETE":0,"VL_DESP":0,"META":1006000,"ATING":122.2},{"COD":50,"NOME":"DIST. EXTREMO SUL - JOSE HEITOR","QTD_PED":928,"QTD_RCA":15,"MIX_CLI":474,"VL_VENDA":1216721.9,"VL_BON":83289.68,"VL_TAB":1733124.06,"PESO":45920.3,"PRAZO":27.4,"MEDIA_ITENS":4.8,"QTD_ITENS":4430,"VL_FRETE":0,"VL_DESP":0,"META":1360000,"ATING":89.5},{"COD":76,"NOME":"MDLZ T.D. NORTE - JONATHAN COSTA","QTD_PED":786,"QTD_RCA":11,"MIX_CLI":395,"VL_VENDA":1216289.86,"VL_BON":62660.53,"VL_TAB":1702459.11,"PESO":44774.82,"PRAZO":26.6,"MEDIA_ITENS":5.5,"QTD_ITENS":4300,"VL_FRETE":0,"VL_DESP":0,"META":1180000,"ATING":103.1},{"COD":61,"NOME":"MDLZ T.D. SSA - REDES MARCELA","QTD_PED":483,"QTD_RCA":9,"MIX_CLI":298,"VL_VENDA":1186157.97,"VL_BON":61065.38,"VL_TAB":1615268.36,"PESO":40949.24,"PRAZO":24.8,"MEDIA_ITENS":5.7,"QTD_ITENS":2748,"VL_FRETE":0,"VL_DESP":0,"META":1080000,"ATING":109.8},{"COD":72,"NOME":"MDLZ T.D. NORTE - UELITON","QTD_PED":775,"QTD_RCA":12,"MIX_CLI":382,"VL_VENDA":1168276.79,"VL_BON":87736.61,"VL_TAB":1651413.32,"PESO":43483.54,"PRAZO":27.1,"MEDIA_ITENS":5.5,"QTD_ITENS":4251,"VL_FRETE":0,"VL_DESP":0,"META":930000,"ATING":125.6},{"COD":12,"NOME":"DIST. SUL - THARCIO HAFNER","QTD_PED":1044,"QTD_RCA":17,"MIX_CLI":534,"VL_VENDA":1147003.28,"VL_BON":89459.41,"VL_TAB":1629742.66,"PESO":43277.75,"PRAZO":27.9,"MEDIA_ITENS":4.8,"QTD_ITENS":5024,"VL_FRETE":0,"VL_DESP":0,"META":1490000,"ATING":77.0},{"COD":3,"NOME":"DIST. SUDOESTE - ISRAEL PEDRO","QTD_PED":856,"QTD_RCA":16,"MIX_CLI":436,"VL_VENDA":1086739.54,"VL_BON":73393.47,"VL_TAB":1534064.27,"PESO":41130.56,"PRAZO":27.0,"MEDIA_ITENS":4.8,"QTD_ITENS":4084,"VL_FRETE":0,"VL_DESP":0,"META":1320000,"ATING":82.3},{"COD":120,"NOME":"DIST. VENDA EXPRESS SUDOESTE - WALLAN","QTD_PED":1119,"QTD_RCA":18,"MIX_CLI":546,"VL_VENDA":997223.9,"VL_BON":91025.65,"VL_TAB":1416019.83,"PESO":37694.71,"PRAZO":28.1,"MEDIA_ITENS":4.5,"QTD_ITENS":5062,"VL_FRETE":0,"VL_DESP":0,"META":940000,"ATING":106.1},{"COD":96,"NOME":"DIST. OESTE III - JORGE","QTD_PED":799,"QTD_RCA":14,"MIX_CLI":399,"VL_VENDA":977334.47,"VL_BON":90461.66,"VL_TAB":1425244.59,"PESO":37113.3,"PRAZO":26.8,"MEDIA_ITENS":4.7,"QTD_ITENS":3748,"VL_FRETE":0,"VL_DESP":0,"META":1565000,"ATING":62.4},{"COD":135,"NOME":"CMA - DIST. SUDOESTE - ISAAC","QTD_PED":820,"QTD_RCA":14,"MIX_CLI":411,"VL_VENDA":918701.0,"VL_BON":71988.89,"VL_TAB":1296897.0,"PESO":34630.06,"PRAZO":28.0,"MEDIA_ITENS":4.6,"QTD_ITENS":3772,"VL_FRETE":0,"VL_DESP":0,"META":1087000,"ATING":84.5},{"COD":24,"NOME":"DIST. OESTE II - DYOGO GOMES","QTD_PED":763,"QTD_RCA":14,"MIX_CLI":391,"VL_VENDA":882422.7,"VL_BON":84483.3,"VL_TAB":1265618.72,"PESO":33374.98,"PRAZO":27.8,"MEDIA_ITENS":4.7,"QTD_ITENS":3559,"VL_FRETE":0,"VL_DESP":0,"META":885000,"ATING":99.7},{"COD":126,"NOME":"MDLZ VENDA EXPRESS SUDOESTE - WARLLEN","QTD_PED":706,"QTD_RCA":12,"MIX_CLI":356,"VL_VENDA":867571.47,"VL_BON":68162.09,"VL_TAB":1215085.19,"PESO":31799.62,"PRAZO":27.4,"MEDIA_ITENS":5.2,"QTD_ITENS":3694,"VL_FRETE":0,"VL_DESP":0,"META":907500,"ATING":95.6},{"COD":60,"NOME":"MDLZ P.E. SSA - JUNIOR","QTD_PED":553,"QTD_RCA":9,"MIX_CLI":276,"VL_VENDA":850865.1,"VL_BON":85636.53,"VL_TAB":1220753.23,"PESO":31010.4,"PRAZO":23.5,"MEDIA_ITENS":5.8,"QTD_ITENS":3193,"VL_FRETE":0,"VL_DESP":0,"META":800000,"ATING":106.4},{"COD":14,"NOME":"DIST. SUDOESTE II - ALINE","QTD_PED":738,"QTD_RCA":13,"MIX_CLI":371,"VL_VENDA":801458.65,"VL_BON":72064.07,"VL_TAB":1150777.59,"PESO":30292.01,"PRAZO":27.6,"MEDIA_ITENS":4.7,"QTD_ITENS":3495,"VL_FRETE":0,"VL_DESP":0,"META":1020000,"ATING":78.6},{"COD":125,"NOME":"MDLZ VENDA EXPRESS SERTAO - ARTENIZ","QTD_PED":679,"QTD_RCA":11,"MIX_CLI":339,"VL_VENDA":777191.83,"VL_BON":71020.98,"VL_TAB":1110700.76,"PESO":28787.18,"PRAZO":27.8,"MEDIA_ITENS":5.1,"QTD_ITENS":3480,"VL_FRETE":0,"VL_DESP":0,"META":729500,"ATING":106.5},{"COD":122,"NOME":"DIST. VENDA EXPRESS OESTE - MARLISON","QTD_PED":712,"QTD_RCA":13,"MIX_CLI":361,"VL_VENDA":774852.15,"VL_BON":73530.66,"VL_TAB":1110162.41,"PESO":29304.85,"PRAZO":28.0,"MEDIA_ITENS":4.8,"QTD_ITENS":3424,"VL_FRETE":0,"VL_DESP":0,"META":760000,"ATING":102.0},{"COD":105,"NOME":"DIST. NORTE - MAURICIO","QTD_PED":613,"QTD_RCA":11,"MIX_CLI":307,"VL_VENDA":697530.22,"VL_BON":61049.76,"VL_TAB":1000048.48,"PESO":26386.14,"PRAZO":27.6,"MEDIA_ITENS":4.8,"QTD_ITENS":2941,"VL_FRETE":0,"VL_DESP":0,"META":902500,"ATING":77.3},{"COD":117,"NOME":"DIST. VENDA EXPRESS SSA - DANILO","QTD_PED":617,"QTD_RCA":11,"MIX_CLI":307,"VL_VENDA":694229.16,"VL_BON":57994.02,"VL_TAB":992427.46,"PESO":26256.44,"PRAZO":27.3,"MEDIA_ITENS":4.8,"QTD_ITENS":2951,"VL_FRETE":0,"VL_DESP":0,"META":520000,"ATING":133.5},{"COD":41,"NOME":"MDLZ T.D. CENTRO SUL - DARLY","QTD_PED":617,"QTD_RCA":10,"MIX_CLI":305,"VL_VENDA":693413.47,"VL_BON":61498.81,"VL_TAB":994095.31,"PESO":25697.6,"PRAZO":27.0,"MEDIA_ITENS":5.3,"QTD_ITENS":3265,"VL_FRETE":0,"VL_DESP":0,"META":1100000,"ATING":63.0},{"COD":99,"NOME":"DIST. EXCLUSIVA VET - ANDRE","QTD_PED":431,"QTD_RCA":4,"MIX_CLI":149,"VL_VENDA":650592.04,"VL_BON":0,"VL_TAB":855700.3,"PESO":20813.86,"PRAZO":27.0,"MEDIA_ITENS":5.9,"QTD_ITENS":2558,"VL_FRETE":0,"VL_DESP":0,"META":990000,"ATING":65.7},{"COD":134,"NOME":"CMA - DIST. OESTE - SANDOVAL NUNES","QTD_PED":541,"QTD_RCA":9,"MIX_CLI":276,"VL_VENDA":625443.42,"VL_BON":58038.25,"VL_TAB":893498.94,"PESO":23649.38,"PRAZO":27.7,"MEDIA_ITENS":4.9,"QTD_ITENS":2649,"VL_FRETE":0,"VL_DESP":0,"META":985000,"ATING":63.5},{"COD":121,"NOME":"DIST. VENDA EXPRESS SUL - REINALDO","QTD_PED":524,"QTD_RCA":9,"MIX_CLI":263,"VL_VENDA":564509.94,"VL_BON":47516.28,"VL_TAB":808022.26,"PESO":21332.08,"PRAZO":27.5,"MEDIA_ITENS":4.8,"QTD_ITENS":2527,"VL_FRETE":0,"VL_DESP":0,"META":630000,"ATING":89.6},{"COD":127,"NOME":"MDLZ VENDA EXPRESS EXTREMO SUL - EDIVALDO","QTD_PED":507,"QTD_RCA":9,"MIX_CLI":250,"VL_VENDA":558930.08,"VL_BON":48985.01,"VL_TAB":801244.35,"PESO":20582.28,"PRAZO":27.5,"MEDIA_ITENS":5.0,"QTD_ITENS":2513,"VL_FRETE":0,"VL_DESP":0,"META":528000,"ATING":105.9},{"COD":115,"NOME":"MDLZ PE EXPRESS SSA - DILTON","QTD_PED":528,"QTD_RCA":9,"MIX_CLI":261,"VL_VENDA":555076.47,"VL_BON":50019.12,"VL_TAB":800481.46,"PESO":20382.15,"PRAZO":28.0,"MEDIA_ITENS":5.1,"QTD_ITENS":2681,"VL_FRETE":0,"VL_DESP":0,"META":640000,"ATING":86.7},{"COD":77,"NOME":"ON PREMISE SSA - LUCIVALDO PINTO","QTD_PED":1029,"QTD_RCA":5,"MIX_CLI":396,"VL_VENDA":513590.1,"VL_BON":0,"VL_TAB":697929.93,"PESO":14523.8,"PRAZO":27.3,"MEDIA_ITENS":3.5,"QTD_ITENS":3618,"VL_FRETE":0,"VL_DESP":0,"META":550000,"ATING":93.4},{"COD":131,"NOME":"MDLZ T.D. SSA - VAREJO MARCIO DE FRANCA","QTD_PED":466,"QTD_RCA":8,"MIX_CLI":237,"VL_VENDA":480157.98,"VL_BON":40810.41,"VL_TAB":690040.81,"PESO":17622.37,"PRAZO":27.1,"MEDIA_ITENS":5.0,"QTD_ITENS":2342,"VL_FRETE":0,"VL_DESP":0,"META":820000,"ATING":58.6},{"COD":93,"NOME":"BAHIA FORT - RUDSLEY GLAUCO","QTD_PED":420,"QTD_RCA":4,"MIX_CLI":171,"VL_VENDA":407818.31,"VL_BON":0,"VL_TAB":546879.76,"PESO":11940.46,"PRAZO":27.0,"MEDIA_ITENS":5.4,"QTD_ITENS":2253,"VL_FRETE":0,"VL_DESP":0,"META":400000,"ATING":102.0},{"COD":21,"NOME":"MDLZ P.E. EXTREMO SUL - EDUARDO FERREIRA","QTD_PED":394,"QTD_RCA":7,"MIX_CLI":197,"VL_VENDA":348377.11,"VL_BON":27700.61,"VL_TAB":498690.11,"PESO":12831.2,"PRAZO":28.4,"MEDIA_ITENS":5.0,"QTD_ITENS":1978,"VL_FRETE":0,"VL_DESP":0,"META":365000,"ATING":95.4},{"COD":118,"NOME":"MDLZ PE EXPRESS NORTE - EVANDRO","QTD_PED":353,"QTD_RCA":6,"MIX_CLI":176,"VL_VENDA":341204.23,"VL_BON":31099.66,"VL_TAB":487820.09,"PESO":12581.69,"PRAZO":27.3,"MEDIA_ITENS":5.2,"QTD_ITENS":1832,"VL_FRETE":0,"VL_DESP":0,"META":410000,"ATING":83.2},{"COD":52,"NOME":"ON PRIMISE SUL - VANUZA","QTD_PED":618,"QTD_RCA":4,"MIX_CLI":232,"VL_VENDA":296646.82,"VL_BON":0,"VL_TAB":409406.47,"PESO":8423.72,"PRAZO":25.6,"MEDIA_ITENS":2.8,"QTD_ITENS":1726,"VL_FRETE":0,"VL_DESP":0,"META":484000,"ATING":61.3},{"COD":65,"NOME":"ATACADO - MASTER MDLZ SSA","QTD_PED":83,"QTD_RCA":3,"MIX_CLI":41,"VL_VENDA":289206.97,"VL_BON":0,"VL_TAB":358249.89,"PESO":12001.93,"PRAZO":22.2,"MEDIA_ITENS":10.5,"QTD_ITENS":871,"VL_FRETE":0,"VL_DESP":0,"META":700000,"ATING":41.3},{"COD":82,"NOME":"MDLZ P.E. NORTE - JOAO MATHEUS LIMA","QTD_PED":272,"QTD_RCA":5,"MIX_CLI":136,"VL_VENDA":267676.63,"VL_BON":24120.27,"VL_TAB":387265.02,"PESO":9834.35,"PRAZO":27.6,"MEDIA_ITENS":5.1,"QTD_ITENS":1389,"VL_FRETE":0,"VL_DESP":0,"META":650000,"ATING":41.2},{"COD":102,"NOME":"EXPORTACAO INTERNA - LAFAETE DIORGE","QTD_PED":55,"QTD_RCA":2,"MIX_CLI":29,"VL_VENDA":264749.64,"VL_BON":0,"VL_TAB":330354.68,"PESO":10879.82,"PRAZO":3.2,"MEDIA_ITENS":4.8,"QTD_ITENS":262,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":73,"NOME":"MDLZ P.E. NORTE - EVANDRO DOS SANTOS","QTD_PED":243,"QTD_RCA":5,"MIX_CLI":122,"VL_VENDA":244444.77,"VL_BON":21956.95,"VL_TAB":351283.54,"PESO":9006.81,"PRAZO":27.5,"MEDIA_ITENS":5.1,"QTD_ITENS":1248,"VL_FRETE":0,"VL_DESP":0,"META":475000,"ATING":51.5},{"COD":137,"NOME":"MDLZ PE EXPRESS NORTE - JOAO MATHEUS","QTD_PED":211,"QTD_RCA":4,"MIX_CLI":106,"VL_VENDA":222145.0,"VL_BON":18889.16,"VL_TAB":317953.0,"PESO":8154.72,"PRAZO":27.2,"MEDIA_ITENS":5.1,"QTD_ITENS":1073,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":136,"NOME":"DIST. EXTREMO NORTE - THAINA","QTD_PED":231,"QTD_RCA":4,"MIX_CLI":118,"VL_VENDA":221916.29,"VL_BON":21144.83,"VL_TAB":318879.28,"PESO":8419.32,"PRAZO":27.4,"MEDIA_ITENS":5.0,"QTD_ITENS":1151,"VL_FRETE":0,"VL_DESP":0,"META":297500,"ATING":74.6},{"COD":91,"NOME":"BAHIA FORT - GEORGE BISPO","QTD_PED":214,"QTD_RCA":3,"MIX_CLI":96,"VL_VENDA":195118.19,"VL_BON":0,"VL_TAB":268133.56,"PESO":5779.41,"PRAZO":27.4,"MEDIA_ITENS":5.2,"QTD_ITENS":1109,"VL_FRETE":0,"VL_DESP":0,"META":320000,"ATING":61.0},{"COD":133,"NOME":"VERBA GN EMERSON","QTD_PED":18,"QTD_RCA":1,"MIX_CLI":10,"VL_VENDA":191023.0,"VL_BON":0,"VL_TAB":244882.0,"PESO":7208.36,"PRAZO":0,"MEDIA_ITENS":24.8,"QTD_ITENS":447,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":9,"NOME":"VENDA ONLINE MATRIZ","QTD_PED":149,"QTD_RCA":1,"MIX_CLI":64,"VL_VENDA":151140.96,"VL_BON":0,"VL_TAB":196754.72,"PESO":5719.74,"PRAZO":24.6,"MEDIA_ITENS":4.4,"QTD_ITENS":660,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":129,"NOME":"DIST. TECNICO BOEHRINGER - VIVIAN","QTD_PED":103,"QTD_RCA":3,"MIX_CLI":48,"VL_VENDA":125024.0,"VL_BON":0,"VL_TAB":160977.0,"PESO":4727.47,"PRAZO":27.1,"MEDIA_ITENS":4.7,"QTD_ITENS":483,"VL_FRETE":0,"VL_DESP":0,"META":90000,"ATING":138.9},{"COD":104,"NOME":"TELEVENDAS CABRAL E SOUSA","QTD_PED":110,"QTD_RCA":1,"MIX_CLI":53,"VL_VENDA":103053.71,"VL_BON":0,"VL_TAB":135024.52,"PESO":3914.07,"PRAZO":25.0,"MEDIA_ITENS":5.1,"QTD_ITENS":562,"VL_FRETE":0,"VL_DESP":0,"META":90000,"ATING":114.5},{"COD":19,"NOME":"MDLZ P.E. SUDOESTE - WARLLEN OLIVEIRA","QTD_PED":84,"QTD_RCA":2,"MIX_CLI":41,"VL_VENDA":80891.0,"VL_BON":7275.77,"VL_TAB":116036.0,"PESO":2963.09,"PRAZO":28.0,"MEDIA_ITENS":5.3,"QTD_ITENS":444,"VL_FRETE":0,"VL_DESP":0,"META":80000,"ATING":101.1},{"COD":111,"NOME":"ON PREMISE SSA - EVENTOS","QTD_PED":33,"QTD_RCA":1,"MIX_CLI":22,"VL_VENDA":74502.62,"VL_BON":0,"VL_TAB":99543.15,"PESO":1838.86,"PRAZO":0,"MEDIA_ITENS":8,"QTD_ITENS":265,"VL_FRETE":0,"VL_DESP":0,"META":150000,"ATING":49.7},{"COD":113,"NOME":"BAHIA FORT PET - MASTER","QTD_PED":30,"QTD_RCA":1,"MIX_CLI":22,"VL_VENDA":25247.0,"VL_BON":0,"VL_TAB":33386.0,"PESO":868.63,"PRAZO":27.3,"MEDIA_ITENS":3.7,"QTD_ITENS":110,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":106,"NOME":"DIST. G. PRODUTO RED BULL - TIAGO JOSE","QTD_PED":4,"QTD_RCA":1,"MIX_CLI":3,"VL_VENDA":1419.0,"VL_BON":0,"VL_TAB":1882.0,"PESO":61.25,"PRAZO":28.3,"MEDIA_ITENS":3.5,"QTD_ITENS":14,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0},{"COD":18,"NOME":"DIST. G. PRODUTO VCT - TAIANE","QTD_PED":2,"QTD_RCA":1,"MIX_CLI":2,"VL_VENDA":430.0,"VL_BON":0,"VL_TAB":563.0,"PESO":8.79,"PRAZO":28.5,"MEDIA_ITENS":2,"QTD_ITENS":4,"VL_FRETE":0,"VL_DESP":0,"META":0,"ATING":0}]
+</script>
+
+<header>
+  <div class="brand">
+    <div class="logo"><span>C&S</span></div>
+    <div>
+      <h1>Acompanhamento de Meta e Vendas</h1>
+      <div class="sub" id="hdr-sub">Período: 01/03/2026 a 26/03/2026 &nbsp;|&nbsp; Março/2026</div>
+    </div>
+  </div>
+  <span class="pill-upd">Atualizado: <span id="pill-upd">26/03/2026 17:32</span></span>
+</header>
+
+<nav>
+  <a href="index.html">🏠 Portal</a>
+  <a href="otif-2026.html">📦 OTIF</a>
+  <a href="dashboard-metas-vendas.html" class="active">🎯 Meta &amp; Vendas</a>
+  <a href="comercial-2026.html">📊 Comercial</a>
+  <a href="fornecedor-2026.html">🏭 Fornecedor</a>
+  <a href="contas-a-pagar-2026.html">💸 A Pagar</a>
+  <a href="contas-a-receber-2026.html">💰 A Receber</a>
+</nav>
+
+<main>
+
+  <!-- DIAS ÚTEIS -->
+  <div class="sec-title">Progresso do Mês</div>
+  <div class="card" style="margin-bottom:4px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <span class="c-label" style="margin:0">Dias Úteis — Março/2026</span>
+      <span style="font-size:13px;font-weight:700;color:var(--red)" id="dias-label">18 de 22 dias úteis decorridos</span>
+    </div>
+    <div class="dias-row">
+      <div class="dias-bar"><div class="dias-bar-fill" id="dias-fill" style="width:81.8%"></div></div>
+      <span class="dias-label" id="dias-pct">81,8%</span>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="sec-title">Resumo do Período</div>
+  <div class="cards-grid" id="cards-grid">
+    <!-- preenchido via JS -->
+  </div>
+
+  <!-- GAUGE + STATUS -->
+  <div class="sec-title">Meta vs Realizado</div>
+  <div class="gauge-section">
+    <div class="gauge-card">
+      <div class="gauge-title">Atingimento de Meta</div>
+      <canvas id="gaugeChart" width="280" height="155"></canvas>
+      <div class="gauge-pct" id="gauge-pct-text" style="color:var(--yellow)">96,4%</div>
+      <div class="gauge-sub">R$ <span id="gauge-venda">68.035.279</span> de R$ <span id="gauge-meta">70.567.000</span></div>
+      <div style="margin-top:10px;font-size:11.5px;color:var(--grey)">Projeção ao final do mês:</div>
+      <div style="font-size:18px;font-weight:700;color:#1a73e8;margin-top:2px">R$ <span id="gauge-proj">83.154.230</span></div>
+      <div style="font-size:11px;color:var(--grey);margin-top:2px">Base: 18/22 dias úteis</div>
+
+      <div class="status-grid" style="margin-top:16px">
+        <div class="status-pill verde">
+          <div class="sp-num" id="cnt-verde">24</div>
+          <div class="sp-label">≥ 100%</div>
+        </div>
+        <div class="status-pill amarelo">
+          <div class="sp-num" id="cnt-amarelo">12</div>
+          <div class="sp-label">80–99%</div>
+        </div>
+        <div class="status-pill vermelho">
+          <div class="sp-num" id="cnt-vermelho">16</div>
+          <div class="sp-label">< 80%</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="chart-card" style="flex:1">
+        <h3>Top 10 Supervisores por Venda</h3>
+        <canvas id="topChart" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS ROW -->
+  <div class="sec-title">Análise Gráfica</div>
+  <div class="charts-row">
+    <div class="chart-card">
+      <h3>Atingimento de Meta por Supervisor (com meta)</h3>
+      <canvas id="atingChart" height="320"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Mix de Clientes vs Qtd Pedidos</h3>
+      <canvas id="mixChart" height="320"></canvas>
+    </div>
+  </div>
+
+  <!-- TABELA -->
+  <div class="sec-title">Detalhamento por Supervisor</div>
+  <div class="filters">
+    <label>Buscar:</label>
+    <input type="text" id="flt-nome" placeholder="Nome do supervisor…" style="width:200px"/>
+    <label>Atingimento:</label>
+    <select id="flt-ating">
+      <option value="">Todos</option>
+      <option value="verde">≥ 100% (Verde)</option>
+      <option value="amarelo">80–99% (Amarelo)</option>
+      <option value="vermelho">&lt; 80% (Vermelho)</option>
+      <option value="semMeta">Sem Meta</option>
+    </select>
+    <button class="btn-filter" onclick="applyFilters()">Filtrar</button>
+    <button class="btn-clear" onclick="clearFilters()">Limpar</button>
+    <span class="count-bar" id="count-bar" style="margin-left:auto">Exibindo <span id="cnt-rows">59</span> supervisores</span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="sups-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable('COD')">#<span class="sort-arrow" id="arr-COD"></span></th>
+          <th onclick="sortTable('NOME')">Supervisor<span class="sort-arrow" id="arr-NOME"></span></th>
+          <th onclick="sortTable('VL_VENDA')">Venda R$<span class="sort-arrow" id="arr-VL_VENDA">▼</span></th>
+          <th onclick="sortTable('META')">Meta R$<span class="sort-arrow" id="arr-META"></span></th>
+          <th onclick="sortTable('ATING')">Ating.<span class="sort-arrow" id="arr-ATING"></span></th>
+          <th onclick="sortTable('QTD_PED')">Pedidos<span class="sort-arrow" id="arr-QTD_PED"></span></th>
+          <th onclick="sortTable('QTD_RCA')">RCAs<span class="sort-arrow" id="arr-QTD_RCA"></span></th>
+          <th onclick="sortTable('MIX_CLI')">Mix Cli<span class="sort-arrow" id="arr-MIX_CLI"></span></th>
+          <th onclick="sortTable('MEDIA_ITENS')">Itn/Ped<span class="sort-arrow" id="arr-MEDIA_ITENS"></span></th>
+          <th onclick="sortTable('PESO')">Peso (kg)<span class="sort-arrow" id="arr-PESO"></span></th>
+          <th onclick="sortTable('PRAZO')">Prazo<span class="sort-arrow" id="arr-PRAZO"></span></th>
+          <th onclick="sortTable('VL_BON')">Bonif. R$<span class="sort-arrow" id="arr-VL_BON"></span></th>
+          <th onclick="sortTable('VL_TAB')">Tabela R$<span class="sort-arrow" id="arr-VL_TAB"></span></th>
+        </tr>
+      </thead>
+      <tbody id="sups-tbody"></tbody>
+      <tfoot id="sups-tfoot"></tfoot>
+    </table>
+  </div>
+
+</main>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────
+const CARDS = JSON.parse(document.getElementById('d-cards').textContent);
+const SUPS_RAW = JSON.parse(document.getElementById('d-sups').textContent);
+
+// ── HELPERS ──────────────────────────────────────────────────────────
+const fmt  = (v,d=0)=>v==null?'—':(+v).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fmtM = v => fmt(v,0);
+const fmtMM= v => 'R$ '+fmt(v,0);
+const fmtPct = v => v?fmt(v,1)+'%':'—';
+const atCol = (v,hasMeta)=>{
+  if(!hasMeta) return 'noMeta';
+  if(v>=100) return 'green';
+  if(v>=80)  return 'yellow';
+  return 'red';
+};
+const atTag = (v,hasMeta)=>{
+  if(!hasMeta) return '<span class="tag grey">s/meta</span>';
+  if(v>=100) return `<span class="tag verde">${fmt(v,1)}%</span>`;
+  if(v>=80)  return `<span class="tag amarelo">${fmt(v,1)}%</span>`;
+  return `<span class="tag vermelho">${fmt(v,1)}%</span>`;
+};
+const barColor = (v,hasMeta)=>{
+  if(!hasMeta) return '#bdc1c6';
+  if(v>=100) return '#1b7e3e';
+  if(v>=80)  return '#e65100';
+  return '#D93025';
+};
+
+// ── CARDS ─────────────────────────────────────────────────────────────
+function buildCards(){
+  const c = CARDS;
+  const grid = document.getElementById('cards-grid');
+  const items = [
+    {label:'Faturamento',val:'R$ '+fmt(c.venda,0),sub:'Período '+document.getElementById('hdr-sub').textContent.split('|')[0].replace('Período: ','').trim(),cls:'accent',color:''},
+    {label:'Meta do Mês',val:'R$ '+fmt(c.meta,0),sub:'Março/2026',cls:''},
+    {label:'% Atingimento',val:fmt(c.ating,1)+'%',sub:c.ating>=100?'✅ Meta atingida':'⚠️ Faltam R$ '+fmt(c.meta-c.venda,0),cls:'',color:c.ating>=100?'green':c.ating>=80?'yellow':'red'},
+    {label:'Projeção Final',val:'R$ '+fmt(c.projecao,0),sub:'Base: 18/22 dias úteis',cls:'',color:''},
+    {label:'CMV',val:'R$ '+fmt(c.cmv,0),sub:fmt(c.cmv/c.venda*100,1)+'% do faturamento',cls:''},
+    {label:'Lucro Bruto',val:'R$ '+fmt(c.lucro,0),sub:fmt(c.lucro_pct,1)+'% de margem',cls:'accent-green',color:'green'},
+    {label:'Pedidos',val:fmt(c.pedidos,0),sub:fmt(c.itens,0)+' itens no total',cls:''},
+    {label:'Mix de Clientes',val:fmt(c.mix_cli,0),sub:'Clientes ativos no período',cls:''},
+    {label:'Tabela (bruto)',val:'R$ '+fmt(c.tabela,0),sub:'Antes de desc/bon',cls:''},
+    {label:'Bonificações',val:'R$ '+fmt(c.bon,0),sub:fmt(c.bon/c.tabela*100,1)+'% da tabela',cls:''},
+    {label:'Descontos',val:'R$ '+fmt(c.desc,0),sub:fmt(c.desc/c.tabela*100,1)+'% da tabela',cls:''},
+    {label:'Peso Total',val:fmt(c.peso,0)+' kg',sub:fmt(c.peso/1000,1)+' toneladas',cls:''},
+    {label:'Prazo Médio',val:fmt(c.prazo,1)+' dias',sub:'Média de prazo de pagamento',cls:''},
+    {label:'Itens/Pedido',val:fmt(c.itens/c.pedidos,1),sub:fmt(c.itens,0)+' itens / '+fmt(c.pedidos,0)+' pedidos',cls:''},
+  ];
+  grid.innerHTML = items.map(i=>`
+    <div class="card ${i.cls||''}">
+      <div class="c-label">${i.label}</div>
+      <div class="c-val ${i.color||''}">${i.val}</div>
+      <div class="c-sub">${i.sub}</div>
+    </div>
+  `).join('');
+}
+
+// ── GAUGE CHART ────────────────────────────────────────────────────────
+function buildGauge(){
+  const pct = CARDS.ating;
+  const col = pct>=100?'#1b7e3e':pct>=80?'#e65100':'#D93025';
+  const val = Math.min(pct/100*180,180);
+  const ctx = document.getElementById('gaugeChart').getContext('2d');
+  new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      datasets:[{
+        data:[val,180-Math.max(val,0),180],
+        backgroundColor:[col,'#e8eaed','transparent'],
+        borderWidth:0,circumference:180,rotation:270
+      }]
+    },
+    options:{
+      responsive:true,cutout:'75%',
+      plugins:{legend:{display:false},tooltip:{enabled:false}}
+    }
+  });
+  const el = document.getElementById('gauge-pct-text');
+  el.textContent = fmt(pct,1)+'%';
+  el.className = 'gauge-pct '+(pct>=100?'green':pct>=80?'yellow':'red');
+  document.getElementById('gauge-venda').textContent = fmt(CARDS.venda,0);
+  document.getElementById('gauge-meta').textContent  = fmt(CARDS.meta,0);
+  document.getElementById('gauge-proj').textContent  = fmt(CARDS.projecao,0);
+  // status counts
+  const withMeta = SUPS_RAW.filter(s=>(s.META||0)>0);
+  document.getElementById('cnt-verde').textContent   = withMeta.filter(s=>s.ATING>=100).length;
+  document.getElementById('cnt-amarelo').textContent = withMeta.filter(s=>s.ATING>=80&&s.ATING<100).length;
+  document.getElementById('cnt-vermelho').textContent= withMeta.filter(s=>s.ATING<80).length;
+}
+
+// ── TOP 10 CHART ───────────────────────────────────────────────────────
+function buildTopChart(){
+  const top = [...SUPS_RAW].sort((a,b)=>b.VL_VENDA-a.VL_VENDA).slice(0,10);
+  const labels = top.map(s=>s.NOME.length>22?s.NOME.substring(0,22)+'…':s.NOME);
+  const vendas = top.map(s=>s.VL_VENDA);
+  const metas  = top.map(s=>s.META||0);
+  const colors = top.map(s=>s.META>0?(s.ATING>=100?'#1b7e3e':s.ATING>=80?'#e65100':'#D93025'):'#4285f4');
+  const ctx = document.getElementById('topChart').getContext('2d');
+  new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[
+        {label:'Venda',data:vendas,backgroundColor:colors,borderRadius:4,order:1},
+        {label:'Meta', data:metas, backgroundColor:'rgba(0,0,0,0)',borderColor:'#1a73e8',borderWidth:2,type:'bar',borderRadius:4,order:0}
+      ]
+    },
+    options:{
+      indexAxis:'y',responsive:true,
+      plugins:{legend:{display:true,position:'top'},tooltip:{callbacks:{label:c=>' R$ '+fmt(c.raw,0)}}},
+      scales:{
+        x:{ticks:{callback:v=>'R$ '+fmt(v/1e6,1)+'M'},grid:{color:'#f1f3f4'}},
+        y:{ticks:{font:{size:11}}}
+      }
+    }
+  });
+}
+
+// ── ATINGIMENTO CHART ─────────────────────────────────────────────────
+function buildAtingChart(){
+  const withMeta = [...SUPS_RAW].filter(s=>(s.META||0)>0).sort((a,b)=>b.ATING-a.ATING);
+  const labels = withMeta.map(s=>s.NOME.length>20?s.NOME.substring(0,20)+'…':s.NOME);
+  const atings = withMeta.map(s=>s.ATING);
+  const colors = withMeta.map(s=>s.ATING>=100?'#1b7e3e':s.ATING>=80?'#e65100':'#D93025');
+  const ctx = document.getElementById('atingChart').getContext('2d');
+  new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[{label:'Atingimento %',data:atings,backgroundColor:colors,borderRadius:3}]
+    },
+    options:{
+      indexAxis:'y',responsive:true,
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{label:c=>` ${fmt(c.raw,1)}%`}},
+        annotation:{}
+      },
+      scales:{
+        x:{min:0,max:Math.max(200,Math.max(...atings)+10),
+           ticks:{callback:v=>v+'%'},
+           grid:{color:'#f1f3f4'}},
+        y:{ticks:{font:{size:9}}}
+      }
+    }
+  });
+}
+
+// ── MIX CHART ─────────────────────────────────────────────────────────
+function buildMixChart(){
+  const top20 = [...SUPS_RAW].sort((a,b)=>b.VL_VENDA-a.VL_VENDA).slice(0,20);
+  const labels = top20.map(s=>s.NOME.length>18?s.NOME.substring(0,18)+'…':s.NOME);
+  const ctx = document.getElementById('mixChart').getContext('2d');
+  new Chart(ctx,{
+    type:'bar',
+    data:{
+      labels,
+      datasets:[
+        {label:'Mix Clientes',data:top20.map(s=>s.MIX_CLI),backgroundColor:'#4285f4',borderRadius:3,yAxisID:'y'},
+        {label:'Qtd Pedidos', data:top20.map(s=>s.QTD_PED),backgroundColor:'#fbbc04',borderRadius:3,yAxisID:'y1'}
+      ]
+    },
+    options:{
+      indexAxis:'y',responsive:true,
+      plugins:{legend:{display:true,position:'top'},tooltip:{mode:'index'}},
+      scales:{
+        y:{position:'left',ticks:{font:{size:9}}},
+        y1:{position:'right',grid:{drawOnChartArea:false},ticks:{font:{size:9}}}
+      }
+    }
+  });
+}
+
+// ── TABLE ─────────────────────────────────────────────────────────────
+let filteredSups = [...SUPS_RAW];
+let sortKey = 'VL_VENDA', sortAsc = false;
+
+function renderTable(){
+  const tbody = document.getElementById('sups-tbody');
+  const tfoot = document.getElementById('sups-tfoot');
+  const rows = filteredSups.sort((a,b)=>{
+    const va=a[sortKey]??0, vb=b[sortKey]??0;
+    const cmp = typeof va==='string'?va.localeCompare(vb):va-vb;
+    return sortAsc?cmp:-cmp;
+  });
+  document.getElementById('cnt-rows').textContent = rows.length;
+
+  tbody.innerHTML = rows.map((s,i)=>{
+    const hasMeta = (s.META||0)>0;
+    const at = s.ATING||0;
+    const col = atCol(at,hasMeta);
+    const barW = hasMeta?Math.min(at,150):0;
+    const bCol = barColor(at,hasMeta);
+    return `<tr>
+      <td>${s.COD}</td>
+      <td>${s.NOME}</td>
+      <td>R$ ${fmt(s.VL_VENDA,0)}</td>
+      <td>${hasMeta?'R$ '+fmt(s.META,0):'—'}</td>
+      <td class="ating ${col}">
+        <div class="ating-bar-wrap">
+          <div class="ating-bar"><div class="ating-bar-fill" style="width:${barW}%;background:${bCol}"></div></div>
+          ${atTag(at,hasMeta)}
+        </div>
+      </td>
+      <td>${fmt(s.QTD_PED,0)}</td>
+      <td>${fmt(s.QTD_RCA,0)}</td>
+      <td>${fmt(s.MIX_CLI,0)}</td>
+      <td>${fmt(s.MEDIA_ITENS,1)}</td>
+      <td>${fmt(s.PESO,0)}</td>
+      <td>${fmt(s.PRAZO,1)}</td>
+      <td>${s.VL_BON>0?'R$ '+fmt(s.VL_BON,0):'—'}</td>
+      <td>R$ ${fmt(s.VL_TAB,0)}</td>
+    </tr>`;
+  }).join('');
+
+  // totais
+  const tot = rows.reduce((a,s)=>({
+    VL_VENDA:a.VL_VENDA+s.VL_VENDA, META:a.META+(s.META||0),
+    QTD_PED:a.QTD_PED+s.QTD_PED, QTD_RCA:a.QTD_RCA+s.QTD_RCA,
+    MIX_CLI:a.MIX_CLI+s.MIX_CLI, VL_BON:a.VL_BON+s.VL_BON,
+    VL_TAB:a.VL_TAB+s.VL_TAB, PESO:a.PESO+s.PESO,
+    QTD_ITENS:a.QTD_ITENS+s.QTD_ITENS
+  },{VL_VENDA:0,META:0,QTD_PED:0,QTD_RCA:0,MIX_CLI:0,VL_BON:0,VL_TAB:0,PESO:0,QTD_ITENS:0}));
+  const totAting = tot.META>0?tot.VL_VENDA/tot.META*100:0;
+  tfoot.innerHTML = `<tr>
+    <td colspan="2">Total (${rows.length} supervisores)</td>
+    <td>R$ ${fmt(tot.VL_VENDA,0)}</td>
+    <td>${tot.META>0?'R$ '+fmt(tot.META,0):'—'}</td>
+    <td>${totAting>0?fmt(totAting,1)+'%':'—'}</td>
+    <td>${fmt(tot.QTD_PED,0)}</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>${fmt(tot.PESO,0)}</td>
+    <td>—</td>
+    <td>${tot.VL_BON>0?'R$ '+fmt(tot.VL_BON,0):'—'}</td>
+    <td>R$ ${fmt(tot.VL_TAB,0)}</td>
+  </tr>`;
+
+  // update sort arrows
+  document.querySelectorAll('.sort-arrow').forEach(el=>el.textContent='');
+  const arr = document.getElementById('arr-'+sortKey);
+  if(arr) arr.textContent = sortAsc?' ▲':' ▼';
+}
+
+function sortTable(key){
+  if(sortKey===key) sortAsc=!sortAsc;
+  else { sortKey=key; sortAsc=false; }
+  renderTable();
+}
+
+function applyFilters(){
+  const nome = document.getElementById('flt-nome').value.toLowerCase();
+  const at   = document.getElementById('flt-ating').value;
+  filteredSups = SUPS_RAW.filter(s=>{
+    if(nome && !s.NOME.toLowerCase().includes(nome)) return false;
+    if(at==='verde'   && !((s.META||0)>0 && s.ATING>=100)) return false;
+    if(at==='amarelo' && !((s.META||0)>0 && s.ATING>=80 && s.ATING<100)) return false;
+    if(at==='vermelho'&& !((s.META||0)>0 && s.ATING<80)) return false;
+    if(at==='semMeta' && (s.META||0)>0) return false;
+    return true;
+  });
+  renderTable();
+}
+
+function clearFilters(){
+  document.getElementById('flt-nome').value='';
+  document.getElementById('flt-ating').value='';
+  filteredSups=[...SUPS_RAW];
+  renderTable();
+}
+
+// Allow Enter key on search input
+document.getElementById('flt-nome').addEventListener('keydown',e=>{ if(e.key==='Enter') applyFilters(); });
+
+// ── INIT ──────────────────────────────────────────────────────────────
+buildCards();
+buildGauge();
+buildTopChart();
+buildAtingChart();
+buildMixChart();
+renderTable();
+</script>
+</body>
+</html>
