@@ -471,7 +471,7 @@ FORN.forEach(function(f){
   Object.keys(oldComp).forEach(function(mk){
     var num=MK[mk]||mk;
     var c=oldComp[mk];
-    f.comp[num]={total:c.tit||0,qtd:(c.nfs||[]).length,nfs:c.nfs||[]};
+    f.comp[num]={total:c.total||c.tit||0,qtd:c.qtd||(c.nfs||[]).length,nfs:c.nfs||[]};
     f.tit[num]={titulo:c.tit||0,pago:c.pago||0,aberto:(c.tit||0)-(c.pago||0)};
   });
   var oldDet=f.det||{};
