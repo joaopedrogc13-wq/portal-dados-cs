@@ -11,7 +11,7 @@
   --r:#D93025;--r2:#B71C1C;
   --bg:#F4F5F7;--card:#FFF;--bd:#E0E4EA;
   --gr:#1B7F3E;--yw:#C87A00;--re:#C0392B;--bl:#1565C0;
-  --or:#E65100;--cy:#0077B6;--pu:#6A1B9A;
+  --or:#E65100;--cy:#0077B6;
   --tx:#1A1A2E;--mu:#6B7280;
   --fn:'Roboto',system-ui,sans-serif;
   --sh:0 1px 4px rgba(0,0,0,.07);
@@ -37,17 +37,17 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fn);min-height:100vh
 .hlogo{height:34px;filter:brightness(0) invert(1);opacity:.95;}
 .hdiv{width:1px;height:28px;background:rgba(255,255,255,.25);}
 .htit{color:#fff;font-weight:700;font-size:.9rem;line-height:1.25;}
-.hsub{color:rgba(255,255,255,.6);font-size:.6rem;margin-top:2px;letter-spacing:.01em;}
+.hsub{color:rgba(255,255,255,.6);font-size:.6rem;margin-top:2px;}
 .hr{display:flex;gap:8px;align-items:center;}
-.pill{font-size:.63rem;font-weight:600;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;letter-spacing:.01em;}
+.pill{font-size:.63rem;font-weight:600;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;}
 .pill-g{background:rgba(27,127,62,.65);border-color:rgba(165,214,167,.5);}
 .btn-ref{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;padding:6px 13px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);color:#fff;cursor:pointer;font-family:var(--fn);transition:all .15s;}
 .btn-ref:hover{background:rgba(255,255,255,.25);}
 
 /* ── NAV ── */
 .nav{display:flex;background:var(--card);border-bottom:2px solid var(--r);padding:0 24px;box-shadow:0 2px 6px rgba(0,0,0,.06);position:sticky;top:102px;z-index:200;}
-.nt{display:flex;align-items:center;gap:6px;padding:11px 18px;font-size:.76rem;font-weight:500;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;margin-bottom:-2px;user-select:none;}
-.nt:hover{color:var(--r);background:#FAFAFA;}
+.nt{display:flex;align-items:center;gap:6px;padding:11px 18px;font-size:.76rem;font-weight:500;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;margin-bottom:-2px;}
+.nt:hover{color:var(--r);}
 .nt.on{color:var(--r);border-bottom-color:var(--r);font-weight:700;}
 .nt .nbdg{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:20px;background:#FDECEA;color:var(--r);}
 
@@ -55,51 +55,31 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fn);min-height:100vh
 .pg{display:none;padding:22px 24px 50px;}
 .pg.on{display:block;}
 
-/* ── HERO ROW ── */
+/* ── HERO ── */
 .hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px;}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.hero{grid-template-columns:1fr;}}
+@media(max-width:580px){.hero{grid-template-columns:1fr;}}
 .hero-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px 22px;box-shadow:var(--sh2);position:relative;overflow:hidden;}
-.hero-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;}
-.hero-card.hc-r::before{background:linear-gradient(90deg,var(--r),#EF5350);}
-.hero-card.hc-y::before{background:linear-gradient(90deg,var(--yw),#FFC107);}
-.hero-card.hc-g::before{background:linear-gradient(90deg,var(--gr),#43A047);}
-.hero-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
-.hero-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;}
-.hero-icon.i-r{background:#FDECEA;color:var(--r);}
-.hero-icon.i-y{background:#FFF8E1;color:var(--yw);}
-.hero-icon.i-g{background:#E8F5E9;color:var(--gr);}
-.hero-val{font-size:2rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;border-radius:12px 12px 0 0;}
+.hc-r::before{background:linear-gradient(90deg,var(--r),#EF5350);}
+.hc-b::before{background:linear-gradient(90deg,var(--bl),#42A5F5);}
+.hc-g::before{background:linear-gradient(90deg,var(--gr),#43A047);}
+.hero-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.hico{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.hico-r{background:#FDECEA;color:var(--r);}
+.hico-b{background:#E3F2FD;color:var(--bl);}
+.hico-g{background:#E8F5E9;color:var(--gr);}
+.hero-val{font-size:1.9rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
 .hero-val.c-r{color:var(--r);}
-.hero-val.c-y{color:var(--yw);}
+.hero-val.c-b{color:var(--bl);}
 .hero-val.c-g{color:var(--gr);}
-.hero-sub{font-size:.68rem;color:var(--mu);margin-top:7px;display:flex;align-items:center;gap:6px;}
+.hero-val.c-y{color:var(--yw);}
+.hero-sub{font-size:.68rem;color:var(--mu);margin-top:7px;}
 .hero-sub b{color:var(--tx);}
-.hero-bar{margin-top:14px;}
-.hero-bar-track{height:8px;background:#EEF0F3;border-radius:4px;overflow:visible;position:relative;}
-.hero-bar-fill{height:8px;background:linear-gradient(90deg,var(--gr),#66BB6A);border-radius:4px;transition:width .6s ease;position:relative;max-width:100%;}
-.hero-bar-fill::after{content:'';position:absolute;right:-1px;top:-4px;width:3px;height:16px;background:var(--gr);border-radius:2px;}
-.hero-bar-meta{position:absolute;top:-5px;height:18px;width:2px;background:var(--yw);border-radius:1px;}
-.hero-bar-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:.58rem;color:var(--mu);}
-.badge-tag{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;padding:3px 9px;border-radius:20px;margin-top:8px;}
-.badge-g{background:#E8F5E9;color:var(--gr);}
-.badge-r{background:#FDECEA;color:var(--r);}
-
-/* ── KPI STRIP ── */
-.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px;}
-@media(max-width:1100px){.kpi-strip{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:650px){.kpi-strip{grid-template-columns:repeat(2,1fr);}}
-.ks{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:13px 15px;box-shadow:var(--sh);display:flex;align-items:flex-start;gap:10px;}
-.ks-ico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px;}
-.ks-ico.i-bl{background:#E3F2FD;color:var(--bl);}
-.ks-ico.i-or{background:#FFF3E0;color:var(--or);}
-.ks-ico.i-gr{background:#E8F5E9;color:var(--gr);}
-.ks-ico.i-pu{background:#F3E5F5;color:var(--pu);}
-.ks-ico.i-cy{background:#E0F7FA;color:var(--cy);}
-.ks-body{}
-.ks-lb{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);margin-bottom:3px;}
-.ks-vl{font-size:1.05rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;}
-.ks-sb{font-size:.62rem;color:var(--mu);margin-top:3px;}
+.hero-row{display:flex;gap:8px;margin-top:14px;}
+.hero-mini{flex:1;background:#F7F8FA;border-radius:8px;padding:9px 11px;border:1px solid var(--bd);}
+.hero-mini .hm-lbl{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);margin-bottom:3px;}
+.hero-mini .hm-val{font-size:.95rem;font-weight:800;font-variant-numeric:tabular-nums;}
 
 /* ── SECTION HEADER ── */
 .sec-hdr{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);padding:5px 2px 9px;margin-top:4px;margin-bottom:12px;border-bottom:2px solid var(--bd);display:flex;align-items:center;gap:8px;}
@@ -107,74 +87,58 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fn);min-height:100vh
 
 /* ── TOOLBAR ── */
 .toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;background:var(--card);padding:10px 14px;border-radius:10px;border:1px solid var(--bd);box-shadow:var(--sh);}
-.tb-lbl{font-size:.65rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.04em;}
+.tb-lbl{font-size:.65rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
 .toolbar select,.toolbar input[type=text]{font-size:.72rem;padding:7px 11px;border:1px solid var(--bd);border-radius:8px;color:var(--tx);background:#fff;font-family:var(--fn);outline:none;transition:border-color .15s;}
 .toolbar select:focus,.toolbar input[type=text]:focus{border-color:var(--r);}
 .tb-sep{width:1px;height:22px;background:var(--bd);flex-shrink:0;}
-.btn-collapse{margin-left:auto;background:transparent;color:var(--r);border:1.5px solid var(--r);border-radius:8px;padding:6px 14px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s;display:flex;align-items:center;gap:5px;}
+.btn-collapse{margin-left:auto;background:transparent;color:var(--r);border:1.5px solid var(--r);border-radius:8px;padding:6px 14px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap;}
 .btn-collapse:hover{background:var(--r);color:#fff;}
 
 /* ── TABLE ── */
 .tw{background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--r);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
 .th2{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(90deg,#FAFBFC,#F7F8FA);border-bottom:1px solid var(--bd);}
 .th2 h3{font-size:.8rem;font-weight:700;color:var(--tx);}
-.tc2{font-size:.68rem;color:var(--mu);background:#F0F2F5;padding:3px 10px;border-radius:20px;font-weight:600;}
-.ts{overflow-x:auto;max-height:620px;overflow-y:auto;}
+.tc2{font-size:.67rem;color:var(--mu);background:#F0F2F5;padding:3px 10px;border-radius:20px;font-weight:600;}
+.ts{overflow-x:auto;max-height:640px;overflow-y:auto;}
 table{width:100%;border-collapse:collapse;font-size:.72rem;}
-thead th{background:#F0F2F5;padding:9px 10px;text-align:right;font-size:.59rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);font-weight:700;border-bottom:2px solid #D0D5DD;white-space:nowrap;position:sticky;top:0;z-index:2;}
+thead th{background:#F0F2F5;padding:9px 12px;text-align:right;font-size:.59rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);font-weight:700;border-bottom:2px solid #D0D5DD;white-space:nowrap;position:sticky;top:0;z-index:2;}
 thead th:first-child{text-align:left;padding-left:14px;}
-thead th.col-fat{color:var(--bl);}
-thead th.col-cart{color:var(--cy);}
-thead th.col-meta{color:var(--yw);}
-thead th.col-at{color:var(--gr);}
+thead th.c-fat{color:var(--r);}
+thead th.c-dev{color:var(--or);}
+thead th.c-liq{color:var(--bl);}
+thead th.c-luc{color:var(--gr);}
+thead th.c-pct{color:var(--gr);}
 tbody tr{border-bottom:1px solid #F0F2F5;transition:background .1s;}
 tbody tr:hover td{background:#F5F7FF;}
-tbody td{padding:8px 10px;text-align:right;white-space:nowrap;vertical-align:middle;}
+tbody td{padding:8px 12px;text-align:right;white-space:nowrap;vertical-align:middle;font-variant-numeric:tabular-nums;}
 tbody td:first-child{text-align:left;padding-left:14px;}
-tfoot td{padding:9px 10px;text-align:right;font-size:.7rem;font-weight:700;background:#F0F2F5;border-top:2px solid #D0D5DD;white-space:nowrap;}
-tfoot td:first-child{text-align:left;padding-left:14px;color:var(--tx);}
+tfoot tr td{padding:10px 12px;text-align:right;font-size:.72rem;font-weight:700;background:#F0F2F5;border-top:2px solid #D0D5DD;white-space:nowrap;font-variant-numeric:tabular-nums;}
+tfoot tr td:first-child{text-align:left;padding-left:14px;}
 .dir-row{cursor:pointer;}
-.dir-row td{font-weight:700;font-size:.72rem;color:#fff!important;padding-top:9px;padding-bottom:9px;}
+.dir-row td{font-weight:700;font-size:.72rem;color:#fff!important;padding-top:10px;padding-bottom:10px;}
 .ger-row{cursor:pointer;}
 .ger-row td{background:#EEF4FF;color:#1A3A6B;font-weight:600;font-size:.7rem;border-bottom:1px solid #D8E4F7;}
 .ger-row td:first-child{padding-left:26px;}
 .sup-row{cursor:pointer;}
 .sup-row td{background:#fff;font-weight:500;}
 .sup-row td:first-child{padding-left:40px;}
-.rca-row td{background:#FAFBFC;font-size:.68rem;color:#4B5563;}
-.rca-row td:first-child{padding-left:56px;color:var(--mu);}
-.mini-bar-wrap{width:64px;height:7px;background:#E5E7EB;border-radius:4px;overflow:hidden;display:inline-flex;vertical-align:middle;}
-.mini-fat{height:100%;background:var(--gr);}
-.mini-cart{height:100%;background:rgba(100,180,255,.7);}
-.num-fat{color:#0D7748;font-weight:600;}
-.num-cart{color:var(--bl);font-weight:600;}
-.num-tot{color:var(--tx);font-weight:700;}
 .pct-ok{color:var(--gr);font-weight:700;}
 .pct-warn{color:var(--yw);font-weight:700;}
 .pct-bad{color:var(--re);font-weight:700;}
+.vl-pos{color:var(--gr);font-weight:600;}
+.vl-neg{color:var(--re);font-weight:600;}
 .tog{user-select:none;}
-.chevron{display:inline-block;transition:transform .2s;margin-right:5px;opacity:.7;font-size:.75em;}
-.n{font-variant-numeric:tabular-nums;}
-
-@media(max-width:900px){
-  .hdr{top:40px;}
-  .nav{top:102px;}
-  .hr .pill{display:none;}
-}
+.chevron{display:inline-block;transition:transform .2s;margin-right:5px;opacity:.6;font-size:.75em;}
 </style>
 </head>
 <body>
 
-<!-- Portal Nav -->
 <nav id="cs-portal-nav">
   <a class="cs-pnav-home" href="index.html">&#8962; Portal C&amp;S</a>
   <div class="cs-pnav-sep"></div>
-  <div class="cs-pnav-crumb">
-    Comercial <span>/</span> Meta &amp; Vendas
-  </div>
+  <div class="cs-pnav-crumb">Comercial <span>/</span> Meta &amp; Vendas</div>
 </nav>
 
-<!-- Header -->
 <header class="hdr">
   <div class="hl">
     <img src="logo-branco-h.png" class="hlogo" alt="C&amp;S" onerror="this.style.display='none'">
@@ -185,8 +149,8 @@ tfoot td:first-child{text-align:left;padding-left:14px;color:var(--tx);}
     </div>
   </div>
   <div class="hr">
-    <span class="pill">22/22 dias úteis</span>
-    <span class="pill pill-g">&#10003; Meta superada: 122,3%</span>
+    <span class="pill">Março/2026 — Mês encerrado</span>
+    <span class="pill pill-g">&#10003; 67 supervisores</span>
     <span class="pill">Atualizado 31/03/2026</span>
     <button class="btn-ref" onclick="showRefreshMsg()">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
@@ -195,133 +159,66 @@ tfoot td:first-child{text-align:left;padding-left:14px;color:var(--tx);}
   </div>
 </header>
 
-<!-- Nav Tabs -->
 <nav class="nav">
   <div class="nt on">&#128200; Março / 2026 <span class="nbdg">Encerrado</span></div>
 </nav>
 
-<!-- Page -->
 <div class="pg on" id="pg-mar">
 
-  <!-- ── Hero KPIs ── -->
-  <div class="sec-hdr" style="margin-top:0">Resumo do Mês — Março 2026</div>
+  <div class="sec-hdr" style="margin-top:0">Resumo Financeiro — Março 2026</div>
+
   <div class="hero">
-
-    <!-- Venda Faturada -->
     <div class="hero-card hc-r">
-      <div class="hero-label">
-        <div class="hero-icon i-r">&#128200;</div>
-        Venda Faturada
-      </div>
-      <div class="hero-val c-r">R$ 86,3M</div>
-      <div class="hero-sub"><b>122,3%</b> da meta mensal atingido</div>
-      <div class="hero-bar">
-        <div class="hero-bar-track">
-          <div class="hero-bar-fill" style="width:81.4%"></div>
-          <div class="hero-bar-meta" style="left:81.4%"></div>
+      <div class="hero-lbl"><div class="hico hico-r">&#128200;</div>Venda Faturada</div>
+      <div class="hero-val c-r">R$ 78,2M</div>
+      <div class="hero-sub">Total faturado no mês (VP + VV)</div>
+      <div class="hero-row">
+        <div class="hero-mini">
+          <div class="hm-lbl">Devoluções</div>
+          <div class="hm-val" style="color:var(--or)">R$ 1,36M</div>
         </div>
-        <div class="hero-bar-labels">
-          <span>R$ 0</span>
-          <span style="color:var(--yw);font-weight:700">Meta R$ 70,6M</span>
-          <span>R$ 100M</span>
+        <div class="hero-mini">
+          <div class="hm-lbl">Part. Dev.</div>
+          <div class="hm-val" style="color:var(--or)">1,74%</div>
         </div>
       </div>
     </div>
 
-    <!-- Meta do Mês -->
-    <div class="hero-card hc-y">
-      <div class="hero-label">
-        <div class="hero-icon i-y">&#127919;</div>
-        Meta do Mês
-      </div>
-      <div class="hero-val c-y">R$ 70,6M</div>
-      <div class="hero-sub">Superado em <b>R$ 15,7M</b></div>
-      <div style="margin-top:14px;display:flex;gap:10px;">
-        <div style="flex:1;background:#F9FAFB;border-radius:8px;padding:10px 12px;border:1px solid var(--bd)">
-          <div style="font-size:.58rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">% Fat.</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--gr)">122,3%</div>
+    <div class="hero-card hc-b">
+      <div class="hero-lbl"><div class="hico hico-b">&#128176;</div>Venda Líquida</div>
+      <div class="hero-val c-b">R$ 76,8M</div>
+      <div class="hero-sub">Faturada menos Devoluções</div>
+      <div class="hero-row">
+        <div class="hero-mini">
+          <div class="hm-lbl">vs. Faturada</div>
+          <div class="hm-val" style="color:var(--bl)">-1,74%</div>
         </div>
-        <div style="flex:1;background:#F9FAFB;border-radius:8px;padding:10px 12px;border:1px solid var(--bd)">
-          <div style="font-size:.58rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">% Total</div>
-          <div style="font-size:1.1rem;font-weight:900;color:var(--gr)">123,4%</div>
+        <div class="hero-mini">
+          <div class="hm-lbl">Diferença</div>
+          <div class="hm-val" style="color:var(--or)">-R$ 1,36M</div>
         </div>
       </div>
     </div>
 
-    <!-- Superávit -->
     <div class="hero-card hc-g">
-      <div class="hero-label">
-        <div class="hero-icon i-g">&#9650;</div>
-        Superávit / Saldo
-      </div>
-      <div class="hero-val c-g">R$ 15,7M</div>
-      <div class="hero-sub">Acima da meta mensal</div>
-      <div style="margin-top:14px;display:flex;flex-direction:column;gap:7px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;font-size:.68rem;">
-          <span style="color:var(--mu)">Fat + Carteira</span>
-          <span style="font-weight:700">R$ 87,1M</span>
+      <div class="hero-lbl"><div class="hico hico-g">&#9650;</div>Lucro Bruto</div>
+      <div class="hero-val c-g">R$ 3,28M</div>
+      <div class="hero-sub">Venda Faturada menos CMV</div>
+      <div class="hero-row">
+        <div class="hero-mini">
+          <div class="hm-lbl">% Lucro</div>
+          <div class="hm-val" style="color:var(--gr)">4,20%</div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;font-size:.68rem;">
-          <span style="color:var(--mu)">Em Aberto (Carteira)</span>
-          <span style="font-weight:600;color:var(--bl)">R$ 834K</span>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;font-size:.68rem;">
-          <span style="color:var(--mu)">Bonificação</span>
-          <span style="font-weight:600;color:var(--or)">R$ 262K</span>
+        <div class="hero-mini">
+          <div class="hm-lbl">CMV Implícito</div>
+          <div class="hm-val" style="color:var(--mu)">95,80%</div>
         </div>
       </div>
     </div>
+  </div>
 
-  </div><!-- /hero -->
-
-  <!-- ── KPI Strip ── -->
-  <div class="kpi-strip">
-    <div class="ks">
-      <div class="ks-ico i-bl">&#128179;</div>
-      <div class="ks-body">
-        <div class="ks-lb">Em Aberto</div>
-        <div class="ks-vl">R$ 834K</div>
-        <div class="ks-sb">1,2% da meta</div>
-      </div>
-    </div>
-    <div class="ks">
-      <div class="ks-ico i-or">&#9733;</div>
-      <div class="ks-body">
-        <div class="ks-lb">Bonificação</div>
-        <div class="ks-vl">R$ 262K</div>
-        <div class="ks-sb">0,3% do faturado</div>
-      </div>
-    </div>
-    <div class="ks">
-      <div class="ks-ico i-gr">&#128230;</div>
-      <div class="ks-body">
-        <div class="ks-lb">Pedidos</div>
-        <div class="ks-vl">33.136</div>
-        <div class="ks-sb">emitidos no mês</div>
-      </div>
-    </div>
-    <div class="ks">
-      <div class="ks-ico i-pu">&#128101;</div>
-      <div class="ks-body">
-        <div class="ks-lb">Mix Clientes</div>
-        <div class="ks-vl">17.673</div>
-        <div class="ks-sb">clientes com compra</div>
-      </div>
-    </div>
-    <div class="ks">
-      <div class="ks-ico i-cy">&#128336;</div>
-      <div class="ks-body">
-        <div class="ks-lb">Prazo Médio</div>
-        <div class="ks-vl">15,7 dias</div>
-        <div class="ks-sb">prazo médio cobrança</div>
-      </div>
-    </div>
-  </div><!-- /kpi-strip -->
-
-  <!-- ── Detalhamento ── -->
   <div class="sec-hdr">Detalhamento por Diretoria / Gerência / Supervisor</div>
 
-  <!-- Toolbar -->
   <div class="toolbar">
     <span class="tb-lbl">Diretoria</span>
     <select id="selDir" onchange="renderTable()">
@@ -336,35 +233,28 @@ tfoot td:first-child{text-align:left;padding-left:14px;color:var(--tx);}
     </select>
     <div class="tb-sep"></div>
     <span class="tb-lbl">&#128269;</span>
-    <input type="text" id="busca" placeholder="Supervisor, Gerente ou RCA..." style="width:230px" oninput="renderTable()">
+    <input type="text" id="busca" placeholder="Nome do supervisor ou gerente..." style="width:240px" oninput="renderTable()">
     <button class="btn-collapse" onclick="toggleAll()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="21 18 15 12 21 6"/></svg>
       Recolher Tudo
     </button>
   </div>
 
-  <!-- Table -->
   <div class="tw">
     <div class="th2">
-      <h3>&#128205; Supervisores &amp; Representantes Comerciais</h3>
+      <h3>&#128205; Resultado por Supervisor — Março/2026</h3>
       <span class="tc2" id="tbl-count">carregando...</span>
     </div>
     <div class="ts">
-      <table id="mainTable">
+      <table>
         <thead>
           <tr>
-            <th style="text-align:left;min-width:250px">Nome / Equipe</th>
-            <th class="col-meta">Meta</th>
-            <th class="col-at">% Fat.</th>
-            <th class="col-fat">Faturado</th>
-            <th class="col-cart">Em Aberto</th>
-            <th>Total</th>
-            <th class="col-at">% Total</th>
-            <th>Bonif.</th>
-            <th>Mix</th>
-            <th>Pedidos</th>
-            <th>Prazo</th>
-            <th style="min-width:110px">Participação</th>
+            <th style="text-align:left;min-width:260px">Supervisor / Gerência / Diretoria</th>
+            <th class="c-fat">Venda Faturada</th>
+            <th class="c-dev">Devoluções</th>
+            <th class="c-liq">Venda Líquida</th>
+            <th class="c-luc">Lucro</th>
+            <th class="c-pct">% Lucro</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -373,7 +263,7 @@ tfoot td:first-child{text-align:left;padding-left:14px;color:var(--tx);}
     </div>
   </div>
 
-</div><!-- /pg-mar -->
+</div>
 
 <script>
 function showRefreshMsg(){
@@ -420,215 +310,142 @@ const DIR_COLORS={
   'DIREÇÃO SUPORTE':'#795548'
 };
 
-const SUPS = [{"cod": 16, "sup": "CABRAL & SOUSA", "fat": 21816568.46, "cart": 76.5, "tot": 21816644.96, "meta": 20000000, "af": 109.1, "at": 109.1, "bon": 0, "ped": 99, "mix": 17, "prazo": 5.61}, {"cod": 101, "sup": "SUPERVISOR 101", "fat": 10289454.23, "cart": 0, "tot": 10289454.23, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 171, "mix": 6, "prazo": 0.06}, {"cod": 13, "sup": "ATACADO - MASTER - LAFAETE", "fat": 3574102.98, "cart": 24799.32, "tot": 3598902.3, "meta": 2450000, "af": 145.9, "at": 146.9, "bon": 1025.42, "ped": 521, "mix": 296, "prazo": 24.71}, {"cod": 66, "sup": "DIST. SALVADOR - ANTONIO FERNANDES", "fat": 3511257.64, "cart": 260333.52, "tot": 3771591.16, "meta": 2170000, "af": 161.8, "at": 173.8, "bon": 4451.9, "ped": 514, "mix": 222, "prazo": 26.41}, {"cod": 114, "sup": "ATACADO INTERNO", "fat": 2601752.06, "cart": 0, "tot": 2601752.06, "meta": 1000000, "af": 260.2, "at": 260.2, "bon": 0, "ped": 16, "mix": 7, "prazo": 7.55}, {"cod": 112, "sup": "SUPERVISOR REDES", "fat": 2126433.39, "cart": 836.57, "tot": 2127269.96, "meta": 2100000, "af": 101.3, "at": 101.3, "bon": 26.14, "ped": 316, "mix": 38, "prazo": 39.44}, {"cod": 4, "sup": "DIST. SERTAO - JOAO PEDRO", "fat": 1869933.96, "cart": 2836.37, "tot": 1872770.33, "meta": 1660000, "af": 112.6, "at": 112.8, "bon": 8029.18, "ped": 997, "mix": 503, "prazo": 26.44}, {"cod": 60, "sup": "MDLZ P.E. SSA - JUNIOR", "fat": 1860696.01, "cart": 0, "tot": 1860696.01, "meta": 800000, "af": 232.6, "at": 232.6, "bon": 14248.57, "ped": 1463, "mix": 739, "prazo": 22.55}, {"cod": 5, "sup": "ATACADO - BALCAO - LAFAETE", "fat": 1771801.35, "cart": 2703.73, "tot": 1774505.08, "meta": 1650000, "af": 107.4, "at": 107.5, "bon": 49.58, "ped": 852, "mix": 392, "prazo": 20.37}, {"cod": 34, "sup": "DIST EXC. PEPSICO - VICTOR", "fat": 1672205.32, "cart": 14118.94, "tot": 1686324.26, "meta": 1480000, "af": 113.0, "at": 113.9, "bon": 8522.96, "ped": 1707, "mix": 677, "prazo": 27.06}, {"cod": 43, "sup": "MDLZ T.D. SUDOESTE - ISMAR PESSOA", "fat": 1665463.37, "cart": 18266.36, "tot": 1683729.73, "meta": 1630000, "af": 102.2, "at": 103.3, "bon": 3306.69, "ped": 769, "mix": 351, "prazo": 28.09}, {"cod": 107, "sup": "ATACADO - MASTER DIST. SSA", "fat": 1489920, "cart": 93480, "tot": 1583400, "meta": 3330000, "af": 44.7, "at": 47.5, "bon": 0, "ped": 9, "mix": 2, "prazo": 30.78}, {"cod": 42, "sup": "MDLZ T.D. SERTAO - ALAN VIEIRA", "fat": 1373905.92, "cart": 5218.29, "tot": 1379124.21, "meta": 1270000, "af": 108.2, "at": 108.6, "bon": 5305.92, "ped": 534, "mix": 221, "prazo": 28.57}, {"cod": 8, "sup": "ATACADO - CHECK OUT", "fat": 1361124.76, "cart": 0, "tot": 1361124.76, "meta": 1000000, "af": 136.1, "at": 136.1, "bon": 0, "ped": 19162, "mix": 290, "prazo": 0.9}, {"cod": 71, "sup": "MDLZ T.D NORTE - WALDEAN", "fat": 1304923.17, "cart": 11986.26, "tot": 1316909.43, "meta": 890000, "af": 146.6, "at": 148.0, "bon": 5053.14, "ped": 613, "mix": 276, "prazo": 28.2}, {"cod": 76, "sup": "MDLZ T.D. NORTE - JONATHAN COSTA", "fat": 1278621.47, "cart": 3467.09, "tot": 1282088.56, "meta": 1180000, "af": 108.4, "at": 108.7, "bon": 14811.43, "ped": 511, "mix": 242, "prazo": 26.73}, {"cod": 84, "sup": "DIST EXC. MARS/NISSIN - CASSIO", "fat": 1277193.83, "cart": 1128.85, "tot": 1278322.68, "meta": 1006000, "af": 127.0, "at": 127.1, "bon": 1789.25, "ped": 912, "mix": 345, "prazo": 24.62}, {"cod": 72, "sup": "MDLZ T.D. NORTE - UELITON", "fat": 1274758.26, "cart": 1301.85, "tot": 1276060.11, "meta": 930000, "af": 137.1, "at": 137.2, "bon": 8856.05, "ped": 717, "mix": 336, "prazo": 26.69}, {"cod": 3, "sup": "DIST. SUDOESTE - ISRAEL PEDRO", "fat": 1230615.73, "cart": 21654.42, "tot": 1252270.15, "meta": 1320000, "af": 93.2, "at": 94.9, "bon": 9430.27, "ped": 838, "mix": 356, "prazo": 25.46}, {"cod": 12, "sup": "DIST. SUL - THARCIO HAFNER", "fat": 1228131.45, "cart": 14130.73, "tot": 1242262.18, "meta": 1490000, "af": 82.4, "at": 83.4, "bon": 3370.01, "ped": 675, "mix": 258, "prazo": 29.62}, {"cod": 50, "sup": "DIST. EXTREMO SUL - JOSE HEITOR", "fat": 1221068.25, "cart": 11425.46, "tot": 1232493.71, "meta": 1360000, "af": 89.8, "at": 90.6, "bon": 438.26, "ped": 459, "mix": 229, "prazo": 31.56}, {"cod": 61, "sup": "MDLZ T.D. SSA - REDES MARCELA", "fat": 1211190.52, "cart": 7288.78, "tot": 1218479.3, "meta": 1080000, "af": 112.1, "at": 112.8, "bon": 3782.6, "ped": 449, "mix": 146, "prazo": 27.98}, {"cod": 135, "sup": "CMA - DIST. SUDOESTE - ISAAC", "fat": 1123377.86, "cart": 16282.3, "tot": 1139660.16, "meta": 1087000, "af": 103.3, "at": 104.8, "bon": 1069.85, "ped": 654, "mix": 307, "prazo": 29.13}, {"cod": 96, "sup": "DIST. OESTE III - JORGE", "fat": 1047349.4, "cart": 39632.33, "tot": 1086981.73, "meta": 1565000, "af": 66.9, "at": 69.5, "bon": 5492.6, "ped": 572, "mix": 189, "prazo": 26.76}, {"cod": 120, "sup": "DIST. VENDA EXPRESS SUDOESTE - WALLAS", "fat": 1039278.86, "cart": 5130.92, "tot": 1044409.78, "meta": 940000, "af": 110.6, "at": 111.1, "bon": 8825.37, "ped": 2023, "mix": 1018, "prazo": 22.07}, {"cod": 24, "sup": "DIST. OESTE II - DYOGO GOMES", "fat": 889360.96, "cart": 3980, "tot": 893340.96, "meta": 885000, "af": 100.5, "at": 100.9, "bon": 5742.29, "ped": 626, "mix": 233, "prazo": 26.12}, {"cod": 126, "sup": "MDLZ VENDA EXPRESS SUDOESTE - WARLLEN", "fat": 889304.96, "cart": 10309.63, "tot": 899614.59, "meta": 907500, "af": 98.0, "at": 99.1, "bon": 2792.9, "ped": 1506, "mix": 1168, "prazo": 26.41}, {"cod": 14, "sup": "DIST. SUDOESTE II - ALINE", "fat": 846434.6, "cart": 15618.06, "tot": 862052.66, "meta": 1020000, "af": 83.0, "at": 84.5, "bon": 3414.31, "ped": 626, "mix": 343, "prazo": 28.1}, {"cod": 125, "sup": "MDLZ VENDA EXPRESS SERTAO - ARTENIZIO", "fat": 785622.07, "cart": 11333.75, "tot": 796955.82, "meta": 729500, "af": 107.7, "at": 109.2, "bon": 1732.08, "ped": 1118, "mix": 888, "prazo": 25.72}, {"cod": 122, "sup": "DIST. VENDA EXPRESS OESTE - MARLISON", "fat": 779135.41, "cart": 2905.76, "tot": 782041.17, "meta": 760000, "af": 102.5, "at": 102.9, "bon": 9959.37, "ped": 1487, "mix": 889, "prazo": 22.5}, {"cod": 41, "sup": "MDLZ T.D. CENTRO SUL - DARLY", "fat": 743845.26, "cart": 4709.4, "tot": 748554.66, "meta": 1100000, "af": 67.6, "at": 68.1, "bon": 844.5, "ped": 439, "mix": 231, "prazo": 30.23}, {"cod": 117, "sup": "DIST. VENDA EXPRESS SSA - DANILO", "fat": 735243.64, "cart": 538.84, "tot": 735782.48, "meta": 520000, "af": 141.4, "at": 141.5, "bon": 3168.87, "ped": 915, "mix": 476, "prazo": 15.4}, {"cod": 105, "sup": "DIST. NORTE - MAURICIO", "fat": 703979.55, "cart": 56534.52, "tot": 760514.07, "meta": 902500, "af": 78.0, "at": 84.3, "bon": 1426.32, "ped": 372, "mix": 254, "prazo": 27.61}, {"cod": 99, "sup": "DIST. EXCLUSIVA VET - ANDRE", "fat": 682840.92, "cart": 100627.55, "tot": 783468.47, "meta": 990000, "af": 69.0, "at": 79.1, "bon": 53226.47, "ped": 205, "mix": 166, "prazo": 39.82}, {"cod": 134, "sup": "CMA - DIST. OESTE - SANDOVAL NUNES", "fat": 638272.72, "cart": 24775.71, "tot": 663048.43, "meta": 985000, "af": 64.8, "at": 67.3, "bon": 301.92, "ped": 424, "mix": 232, "prazo": 28.62}, {"cod": 115, "sup": "MDLZ PE EXPRESS SSA - DILTON", "fat": 631548.89, "cart": 3151.46, "tot": 634700.35, "meta": 640000, "af": 98.7, "at": 99.2, "bon": 0, "ped": 680, "mix": 534, "prazo": 19.94}, {"cod": 48, "sup": "SUPERVISOR 48", "fat": 603094.45, "cart": 0, "tot": 603094.45, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1287, "mix": 1, "prazo": 0}, {"cod": 21, "sup": "MDLZ P.E. EXTREMO SUL - EDUARDO FERREIRA", "fat": 602393.11, "cart": 0, "tot": 602393.11, "meta": 365000, "af": 165.0, "at": 165.0, "bon": 814.5, "ped": 552, "mix": 410, "prazo": 22.39}, {"cod": 121, "sup": "DIST. VENDA EXPRESS SUL - REINALDO MALTA", "fat": 585846.18, "cart": 4372.85, "tot": 590219.03, "meta": 630000, "af": 93.0, "at": 93.7, "bon": 1812.68, "ped": 996, "mix": 718, "prazo": 24.74}, {"cod": 77, "sup": "ON PREMISE SSA - LUCIVALDO PINTO", "fat": 581027.35, "cart": 0, "tot": 581027.35, "meta": 550000, "af": 105.6, "at": 105.6, "bon": 5625.52, "ped": 352, "mix": 127, "prazo": 16.37}, {"cod": 127, "sup": "MDLZ VENDA EXPRESS EXTREMO SUL - EDUARDO", "fat": 570112.05, "cart": 1268.65, "tot": 571380.7, "meta": 528000, "af": 108.0, "at": 108.2, "bon": 1770.35, "ped": 976, "mix": 734, "prazo": 25.23}, {"cod": 131, "sup": "MDLZ T.D. SSA - VAREJO MARCIO DE FREITAS", "fat": 520183.82, "cart": 0, "tot": 520183.82, "meta": 820000, "af": 63.4, "at": 63.4, "bon": 2571.27, "ped": 377, "mix": 193, "prazo": 21.97}, {"cod": 73, "sup": "MDLZ P.E. NORTE - EVANDRO DOS SANTOS", "fat": 517255.95, "cart": 0, "tot": 517255.95, "meta": 475000, "af": 108.9, "at": 108.9, "bon": 2308.44, "ped": 379, "mix": 271, "prazo": 20.07}, {"cod": 93, "sup": "BAHIA FORT - RUDSLEY GLAUCO", "fat": 416205.38, "cart": 32712.63, "tot": 448918.01, "meta": 400000, "af": 104.1, "at": 112.2, "bon": 7419.23, "ped": 148, "mix": 117, "prazo": 48.27}, {"cod": 82, "sup": "MDLZ P.E. NORTE - JOAO MATHEUS LIMA", "fat": 411034.4, "cart": 0, "tot": 411034.4, "meta": 650000, "af": 63.2, "at": 63.2, "bon": 2550.31, "ped": 449, "mix": 305, "prazo": 21.73}, {"cod": 118, "sup": "MDLZ PE EXPRESS NORTE - EVANDRO", "fat": 343705.27, "cart": 3301.01, "tot": 347006.28, "meta": 410000, "af": 83.8, "at": 84.6, "bon": 1711.45, "ped": 591, "mix": 464, "prazo": 20.25}, {"cod": 52, "sup": "ON PRIMISE SUL - VANUZA", "fat": 330199.62, "cart": 0, "tot": 330199.62, "meta": 484000, "af": 68.2, "at": 68.2, "bon": 2317.78, "ped": 222, "mix": 137, "prazo": 22.79}, {"cod": 65, "sup": "ATACADO - MASTER MDLZ SSA", "fat": 296920.55, "cart": 0, "tot": 296920.55, "meta": 700000, "af": 42.4, "at": 42.4, "bon": 0, "ped": 125, "mix": 60, "prazo": 26.13}, {"cod": 102, "sup": "EXPORTACAO INTERNA - LAFAETE DIORGENES", "fat": 264750, "cart": 0, "tot": 264750, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 3, "mix": 2, "prazo": 0}, {"cod": 19, "sup": "MDLZ P.E. SUDOESTE - WARLLEN OLIVEIRA", "fat": 245578.64, "cart": 0, "tot": 245578.64, "meta": 80000, "af": 307.0, "at": 307.0, "bon": 1102.88, "ped": 208, "mix": 133, "prazo": 19.57}, {"cod": 91, "sup": "BAHIA FORT - GEORGE BISPO", "fat": 229150.91, "cart": 113.01, "tot": 229263.92, "meta": 320000, "af": 71.6, "at": 71.6, "bon": 3850, "ped": 291, "mix": 173, "prazo": 43.45}, {"cod": 137, "sup": "MDLZ PE EXPRESS NORTE - JOAO MATHEUS LIMA", "fat": 224890.16, "cart": 0, "tot": 224890.16, "meta": 0, "af": 0, "at": 0, "bon": 1157.17, "ped": 285, "mix": 220, "prazo": 20.48}, {"cod": 136, "sup": "DIST. EXTREMO NORTE - THAINA", "fat": 221916.24, "cart": 1548.24, "tot": 223464.48, "meta": 297500, "af": 74.6, "at": 75.1, "bon": 0, "ped": 96, "mix": 66, "prazo": 26.33}, {"cod": 9, "sup": "VENDA ONLINE MATRIZ", "fat": 159585.63, "cart": 0, "tot": 159585.63, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 626, "mix": 409, "prazo": 4.66}, {"cod": 129, "sup": "DIST. TECNICO BOEHRINGER - VIVIAN", "fat": 128935.13, "cart": 0, "tot": 128935.13, "meta": 90000, "af": 143.3, "at": 143.3, "bon": 26109.02, "ped": 71, "mix": 55, "prazo": 32.24}, {"cod": 106, "sup": "DIST. G. PRODUTO RED BULL - TIAGO JESUS", "fat": 107338.68, "cart": 0, "tot": 107338.68, "meta": 0, "af": 0, "at": 0, "bon": 5114.97, "ped": 19, "mix": 18, "prazo": 1.22}, {"cod": 104, "sup": "TELEVENDAS CABRAL E SOUSA", "fat": 104592.49, "cart": 0, "tot": 104592.49, "meta": 90000, "af": 116.2, "at": 116.2, "bon": 337.32, "ped": 69, "mix": 51, "prazo": 25.31}, {"cod": 86, "sup": "SUPERVISOR 86", "fat": 77109.5, "cart": 0, "tot": 77109.5, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 0}, {"cod": 111, "sup": "ON PREMISE SSA - EVENTOS", "fat": 74503.44, "cart": 0, "tot": 74503.44, "meta": 150000, "af": 49.7, "at": 49.7, "bon": 0, "ped": 5, "mix": 5, "prazo": 13.29}, {"cod": 100, "sup": "SUPERVISOR 100", "fat": 33964.16, "cart": 0, "tot": 33964.16, "meta": 0, "af": 0, "at": 0, "bon": 492.94, "ped": 11, "mix": 7, "prazo": 2.42}, {"cod": 133, "sup": "VERBA GN EMERSON", "fat": 31448.05, "cart": 0, "tot": 31448.05, "meta": 0, "af": 0, "at": 0, "bon": 4125.16, "ped": 93, "mix": 77, "prazo": 0.87}, {"cod": 113, "sup": "BAHIA FORT PET - MASTER", "fat": 25247.1, "cart": 0, "tot": 25247.1, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 27, "mix": 20, "prazo": 52.05}, {"cod": 18, "sup": "DIST. G. PRODUTO VCT - TAIANE", "fat": 19660.94, "cart": 0, "tot": 19660.94, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 20, "mix": 19, "prazo": 1.68}, {"cod": 88, "sup": "SUPERVISOR 88", "fat": 3875.73, "cart": 0, "tot": 3875.73, "meta": 0, "af": 0, "at": 0, "bon": 598.83, "ped": 1, "mix": 1, "prazo": 0}, {"cod": 58, "sup": "SUPERVISOR 58", "fat": 3468.68, "cart": 0, "tot": 3468.68, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 63, "mix": 1, "prazo": 0}, {"cod": 59, "sup": "SUPERVISOR 59", "fat": 120.93, "cart": 0, "tot": 120.93, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 4, "mix": 1, "prazo": 0}, {"cod": 80, "sup": "SUPERVISOR 80", "fat": 0, "cart": 0, "tot": 0, "meta": 700000, "af": 0.0, "at": 0.0, "bon": 0, "ped": 0, "mix": 0, "prazo": 0}];
-const RCA  = {"16": [{"c": 650, "n": "RCA BRUNO BH", "fat": 11965660.4, "cart": 0, "tot": 11965660.4, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 44, "mix": 7, "prazo": 3.15}, {"c": 7, "n": "LOURILSON CABRAL SANTOS DE SOUZA", "fat": 7160189.16, "cart": 76.5, "tot": 7160265.66, "meta": 20000000, "af": 35.8, "at": 35.8, "bon": 0, "ped": 24, "mix": 8, "prazo": 0.87}, {"c": 2060, "n": "RCA ASSIS - SP", "fat": 1853727.48, "cart": 0, "tot": 1853727.48, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 24, "mix": 3, "prazo": 12.03}, {"c": 64, "n": "CABRAL E SOUSA LTDA", "fat": 545391.42, "cart": 0, "tot": 545391.42, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 4, "mix": 4, "prazo": 14.17}, {"c": 2061, "n": "RCA VIANA - SP", "fat": 291600, "cart": 0, "tot": 291600, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 3, "mix": 1, "prazo": 7}], "101": [{"c": 1924, "n": "RCA 1924", "fat": 10289454.23, "cart": 0, "tot": 10289454.23, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 171, "mix": 6, "prazo": 0.06}], "114": [{"c": 769, "n": "RCA MASTER ", "fat": 2601752.06, "cart": 0, "tot": 2601752.06, "meta": 1000000, "af": 260.2, "at": 260.2, "bon": 0, "ped": 16, "mix": 7, "prazo": 7.55}], "66": [{"c": 2262, "n": "OSVALDO NERI LIMA", "fat": 1956887.52, "cart": 196805.52, "tot": 2153693.04, "meta": 1378000, "af": 142.0, "at": 156.3, "bon": 0, "ped": 16, "mix": 8, "prazo": 33.57}, {"c": 1360, "n": "ISABELA DA SILVA DE JESUS - GERENTE", "fat": 920274.12, "cart": 0, "tot": 920274.12, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 31, "mix": 26, "prazo": 38.93}, {"c": 2208, "n": "RYAN SOUZA DOS SANTOS", "fat": 291781.39, "cart": 62655.36, "tot": 354436.75, "meta": 254000, "af": 114.9, "at": 139.5, "bon": 0, "ped": 73, "mix": 47, "prazo": 29.15}, {"c": 1361, "n": "PATRICIA SOUZA ANSELMO", "fat": 169570.88, "cart": 0, "tot": 169570.88, "meta": 145500, "af": 116.5, "at": 116.5, "bon": 0, "ped": 165, "mix": 73, "prazo": 26.84}, {"c": 1516, "n": "JULIANA SOUZA SANTANA", "fat": 65263.3, "cart": 872.64, "tot": 66135.94, "meta": 182000, "af": 35.9, "at": 36.3, "bon": 0, "ped": 46, "mix": 15, "prazo": 39.19}, {"c": 2210, "n": "JOAO PAULO FEITOSA DA SILVA", "fat": 43186.04, "cart": 0, "tot": 43186.04, "meta": 71500, "af": 60.4, "at": 60.4, "bon": 0, "ped": 54, "mix": 45, "prazo": 29.43}, {"c": 2087, "n": "RAFAEL MORAES PINHO", "fat": 36645.03, "cart": 0, "tot": 36645.03, "meta": 139000, "af": 26.4, "at": 26.4, "bon": 0, "ped": 13, "mix": 11, "prazo": 27.93}, {"c": 2180, "n": "ANTONIO FERNANDES - RCA SUPERVISOR", "fat": 27649.36, "cart": 0, "tot": 27649.36, "meta": 0, "af": 0, "at": 0, "bon": 4451.9, "ped": 116, "mix": 96, "prazo": 0}], "107": [{"c": 2070, "n": "ISABELA DA SILVA DE JESUS - SUP", "fat": 1489920, "cart": 93480, "tot": 1583400, "meta": 3330000, "af": 44.7, "at": 47.5, "bon": 0, "ped": 9, "mix": 2, "prazo": 30.78}], "8": [{"c": 150, "n": "AUTO ATENDIMENTO", "fat": 1357653.77, "cart": 0, "tot": 1357653.77, "meta": 1000000, "af": 135.8, "at": 135.8, "bon": 0, "ped": 19010, "mix": 290, "prazo": 0.9}, {"c": 156, "n": "QUIOSQUE", "fat": 3470.99, "cart": 0, "tot": 3470.99, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 152, "mix": 1, "prazo": 0}], "13": [{"c": 2028, "n": "LAFAETE DIORGENES OLIVEIRA DANTAS - SUP", "fat": 982204.63, "cart": 0, "tot": 982204.63, "meta": 231000, "af": 425.2, "at": 425.2, "bon": 66.93, "ped": 65, "mix": 40, "prazo": 17.06}, {"c": 620, "n": "ANTONIO AUGUSTO DE ARAUJO", "fat": 713718.69, "cart": 11789.88, "tot": 725508.57, "meta": 632000, "af": 112.9, "at": 114.8, "bon": 0, "ped": 84, "mix": 38, "prazo": 29.92}, {"c": 2230, "n": "WATILA SANTOS DE OLIVEIRA", "fat": 467495.98, "cart": 0, "tot": 467495.98, "meta": 200000, "af": 233.7, "at": 233.7, "bon": 0, "ped": 7, "mix": 4, "prazo": 34.84}, {"c": 607, "n": "MARCIO VINICIUS COSTA BRITO", "fat": 280600.85, "cart": 0, "tot": 280600.85, "meta": 236000, "af": 118.9, "at": 118.9, "bon": 0, "ped": 64, "mix": 29, "prazo": 32.36}, {"c": 522, "n": "ARLETE  SILVA SOUSA OLIVEIRA", "fat": 256211.02, "cart": 0, "tot": 256211.02, "meta": 0, "af": 0, "at": 0, "bon": 958.49, "ped": 143, "mix": 122, "prazo": 1.04}, {"c": 877, "n": "RINALDO SOUSA DO NASCIMENTO", "fat": 254895.97, "cart": 0, "tot": 254895.97, "meta": 275000, "af": 92.7, "at": 92.7, "bon": 0, "ped": 45, "mix": 19, "prazo": 32.09}, {"c": 651, "n": "CABRAL E SOUSA LTDA", "fat": 243869.88, "cart": 0, "tot": 243869.88, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 34, "mix": 27, "prazo": 0}, {"c": 232, "n": "WANDERLEY RODRIGUES DA SILVA", "fat": 201988.54, "cart": 13009.44, "tot": 214997.98, "meta": 300000, "af": 67.3, "at": 71.7, "bon": 0, "ped": 35, "mix": 24, "prazo": 32.03}, {"c": 2374, "n": "CLAUDIO QUEIROZ SANTOS", "fat": 104742.79, "cart": 0, "tot": 104742.79, "meta": 135000, "af": 77.6, "at": 77.6, "bon": 0, "ped": 34, "mix": 23, "prazo": 30.18}, {"c": 1181, "n": "RCA IVE", "fat": 68374.56, "cart": 0, "tot": 68374.56, "meta": 241000, "af": 28.4, "at": 28.4, "bon": 0, "ped": 3, "mix": 3, "prazo": 34.9}, {"c": 2067, "n": "RCA COMPRAS - EXPOSITOR", "fat": 0.07, "cart": 0, "tot": 0.07, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 7, "mix": 7, "prazo": 2.86}], "112": [{"c": 1246, "n": "IVANA SILVA CANARIO", "fat": 969679.19, "cart": 836.57, "tot": 970515.76, "meta": 400000, "af": 242.4, "at": 242.6, "bon": 0, "ped": 64, "mix": 7, "prazo": 30.28}, {"c": 2350, "n": "MARLO JORGE VIDAL CHASTINET", "fat": 735110.69, "cart": 0, "tot": 735110.69, "meta": 500000, "af": 147.0, "at": 147.0, "bon": 0, "ped": 243, "mix": 29, "prazo": 42}, {"c": 2340, "n": "FABIO SOARES DOS SANTOS", "fat": 367746.85, "cart": 0, "tot": 367746.85, "meta": 500000, "af": 73.5, "at": 73.5, "bon": 0, "ped": 6, "mix": 1, "prazo": 45}, {"c": 1923, "n": "CRISTINA REIS SANTOS OLIVEIRA", "fat": 53896.66, "cart": 0, "tot": 53896.66, "meta": 0, "af": 0, "at": 0, "bon": 26.14, "ped": 3, "mix": 2, "prazo": 2.62}], "48": [{"c": 1001, "n": "RCA 1001", "fat": 603094.45, "cart": 0, "tot": 603094.45, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1287, "mix": 1, "prazo": 0}], "50": [{"c": 975, "n": "JABES ALCANTARA DE FRANCA", "fat": 576764.16, "cart": 0, "tot": 576764.16, "meta": 551000, "af": 104.7, "at": 104.7, "bon": 0, "ped": 89, "mix": 31, "prazo": 40.46}, {"c": 2294, "n": "LUDIMAN DOS SANTOS COELHO", "fat": 216201.3, "cart": 7405.44, "tot": 223606.74, "meta": 226000, "af": 95.7, "at": 98.9, "bon": 0, "ped": 87, "mix": 24, "prazo": 35.69}, {"c": 2331, "n": "DAVID MATOS SILVA", "fat": 119587.03, "cart": 0, "tot": 119587.03, "meta": 100000, "af": 119.6, "at": 119.6, "bon": 0, "ped": 68, "mix": 48, "prazo": 29.54}, {"c": 603, "n": "ROBERTO MARTINS PEREIRA", "fat": 99350.2, "cart": 0, "tot": 99350.2, "meta": 132000, "af": 75.3, "at": 75.3, "bon": 17.34, "ped": 43, "mix": 32, "prazo": 31.49}, {"c": 1313, "n": "BRENO PORTO NEVES", "fat": 94815.42, "cart": 0, "tot": 94815.42, "meta": 120000, "af": 79.0, "at": 79.0, "bon": 0, "ped": 58, "mix": 40, "prazo": 29.03}, {"c": 2085, "n": "FLAVIO HENRIQUE JESUS DOS SANTOS", "fat": 78018.69, "cart": 4020.02, "tot": 82038.71, "meta": 111000, "af": 70.3, "at": 73.9, "bon": 0, "ped": 64, "mix": 58, "prazo": 29.93}, {"c": 2427, "n": "BRISA SANTANA NOBRE", "fat": 31984.96, "cart": 0, "tot": 31984.96, "meta": 120000, "af": 26.7, "at": 26.7, "bon": 0, "ped": 32, "mix": 26, "prazo": 29.98}, {"c": 842, "n": "JOSE HEITOR - RCA SUPERVISOR", "fat": 4346.49, "cart": 0, "tot": 4346.49, "meta": 0, "af": 0, "at": 0, "bon": 420.92, "ped": 18, "mix": 18, "prazo": 0}], "5": [{"c": 3, "n": "ELIZEU JOSE PEREIRA", "fat": 505780.39, "cart": 0, "tot": 505780.39, "meta": 496000, "af": 102.0, "at": 102.0, "bon": 21, "ped": 155, "mix": 69, "prazo": 21.24}, {"c": 2, "n": "AGENOR FERREIRA DOS SANTOS", "fat": 397212.88, "cart": 0, "tot": 397212.88, "meta": 391000, "af": 101.6, "at": 101.6, "bon": 1.63, "ped": 129, "mix": 61, "prazo": 19.42}, {"c": 6, "n": "JOSE VALDELIRIO DE SOUSA", "fat": 344037.25, "cart": 2703.73, "tot": 346740.98, "meta": 316000, "af": 108.9, "at": 109.7, "bon": 12.91, "ped": 231, "mix": 117, "prazo": 21.15}, {"c": 9, "n": "GILBERTO PEREIRA DE JESUS", "fat": 333026.52, "cart": 0, "tot": 333026.52, "meta": 246000, "af": 135.4, "at": 135.4, "bon": 9.15, "ped": 180, "mix": 80, "prazo": 23.39}, {"c": 8, "n": "FRANCISCO DE ASSIS ALVES DE CARVALHO", "fat": 191744.31, "cart": 0, "tot": 191744.31, "meta": 201000, "af": 95.4, "at": 95.4, "bon": 4.89, "ped": 157, "mix": 76, "prazo": 16.47}], "42": [{"c": 700, "n": "DURVALDINO DE SOUZA DA SILVA", "fat": 476277.4, "cart": 879.8, "tot": 477157.2, "meta": 350000, "af": 136.1, "at": 136.3, "bon": 0, "ped": 147, "mix": 55, "prazo": 29.51}, {"c": 939, "n": "CASSIO SANTANA DOS SANTOS", "fat": 283597.5, "cart": 0, "tot": 283597.5, "meta": 260000, "af": 109.1, "at": 109.1, "bon": 0, "ped": 112, "mix": 64, "prazo": 31.04}, {"c": 1172, "n": "ADILIO ALVES DOS SANTOS", "fat": 217846.26, "cart": 0, "tot": 217846.26, "meta": 300000, "af": 72.6, "at": 72.6, "bon": 0, "ped": 57, "mix": 19, "prazo": 30.23}, {"c": 1201, "n": "FERNANDO BARBOSA MARQUES", "fat": 190285.16, "cart": 0, "tot": 190285.16, "meta": 190000, "af": 100.2, "at": 100.2, "bon": 0, "ped": 75, "mix": 45, "prazo": 28.7}, {"c": 927, "n": "FABIA FROTA TRINDADE", "fat": 172855.61, "cart": 4338.49, "tot": 177194.1, "meta": 170000, "af": 101.7, "at": 104.2, "bon": 0, "ped": 54, "mix": 32, "prazo": 26.29}, {"c": 2080, "n": "ALAN VIEIRA PALSIKOWSKI- SUPERVISOR", "fat": 33043.99, "cart": 0, "tot": 33043.99, "meta": 0, "af": 0, "at": 0, "bon": 5305.92, "ped": 89, "mix": 71, "prazo": 3.15}], "4": [{"c": 750, "n": "ANTONIO MARCIO DA SILVA BITENCOURT", "fat": 438372.77, "cart": 0, "tot": 438372.77, "meta": 236000, "af": 185.8, "at": 185.8, "bon": 2164.17, "ped": 132, "mix": 80, "prazo": 27.59}, {"c": 803, "n": "TIAGO AGUIAR RIBEIRO", "fat": 381715.4, "cart": 106.2, "tot": 381821.6, "meta": 274000, "af": 139.3, "at": 139.4, "bon": 1431.3, "ped": 136, "mix": 46, "prazo": 26.61}, {"c": 207, "n": "RICARDO TEIXEIRA SANTOS", "fat": 285449.72, "cart": 2563.61, "tot": 288013.33, "meta": 212000, "af": 134.6, "at": 135.9, "bon": 618.89, "ped": 106, "mix": 70, "prazo": 25.21}, {"c": 457, "n": "LUCIO LEITE COQUEIRO", "fat": 255612.48, "cart": 166.56, "tot": 255779.04, "meta": 217000, "af": 117.8, "at": 117.9, "bon": 673.79, "ped": 125, "mix": 78, "prazo": 22.07}, {"c": 984, "n": "NOBERTO DE SOUZA COSTA", "fat": 184388.05, "cart": 0, "tot": 184388.05, "meta": 192000, "af": 96.0, "at": 96.0, "bon": 485.85, "ped": 114, "mix": 64, "prazo": 28.78}, {"c": 913, "n": "LUCIANO SANTOS DE JESUS", "fat": 124087.73, "cart": 0, "tot": 124087.73, "meta": 216000, "af": 57.4, "at": 57.4, "bon": 351.99, "ped": 77, "mix": 59, "prazo": 30.0}, {"c": 69, "n": "UILTON SANTANA LEAL", "fat": 114195.81, "cart": 0, "tot": 114195.81, "meta": 135000, "af": 84.6, "at": 84.6, "bon": 334.65, "ped": 123, "mix": 74, "prazo": 28.16}, {"c": 12, "n": "GIVANILDO OLIVEIRA SANTOS", "fat": 70648.72, "cart": 0, "tot": 70648.72, "meta": 178000, "af": 39.7, "at": 39.7, "bon": 133.86, "ped": 72, "mix": 40, "prazo": 31.21}, {"c": 2385, "n": "JOAO PEDRO BONFIM - RCA SUPERVISOR", "fat": 15463.28, "cart": 0, "tot": 15463.28, "meta": 0, "af": 0, "at": 0, "bon": 1834.68, "ped": 112, "mix": 98, "prazo": 1.13}], "61": [{"c": 2362, "n": "FABIANA DE OLIVEIRA DE CARVALHO", "fat": 430155.83, "cart": 0, "tot": 430155.83, "meta": 215000, "af": 200.1, "at": 200.1, "bon": 0, "ped": 105, "mix": 39, "prazo": 24.48}, {"c": 1327, "n": "IGOR SANTANA LIMA JUNIOR", "fat": 231875.97, "cart": 0, "tot": 231875.97, "meta": 215000, "af": 107.8, "at": 107.8, "bon": 0, "ped": 60, "mix": 16, "prazo": 23.79}, {"c": 2380, "n": "JOVANIO SANTOS DE OLIVEIRA", "fat": 192816.98, "cart": 6823.2, "tot": 199640.18, "meta": 220000, "af": 87.6, "at": 90.7, "bon": 0, "ped": 69, "mix": 20, "prazo": 41.81}, {"c": 1245, "n": "GILVA CAPISTRANO SILVA", "fat": 188215.58, "cart": 0, "tot": 188215.58, "meta": 215000, "af": 87.5, "at": 87.5, "bon": 0, "ped": 63, "mix": 31, "prazo": 29.34}, {"c": 1250, "n": "ELLEN ADRINE JESUS SANTOS", "fat": 149722.59, "cart": 0, "tot": 149722.59, "meta": 215000, "af": 69.6, "at": 69.6, "bon": 0, "ped": 64, "mix": 21, "prazo": 29.98}, {"c": 2069, "n": "MARCELA DE ABREU AMADO - SUPERVISORA", "fat": 18403.57, "cart": 465.58, "tot": 18869.15, "meta": 0, "af": 0, "at": 0, "bon": 3782.6, "ped": 88, "mix": 72, "prazo": 2.11}], "135": [{"c": 66, "n": "WATILA SANTOS DE OLIVEIRA", "fat": 398901.93, "cart": 0, "tot": 398901.93, "meta": 277000, "af": 144.0, "at": 144.0, "bon": 256.93, "ped": 184, "mix": 59, "prazo": 28.19}, {"c": 2402, "n": "ISLAN LIMA BARROS", "fat": 325862.03, "cart": 2510.68, "tot": 328372.71, "meta": 250000, "af": 130.3, "at": 131.3, "bon": 191.14, "ped": 146, "mix": 69, "prazo": 28.94}, {"c": 2420, "n": "ALVARO DE JESUS SANTOS ", "fat": 105670.13, "cart": 0, "tot": 105670.13, "meta": 100000, "af": 105.7, "at": 105.7, "bon": 0, "ped": 72, "mix": 43, "prazo": 30.27}, {"c": 2399, "n": "CARLOS LUCAS MORAES SOUZA", "fat": 86318.17, "cart": 0, "tot": 86318.17, "meta": 100000, "af": 86.3, "at": 86.3, "bon": 0, "ped": 79, "mix": 39, "prazo": 32.53}, {"c": 2414, "n": "ENOCK OLIVEIRA SANTOS", "fat": 76395.03, "cart": 0, "tot": 76395.03, "meta": 120000, "af": 63.7, "at": 63.7, "bon": 0, "ped": 38, "mix": 34, "prazo": 30.25}, {"c": 2424, "n": "ERIVELTON MOREIRA SILVA", "fat": 57756.98, "cart": 0, "tot": 57756.98, "meta": 110000, "af": 52.5, "at": 52.5, "bon": 0, "ped": 63, "mix": 51, "prazo": 32.18}, {"c": 2408, "n": "ISAAC ANDRADE - SUPERVISOR CMA", "fat": 53600.46, "cart": 13771.62, "tot": 67372.08, "meta": 0, "af": 0, "at": 0, "bon": 621.78, "ped": 63, "mix": 60, "prazo": 13.44}, {"c": 2406, "n": "ZAMAEL BORGES COSTA", "fat": 18873.13, "cart": 0, "tot": 18873.13, "meta": 130000, "af": 14.5, "at": 14.5, "bon": 0, "ped": 9, "mix": 9, "prazo": 32.11}], "12": [{"c": 1144, "n": "MARCELO SANTOS DE JESUS", "fat": 389555.52, "cart": 0, "tot": 389555.52, "meta": 350000, "af": 111.3, "at": 111.3, "bon": 0, "ped": 105, "mix": 20, "prazo": 33.84}, {"c": 149, "n": "JOSE ROBERTO DOS SANTOS OLIVEIRA", "fat": 208003.19, "cart": 418.32, "tot": 208421.51, "meta": 250000, "af": 83.2, "at": 83.4, "bon": 0, "ped": 106, "mix": 67, "prazo": 31.75}, {"c": 65, "n": "CAIQUE THAILAN SOUZA DA SILVA", "fat": 158095.69, "cart": 0, "tot": 158095.69, "meta": 260000, "af": 60.8, "at": 60.8, "bon": 0, "ped": 91, "mix": 58, "prazo": 30.6}, {"c": 1619, "n": "THIAGO GONZAGA MACEDO", "fat": 137726.7, "cart": 0, "tot": 137726.7, "meta": 165000, "af": 83.5, "at": 83.5, "bon": 233.21, "ped": 84, "mix": 53, "prazo": 27.95}, {"c": 2293, "n": "MAENNYSON EROM ALVES VIEIRA", "fat": 101743.77, "cart": 0, "tot": 101743.77, "meta": 160000, "af": 63.6, "at": 63.6, "bon": 0, "ped": 74, "mix": 44, "prazo": 30.54}, {"c": 932, "n": "JULIO CESAR SOARES SOUZA", "fat": 95177.2, "cart": 13712.41, "tot": 108889.61, "meta": 145000, "af": 65.6, "at": 75.1, "bon": 124.4, "ped": 52, "mix": 42, "prazo": 29.74}, {"c": 2292, "n": "SIDNEI SILVA DE OLIVEIRA", "fat": 80337.53, "cart": 0, "tot": 80337.53, "meta": 160000, "af": 50.2, "at": 50.2, "bon": 0, "ped": 72, "mix": 50, "prazo": 28.89}, {"c": 1213, "n": "THARCIO HAFNER - RCA SUPERVISOR", "fat": 57491.85, "cart": 0, "tot": 57491.85, "meta": 0, "af": 0, "at": 0, "bon": 3012.4, "ped": 91, "mix": 65, "prazo": 0.43}], "3": [{"c": 635, "n": "DOUGLAS RODRIGUES DE PONTES", "fat": 355319.05, "cart": 17669.7, "tot": 372988.75, "meta": 190000, "af": 187.0, "at": 196.3, "bon": 2171.02, "ped": 174, "mix": 70, "prazo": 26.76}, {"c": 252, "n": "JOAO NETO GUSMAO DE SOUZA", "fat": 228102.66, "cart": 0, "tot": 228102.66, "meta": 197000, "af": 115.8, "at": 115.8, "bon": 949.81, "ped": 98, "mix": 54, "prazo": 24.16}, {"c": 647, "n": "FABRICIO MOITINHO OLIVEIRA", "fat": 217778.62, "cart": 0, "tot": 217778.62, "meta": 178000, "af": 122.3, "at": 122.3, "bon": 1210.29, "ped": 144, "mix": 72, "prazo": 23.03}, {"c": 1355, "n": "DIEGO RAMOS BORBA", "fat": 130631.96, "cart": 645.48, "tot": 131277.44, "meta": 131000, "af": 99.7, "at": 100.2, "bon": 0, "ped": 76, "mix": 34, "prazo": 27.94}, {"c": 2295, "n": "PATRICK SANTANA BRAGA", "fat": 124040.97, "cart": 3339.24, "tot": 127380.21, "meta": 190000, "af": 65.3, "at": 67.0, "bon": 1305.32, "ped": 75, "mix": 35, "prazo": 27.16}, {"c": 429, "n": "SISINIO CALDEIRA DA SILVA FILHO", "fat": 94861.59, "cart": 0, "tot": 94861.59, "meta": 131000, "af": 72.4, "at": 72.4, "bon": 755.42, "ped": 89, "mix": 55, "prazo": 29.02}, {"c": 26, "n": "JOSELITO SANTOS OLIVEIRA", "fat": 47518.04, "cart": 0, "tot": 47518.04, "meta": 102000, "af": 46.6, "at": 46.6, "bon": 1139.66, "ped": 95, "mix": 53, "prazo": 26.94}, {"c": 739, "n": "RCA 739", "fat": 17920, "cart": 0, "tot": 17920, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 0}, {"c": 843, "n": "ISRAEL PEDRO - RCA SUPERVISOR", "fat": 14442.84, "cart": 0, "tot": 14442.84, "meta": 0, "af": 0, "at": 0, "bon": 1898.75, "ped": 86, "mix": 69, "prazo": 1.2}], "84": [{"c": 1608, "n": "GILBERTO TRINDADE CABRAL", "fat": 339637.81, "cart": 0, "tot": 339637.81, "meta": 266000, "af": 127.7, "at": 127.7, "bon": 223.68, "ped": 111, "mix": 55, "prazo": 25.2}, {"c": 1620, "n": "LUAN CARLOS DA SILVA", "fat": 196743.62, "cart": 0, "tot": 196743.62, "meta": 154000, "af": 127.8, "at": 127.8, "bon": 264.04, "ped": 131, "mix": 51, "prazo": 27.59}, {"c": 1602, "n": "WALLAS VIEIRA LEITE", "fat": 195671.89, "cart": 0, "tot": 195671.89, "meta": 140000, "af": 139.8, "at": 139.8, "bon": 198.85, "ped": 150, "mix": 49, "prazo": 22.05}, {"c": 2400, "n": "HITALOAN SILVA RIQUEZA", "fat": 190975.23, "cart": 0, "tot": 190975.23, "meta": 135000, "af": 141.5, "at": 141.5, "bon": 194.9, "ped": 160, "mix": 66, "prazo": 27.25}, {"c": 1606, "n": "FLAVIO DE JESUS SALES", "fat": 185458.65, "cart": 0, "tot": 185458.65, "meta": 155000, "af": 119.7, "at": 119.7, "bon": 463.4, "ped": 171, "mix": 66, "prazo": 21.7}, {"c": 1604, "n": "ALEX MILLER DE OLIVEIRA SILVA", "fat": 145057.83, "cart": 1128.85, "tot": 146186.68, "meta": 156000, "af": 93.0, "at": 93.7, "bon": 149.49, "ped": 123, "mix": 54, "prazo": 25.9}, {"c": 1607, "n": "CASSIO MURILO - RCA SUPERVISOR", "fat": 22326.68, "cart": 0, "tot": 22326.68, "meta": 0, "af": 0, "at": 0, "bon": 284.36, "ped": 64, "mix": 57, "prazo": 5.61}, {"c": 1603, "n": "YAN MONTEIRO FERNANDES", "fat": 1322.12, "cart": 0, "tot": 1322.12, "meta": 0, "af": 0, "at": 0, "bon": 10.53, "ped": 2, "mix": 1, "prazo": 23.38}], "43": [{"c": 983, "n": "LUANDERSON COSTA VIEIRA", "fat": 339001.38, "cart": 0, "tot": 339001.38, "meta": 290000, "af": 116.9, "at": 116.9, "bon": 0, "ped": 95, "mix": 41, "prazo": 29.3}, {"c": 980, "n": "ALTIELI OLIVEIRA SOUZA", "fat": 271709.74, "cart": 0, "tot": 271709.74, "meta": 255000, "af": 106.6, "at": 106.6, "bon": 0, "ped": 88, "mix": 48, "prazo": 29.23}, {"c": 1145, "n": "JOBIS QUEIROZ MARTINS", "fat": 260701.03, "cart": 1526.11, "tot": 262227.14, "meta": 200000, "af": 130.4, "at": 131.1, "bon": 0, "ped": 96, "mix": 55, "prazo": 23.77}, {"c": 2225, "n": "BRENO BORGES DOS SANTOS", "fat": 196800, "cart": 16740.25, "tot": 213540.25, "meta": 185000, "af": 106.4, "at": 115.4, "bon": 0, "ped": 112, "mix": 53, "prazo": 31.26}, {"c": 950, "n": "MARCOS ALEX BONFIM SILVA", "fat": 194689.36, "cart": 0, "tot": 194689.36, "meta": 230000, "af": 84.6, "at": 84.6, "bon": 0, "ped": 124, "mix": 52, "prazo": 30.79}, {"c": 959, "n": "FRANCISLAINE FERNANDES OLIVEIRA", "fat": 146958.43, "cart": 0, "tot": 146958.43, "meta": 210000, "af": 70.0, "at": 70.0, "bon": 0, "ped": 63, "mix": 38, "prazo": 28.53}, {"c": 2388, "n": "NADSON SENA NEVES JUNIOR", "fat": 116027.67, "cart": 0, "tot": 116027.67, "meta": 150000, "af": 77.4, "at": 77.4, "bon": 0, "ped": 49, "mix": 37, "prazo": 26.68}, {"c": 1520, "n": "CARLOS EDUARDO DOS SANTOS SOUSA", "fat": 71975.99, "cart": 0, "tot": 71975.99, "meta": 110000, "af": 65.4, "at": 65.4, "bon": 0, "ped": 51, "mix": 23, "prazo": 27.19}, {"c": 883, "n": "ISMAR PESSOA FERRAZ- RCA SUPERVISOR", "fat": 67597.83, "cart": 0, "tot": 67597.83, "meta": 0, "af": 0, "at": 0, "bon": 3306.69, "ped": 90, "mix": 76, "prazo": 15.19}, {"c": 709, "n": "CRISTIANO TESTE RCA", "fat": 1.94, "cart": 0, "tot": 1.94, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 30}], "99": [{"c": 2204, "n": "GEOVANE BRITO SILVA - BAHIA FORT", "fat": 331552.56, "cart": 95337, "tot": 426889.56, "meta": 315000, "af": 105.3, "at": 135.5, "bon": 24203.47, "ped": 57, "mix": 52, "prazo": 44.22}, {"c": 2224, "n": "ENZO MONTENEGRO CINTRA CASTRO", "fat": 133934.15, "cart": 0, "tot": 133934.15, "meta": 260000, "af": 51.5, "at": 51.5, "bon": 9706.01, "ped": 37, "mix": 33, "prazo": 41.38}, {"c": 2207, "n": "ALBERTO NASCIMENTO DE ANDRADE", "fat": 104905.12, "cart": 5290.55, "tot": 110195.67, "meta": 110000, "af": 95.4, "at": 100.2, "bon": 7978, "ped": 53, "mix": 48, "prazo": 39.99}, {"c": 2202, "n": "PEDRO MOURA LOPES ", "fat": 56607.09, "cart": 0, "tot": 56607.09, "meta": 125000, "af": 45.3, "at": 45.3, "bon": 3827.04, "ped": 24, "mix": 23, "prazo": 37.07}, {"c": 2188, "n": "ANDRE TRINDADE CABRAL", "fat": 33370, "cart": 0, "tot": 33370, "meta": 80000, "af": 41.7, "at": 41.7, "bon": 7343.87, "ped": 30, "mix": 24, "prazo": 11.91}, {"c": 2339, "n": "JOAO VICTOR LACERDA SANTOS", "fat": 22472, "cart": 0, "tot": 22472, "meta": 100000, "af": 22.5, "at": 22.5, "bon": 168.08, "ped": 4, "mix": 4, "prazo": 46.19}], "60": [{"c": 1242, "n": "FLAVIO ALVES LIMA", "fat": 323568.46, "cart": 0, "tot": 323568.46, "meta": 100000, "af": 323.6, "at": 323.6, "bon": 4561.91, "ped": 279, "mix": 93, "prazo": 26.34}, {"c": 1241, "n": "VAGNER ARAUJO DOS SANTOS CONCEICAO", "fat": 288602.1, "cart": 0, "tot": 288602.1, "meta": 100000, "af": 288.6, "at": 288.6, "bon": 3351.42, "ped": 190, "mix": 105, "prazo": 23.73}, {"c": 1239, "n": "IVAN SOUZA SANTOS", "fat": 275629.64, "cart": 0, "tot": 275629.64, "meta": 100000, "af": 275.6, "at": 275.6, "bon": 1070.55, "ped": 225, "mix": 95, "prazo": 19.87}, {"c": 1238, "n": "CLAUDIO MARCUS BARBOSA QUEIROZ BRITO", "fat": 253045.87, "cart": 0, "tot": 253045.87, "meta": 100000, "af": 253.0, "at": 253.0, "bon": 1382.32, "ped": 166, "mix": 111, "prazo": 27.69}, {"c": 1273, "n": "TARCISIO DE SOUZA ALMEIDA", "fat": 249873.77, "cart": 0, "tot": 249873.77, "meta": 100000, "af": 249.9, "at": 249.9, "bon": 485.4, "ped": 150, "mix": 93, "prazo": 21.63}, {"c": 2422, "n": "ANTONIO CARLOS BARBOSA NETO", "fat": 175895.17, "cart": 0, "tot": 175895.17, "meta": 100000, "af": 175.9, "at": 175.9, "bon": 774.15, "ped": 168, "mix": 80, "prazo": 18.94}, {"c": 1304, "n": "JEFERSON PEREIRA SANTOS ", "fat": 154776.79, "cart": 0, "tot": 154776.79, "meta": 100000, "af": 154.8, "at": 154.8, "bon": 568.73, "ped": 152, "mix": 118, "prazo": 18.49}, {"c": 1233, "n": "DOUGLAS REIS DE SOUSA", "fat": 139304.21, "cart": 0, "tot": 139304.21, "meta": 100000, "af": 139.3, "at": 139.3, "bon": 2054.09, "ped": 133, "mix": 54, "prazo": 19.1}], "105": [{"c": 2286, "n": "PATRICK OLIVEIRA BARRETO", "fat": 303310.77, "cart": 45723.6, "tot": 349034.37, "meta": 217000, "af": 139.8, "at": 160.8, "bon": 0, "ped": 50, "mix": 15, "prazo": 35.43}, {"c": 2256, "n": "CRISTIANO DAMASCENO DA SILVA", "fat": 84471.2, "cart": 8136, "tot": 92607.2, "meta": 82500, "af": 102.4, "at": 112.3, "bon": 0, "ped": 93, "mix": 70, "prazo": 26.83}, {"c": 2244, "n": "ANA PAULA DA SILVA QUADROS", "fat": 74052.44, "cart": 0, "tot": 74052.44, "meta": 107000, "af": 69.2, "at": 69.2, "bon": 0, "ped": 34, "mix": 23, "prazo": 25.42}, {"c": 2238, "n": "PEDRO HENRIQUE DE OLIVEIRA LOPES", "fat": 64880.75, "cart": 0, "tot": 64880.75, "meta": 82500, "af": 78.6, "at": 78.6, "bon": 0, "ped": 47, "mix": 41, "prazo": 26.7}, {"c": 2387, "n": "EDER SANTOS NUNES MACHADO", "fat": 56001.92, "cart": 0, "tot": 56001.92, "meta": 56000, "af": 100.0, "at": 100.0, "bon": 0, "ped": 22, "mix": 15, "prazo": 30}, {"c": 2243, "n": "DANIEL BASTOS PRIMO", "fat": 50099.67, "cart": 0, "tot": 50099.67, "meta": 82000, "af": 61.1, "at": 61.1, "bon": 0, "ped": 39, "mix": 28, "prazo": 30.03}, {"c": 2322, "n": "ROSILENE MOREIRA TELES", "fat": 41544.87, "cart": 0, "tot": 41544.87, "meta": 79000, "af": 52.6, "at": 52.6, "bon": 0, "ped": 43, "mix": 35, "prazo": 28.03}, {"c": 2419, "n": "ALICIA PEREIRA SANTOS", "fat": 14149.04, "cart": 1291.2, "tot": 15440.24, "meta": 65000, "af": 21.8, "at": 23.8, "bon": 0, "ped": 12, "mix": 8, "prazo": 28.38}, {"c": 2378, "n": "MAURICIO SANTOS CERQUEIRA", "fat": 6916.51, "cart": 0, "tot": 6916.51, "meta": 0, "af": 0, "at": 0, "bon": 1426.32, "ped": 24, "mix": 21, "prazo": 0}, {"c": 2560, "n": "JOAO VITOR SANTANA SANTOS SOUZA", "fat": 6133.68, "cart": 0, "tot": 6133.68, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 2, "mix": 2, "prazo": 27.17}, {"c": 2245, "n": "JONALDO DE SOUSA CARVALHO", "fat": 1785.36, "cart": 1548.24, "tot": 3333.6, "meta": 54500, "af": 3.3, "at": 6.1, "bon": 0, "ped": 4, "mix": 4, "prazo": 0}, {"c": 2284, "n": "RAPHAEL SANTOS DE AZEVEDO", "fat": 633.34, "cart": 0, "tot": 633.34, "meta": 56500, "af": 1.1, "at": 1.1, "bon": 0, "ped": 2, "mix": 2, "prazo": 27}], "96": [{"c": 1345, "n": "ARISON ROCHA DE CASTRO", "fat": 300790.99, "cart": 3924.23, "tot": 304715.22, "meta": 295000, "af": 102.0, "at": 103.3, "bon": 776.22, "ped": 216, "mix": 101, "prazo": 26.84}, {"c": 2287, "n": "MARLENE ROSA RAMOS", "fat": 258387.45, "cart": 5102.73, "tot": 263490.18, "meta": 360000, "af": 71.8, "at": 73.2, "bon": 133.86, "ped": 49, "mix": 18, "prazo": 27.74}, {"c": 1168, "n": "MURYLLO RIBEIRO DA SILVA", "fat": 211297.9, "cart": 14405.32, "tot": 225703.22, "meta": 290000, "af": 72.9, "at": 77.8, "bon": 937.02, "ped": 109, "mix": 32, "prazo": 26.52}, {"c": 693, "n": "ADENILTON CORREIA SILVA", "fat": 158358.69, "cart": 0, "tot": 158358.69, "meta": 370000, "af": 42.8, "at": 42.8, "bon": 68.45, "ped": 65, "mix": 29, "prazo": 32.22}, {"c": 1271, "n": "PAULO RICARDO DE SOUZA", "fat": 88440.36, "cart": 3506.45, "tot": 91946.81, "meta": 250000, "af": 35.4, "at": 36.8, "bon": 0, "ped": 65, "mix": 19, "prazo": 30.29}, {"c": 1625, "n": "JORGE RICARDO DOS ANJOS - RCA SUPERVISOR", "fat": 18721.16, "cart": 12693.6, "tot": 31414.76, "meta": 0, "af": 0, "at": 0, "bon": 1582.91, "ped": 50, "mix": 41, "prazo": 3.02}, {"c": 1478, "n": "ROBERTO CORDEIRO JAQUEIRA", "fat": 9818.95, "cart": 0, "tot": 9818.95, "meta": 0, "af": 0, "at": 0, "bon": 1992.25, "ped": 16, "mix": 13, "prazo": 2.35}, {"c": 1287, "n": "BEATRIZ MACEDO NASCIMENTO", "fat": 1533.9, "cart": 0, "tot": 1533.9, "meta": 0, "af": 0, "at": 0, "bon": 1.89, "ped": 2, "mix": 1, "prazo": 28}], "65": [{"c": 1306, "n": "ANTONIO CARLOS DIAS DE ANDRADE", "fat": 296920.55, "cart": 0, "tot": 296920.55, "meta": 700000, "af": 42.4, "at": 42.4, "bon": 0, "ped": 125, "mix": 60, "prazo": 26.13}], "115": [{"c": 1347, "n": "ISAAC DE LIMA BARRETO - MDLZ PE EXPRESS", "fat": 270166.16, "cart": 0, "tot": 270166.16, "meta": 80000, "af": 337.7, "at": 337.7, "bon": 0, "ped": 110, "mix": 71, "prazo": 23.21}, {"c": 2341, "n": "WILSON NERI RAMOS - MDLZ PE EXPRESS", "fat": 82702.76, "cart": 0, "tot": 82702.76, "meta": 80000, "af": 103.4, "at": 103.4, "bon": 0, "ped": 86, "mix": 70, "prazo": 22.32}, {"c": 2418, "n": "DANELLE LORENA - MDLZ PE EXPRESS", "fat": 80977.21, "cart": 0, "tot": 80977.21, "meta": 80000, "af": 101.2, "at": 101.2, "bon": 0, "ped": 111, "mix": 86, "prazo": 15.66}, {"c": 1507, "n": "LUIS CARLOS REIS SILVA - MDLZ PE EXPRESS", "fat": 65816.14, "cart": 1920.92, "tot": 67737.06, "meta": 80000, "af": 82.3, "at": 84.7, "bon": 0, "ped": 103, "mix": 91, "prazo": 18.56}, {"c": 2423, "n": "MAGDO BARBOSA - MDLZ PE EXPRESS", "fat": 54123.87, "cart": 1230.54, "tot": 55354.41, "meta": 80000, "af": 67.7, "at": 69.2, "bon": 0, "ped": 110, "mix": 84, "prazo": 22.5}, {"c": 2375, "n": "ANDERSON DOS SANTOS - MDLZ PE EXPRESS", "fat": 53181.49, "cart": 0, "tot": 53181.49, "meta": 80000, "af": 66.5, "at": 66.5, "bon": 0, "ped": 94, "mix": 75, "prazo": 21.49}, {"c": 2431, "n": "LEONARDO DA SILVA ARAO - MDLZ PE EXPRESS", "fat": 15613.7, "cart": 0, "tot": 15613.7, "meta": 80000, "af": 19.5, "at": 19.5, "bon": 0, "ped": 41, "mix": 37, "prazo": 15.4}, {"c": 2370, "n": "KAYC DE MATOS SOUZA - MDLZ PE EXPRESS", "fat": 8967.56, "cart": 0, "tot": 8967.56, "meta": 80000, "af": 11.2, "at": 11.2, "bon": 0, "ped": 25, "mix": 23, "prazo": 18.93}], "102": [{"c": 2221, "n": "LAFAETE DIORGENES - VENDAS INTERNA", "fat": 264750, "cart": 0, "tot": 264750, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 3, "mix": 2, "prazo": 0}], "72": [{"c": 1379, "n": "UARLIS DE JESUS COELHO", "fat": 261643.49, "cart": 0, "tot": 261643.49, "meta": 205000, "af": 127.6, "at": 127.6, "bon": 0, "ped": 73, "mix": 40, "prazo": 27.38}, {"c": 2337, "n": "ECLISMAR DE JESUS SANTOS", "fat": 228108.51, "cart": 0, "tot": 228108.51, "meta": 205000, "af": 111.3, "at": 111.3, "bon": 0, "ped": 39, "mix": 20, "prazo": 29.79}, {"c": 2201, "n": "PAULO SANTOS CARNEIRO", "fat": 201492.94, "cart": 1301.85, "tot": 202794.79, "meta": 110000, "af": 183.2, "at": 184.4, "bon": 0, "ped": 88, "mix": 72, "prazo": 29.47}, {"c": 2211, "n": "SERGIO RENNAN MENDES DE OLIVEIRA", "fat": 168177.8, "cart": 0, "tot": 168177.8, "meta": 170000, "af": 98.9, "at": 98.9, "bon": 0, "ped": 76, "mix": 50, "prazo": 26.83}, {"c": 2384, "n": "RHENAN LUIZ ARRUDA DE SIQUEIRA", "fat": 141370.72, "cart": 0, "tot": 141370.72, "meta": 110000, "af": 128.5, "at": 128.5, "bon": 0, "ped": 63, "mix": 47, "prazo": 29.96}, {"c": 1391, "n": "UELITON LOPES - RCA SUPERVISOR", "fat": 106481.19, "cart": 0, "tot": 106481.19, "meta": 0, "af": 0, "at": 0, "bon": 8856.05, "ped": 229, "mix": 178, "prazo": 0}, {"c": 2212, "n": "CARLLOS CHISTTIAN GONCALVES DE ARAUJO", "fat": 97530, "cart": 0, "tot": 97530, "meta": 65000, "af": 150.0, "at": 150.0, "bon": 0, "ped": 90, "mix": 63, "prazo": 29.84}, {"c": 1434, "n": "JONATAS REIS", "fat": 69953.61, "cart": 0, "tot": 69953.61, "meta": 65000, "af": 107.6, "at": 107.6, "bon": 0, "ped": 59, "mix": 31, "prazo": 29.75}], "76": [{"c": 1383, "n": "RAMON FELIPE DE SOUSA DUTRA", "fat": 250468.99, "cart": 3467.09, "tot": 253936.08, "meta": 220000, "af": 113.8, "at": 115.4, "bon": 0, "ped": 55, "mix": 46, "prazo": 29.46}, {"c": 1378, "n": "MARIA HELENA ALVES DE JESUS", "fat": 230962.28, "cart": 0, "tot": 230962.28, "meta": 200000, "af": 115.5, "at": 115.5, "bon": 10.99, "ped": 64, "mix": 41, "prazo": 30.15}, {"c": 1440, "n": "JOSE DOMINGOS DA SOLIDADE SANTOS", "fat": 229828.59, "cart": 0, "tot": 229828.59, "meta": 220000, "af": 104.5, "at": 104.5, "bon": 0, "ped": 119, "mix": 64, "prazo": 29.39}, {"c": 1382, "n": "KLEBER MOURA BORGES", "fat": 202337.5, "cart": 0, "tot": 202337.5, "meta": 210000, "af": 96.4, "at": 96.4, "bon": 0, "ped": 47, "mix": 17, "prazo": 27.28}, {"c": 1618, "n": "CARMO COSTA RAMOS", "fat": 142758.25, "cart": 0, "tot": 142758.25, "meta": 200000, "af": 71.4, "at": 71.4, "bon": 0, "ped": 47, "mix": 34, "prazo": 29.95}, {"c": 1381, "n": "JOSE FELIPE FRANCA DA SILVA", "fat": 92265.98, "cart": 0, "tot": 92265.98, "meta": 70000, "af": 131.8, "at": 131.8, "bon": 0, "ped": 31, "mix": 24, "prazo": 29.19}, {"c": 1409, "n": "MARCOS ANTONIO ALVES GOMES ", "fat": 67668.44, "cart": 0, "tot": 67668.44, "meta": 60000, "af": 112.8, "at": 112.8, "bon": 0, "ped": 27, "mix": 14, "prazo": 30}, {"c": 2372, "n": "JONATHAN COSTA DO NASCIMENTO", "fat": 61908.53, "cart": 0, "tot": 61908.53, "meta": 0, "af": 0, "at": 0, "bon": 14753.45, "ped": 120, "mix": 95, "prazo": 0}, {"c": 2361, "n": "RENAN INES GUIMARAES", "fat": 422.91, "cart": 0, "tot": 422.91, "meta": 0, "af": 0, "at": 0, "bon": 46.99, "ped": 1, "mix": 1, "prazo": 0}], "19": [{"c": 1162, "n": "EDIMAR MARQUES LOPES", "fat": 243279.51, "cart": 0, "tot": 243279.51, "meta": 80000, "af": 304.1, "at": 304.1, "bon": 928.43, "ped": 202, "mix": 129, "prazo": 19.66}, {"c": 559, "n": "ROMARIO MIRANDA SOUZA", "fat": 2299.13, "cart": 0, "tot": 2299.13, "meta": 0, "af": 0, "at": 0, "bon": 174.45, "ped": 6, "mix": 4, "prazo": 15.52}], "73": [{"c": 1497, "n": "VINICIUS RAMOS DOS PASSOS", "fat": 243056.62, "cart": 0, "tot": 243056.62, "meta": 95000, "af": 255.8, "at": 255.8, "bon": 411.59, "ped": 134, "mix": 100, "prazo": 18.41}, {"c": 1404, "n": "JORGE DO ESPIRITO SANTO DE JESUS", "fat": 185304.97, "cart": 0, "tot": 185304.97, "meta": 100000, "af": 185.3, "at": 185.3, "bon": 1196.86, "ped": 146, "mix": 100, "prazo": 22.25}, {"c": 1394, "n": "RAFAEL PIEDADE - MDLZ PE EXPRESS", "fat": 75800.13, "cart": 2934.96, "tot": 78735.09, "meta": 95000, "af": 79.8, "at": 82.9, "bon": 563.91, "ped": 88, "mix": 65, "prazo": 21.01}, {"c": 2417, "n": "RICARDO RAMOS - MDLZ PE EXPRESS", "fat": 7957.94, "cart": 0, "tot": 7957.94, "meta": 45000, "af": 17.7, "at": 17.7, "bon": 17.8, "ped": 5, "mix": 3, "prazo": 9.82}, {"c": 1498, "n": "KAIO OLIVEIRA - MDLZ PE EXPRESS", "fat": 5136.29, "cart": 366.05, "tot": 5502.34, "meta": 95000, "af": 5.4, "at": 5.8, "bon": 118.28, "ped": 6, "mix": 5, "prazo": 16.71}], "120": [{"c": 778, "n": "EVERTON CARVALHO DA SILVA - DIST EXPRESS", "fat": 228524.98, "cart": 0, "tot": 228524.98, "meta": 138000, "af": 165.6, "at": 165.6, "bon": 1353.92, "ped": 347, "mix": 165, "prazo": 24.2}, {"c": 1225, "n": "CHARLES AGUIAR - DIST EXPRESS", "fat": 121367.9, "cart": 0, "tot": 121367.9, "meta": 115000, "af": 105.5, "at": 105.5, "bon": 1590.78, "ped": 281, "mix": 118, "prazo": 23.32}, {"c": 1011, "n": "DANYELLE SILVA BARBOSA - DIST EXPRESS", "fat": 120365.13, "cart": 0, "tot": 120365.13, "meta": 115000, "af": 104.7, "at": 104.7, "bon": 1517.96, "ped": 238, "mix": 121, "prazo": 21.36}, {"c": 958, "n": "JOSE DOS SANTOS LIMA - DIST EXPRESS", "fat": 116266.67, "cart": 0, "tot": 116266.67, "meta": 105000, "af": 110.7, "at": 110.7, "bon": 881.43, "ped": 270, "mix": 142, "prazo": 17.88}, {"c": 585, "n": "WAGNER PAULO LEDO - DIST EXPRESS", "fat": 105814.81, "cart": 0, "tot": 105814.81, "meta": 115000, "af": 92.0, "at": 92.0, "bon": 971.95, "ped": 193, "mix": 114, "prazo": 31.36}, {"c": 967, "n": "ELIAS SANTOS AGUIAR - DIST EXPRESS", "fat": 103368.49, "cart": 0, "tot": 103368.49, "meta": 110000, "af": 94.0, "at": 94.0, "bon": 574.5, "ped": 222, "mix": 104, "prazo": 18.89}, {"c": 1279, "n": "LUCAS CERQUEIRA SANTOS - DIST EXPRESS", "fat": 100038.39, "cart": 5130.92, "tot": 105169.31, "meta": 101000, "af": 99.0, "at": 104.1, "bon": 926.11, "ped": 188, "mix": 87, "prazo": 22.94}, {"c": 905, "n": "LUIS HENRIQUE OLIVEIRA - DIST EXPRESS", "fat": 98538.31, "cart": 0, "tot": 98538.31, "meta": 101000, "af": 97.6, "at": 97.6, "bon": 601.61, "ped": 181, "mix": 105, "prazo": 17.82}, {"c": 2083, "n": "ALEX REIS BRITO - DIST EXPRESS", "fat": 44994.19, "cart": 0, "tot": 44994.19, "meta": 40000, "af": 112.5, "at": 112.5, "bon": 407.11, "ped": 103, "mix": 63, "prazo": 19.3}], "14": [{"c": 968, "n": "TIAGO JOSE DOS SANTOS", "fat": 228213.86, "cart": 2983.57, "tot": 231197.43, "meta": 228000, "af": 100.1, "at": 101.4, "bon": 1013.2, "ped": 119, "mix": 58, "prazo": 28.12}, {"c": 143, "n": "CELINIO SALUSTIANO PEREIRA NETO", "fat": 158770.07, "cart": 2307.22, "tot": 161077.29, "meta": 143000, "af": 111.0, "at": 112.6, "bon": 979.77, "ped": 115, "mix": 72, "prazo": 25.5}, {"c": 508, "n": "ELTON SANTOS FERREIRA", "fat": 158329.69, "cart": 9472.32, "tot": 167802.01, "meta": 166000, "af": 95.4, "at": 101.1, "bon": 124.4, "ped": 93, "mix": 66, "prazo": 29.88}, {"c": 1303, "n": "CLEITON DE JESUS PEREIRA", "fat": 99184.49, "cart": 749.52, "tot": 99934.01, "meta": 139000, "af": 71.4, "at": 71.9, "bon": 237.06, "ped": 79, "mix": 57, "prazo": 29.78}, {"c": 1334, "n": "ORLANDO MATOS DOS SANTOS", "fat": 96535.23, "cart": 0, "tot": 96535.23, "meta": 147000, "af": 65.7, "at": 65.7, "bon": 385.03, "ped": 94, "mix": 48, "prazo": 28.67}, {"c": 1519, "n": "ANDRE LUIS DE JESUS COUTINHO ", "fat": 60168.36, "cart": 0, "tot": 60168.36, "meta": 124000, "af": 48.5, "at": 48.5, "bon": 0, "ped": 61, "mix": 35, "prazo": 30.49}, {"c": 2430, "n": "VALDEIR SILVA BRANDAO", "fat": 45232.9, "cart": 105.43, "tot": 45338.33, "meta": 73000, "af": 62.0, "at": 62.1, "bon": 674.85, "ped": 65, "mix": 53, "prazo": 27.66}], "41": [{"c": 780, "n": "MARIA DE FATIMA FARIAS DOS SANTOS", "fat": 224114.44, "cart": 0, "tot": 224114.44, "meta": 200000, "af": 112.1, "at": 112.1, "bon": 0, "ped": 141, "mix": 62, "prazo": 31.37}, {"c": 988, "n": "VINICIUS GALVAO CARNEIRO", "fat": 156104.61, "cart": 4034, "tot": 160138.61, "meta": 260000, "af": 60.0, "at": 61.6, "bon": 0, "ped": 79, "mix": 51, "prazo": 30.67}, {"c": 714, "n": "DIEGO MIRANDA NASCIMENTO", "fat": 144513.27, "cart": 0, "tot": 144513.27, "meta": 200000, "af": 72.3, "at": 72.3, "bon": 0, "ped": 95, "mix": 47, "prazo": 29.41}, {"c": 749, "n": "ADAILTON GON\u00c7ALVES DE SOUZA", "fat": 92477.78, "cart": 675.4, "tot": 93153.18, "meta": 180000, "af": 51.4, "at": 51.8, "bon": 0, "ped": 41, "mix": 23, "prazo": 30.98}, {"c": 1515, "n": "ICARO DIEGO SA TELES FERREIRA", "fat": 80803.53, "cart": 0, "tot": 80803.53, "meta": 180000, "af": 44.9, "at": 44.9, "bon": 0, "ped": 30, "mix": 20, "prazo": 28.37}, {"c": 2058, "n": "DARLY FERNANDES - RCA SUPERVISOR", "fat": 17578.02, "cart": 0, "tot": 17578.02, "meta": 0, "af": 0, "at": 0, "bon": 844.5, "ped": 34, "mix": 31, "prazo": 8.37}, {"c": 773, "n": "DANIEL DIAS FERREIRA ", "fat": 14287.78, "cart": 0, "tot": 14287.78, "meta": 80000, "af": 17.9, "at": 17.9, "bon": 0, "ped": 6, "mix": 6, "prazo": 30.36}, {"c": 2332, "n": "LUIS FELIPE OLIVEIRA ANDRADE", "fat": 13965.83, "cart": 0, "tot": 13965.83, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 13, "mix": 13, "prazo": 32.3}], "77": [{"c": 1479, "n": "LUCIVALDO PINTO DE SA - SUPERVISOR", "fat": 217160.45, "cart": 0, "tot": 217160.45, "meta": 0, "af": 0, "at": 0, "bon": 5625.52, "ped": 102, "mix": 64, "prazo": 3.99}, {"c": 1614, "n": "JONATAS DE SOUZA BITENCOURT", "fat": 81563.64, "cart": 0, "tot": 81563.64, "meta": 80000, "af": 102.0, "at": 102.0, "bon": 0, "ped": 32, "mix": 18, "prazo": 26.95}, {"c": 2326, "n": "CLAUDIO DA SILVA RIBEIRO", "fat": 76798.54, "cart": 0, "tot": 76798.54, "meta": 60000, "af": 128.0, "at": 128.0, "bon": 0, "ped": 26, "mix": 18, "prazo": 20}, {"c": 1615, "n": "JOSE SANTOS ", "fat": 75818.15, "cart": 0, "tot": 75818.15, "meta": 150000, "af": 50.5, "at": 50.5, "bon": 0, "ped": 61, "mix": 21, "prazo": 21.6}, {"c": 1330, "n": "CAROLINA LOPEZ PRATA ", "fat": 50168.32, "cart": 0, "tot": 50168.32, "meta": 80000, "af": 62.7, "at": 62.7, "bon": 0, "ped": 51, "mix": 23, "prazo": 17.83}, {"c": 1491, "n": "MARIA ALICE GONCALVES", "fat": 41200.43, "cart": 0, "tot": 41200.43, "meta": 100000, "af": 41.2, "at": 41.2, "bon": 0, "ped": 41, "mix": 19, "prazo": 18.1}, {"c": 1329, "n": "BRUNO SILVA SANTIAGO ", "fat": 38317.82, "cart": 0, "tot": 38317.82, "meta": 80000, "af": 47.9, "at": 47.9, "bon": 0, "ped": 39, "mix": 25, "prazo": 15.37}], "24": [{"c": 1171, "n": "ROBERTO FELIPE PEREIRA BARREIROS", "fat": 210177.08, "cart": 0, "tot": 210177.08, "meta": 185000, "af": 113.6, "at": 113.6, "bon": 1083.5, "ped": 133, "mix": 59, "prazo": 28.43}, {"c": 1222, "n": "JOSEILTON DA CRUZ FERREIRA", "fat": 180456.97, "cart": 0, "tot": 180456.97, "meta": 162500, "af": 111.1, "at": 111.1, "bon": 543.7, "ped": 78, "mix": 35, "prazo": 22.43}, {"c": 639, "n": "ELICA MARIA DA CRUZ", "fat": 168497.93, "cart": 0, "tot": 168497.93, "meta": 155000, "af": 108.7, "at": 108.7, "bon": 1481.71, "ped": 106, "mix": 40, "prazo": 28.98}, {"c": 75, "n": "ALLYSSON TEIXEIRA VIEIRA DE SOUZA", "fat": 119685.23, "cart": 3980, "tot": 123665.23, "meta": 150000, "af": 79.8, "at": 82.4, "bon": 0, "ped": 92, "mix": 54, "prazo": 30.8}, {"c": 961, "n": "FREDSON HENRIQUE DA SILVA BATISTA", "fat": 115715.34, "cart": 0, "tot": 115715.34, "meta": 135000, "af": 85.7, "at": 85.7, "bon": 741.78, "ped": 95, "mix": 38, "prazo": 19.27}, {"c": 2220, "n": "VITOR CAMPOS DOS ANJOS", "fat": 87890.31, "cart": 0, "tot": 87890.31, "meta": 97500, "af": 90.1, "at": 90.1, "bon": 948.12, "ped": 71, "mix": 44, "prazo": 27.05}, {"c": 23, "n": "DYOGO GOMES - RCA SUPERVISOR", "fat": 6938.1, "cart": 0, "tot": 6938.1, "meta": 0, "af": 0, "at": 0, "bon": 943.48, "ped": 51, "mix": 42, "prazo": 1.2}], "71": [{"c": 1624, "n": "RENAN DE ALMEIDA NERIS", "fat": 205825.67, "cart": 0, "tot": 205825.67, "meta": 130000, "af": 158.3, "at": 158.3, "bon": 0, "ped": 53, "mix": 8, "prazo": 30}, {"c": 1388, "n": "MICAELEN COSTA OLIVEIRA ", "fat": 204964.14, "cart": 0, "tot": 204964.14, "meta": 160000, "af": 128.1, "at": 128.1, "bon": 0, "ped": 84, "mix": 50, "prazo": 29.83}, {"c": 1387, "n": "ANTONIO CRISPIM ALMEIDA AMORIM", "fat": 196711.44, "cart": 0, "tot": 196711.44, "meta": 100000, "af": 196.7, "at": 196.7, "bon": 0, "ped": 69, "mix": 38, "prazo": 28.54}, {"c": 1384, "n": "MARCOS UILLIANS CRUZ DE JESUS ", "fat": 194503.96, "cart": 2909.31, "tot": 197413.27, "meta": 130000, "af": 149.6, "at": 151.9, "bon": 0, "ped": 66, "mix": 48, "prazo": 30.27}, {"c": 1385, "n": "ALAN FERREIRA LIMA SANTANA", "fat": 165818.59, "cart": 7110.73, "tot": 172929.32, "meta": 100000, "af": 165.8, "at": 172.9, "bon": 0, "ped": 61, "mix": 44, "prazo": 30.04}, {"c": 1464, "n": "CAMILA SOUZA OLIVEIRA", "fat": 120452.44, "cart": 0, "tot": 120452.44, "meta": 90000, "af": 133.8, "at": 133.8, "bon": 0, "ped": 36, "mix": 18, "prazo": 27.14}, {"c": 2407, "n": "MARCOS PEREIRA DA SILVA ", "fat": 103351.73, "cart": 0, "tot": 103351.73, "meta": 90000, "af": 114.8, "at": 114.8, "bon": 21.98, "ped": 53, "mix": 33, "prazo": 28.42}, {"c": 1421, "n": "MOISES PINHEIRO DOS SANTOS", "fat": 85149.02, "cart": 1966.22, "tot": 87115.24, "meta": 90000, "af": 94.6, "at": 96.8, "bon": 0, "ped": 64, "mix": 37, "prazo": 29.94}, {"c": 1376, "n": "WALDEAN MATA CERQUEIRA- RCA SUPERVISOR", "fat": 28146.18, "cart": 0, "tot": 28146.18, "meta": 0, "af": 0, "at": 0, "bon": 5031.16, "ped": 127, "mix": 97, "prazo": 0.41}], "21": [{"c": 370, "n": "GILBERTO SOUZA MOTA", "fat": 200227.16, "cart": 0, "tot": 200227.16, "meta": 100000, "af": 200.2, "at": 200.2, "bon": 269.82, "ped": 158, "mix": 124, "prazo": 25.06}, {"c": 1165, "n": "DAVI RODRIGUES CAMPOS", "fat": 182464.71, "cart": 0, "tot": 182464.71, "meta": 100000, "af": 182.5, "at": 182.5, "bon": 205.53, "ped": 134, "mix": 111, "prazo": 22.37}, {"c": 270, "n": "EDUARDO RAFAEL PEIXOTO", "fat": 177704.7, "cart": 0, "tot": 177704.7, "meta": 95000, "af": 187.1, "at": 187.1, "bon": 56.98, "ped": 206, "mix": 134, "prazo": 19.84}, {"c": 1493, "n": "DARSAIED DE FREITAS SILVA", "fat": 41996.54, "cart": 0, "tot": 41996.54, "meta": 70000, "af": 60.0, "at": 60.0, "bon": 282.17, "ped": 54, "mix": 45, "prazo": 23.98}], "34": [{"c": 720, "n": "GUSTAVO LOPES SOUZA", "fat": 187521.06, "cart": 0, "tot": 187521.06, "meta": 180000, "af": 104.2, "at": 104.2, "bon": 844.98, "ped": 128, "mix": 57, "prazo": 27.72}, {"c": 744, "n": "TAILISON MACEDO BONFIM", "fat": 183054.52, "cart": 3383.23, "tot": 186437.75, "meta": 210000, "af": 87.2, "at": 88.8, "bon": 847.89, "ped": 195, "mix": 69, "prazo": 26.94}, {"c": 479, "n": "JONAS DOS SANTOS SOUZA", "fat": 177874.62, "cart": 2104.25, "tot": 179978.87, "meta": 154000, "af": 115.5, "at": 116.9, "bon": 1069.37, "ped": 157, "mix": 72, "prazo": 27.6}, {"c": 480, "n": "DIEGO FERREIRA LIMA", "fat": 177577.8, "cart": 0, "tot": 177577.8, "meta": 125000, "af": 142.1, "at": 142.1, "bon": 626.98, "ped": 142, "mix": 69, "prazo": 22.29}, {"c": 685, "n": "SAMUEL DE SOUZA SANTOS", "fat": 174078.81, "cart": 0, "tot": 174078.81, "meta": 136000, "af": 128.0, "at": 128.0, "bon": 913.73, "ped": 170, "mix": 86, "prazo": 29.3}, {"c": 895, "n": "SCHEUBER SILVA ROCHA", "fat": 164968.15, "cart": 0, "tot": 164968.15, "meta": 144000, "af": 114.6, "at": 114.6, "bon": 873.52, "ped": 126, "mix": 38, "prazo": 24.73}, {"c": 489, "n": "ADENILTON SANTOS BRAGA", "fat": 147032.63, "cart": 733.74, "tot": 147766.37, "meta": 124000, "af": 118.6, "at": 119.2, "bon": 756.06, "ped": 197, "mix": 60, "prazo": 30.07}, {"c": 972, "n": "ANGELO GABRIEL LEITE MEIRA", "fat": 134131.36, "cart": 745.48, "tot": 134876.84, "meta": 115000, "af": 116.6, "at": 117.3, "bon": 622.5, "ped": 126, "mix": 56, "prazo": 27.55}, {"c": 1922, "n": "JOAO CARLOS RIBEIRO DOS SANTOS", "fat": 97557.96, "cart": 0, "tot": 97557.96, "meta": 100000, "af": 97.6, "at": 97.6, "bon": 258.22, "ped": 136, "mix": 72, "prazo": 27.66}, {"c": 721, "n": "PABLO HYANN SOUZA NOVAIS", "fat": 81784.06, "cart": 0, "tot": 81784.06, "meta": 122000, "af": 67.0, "at": 67.0, "bon": 611.18, "ped": 88, "mix": 38, "prazo": 28.52}, {"c": 866, "n": "GIVANILDO AMARAL NASCIMENTO - SUPERVISOR", "fat": 75409.53, "cart": 6181, "tot": 81590.53, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 78, "mix": 57, "prazo": 8.45}, {"c": 2395, "n": "MARCOS TULIO SANTOS BRITO", "fat": 53204.5, "cart": 465.79, "tot": 53670.29, "meta": 70000, "af": 76.0, "at": 76.7, "bon": 163.87, "ped": 71, "mix": 33, "prazo": 28.55}, {"c": 2351, "n": "VICTOR LAZARO OLIVEIRA - RCA SUPERVISOR", "fat": 18000.43, "cart": 505.45, "tot": 18505.88, "meta": 0, "af": 0, "at": 0, "bon": 934.66, "ped": 90, "mix": 69, "prazo": 1.46}, {"c": 709, "n": "CRISTIANO TESTE RCA", "fat": 9.89, "cart": 0, "tot": 9.89, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 3, "mix": 1, "prazo": 30}], "117": [{"c": 1463, "n": "DANIEL GOMES DE MOURA - DIST EXPRESS", "fat": 183294.02, "cart": 0, "tot": 183294.02, "meta": 115000, "af": 159.4, "at": 159.4, "bon": 397.84, "ped": 188, "mix": 101, "prazo": 13.59}, {"c": 1365, "n": "RENATO ARAUJO DE JESUS - DIST EXPRESS", "fat": 159572.1, "cart": 25.6, "tot": 159597.7, "meta": 115000, "af": 138.8, "at": 138.8, "bon": 574.5, "ped": 205, "mix": 101, "prazo": 15.05}, {"c": 1471, "n": "DIEGO BASTOS SANTOS - DIST EXPRESS", "fat": 144356.38, "cart": 404.6, "tot": 144760.98, "meta": 115000, "af": 125.5, "at": 125.9, "bon": 268.8, "ped": 174, "mix": 82, "prazo": 19.82}, {"c": 1462, "n": "ANDRE LUIS REIS - DIST EXPRESS", "fat": 125022.99, "cart": 0, "tot": 125022.99, "meta": 115000, "af": 108.7, "at": 108.7, "bon": 418.11, "ped": 152, "mix": 101, "prazo": 10.67}, {"c": 2390, "n": "NILSON JOSE GOMES - DIST EXPRESS", "fat": 90101.35, "cart": 108.64, "tot": 90209.99, "meta": 40000, "af": 225.3, "at": 225.5, "bon": 1330.97, "ped": 140, "mix": 54, "prazo": 15.57}, {"c": 1510, "n": "JILMAR SANTOS SILVA - DIST EXPRESS", "fat": 32757.76, "cart": 0, "tot": 32757.76, "meta": 20000, "af": 163.8, "at": 163.8, "bon": 39.61, "ped": 55, "mix": 44, "prazo": 20.91}, {"c": 1377, "n": "DANILO - RCA SUP - DIST EXPRESS", "fat": 139.04, "cart": 0, "tot": 139.04, "meta": 0, "af": 0, "at": 0, "bon": 139.04, "ped": 1, "mix": 1, "prazo": 0}], "121": [{"c": 2086, "n": "WERITON FREITAS - DIST EXPRESS", "fat": 152597.24, "cart": 1857.4, "tot": 154454.64, "meta": 140000, "af": 109.0, "at": 110.3, "bon": 319.97, "ped": 201, "mix": 142, "prazo": 22.32}, {"c": 1226, "n": "ANISIO NEPOMUCENO - DIST EXPRESS", "fat": 106583.87, "cart": 0, "tot": 106583.87, "meta": 90000, "af": 118.4, "at": 118.4, "bon": 589.34, "ped": 148, "mix": 113, "prazo": 22.63}, {"c": 1626, "n": "SIDNEI BONDEZAN - DIST EXPRESS", "fat": 102640.13, "cart": 0, "tot": 102640.13, "meta": 105000, "af": 97.8, "at": 97.8, "bon": 176.89, "ped": 212, "mix": 127, "prazo": 28.68}, {"c": 1277, "n": "ADEMILSON DA ROCHA PINTO - DIST EXPRESS", "fat": 89282.34, "cart": 1768.42, "tot": 91050.76, "meta": 90000, "af": 99.2, "at": 101.2, "bon": 577.91, "ped": 173, "mix": 125, "prazo": 24.03}, {"c": 1227, "n": "ALEX SANTOS SILVA - DIST EXPRESS", "fat": 67976.84, "cart": 460.86, "tot": 68437.7, "meta": 105000, "af": 64.7, "at": 65.2, "bon": 10.87, "ped": 139, "mix": 113, "prazo": 26.49}, {"c": 1275, "n": "MARCOS VINICIUS SANTOS - DIST EXPRESS", "fat": 66765.76, "cart": 286.17, "tot": 67051.93, "meta": 100000, "af": 66.8, "at": 67.1, "bon": 137.7, "ped": 123, "mix": 98, "prazo": 22.93}], "134": [{"c": 2412, "n": "JOSENILTO ALVES DE ARAUJO", "fat": 142756.67, "cart": 2179.32, "tot": 144935.99, "meta": 145000, "af": 98.5, "at": 100.0, "bon": 0, "ped": 109, "mix": 73, "prazo": 31.19}, {"c": 2413, "n": "IONALDO ROBSON DE ARAUJO FELIX", "fat": 133352.66, "cart": 1682.55, "tot": 135035.21, "meta": 145000, "af": 92.0, "at": 93.1, "bon": 0, "ped": 58, "mix": 36, "prazo": 26.51}, {"c": 2398, "n": "TIAGO DA CONCEI\u00c7\u00c3O NOVAES", "fat": 121150.92, "cart": 570.24, "tot": 121721.16, "meta": 135000, "af": 89.7, "at": 90.2, "bon": 0, "ped": 63, "mix": 43, "prazo": 28.12}, {"c": 2409, "n": "JOCIMAR WAGNER", "fat": 89815.08, "cart": 0, "tot": 89815.08, "meta": 145000, "af": 61.9, "at": 61.9, "bon": 0, "ped": 54, "mix": 33, "prazo": 27.81}, {"c": 2397, "n": "DEIBSON MOURA BARBOSA", "fat": 87140.28, "cart": 571.5, "tot": 87711.78, "meta": 145000, "af": 60.1, "at": 60.5, "bon": 0, "ped": 59, "mix": 21, "prazo": 29.91}, {"c": 2415, "n": "CLEARDES DE SOUZA RIBEIRO", "fat": 46377.42, "cart": 0, "tot": 46377.42, "meta": 145000, "af": 32.0, "at": 32.0, "bon": 0, "ped": 35, "mix": 21, "prazo": 29.93}, {"c": 2396, "n": "SANDOVAL NUNES PEREIRA - RCA SUPERVISOR", "fat": 17679.69, "cart": 19772.1, "tot": 37451.79, "meta": 0, "af": 0, "at": 0, "bon": 301.92, "ped": 46, "mix": 43, "prazo": 12.85}], "131": [{"c": 1247, "n": "BRUNO SANTOS DA CONCEICAO", "fat": 135598.41, "cart": 0, "tot": 135598.41, "meta": 130000, "af": 104.3, "at": 104.3, "bon": 0, "ped": 88, "mix": 62, "prazo": 24.37}, {"c": 1252, "n": "JAILSON GABRIEL CRUZ DA SILVA", "fat": 100181.49, "cart": 0, "tot": 100181.49, "meta": 220000, "af": 45.5, "at": 45.5, "bon": 0, "ped": 63, "mix": 31, "prazo": 25.6}, {"c": 1243, "n": "ALAN NONATO DOS SANTOS DO NASCIMENTO", "fat": 97000.43, "cart": 0, "tot": 97000.43, "meta": 130000, "af": 74.6, "at": 74.6, "bon": 0, "ped": 55, "mix": 34, "prazo": 21.15}, {"c": 1244, "n": "GISLANE COUTO SALA", "fat": 75119.73, "cart": 0, "tot": 75119.73, "meta": 120000, "af": 62.6, "at": 62.6, "bon": 0, "ped": 63, "mix": 36, "prazo": 23.69}, {"c": 2432, "n": "MARIA CELESTE GUIMARAES ANDRADE BRANDAO", "fat": 71144.83, "cart": 0, "tot": 71144.83, "meta": 120000, "af": 59.3, "at": 59.3, "bon": 0, "ped": 32, "mix": 20, "prazo": 17.78}, {"c": 1921, "n": "MARCIO DE FREITAS DANTAS - SUPERVISOR", "fat": 27419.89, "cart": 0, "tot": 27419.89, "meta": 0, "af": 0, "at": 0, "bon": 2571.27, "ped": 69, "mix": 61, "prazo": 4.31}, {"c": 2556, "n": "THAYS FERREIRA DA SILVA", "fat": 12808.92, "cart": 0, "tot": 12808.92, "meta": 100000, "af": 12.8, "at": 12.8, "bon": 0, "ped": 6, "mix": 5, "prazo": 20.39}, {"c": 2383, "n": "SEM RCA", "fat": 910.12, "cart": 0, "tot": 910.12, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 14}], "93": [{"c": 2156, "n": "GILDASIO RODRIGUES DOS SANTOS", "fat": 132989.55, "cart": 2864.75, "tot": 135854.3, "meta": 90000, "af": 147.8, "at": 150.9, "bon": 2639.88, "ped": 41, "mix": 34, "prazo": 52.78}, {"c": 2343, "n": "JOAO VICTOR LARCEDA SANTOS", "fat": 102666.42, "cart": 12994.9, "tot": 115661.32, "meta": 100000, "af": 102.7, "at": 115.7, "bon": 1376.01, "ped": 33, "mix": 28, "prazo": 47.87}, {"c": 2349, "n": "CARLOS MAGNO QUEIROZ DE MEZEZES", "fat": 85475.94, "cart": 9150.42, "tot": 94626.36, "meta": 100000, "af": 85.5, "at": 94.6, "bon": 2321.43, "ped": 31, "mix": 26, "prazo": 42.11}, {"c": 2281, "n": "REGINALDO PEREIRA DOS SANTOS JUNIOR ", "fat": 61107.43, "cart": 4368.96, "tot": 65476.39, "meta": 80000, "af": 76.4, "at": 81.8, "bon": 555.32, "ped": 26, "mix": 20, "prazo": 47.79}, {"c": 2336, "n": "NATHAN DE SOUZA SANTOS BULHOES", "fat": 33711.31, "cart": 3333.6, "tot": 37044.91, "meta": 50000, "af": 67.4, "at": 74.1, "bon": 445, "ped": 16, "mix": 11, "prazo": 53}, {"c": 2092, "n": "RUDSLEY GLAUCO SANTANA ZIMMER", "fat": 254.73, "cart": 0, "tot": 254.73, "meta": 0, "af": 0, "at": 0, "bon": 81.59, "ped": 1, "mix": 1, "prazo": 0}], "122": [{"c": 1350, "n": "ADENILDE ALVES FERREIRA - DIST EXPRESS", "fat": 131286.32, "cart": 0, "tot": 131286.32, "meta": 120000, "af": 109.4, "at": 109.4, "bon": 1374.84, "ped": 229, "mix": 123, "prazo": 20.65}, {"c": 942, "n": "GEFERSON ALEXANDRE PRATES - DIST EXPRESS", "fat": 126855.7, "cart": 0, "tot": 126855.7, "meta": 120000, "af": 105.7, "at": 105.7, "bon": 2320.97, "ped": 226, "mix": 167, "prazo": 25.49}, {"c": 2363, "n": "MARIANA DOS SANTOS - DIST EXPRESS", "fat": 113491, "cart": 0, "tot": 113491, "meta": 100000, "af": 113.5, "at": 113.5, "bon": 969.37, "ped": 216, "mix": 123, "prazo": 21.35}, {"c": 1475, "n": "THALES NERY DA SILVA - DIST EXPRESS", "fat": 107417.42, "cart": 0, "tot": 107417.42, "meta": 101000, "af": 106.4, "at": 106.4, "bon": 757.8, "ped": 204, "mix": 116, "prazo": 25.53}, {"c": 1341, "n": "ANDREILTON OLIVEIRA - DIST EXPRESS", "fat": 102525.27, "cart": 230.16, "tot": 102755.43, "meta": 100000, "af": 102.5, "at": 102.8, "bon": 678.93, "ped": 242, "mix": 120, "prazo": 21.54}, {"c": 1278, "n": "JEOVANE DO CARMO SANTOS - DIST EXPRESS", "fat": 100991.35, "cart": 0, "tot": 100991.35, "meta": 101000, "af": 100.0, "at": 100.0, "bon": 2043.82, "ped": 184, "mix": 113, "prazo": 21.86}, {"c": 636, "n": "REBECA CAROLINE FERNANDES - DIST EXPRESS", "fat": 96568.35, "cart": 2675.6, "tot": 99243.95, "meta": 118000, "af": 81.8, "at": 84.1, "bon": 1813.64, "ped": 186, "mix": 127, "prazo": 21.01}], "136": [{"c": 2237, "n": "FABIO HENRIQUE ALVES DE MELO NEVES", "fat": 129238.86, "cart": 0, "tot": 129238.86, "meta": 118000, "af": 109.5, "at": 109.5, "bon": 0, "ped": 55, "mix": 30, "prazo": 25.8}, {"c": 2389, "n": "ANE KARINE VARGAS FEITOSA ALVES", "fat": 71733.4, "cart": 0, "tot": 71733.4, "meta": 53000, "af": 135.3, "at": 135.3, "bon": 0, "ped": 25, "mix": 23, "prazo": 29.51}, {"c": 2245, "n": "JONALDO DE SOUSA CARVALHO", "fat": 17206.6, "cart": 1548.24, "tot": 18754.84, "meta": 54500, "af": 31.6, "at": 34.4, "bon": 0, "ped": 15, "mix": 12, "prazo": 25.47}, {"c": 2425, "n": "THAINA SOUZA DA SILVA", "fat": 3737.38, "cart": 0, "tot": 3737.38, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 30}], "127": [{"c": 1352, "n": "JOSE UOSHINGTON - MDLZ VENDA EXPRESS", "fat": 127942.13, "cart": 0, "tot": 127942.13, "meta": 100000, "af": 127.9, "at": 127.9, "bon": 364.01, "ped": 171, "mix": 126, "prazo": 25.7}, {"c": 911, "n": "RAFAEL BEZERRA - MDLZ VENDA EXPRESS", "fat": 109790.3, "cart": 0, "tot": 109790.3, "meta": 100000, "af": 109.8, "at": 109.8, "bon": 175.11, "ped": 174, "mix": 135, "prazo": 27.9}, {"c": 520, "n": "CASSIO HAFNER - MDLZ VENDA EXPRESS", "fat": 106822.03, "cart": 0, "tot": 106822.03, "meta": 100000, "af": 106.8, "at": 106.8, "bon": 456.31, "ped": 147, "mix": 111, "prazo": 26.04}, {"c": 921, "n": "PAULO ROBERTO - MDLZ VENDA EXPRESS", "fat": 93595.48, "cart": 0, "tot": 93595.48, "meta": 98000, "af": 95.5, "at": 95.5, "bon": 212.61, "ped": 185, "mix": 132, "prazo": 23.47}, {"c": 2366, "n": "JORGE CLAUDIO - MDLZ VENDA EXPRESS", "fat": 74919.96, "cart": 0, "tot": 74919.96, "meta": 70000, "af": 107.0, "at": 107.0, "bon": 78.76, "ped": 173, "mix": 130, "prazo": 22.72}, {"c": 1164, "n": "WANDERSON SANTANA - MDLZ VENDA EXPRESS", "fat": 57042.15, "cart": 1268.65, "tot": 58310.8, "meta": 60000, "af": 95.1, "at": 97.2, "bon": 483.55, "ped": 126, "mix": 101, "prazo": 24.3}], "52": [{"c": 2369, "n": "LAYRA VITORIA DA SILVA MOTA", "fat": 123749.37, "cart": 0, "tot": 123749.37, "meta": 120000, "af": 103.1, "at": 103.1, "bon": 0, "ped": 62, "mix": 39, "prazo": 26.39}, {"c": 846, "n": "MARIA VANUZA - RCA SUPERVISORA", "fat": 61024.89, "cart": 0, "tot": 61024.89, "meta": 0, "af": 0, "at": 0, "bon": 2317.78, "ped": 39, "mix": 24, "prazo": 12.65}, {"c": 1269, "n": "JAIRO VINICIUS DE JESUS SANTOS ", "fat": 50650.48, "cart": 0, "tot": 50650.48, "meta": 120000, "af": 42.2, "at": 42.2, "bon": 0, "ped": 62, "mix": 47, "prazo": 21.81}, {"c": 2260, "n": "ULDARICO SALES DANTAS JUNIOR", "fat": 50497.79, "cart": 0, "tot": 50497.79, "meta": 124000, "af": 40.7, "at": 40.7, "bon": 0, "ped": 30, "mix": 22, "prazo": 29.84}, {"c": 2328, "n": "ANTONIO DELFINO NETO", "fat": 44277.09, "cart": 0, "tot": 44277.09, "meta": 120000, "af": 36.9, "at": 36.9, "bon": 0, "ped": 29, "mix": 19, "prazo": 22.85}], "82": [{"c": 2411, "n": "CRISTIAN ALMEIDA - MDLZ PE EXPRESS", "fat": 122420.8, "cart": 0, "tot": 122420.8, "meta": 90000, "af": 136.0, "at": 136.0, "bon": 359.7, "ped": 101, "mix": 67, "prazo": 23.51}, {"c": 1395, "n": "NAELTON GONCALVES - MDLZ PE EXPRESS", "fat": 110500.91, "cart": 0, "tot": 110500.91, "meta": 95000, "af": 116.3, "at": 116.3, "bon": 806.11, "ped": 133, "mix": 83, "prazo": 14.9}, {"c": 1446, "n": "VINICIOS CUNHA SOUSA", "fat": 95142.42, "cart": 0, "tot": 95142.42, "meta": 95000, "af": 100.1, "at": 100.1, "bon": 788.24, "ped": 121, "mix": 85, "prazo": 30.87}, {"c": 1393, "n": "THIAGO DE SANTANA - MDLZ PE EXPRESS", "fat": 56386.64, "cart": 0, "tot": 56386.64, "meta": 90000, "af": 62.7, "at": 62.7, "bon": 583.48, "ped": 74, "mix": 55, "prazo": 19.43}, {"c": 1402, "n": "ROBERVAN SILVA - MDLZ PE EXPRESS", "fat": 13707.15, "cart": 0, "tot": 13707.15, "meta": 95000, "af": 14.4, "at": 14.4, "bon": 0, "ped": 1, "mix": 1, "prazo": 7}, {"c": 2214, "n": "RAIMUNDO VICTOR MIRANDA- MDLZ PE EXPRESS", "fat": 12876.48, "cart": 0, "tot": 12876.48, "meta": 90000, "af": 14.3, "at": 14.3, "bon": 12.78, "ped": 19, "mix": 17, "prazo": 14.75}], "126": [{"c": 220, "n": "WAGNER BARBOSA - MDLZ VENDA EXPRESS", "fat": 113397.58, "cart": 0, "tot": 113397.58, "meta": 100000, "af": 113.4, "at": 113.4, "bon": 595.4, "ped": 196, "mix": 143, "prazo": 28.86}, {"c": 856, "n": "ANDRE LUIZ OLIVEIRA - MDLZ VENDA EXPRESS", "fat": 103971.09, "cart": 0, "tot": 103971.09, "meta": 100000, "af": 104.0, "at": 104.0, "bon": 230.05, "ped": 154, "mix": 115, "prazo": 26.78}, {"c": 889, "n": "RIRLLAN MEIRA - MDLZ VENDA EXPRESS", "fat": 103036.47, "cart": 0, "tot": 103036.47, "meta": 87000, "af": 118.4, "at": 118.4, "bon": 157.69, "ped": 128, "mix": 104, "prazo": 27.93}, {"c": 977, "n": "CARLITO REIS - MDLZ VENDA EXPRESS", "fat": 92529.24, "cart": 10309.63, "tot": 102838.87, "meta": 85000, "af": 108.9, "at": 121.0, "bon": 480.99, "ped": 146, "mix": 114, "prazo": 27.65}, {"c": 631, "n": "SONIVALDO NOLASCO - MDLZ VENDA EXPRESS", "fat": 84332.96, "cart": 0, "tot": 84332.96, "meta": 80000, "af": 105.4, "at": 105.4, "bon": 281.45, "ped": 179, "mix": 138, "prazo": 21.95}, {"c": 458, "n": "MAURICIO NOVAIS - MDLZ VENDA EXPRESS", "fat": 79093.56, "cart": 0, "tot": 79093.56, "meta": 85000, "af": 93.1, "at": 93.1, "bon": 220.95, "ped": 114, "mix": 90, "prazo": 26.27}, {"c": 912, "n": "DEVANEI DE JESUS - MDLZ VENDA EXPRESS", "fat": 78495.21, "cart": 0, "tot": 78495.21, "meta": 90000, "af": 87.2, "at": 87.2, "bon": 380.48, "ped": 191, "mix": 134, "prazo": 25.4}, {"c": 1342, "n": "JOAO MARCOS SANTOS - MDLZ VENDA EXPRESS", "fat": 69890.04, "cart": 0, "tot": 69890.04, "meta": 65250, "af": 107.1, "at": 107.1, "bon": 162.38, "ped": 104, "mix": 84, "prazo": 22.47}, {"c": 814, "n": "DOUGLAS SANTOS - MDLZ VENDA EXPRESS", "fat": 63934.15, "cart": 0, "tot": 63934.15, "meta": 75000, "af": 85.2, "at": 85.2, "bon": 61.55, "ped": 134, "mix": 115, "prazo": 28.27}, {"c": 2435, "n": "EDUARDO OLIVEIRA - MDLZ VENDA EXPRESS", "fat": 58320.18, "cart": 0, "tot": 58320.18, "meta": 65250, "af": 89.4, "at": 89.4, "bon": 42.46, "ped": 74, "mix": 64, "prazo": 24.01}, {"c": 945, "n": "DANIEL JESUS - MDLZ VENDA EXPRESS", "fat": 42304.48, "cart": 0, "tot": 42304.48, "meta": 75000, "af": 56.4, "at": 56.4, "bon": 179.5, "ped": 86, "mix": 70, "prazo": 31.31}], "125": [{"c": 218, "n": "JAILTON RODRIGUES - MDLZ VENDA EXPRESS", "fat": 112178.67, "cart": 2904.4, "tot": 115083.07, "meta": 100000, "af": 112.2, "at": 115.1, "bon": 828.65, "ped": 168, "mix": 124, "prazo": 27.96}, {"c": 981, "n": "KAROLINE FILIPE - MDLZ VENDA EXPRESS", "fat": 110407.3, "cart": 2207.56, "tot": 112614.86, "meta": 76500, "af": 144.3, "at": 147.2, "bon": 59.65, "ped": 158, "mix": 119, "prazo": 24.8}, {"c": 239, "n": "ROBERTO BOTELHO - MDLZ VENDA EXPRESS", "fat": 107984.2, "cart": 0, "tot": 107984.2, "meta": 100000, "af": 108.0, "at": 108.0, "bon": 64.92, "ped": 125, "mix": 107, "prazo": 23.38}, {"c": 1351, "n": "CLARISSE ALVES - MDLZ VENDA EXPRESS", "fat": 107665.99, "cart": 0, "tot": 107665.99, "meta": 100000, "af": 107.7, "at": 107.7, "bon": 243.17, "ped": 118, "mix": 96, "prazo": 23.96}, {"c": 973, "n": "HEBERT MOTA BRAGA - MDLZ VENDA EXPRESS", "fat": 96922.71, "cart": 0, "tot": 96922.71, "meta": 100000, "af": 96.9, "at": 96.9, "bon": 0, "ped": 119, "mix": 79, "prazo": 26.73}, {"c": 2344, "n": "JILMARA LOPES - MDLZ VENDA EXPRESS", "fat": 91935.41, "cart": 0, "tot": 91935.41, "meta": 76500, "af": 120.2, "at": 120.2, "bon": 241.75, "ped": 139, "mix": 127, "prazo": 25.36}, {"c": 500, "n": "JULIO CESAR - MDLZ VENDA EXPRESS", "fat": 87138.31, "cart": 3875.79, "tot": 91014.1, "meta": 100000, "af": 87.1, "at": 91.0, "bon": 150.48, "ped": 141, "mix": 105, "prazo": 31.96}, {"c": 2421, "n": "JAKSON ALEX PRATES - MDLZ VENDA EXPRESS", "fat": 71389.48, "cart": 2346, "tot": 73735.48, "meta": 76500, "af": 93.3, "at": 96.4, "bon": 143.46, "ped": 150, "mix": 131, "prazo": 21.55}], "104": [{"c": 1600, "n": "EDUARDA SILVA OLIVEIRA", "fat": 104592.49, "cart": 0, "tot": 104592.49, "meta": 90000, "af": 116.2, "at": 116.2, "bon": 337.32, "ped": 69, "mix": 51, "prazo": 25.31}], "9": [{"c": 2023, "n": "VENDAS WHATSAPP", "fat": 95056.38, "cart": 0, "tot": 95056.38, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 228, "mix": 48, "prazo": 9.02}, {"c": 2077, "n": "VENDAS B2C", "fat": 64529.25, "cart": 0, "tot": 64529.25, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 398, "mix": 362, "prazo": 0}], "129": [{"c": 2270, "n": "IGOR DA PAIXAO DE REZENDE", "fat": 90164.1, "cart": 0, "tot": 90164.1, "meta": 45000, "af": 200.4, "at": 200.4, "bon": 14480.0, "ped": 35, "mix": 29, "prazo": 35.58}, {"c": 1367, "n": "DOMENIQUE SILVA (PROMOTOR T\u00c9CNICO)", "fat": 38771.03, "cart": 0, "tot": 38771.03, "meta": 45000, "af": 86.2, "at": 86.2, "bon": 11629.02, "ped": 36, "mix": 26, "prazo": 26}], "137": [{"c": 2214, "n": "RAIMUNDO VICTOR MIRANDA- MDLZ PE EXPRESS", "fat": 83765.22, "cart": 0, "tot": 83765.22, "meta": 90000, "af": 93.1, "at": 93.1, "bon": 460.28, "ped": 107, "mix": 80, "prazo": 22.49}, {"c": 1402, "n": "ROBERVAN SILVA - MDLZ PE EXPRESS", "fat": 81733.18, "cart": 0, "tot": 81733.18, "meta": 95000, "af": 86.0, "at": 86.0, "bon": 293.98, "ped": 90, "mix": 69, "prazo": 16.56}, {"c": 1393, "n": "THIAGO DE SANTANA - MDLZ PE EXPRESS", "fat": 38177.15, "cart": 0, "tot": 38177.15, "meta": 90000, "af": 42.4, "at": 42.4, "bon": 230.72, "ped": 51, "mix": 44, "prazo": 26.44}, {"c": 1395, "n": "NAELTON GONCALVES - MDLZ PE EXPRESS", "fat": 12444.59, "cart": 0, "tot": 12444.59, "meta": 95000, "af": 13.1, "at": 13.1, "bon": 131.0, "ped": 24, "mix": 18, "prazo": 18.37}, {"c": 2411, "n": "CRISTIAN ALMEIDA - MDLZ PE EXPRESS", "fat": 8770.02, "cart": 0, "tot": 8770.02, "meta": 90000, "af": 9.7, "at": 9.7, "bon": 41.19, "ped": 13, "mix": 9, "prazo": 15.58}], "106": [{"c": 2347, "n": "HELYNILDA RAMOS DE ALCANTARA", "fat": 81245.8, "cart": 0, "tot": 81245.8, "meta": 0, "af": 0, "at": 0, "bon": 4744.86, "ped": 3, "mix": 3, "prazo": 0}, {"c": 2255, "n": "TIAGO JESUS SOUSA", "fat": 26092.88, "cart": 0, "tot": 26092.88, "meta": 0, "af": 0, "at": 0, "bon": 370.11, "ped": 16, "mix": 15, "prazo": 1.43}], "118": [{"c": 1498, "n": "KAIO OLIVEIRA - MDLZ PE EXPRESS", "fat": 77788.08, "cart": 366.05, "tot": 78154.13, "meta": 95000, "af": 81.9, "at": 82.3, "bon": 367.24, "ped": 96, "mix": 68, "prazo": 23.33}, {"c": 2376, "n": "TANIO SULAMITO - MDLZ PE EXPRESS", "fat": 74775.87, "cart": 0, "tot": 74775.87, "meta": 75000, "af": 99.7, "at": 99.7, "bon": 197.89, "ped": 134, "mix": 110, "prazo": 19.59}, {"c": 2355, "n": "LUCAS LIMA CARNEIRO - MDLZ PE EXPRESS", "fat": 67961.85, "cart": 0, "tot": 67961.85, "meta": 75000, "af": 90.6, "at": 90.6, "bon": 657.64, "ped": 151, "mix": 107, "prazo": 19.3}, {"c": 1407, "n": "PABLO MICHEL SILVA - MDLZ PE EXPRESS", "fat": 66635.2, "cart": 0, "tot": 66635.2, "meta": 75000, "af": 88.8, "at": 88.8, "bon": 239.63, "ped": 116, "mix": 102, "prazo": 20.53}, {"c": 1394, "n": "RAFAEL PIEDADE - MDLZ PE EXPRESS", "fat": 41501.46, "cart": 2934.96, "tot": 44436.42, "meta": 95000, "af": 43.7, "at": 46.8, "bon": 194.4, "ped": 54, "mix": 49, "prazo": 21.63}, {"c": 2417, "n": "RICARDO RAMOS - MDLZ PE EXPRESS", "fat": 15042.81, "cart": 0, "tot": 15042.81, "meta": 45000, "af": 33.4, "at": 33.4, "bon": 54.65, "ped": 40, "mix": 35, "prazo": 14.2}], "86": [{"c": 2367, "n": "RCA 2367", "fat": 77109.5, "cart": 0, "tot": 77109.5, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 1, "mix": 1, "prazo": 0}], "111": [{"c": 1623, "n": "SHEILA PATRICIA LIMA BATISTA SALES ", "fat": 74503.44, "cart": 0, "tot": 74503.44, "meta": 150000, "af": 49.7, "at": 49.7, "bon": 0, "ped": 5, "mix": 5, "prazo": 13.29}], "91": [{"c": 2197, "n": "GEORGE BISPO DOS SANTOS", "fat": 40742.29, "cart": 0, "tot": 40742.29, "meta": 20000, "af": 203.7, "at": 203.7, "bon": 3850, "ped": 80, "mix": 68, "prazo": 28.23}, {"c": 2273, "n": "ROSALVO MOREIRA DOS SANTOS JUNIOR", "fat": 39028.14, "cart": 0, "tot": 39028.14, "meta": 25000, "af": 156.1, "at": 156.1, "bon": 0, "ped": 35, "mix": 28, "prazo": 58.92}, {"c": 2338, "n": "JOAO CARLOS LOPES DA CRUZ DA GUIA", "fat": 38244.41, "cart": 0, "tot": 38244.41, "meta": 85000, "af": 45.0, "at": 45.0, "bon": 0, "ped": 45, "mix": 36, "prazo": 41.26}, {"c": 2184, "n": "PABLO ARAUJO GUIMARAES", "fat": 37362.14, "cart": 0, "tot": 37362.14, "meta": 35000, "af": 106.7, "at": 106.7, "bon": 0, "ped": 27, "mix": 23, "prazo": 48.7}, {"c": 2196, "n": "MAYARA MACIEL DA CRUZ", "fat": 27456.65, "cart": 0, "tot": 27456.65, "meta": 60000, "af": 45.8, "at": 45.8, "bon": 0, "ped": 39, "mix": 30, "prazo": 42.75}, {"c": 2272, "n": "EDVA TEIXEIRA SANTOS", "fat": 22419.02, "cart": 113.01, "tot": 22532.03, "meta": 25000, "af": 89.7, "at": 90.1, "bon": 0, "ped": 33, "mix": 20, "prazo": 44.12}, {"c": 2330, "n": "IANCA SANTOS DE JESUS FREIRE", "fat": 14680.31, "cart": 0, "tot": 14680.31, "meta": 25000, "af": 58.7, "at": 58.7, "bon": 0, "ped": 22, "mix": 17, "prazo": 34.72}, {"c": 2274, "n": "GEFERSON LIMA DA SILVA", "fat": 9217.95, "cart": 0, "tot": 9217.95, "meta": 45000, "af": 20.5, "at": 20.5, "bon": 0, "ped": 10, "mix": 8, "prazo": 69.86}], "100": [{"c": 1477, "n": "JOSE CARLOS JUNIOR DUARTE - RCA GERENTE", "fat": 33964.16, "cart": 0, "tot": 33964.16, "meta": 0, "af": 0, "at": 0, "bon": 492.94, "ped": 11, "mix": 7, "prazo": 2.42}], "133": [{"c": 884, "n": "EMERSON LEVI - RCA SUPERVISOR", "fat": 31448.05, "cart": 0, "tot": 31448.05, "meta": 0, "af": 0, "at": 0, "bon": 4125.16, "ped": 93, "mix": 77, "prazo": 0.87}], "113": [{"c": 2352, "n": "GUSTAVO HENRIQUE NUNES RUIZ", "fat": 25247.1, "cart": 0, "tot": 25247.1, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 27, "mix": 20, "prazo": 52.05}], "18": [{"c": 1322, "n": "TAIANE MEIRA PINTO - RCA SUPERVISOR", "fat": 19660.94, "cart": 0, "tot": 19660.94, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 20, "mix": 19, "prazo": 1.68}], "88": [{"c": 1466, "n": "EDVANIA GERMANO RIBEIRO DA SILVA - GE", "fat": 3875.73, "cart": 0, "tot": 3875.73, "meta": 0, "af": 0, "at": 0, "bon": 598.83, "ped": 1, "mix": 1, "prazo": 0}], "58": [{"c": 2391, "n": "HANNA EVELYN ROCHA DE OLIVEIRA", "fat": 3468.68, "cart": 0, "tot": 3468.68, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 63, "mix": 1, "prazo": 0}], "59": [{"c": 2045, "n": "ALEX DE JESUS - VENDEDOR EXPOSITOR", "fat": 120.93, "cart": 0, "tot": 120.93, "meta": 0, "af": 0, "at": 0, "bon": 0, "ped": 4, "mix": 1, "prazo": 0}]};
-const META_RCA = {"7": 20000000, "2070": 3330000, "2262": 1378000, "769": 1000000, "150": 1000000, "2300": 700000, "1451": 700000, "1306": 700000, "620": 632000, "975": 551000, "2340": 500000, "2350": 500000, "3": 496000, "1246": 400000, "2": 391000, "693": 370000, "2287": 360000, "700": 350000, "1144": 350000, "6": 316000, "2204": 315000, "232": 300000, "1172": 300000, "1345": 295000, "983": 290000, "1168": 290000, "66": 277000, "877": 275000, "803": 274000, "1608": 266000, "988": 260000, "2224": 260000, "939": 260000, "65": 260000, "980": 255000, "2208": 254000, "1271": 250000, "2402": 250000, "149": 250000, "9": 246000, "1181": 241000, "607": 236000, "750": 236000, "2028": 231000, "950": 230000, "968": 228000, "2294": 226000, "1252": 220000, "1440": 220000, "1383": 220000, "2380": 220000, "457": 217000, "2286": 217000, "913": 216000, "1327": 215000, "1250": 215000, "1245": 215000, "2362": 215000, "207": 212000, "744": 210000, "959": 210000, "1382": 210000, "2337": 205000, "1379": 205000, "8": 201000, "714": 200000, "780": 200000, "2230": 200000, "1439": 200000, "1145": 200000, "1378": 200000, "1618": 200000, "252": 197000, "984": 192000, "1201": 190000, "2295": 190000, "635": 190000, "2225": 185000, "1171": 185000, "1516": 182000, "720": 180000, "1515": 180000, "749": 180000, "647": 178000, "12": 178000, "927": 170000, "2211": 170000, "508": 166000, "1619": 165000, "1222": 162500, "1388": 160000, "2293": 160000, "2292": 160000, "1604": 156000, "639": 155000, "1606": 155000, "479": 154000, "1620": 154000, "1623": 150000, "1615": 150000, "2388": 150000, "75": 150000, "1334": 147000, "1361": 145500, "2412": 145000, "2397": 145000, "932": 145000, "2409": 145000, "2415": 145000, "2413": 145000, "895": 144000, "143": 143000, "1602": 140000, "2086": 140000, "1303": 139000, "2087": 139000, "778": 138000, "685": 136000, "2400": 135000, "2398": 135000, "69": 135000, "2374": 135000, "961": 135000, "603": 132000, "429": 131000, "1355": 131000, "288": 131000, "1624": 130000, "1384": 130000, "2406": 130000, "1247": 130000, "1243": 130000, "2202": 125000, "480": 125000, "2405": 125000, "2260": 124000, "489": 124000, "1519": 124000, "721": 122000, "2432": 120000, "2328": 120000, "1244": 120000, "942": 120000, "1313": 120000, "2414": 120000, "2369": 120000, "1269": 120000, "1350": 120000, "2427": 120000, "2237": 118000, "636": 118000, "1462": 115000, "972": 115000, "1463": 115000, "1471": 115000, "1365": 115000, "585": 115000, "1011": 115000, "1225": 115000, "2085": 111000, "1520": 110000, "2424": 110000, "967": 110000, "2207": 110000, "2384": 110000, "2201": 110000, "2244": 107000, "1626": 105000, "1227": 105000, "958": 105000, "26": 102000, "1278": 101000, "1475": 101000, "1279": 101000, "905": 101000, "1241": 100000, "2363": 100000, "2331": 100000, "239": 100000, "2339": 100000, "1341": 100000, "1922": 100000, "1351": 100000, "973": 100000, "500": 100000, "2556": 100000, "2343": 100000, "1275": 100000, "1233": 100000, "1387": 100000, "218": 100000, "2349": 100000, "220": 100000, "1352": 100000, "2420": 100000, "1304": 100000, "1238": 100000, "1385": 100000, "856": 100000, "1491": 100000, "2422": 100000, "1273": 100000, "911": 100000, "520": 100000, "1165": 100000, "370": 100000, "1404": 100000, "2399": 100000, "1239": 100000, "1242": 100000, "921": 98000, "2220": 97500, "1402": 95000, "1494": 95000, "1498": 95000, "1497": 95000, "1395": 95000, "1394": 95000, "270": 95000, "1446": 95000, "1421": 90000, "912": 90000, "1464": 90000, "2156": 90000, "1226": 90000, "2214": 90000, "1277": 90000, "1393": 90000, "1600": 90000, "2411": 90000, "2407": 90000, "889": 87000, "977": 85000, "458": 85000, "2338": 85000, "2238": 82500, "2256": 82500, "2243": 82000, "2341": 80000, "2253": 80000, "1347": 80000, "1162": 80000, "2418": 80000, "2375": 80000, "1329": 80000, "2431": 80000, "2370": 80000, "1507": 80000, "773": 80000, "1614": 80000, "1330": 80000, "631": 80000, "2281": 80000, "2188": 80000, "2423": 80000, "2322": 79000, "2344": 76500, "2421": 76500, "981": 76500, "2355": 75000, "1407": 75000, "2376": 75000, "2434": 75000, "945": 75000, "814": 75000, "2430": 73000, "2252": 72000, "2210": 71500, "2395": 70000, "1381": 70000, "1493": 70000, "2296": 70000, "2366": 70000, "2435": 65250, "1342": 65250, "2419": 65000, "1434": 65000, "2212": 65000, "2196": 60000, "2326": 60000, "1409": 60000, "1164": 60000, "2284": 56500, "2387": 56000, "2245": 54500, "2389": 53000, "2336": 50000, "2417": 45000, "2274": 45000, "2270": 45000, "1367": 45000, "2354": 45000, "2390": 40000, "2083": 40000, "2184": 35000, "2273": 25000, "2272": 25000, "2330": 25000, "2197": 20000, "1510": 20000};
-const FAT_TOTAL  = 86280831.77;
-const CART_TOTAL = 833899.66;
-const META_TOTAL = 70567000.00;
+const SUPS = [{"cod":16,"sup":"CELSO NUNES DE SOUZA","vv":24705554.35,"dev":1354426.82,"vliq":23351127.53,"lucro":-1408722.65,"perc":-5.7},{"cod":66,"sup":"WATILA SANTOS DE OLIVEIRA","vv":4055230.34,"dev":0,"vliq":4055230.34,"lucro":196605.07,"perc":4.85},{"cod":13,"sup":"JOAO CARLOS DIAS LIBARINO","vv":3670241.32,"dev":937.77,"vliq":3669303.55,"lucro":42409.52,"perc":1.16},{"cod":114,"sup":"EDGAR FERNANDES CAMPOS","vv":3038466.06,"dev":0,"vliq":3038466.06,"lucro":-233220.52,"perc":-7.68},{"cod":4,"sup":"ARLETE SILVA SOUSA DE OLIVEIRA","vv":1881767.26,"dev":0,"vliq":1881767.26,"lucro":245720.56,"perc":13.06},{"cod":5,"sup":"MAISA SOUSA","vv":1794378.77,"dev":0,"vliq":1794378.77,"lucro":117998.67,"perc":6.58},{"cod":43,"sup":"SOSTENES MOAN BRITO ALMEIDA","vv":1724667.05,"dev":0,"vliq":1724667.05,"lucro":277365.66,"perc":16.08},{"cod":34,"sup":"TATIANA DE SOUSA MENDES ANDRADE","vv":1656752.59,"dev":0,"vliq":1656752.59,"lucro":278402.38,"perc":16.8},{"cod":107,"sup":"DIACUI OLIVEIRA LEAO","vv":1583400.0,"dev":0,"vliq":1583400.0,"lucro":96152.17,"perc":6.07},{"cod":8,"sup":"FRANCISCO DE ASSIS ALVES DE CARVALHO","vv":1461390.82,"dev":0,"vliq":1461390.82,"lucro":256657.62,"perc":17.56},{"cod":42,"sup":"VENDEDOR INDENIZACAO","vv":1432233.32,"dev":0,"vliq":1432233.32,"lucro":177277.44,"perc":12.38},{"cod":3,"sup":"ELIZEU JOSE PEREIRA","vv":1312741.79,"dev":0,"vliq":1312741.79,"lucro":170172.47,"perc":12.96},{"cod":96,"sup":"DERVAL SOUZA CORREA","vv":1310949.06,"dev":0,"vliq":1310949.06,"lucro":62098.9,"perc":4.74},{"cod":61,"sup":"JACKSON SOARES PEREIRA","vv":1297009.21,"dev":0,"vliq":1297009.21,"lucro":219753.53,"perc":16.94},{"cod":71,"sup":"ERIVALDO ROMANO TEIXEIRA BORGES","vv":1281855.15,"dev":0,"vliq":1281855.15,"lucro":130076.67,"perc":10.15},{"cod":84,"sup":"LUIZ CLAUDIO FREITAS SOBRAL","vv":1277839.26,"dev":0,"vliq":1277839.26,"lucro":30462.09,"perc":2.38},{"cod":12,"sup":"GIVANILDO OLIVEIRA SANTOS","vv":1275145.78,"dev":0,"vliq":1275145.78,"lucro":46340.57,"perc":3.63},{"cod":50,"sup":"JOALDO GARCIA DOS SANTOS","vv":1258939.9,"dev":0,"vliq":1258939.9,"lucro":85835.06,"perc":6.82},{"cod":76,"sup":"NELIO SANTOS SANTANA","vv":1203766.93,"dev":0,"vliq":1203766.93,"lucro":101081.11,"perc":8.4},{"cod":72,"sup":"MARIO DE JESUS FERREIRA","vv":1158245.29,"dev":0,"vliq":1158245.29,"lucro":78306.06,"perc":6.76},{"cod":112,"sup":"ADILDO BALIEIRO SILVA","vv":1091549.32,"dev":0,"vliq":1091549.32,"lucro":38575.39,"perc":3.53},{"cod":120,"sup":"VALDINO ANDRADE SANTOS","vv":1065200.71,"dev":0,"vliq":1065200.71,"lucro":203668.0,"perc":19.12},{"cod":130,"sup":"ELIVALDO FELIPE","vv":950284.39,"dev":0,"vliq":950284.39,"lucro":60070.08,"perc":6.32},{"cod":135,"sup":"JAILTON SANTOS DA SILVA","vv":947469.77,"dev":0,"vliq":947469.77,"lucro":-14249.43,"perc":-1.5},{"cod":14,"sup":"BRUNO CABRAL","vv":920672.44,"dev":0,"vliq":920672.44,"lucro":138738.45,"perc":15.07},{"cod":126,"sup":"HONORIO DE QUEIROZ SANTOS","vv":911572.56,"dev":0,"vliq":911572.56,"lucro":180173.94,"perc":19.77},{"cod":24,"sup":"JOSE AUGUSTO SILVA JUNIOR","vv":873995.0,"dev":0,"vliq":873995.0,"lucro":92903.5,"perc":10.63},{"cod":99,"sup":"JOILSON CORREIA DA SILVA","vv":860569.38,"dev":0,"vliq":860569.38,"lucro":164195.0,"perc":19.08},{"cod":60,"sup":"RCA INEXISTENTE","vv":844743.05,"dev":0,"vliq":844743.05,"lucro":171820.4,"perc":20.34},{"cod":125,"sup":"IRAN BARROS COQUEIRO","vv":808950.33,"dev":0,"vliq":808950.33,"lucro":147359.31,"perc":18.22},{"cod":41,"sup":"JOELMA BARBOSA GASPAR","vv":785818.05,"dev":0,"vliq":785818.05,"lucro":99948.9,"perc":12.72},{"cod":122,"sup":"HEBER ROCHA PINTO","vv":774659.06,"dev":0,"vliq":774659.06,"lucro":118176.51,"perc":15.26},{"cod":117,"sup":"ALA SANDRO FARIAS BASTOS","vv":736886.83,"dev":0,"vliq":736886.83,"lucro":97711.86,"perc":13.26},{"cod":105,"sup":"JULIO CESAR AZEVEDO","vv":687203.6,"dev":0,"vliq":687203.6,"lucro":66724.97,"perc":9.71},{"cod":115,"sup":"JOILSON BATISTA SILVA","vv":644938.98,"dev":0,"vliq":644938.98,"lucro":48130.49,"perc":7.46},{"cod":121,"sup":"DAISY GOMES OLIVEIRA","vv":639436.2,"dev":0,"vliq":639436.2,"lucro":103655.92,"perc":16.21},{"cod":134,"sup":"MAURICIO DA CRUZ SANTOS","vv":625730.14,"dev":0,"vliq":625730.14,"lucro":35621.42,"perc":5.69},{"cod":127,"sup":"WILDMAN DE OLIVEIRA","vv":594006.92,"dev":0,"vliq":594006.92,"lucro":116463.66,"perc":19.61},{"cod":77,"sup":"MOYSES RAMOS MOREIRA","vv":537384.91,"dev":0,"vliq":537384.91,"lucro":53950.37,"perc":10.04},{"cod":131,"sup":"ROMILDO DE JESUS","vv":478794.98,"dev":0,"vliq":478794.98,"lucro":68252.73,"perc":14.26},{"cod":118,"sup":"RODRIGO SILVA","vv":441617.37,"dev":0,"vliq":441617.37,"lucro":72949.18,"perc":16.52},{"cod":137,"sup":"JOSELINO PEREIRA DOS SANTOS","vv":419701.59,"dev":0,"vliq":419701.59,"lucro":72969.23,"perc":17.39},{"cod":93,"sup":"CARLOS ALBERTO DE SOUZA","vv":412356.49,"dev":0,"vliq":412356.49,"lucro":64774.57,"perc":15.71},{"cod":21,"sup":"GILMAR GOMES DA SILVA","vv":374228.58,"dev":0,"vliq":374228.58,"lucro":81634.8,"perc":21.81},{"cod":65,"sup":"CAIQUE THAILAN SOUZA DA SILVA","vv":323857.04,"dev":0,"vliq":323857.04,"lucro":22047.36,"perc":6.81},{"cod":52,"sup":"CLAUDIORLAN DA SILVA DIAS","vv":311962.31,"dev":0,"vliq":311962.31,"lucro":-15856.68,"perc":-5.08},{"cod":102,"sup":"JORGE LUIS DA SILVA","vv":264750.0,"dev":0,"vliq":264750.0,"lucro":-10644.05,"perc":-4.02},{"cod":136,"sup":"CLEUDSON MOREIRA SANTOS","vv":222926.08,"dev":0,"vliq":222926.08,"lucro":23392.73,"perc":10.49},{"cod":111,"sup":"HILARINO BARRETO DOS SANTOS","vv":209559.04,"dev":0,"vliq":209559.04,"lucro":32567.09,"perc":15.54},{"cod":73,"sup":"RUBENS RODRIGUES DOS SANTOS","vv":187931.74,"dev":0,"vliq":187931.74,"lucro":42021.24,"perc":22.36},{"cod":91,"sup":"MARCOS SOUZA SANTOS","vv":182037.73,"dev":0,"vliq":182037.73,"lucro":18760.54,"perc":10.31},{"cod":9,"sup":"GILBERTO PEREIRA DE JESUS","vv":169910.6,"dev":0,"vliq":169910.6,"lucro":35348.94,"perc":20.8},{"cod":104,"sup":"HERLAN MARTINS DA SILVA","vv":105752.94,"dev":0,"vliq":105752.94,"lucro":17459.74,"perc":16.51},{"cod":129,"sup":"MARCONE RAMOS GARCIA","vv":102544.09,"dev":0,"vliq":102544.09,"lucro":26731.27,"perc":26.07},{"cod":19,"sup":"VANDERLEI DUTRA SILVA","vv":83372.08,"dev":0,"vliq":83372.08,"lucro":18577.42,"perc":22.28},{"cod":86,"sup":"MARCELO SANTOS DIAS","vv":77109.5,"dev":0,"vliq":77109.5,"lucro":-82681.14,"perc":-107.23},{"cod":82,"sup":"LUSSIEDE BASTOS DOS SANTOS SILVA","vv":60753.65,"dev":0,"vliq":60753.65,"lucro":11233.67,"perc":18.49},{"cod":113,"sup":"CARLOS ALBERTO DE JESUS","vv":48122.51,"dev":0,"vliq":48122.51,"lucro":1215.54,"perc":2.53},{"cod":58,"sup":"LUCIANO SANTOS DE JESUS","vv":5160.31,"dev":0,"vliq":5160.31,"lucro":974.44,"perc":18.88},{"cod":106,"sup":"VALDECK GONCALVES MAFRA","vv":1191.12,"dev":0,"vliq":1191.12,"lucro":-68470.1,"perc":-5748.38},{"cod":18,"sup":"VINICIUS BRANDAO DOS SANTOS","vv":429.7,"dev":0,"vliq":429.7,"lucro":-4716.06,"perc":-1097.52},{"cod":59,"sup":"HILDEBERTO WAGNER DE JESUS VIEIRA","vv":120.93,"dev":0,"vliq":120.93,"lucro":24.65,"perc":20.38},{"cod":88,"sup":"EDVALDO AGUIAR DUTRA","vv":0,"dev":0,"vliq":0,"lucro":-1.22,"perc":null},{"cod":101,"sup":"SEM RCA","vv":0,"dev":376.23,"vliq":-376.23,"lucro":0,"perc":null},{"cod":133,"sup":"ORISVALDO GOMES PEREIRA JUNIOR","vv":0,"dev":0,"vliq":0,"lucro":-19492.03,"perc":null},{"cod":100,"sup":"RUBEM RIBEIRO CIDREIRA","vv":0,"dev":0,"vliq":0,"lucro":-23586.24,"perc":null},{"cod":92,"sup":"CELIO BRANDAO DE MATOS","vv":0,"dev":1750.61,"vliq":-1750.61,"lucro":0,"perc":null}];
 
 const collapseDir={};
 const collapseGer={};
 const collapseSup={};
 let allCollapsed=false;
 
-function fmtR(v){
-  if(!v||isNaN(v)||v===0)return'<span style="color:#999">—</span>';
-  if(v>=1e6)return'R$&nbsp;'+(v/1e6).toFixed(1)+'M';
-  if(v>=1e3)return'R$&nbsp;'+(v/1e3).toFixed(0)+'K';
-  return'R$&nbsp;'+v.toFixed(0);
+function fmtM(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
+  if(Math.abs(v)>=1e6)return'R$ '+(v/1e6).toFixed(2)+'M';
+  if(Math.abs(v)>=1e3)return'R$ '+(v/1e3).toFixed(0)+'K';
+  return'R$ '+v.toFixed(0);
 }
-function fmtPct(v){
-  if(!v||isNaN(v))return'<span style="color:#999">—</span>';
-  const c=v>=100?'pct-ok':v>=90?'pct-warn':'pct-bad';
-  return`<span class="${c}">${v.toFixed(1)}%</span>`;
+function fmtP(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
+  var c=v>=15?'pct-ok':v>=5?'pct-warn':'pct-bad';
+  return'<span class="'+c+'">'+v.toFixed(2)+'%</span>';
 }
-function fmtN(v){return(!v||isNaN(v)||v===0)?'<span style="color:#999">—</span>':v.toLocaleString('pt-BR');}
-
-function miniBar(fat,cart,meta){
-  if(!meta||meta===0)return'';
-  const pf=Math.min((fat||0)/meta*100,100);
-  const pc=Math.min((cart||0)/meta*100,Math.max(0,100-pf));
-  return`<div style="display:flex;align-items:center;gap:5px">
-    <div class="mini-bar-wrap"><div class="mini-fat" style="width:${pf.toFixed(1)}%"></div><div class="mini-cart" style="width:${pc.toFixed(1)}%"></div></div>
-    <span style="font-size:10px;color:#6B7280">${pf.toFixed(0)}%</span>
-  </div>`;
+function fmtV(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
+  var cls=v>0?'vl-pos':v<0?'vl-neg':'';
+  return cls?'<span class="'+cls+'">'+fmtM(v)+'</span>':fmtM(v);
 }
+function esc(k){return(k||'').replace(/[^a-zA-Z0-9]/g,'_');}
 
 function buildData(){
-  const dirs={};
-  SUPS.forEach(s=>{
-    const d=DIRETORIA_MAP[s.cod]||'SEM DIRETORIA';
-    const gi=GERENTE_MAP[s.cod]||{g:0,n:'SEM GERENTE'};
-    const gk=d+'__'+gi.n;
-    if(!dirs[d])dirs[d]={name:d,gers:{},fat:0,cart:0,tot:0,meta:0,ped:0,mix:0,bon:0,n:0};
-    if(!dirs[d].gers[gk])dirs[d].gers[gk]={name:gi.n,sups:[],fat:0,cart:0,tot:0,meta:0,ped:0,mix:0,bon:0,n:0};
-    dirs[d].fat+=(s.fat||0);dirs[d].cart+=(s.cart||0);dirs[d].tot+=(s.tot||0);dirs[d].meta+=(s.meta||0);
-    dirs[d].ped+=(s.ped||0);dirs[d].bon+=(s.bon||0);dirs[d].n++;
-    dirs[d].gers[gk].fat+=(s.fat||0);dirs[d].gers[gk].cart+=(s.cart||0);
-    dirs[d].gers[gk].tot+=(s.tot||0);dirs[d].gers[gk].meta+=(s.meta||0);
-    dirs[d].gers[gk].ped+=(s.ped||0);dirs[d].gers[gk].bon+=(s.bon||0);dirs[d].gers[gk].n++;
+  var dirs={};
+  SUPS.forEach(function(s){
+    var d=DIRETORIA_MAP[s.cod]||'SEM DIRETORIA';
+    var gi=GERENTE_MAP[s.cod]||{g:0,n:'SEM GERENTE'};
+    var gk=d+'__'+gi.n;
+    if(!dirs[d])dirs[d]={name:d,gers:{},vv:0,dev:0,vliq:0,lucro:0,n:0};
+    if(!dirs[d].gers[gk])dirs[d].gers[gk]={name:gi.n,sups:[],vv:0,dev:0,vliq:0,lucro:0,n:0};
+    dirs[d].vv+=(s.vv||0);dirs[d].dev+=(s.dev||0);
+    dirs[d].vliq+=(s.vliq||0);dirs[d].lucro+=(s.lucro||0);dirs[d].n++;
+    dirs[d].gers[gk].vv+=(s.vv||0);dirs[d].gers[gk].dev+=(s.dev||0);
+    dirs[d].gers[gk].vliq+=(s.vliq||0);dirs[d].gers[gk].lucro+=(s.lucro||0);dirs[d].gers[gk].n++;
     dirs[d].gers[gk].sups.push(s);
   });
   return dirs;
 }
 
 function renderTable(){
-  const filterDir=document.getElementById('selDir').value;
-  const busca=(document.getElementById('busca').value||'').toLowerCase();
-  const dirs=buildData();
-  const rows=[];
+  var filterDir=document.getElementById('selDir').value;
+  var busca=(document.getElementById('busca').value||'').toLowerCase();
+  var dirs=buildData();
+  var rows=[];
+  var totVV=0,totDev=0,totVliq=0,totLucro=0,supCount=0;
 
-  Object.entries(dirs).sort((a,b)=>b[1].fat-a[1].fat).forEach(([dname,ddata])=>{
+  Object.entries(dirs).sort(function(a,b){return b[1].vv-a[1].vv;}).forEach(function(entry){
+    var dname=entry[0],ddata=entry[1];
     if(filterDir&&dname!==filterDir)return;
-    if(busca&&!matchDir(dname,ddata,busca))return;
+    var matchD=!busca||dname.toLowerCase().includes(busca)||
+      Object.values(ddata.gers).some(function(g){
+        return g.name.toLowerCase().includes(busca)||
+          g.sups.some(function(s){return s.sup.toLowerCase().includes(busca);});
+      });
+    if(!matchD)return;
 
-    const dk=esc(dname);
-    const col=DIR_COLORS[dname]||'#37474F';
-    const af=ddata.meta?(ddata.fat/ddata.meta*100):0;
-    const at=ddata.meta?(ddata.tot/ddata.meta*100):af;
-    const pp=FAT_TOTAL?(ddata.fat/FAT_TOTAL*100):0;
-    const isCollDir=collapseDir[dname]||false;
+    totVV+=ddata.vv;totDev+=ddata.dev;totVliq+=ddata.vliq;totLucro+=ddata.lucro;
+    supCount+=ddata.n;
 
-    rows.push(`<tr class="dir-row tog" style="background:${col}" onclick="toggleDir('${dname}')">
-      <td><span class="chevron" id="chd_${dk}">${isCollDir?'▶':'▼'}</span> ${dname}</td>
-      <td style="text-align:right;color:rgba(255,204,128,.9)">${fmtR(ddata.meta)}</td>
-      <td style="text-align:right">${fmtPct(af)}</td>
-      <td style="text-align:right;color:#80CBC4">${fmtR(ddata.fat)}</td>
-      <td style="text-align:right;color:#90CAF9">${ddata.cart?fmtR(ddata.cart):'<span style="color:rgba(255,255,255,.3)">—</span>'}</td>
-      <td style="text-align:right;color:#fff">${fmtR(ddata.tot)}</td>
-      <td style="text-align:right">${fmtPct(at)}</td>
-      <td style="text-align:right;color:rgba(255,255,255,.7)">${fmtR(ddata.bon)}</td>
-      <td style="text-align:right">—</td>
-      <td style="text-align:right;color:rgba(255,255,255,.7)">${fmtN(ddata.ped)}</td>
-      <td style="text-align:right">—</td>
-      <td style="text-align:right;color:rgba(255,255,255,.8)">${pp.toFixed(1)}%</td>
-    </tr>`);
+    var col=DIR_COLORS[dname]||'#37474F';
+    var dk=esc(dname);
+    var pLuc=ddata.vv?ddata.lucro/ddata.vv*100:0;
+    var isCollDir=collapseDir[dname]||false;
+    rows.push('<tr class="dir-row tog" style="background:'+col+'" onclick="toggleDir(''+dname+'')">'+
+      '<td><span class="chevron" id="chd_'+dk+'">'+(isCollDir?'▶':'▼')+'</span> '+dname+'</td>'+
+      '<td>'+fmtM(ddata.vv)+'</td>'+
+      '<td>'+(ddata.dev?'<span style="color:#FFCC80">'+fmtM(ddata.dev)+'</span>':'<span style="opacity:.35">—</span>')+'</td>'+
+      '<td>'+fmtM(ddata.vliq)+'</td>'+
+      '<td>'+fmtV(ddata.lucro)+'</td>'+
+      '<td>'+fmtP(pLuc)+'</td>'+
+    '</tr>');
 
     if(isCollDir)return;
 
-    Object.entries(ddata.gers).sort((a,b)=>b[1].fat-a[1].fat).forEach(([gk,gdata])=>{
-      if(busca&&!matchGer(gdata,busca))return;
-      const gkesc=esc(gk);
-      const gaf=gdata.meta?(gdata.fat/gdata.meta*100):0;
-      const gat=gdata.meta?(gdata.tot/gdata.meta*100):gaf;
-      const gpp=FAT_TOTAL?(gdata.fat/FAT_TOTAL*100):0;
-      const isCollGer=collapseGer[gk]||false;
-
-      rows.push(`<tr class="ger-row tog" onclick="toggleGer('${gkesc}','${gk}')">
-        <td><span class="chevron" id="chg_${gkesc}">${isCollGer?'▶':'▼'}</span> ${gdata.name}</td>
-        <td style="text-align:right">${fmtR(gdata.meta)}</td>
-        <td style="text-align:right">${fmtPct(gaf)}</td>
-        <td style="text-align:right" class="num-fat">${fmtR(gdata.fat)}</td>
-        <td style="text-align:right" class="num-cart">${gdata.cart?fmtR(gdata.cart):'—'}</td>
-        <td style="text-align:right">${fmtR(gdata.tot)}</td>
-        <td style="text-align:right">${fmtPct(gat)}</td>
-        <td style="text-align:right">${fmtR(gdata.bon)}</td>
-        <td style="text-align:right">—</td>
-        <td style="text-align:right">${fmtN(gdata.ped)}</td>
-        <td style="text-align:right">—</td>
-        <td style="text-align:right">${gpp.toFixed(1)}%</td>
-      </tr>`);
-
+    Object.entries(ddata.gers).sort(function(a,b){return b[1].vv-a[1].vv;}).forEach(function(gentry){
+      var gk=gentry[0],gdata=gentry[1];
+      var matchG=!busca||gdata.name.toLowerCase().includes(busca)||
+        gdata.sups.some(function(s){return s.sup.toLowerCase().includes(busca);});
+      if(!matchG)return;
+      var gkesc=esc(gk);
+      var gPLuc=gdata.vv?gdata.lucro/gdata.vv*100:0;
+      var isCollGer=collapseGer[gk]||false;
+      rows.push('<tr class="ger-row tog" onclick="toggleGer(''+gkesc+'',''+gk+'')">'+
+        '<td style="padding-left:26px"><span class="chevron" id="chg_'+gkesc+'">'+(isCollGer?'▶':'▼')+'</span> '+gdata.name+'</td>'+
+        '<td>'+fmtM(gdata.vv)+'</td>'+
+        '<td>'+(gdata.dev?'<span style="color:var(--or)">'+fmtM(gdata.dev)+'</span>':'—')+'</td>'+
+        '<td>'+fmtM(gdata.vliq)+'</td>'+
+        '<td>'+fmtV(gdata.lucro)+'</td>'+
+        '<td>'+fmtP(gPLuc)+'</td>'+
+      '</tr>');
       if(isCollGer)return;
-
-      gdata.sups.sort((a,b)=>(b.fat||0)-(a.fat||0)).forEach(s=>{
-        if(busca&&!matchSup(s,busca))return;
-        const saf=s.meta?(s.fat/s.meta*100):0;
-        const sat=s.meta?(s.tot/s.meta*100):saf;
-        const spp=FAT_TOTAL?(s.fat/FAT_TOTAL*100):0;
-        const rcaList=RCA[String(s.cod)]||[];
-        const isCollSup=collapseSup[s.cod]||false;
-
-        rows.push(`<tr class="sup-row tog" onclick="toggleSup(${s.cod})">
-          <td><span class="chevron" id="chs_${s.cod}">${isCollSup?'▶':'▼'}</span> [${s.cod}] ${s.sup}</td>
-          <td style="text-align:right">${fmtR(s.meta)}</td>
-          <td style="text-align:right">${fmtPct(saf)}</td>
-          <td style="text-align:right" class="num-fat">${fmtR(s.fat)}</td>
-          <td style="text-align:right" class="num-cart">${s.cart?fmtR(s.cart):'—'}</td>
-          <td style="text-align:right" class="num-tot">${fmtR(s.tot)}</td>
-          <td style="text-align:right">${fmtPct(sat)}</td>
-          <td style="text-align:right">${fmtR(s.bon)}</td>
-          <td style="text-align:right">${s.mix||'—'}</td>
-          <td style="text-align:right">${fmtN(s.ped)}</td>
-          <td style="text-align:right">${s.prazo?s.prazo.toFixed(1):'—'}</td>
-          <td style="text-align:right">${miniBar(s.fat,s.cart,s.meta||1)}</td>
-        </tr>`);
-
-        if(isCollSup)return;
-
-        rcaList.forEach(r=>{
-          if(busca&&!r.n.toLowerCase().includes(busca))return;
-          const rmeta=META_RCA[r.c]||r.meta||0;
-          const raf=rmeta?(r.fat/rmeta*100):0;
-          const rat=rmeta?(r.tot/rmeta*100):raf;
-          rows.push(`<tr class="rca-row">
-            <td>[${r.c}] ${r.n}</td>
-            <td style="text-align:right">${rmeta?fmtR(rmeta):'—'}</td>
-            <td style="text-align:right">${rmeta?fmtPct(raf):'—'}</td>
-            <td style="text-align:right" class="num-fat">${fmtR(r.fat)}</td>
-            <td style="text-align:right" class="num-cart">${r.cart?fmtR(r.cart):'—'}</td>
-            <td style="text-align:right">${fmtR(r.tot||r.fat)}</td>
-            <td style="text-align:right">${rmeta?fmtPct(rat):'—'}</td>
-            <td style="text-align:right">${r.bon?fmtR(r.bon):'—'}</td>
-            <td style="text-align:right">${r.mix||'—'}</td>
-            <td style="text-align:right">${fmtN(r.ped)}</td>
-            <td style="text-align:right">${r.prazo?r.prazo.toFixed(1):'—'}</td>
-            <td style="text-align:right">${miniBar(r.fat,r.cart,rmeta||1)}</td>
-          </tr>`);
-        });
+      gdata.sups.sort(function(a,b){return(b.vv||0)-(a.vv||0);}).forEach(function(s){
+        var matchS=!busca||s.sup.toLowerCase().includes(busca);
+        if(!matchS)return;
+        var sPLuc=s.vv?s.lucro/s.vv*100:(s.perc||0);
+        rows.push('<tr class="sup-row tog" onclick="toggleSup('+s.cod+')">'+
+          '<td style="padding-left:40px">['+s.cod+'] '+s.sup+'</td>'+
+          '<td>'+fmtM(s.vv)+'</td>'+
+          '<td>'+(s.dev?'<span style="color:var(--or)">'+fmtM(s.dev)+'</span>':'—')+'</td>'+
+          '<td>'+fmtM(s.vliq)+'</td>'+
+          '<td>'+fmtV(s.lucro)+'</td>'+
+          '<td>'+fmtP(sPLuc)+'</td>'+
+        '</tr>');
       });
     });
   });
 
   document.getElementById('tbody').innerHTML=rows.join('');
-  // Update table count
-  var supCount=0;
-  SUPS.forEach(function(s){
-    var d=DIRETORIA_MAP[s.cod]||'SEM DIRETORIA';
-    var fDir=document.getElementById('selDir').value;
-    if(fDir&&d!==fDir)return;
-    supCount++;
-  });
+
   var el=document.getElementById('tbl-count');
   if(el)el.textContent=supCount+' supervisores';
-  // Update tfoot totals
-  var fDir2=document.getElementById('selDir').value;
-  var totFat=0,totCart=0,totMeta=0,totBon=0,totPed=0;
-  SUPS.forEach(function(s){
-    var d=DIRETORIA_MAP[s.cod]||'SEM DIRETORIA';
-    if(fDir2&&d!==fDir2)return;
-    totFat+=(s.fat||0);totCart+=(s.cart||0);totMeta+=(s.meta||0);totBon+=(s.bon||0);totPed+=(s.ped||0);
-  });
-  var totTot=totFat+totCart;
-  var totAf=totMeta?(totFat/totMeta*100):0;
-  var totAt=totMeta?(totTot/totMeta*100):0;
+
+  var totPLuc=totVV?totLucro/totVV*100:0;
   var tf=document.getElementById('tfoot');
-  if(tf)tf.innerHTML='<tr><td><strong>&#931; TOTAL GERAL</strong></td><td>'+fmtR(totMeta)+'</td><td>'+fmtPct(totAf)+'</td><td class="num-fat">'+fmtR(totFat)+'</td><td class="num-cart">'+(totCart?fmtR(totCart):'—')+'</td><td class="num-tot">'+fmtR(totTot)+'</td><td>'+fmtPct(totAt)+'</td><td>'+fmtR(totBon)+'</td><td>—</td><td class="n">'+totPed.toLocaleString('pt-BR')+'</td><td>—</td><td>100%</td></tr>';
+  if(tf)tf.innerHTML='<tr>'+
+    '<td>&#931; TOTAL GERAL</td>'+
+    '<td>'+fmtM(totVV)+'</td>'+
+    '<td><span style="color:var(--or)">'+fmtM(totDev)+'</span></td>'+
+    '<td>'+fmtM(totVliq)+'</td>'+
+    '<td>'+fmtV(totLucro)+'</td>'+
+    '<td>'+fmtP(totPLuc)+'</td>'+
+  '</tr>';
 }
 
-function esc(k){return(k||'').replace(/[^a-zA-Z0-9]/g,'_');}
-function matchDir(dname,ddata,b){
-  if(dname.toLowerCase().includes(b))return true;
-  return Object.values(ddata.gers).some(g=>matchGer(g,b));
-}
-function matchGer(g,b){
-  if(g.name.toLowerCase().includes(b))return true;
-  return g.sups.some(s=>matchSup(s,b));
-}
-function matchSup(s,b){
-  if(s.sup.toLowerCase().includes(b))return true;
-  return(RCA[String(s.cod)]||[]).some(r=>r.n.toLowerCase().includes(b));
-}
-function toggleDir(dname){collapseDir[dname]=!collapseDir[dname];renderTable();}
-function toggleGer(gkesc,gk){collapseGer[gk]=!collapseGer[gk];renderTable();}
-function toggleSup(cod){collapseSup[cod]=!collapseSup[cod];renderTable();}
+function toggleDir(d){collapseDir[d]=!collapseDir[d];renderTable();}
+function toggleGer(ge,gk){collapseGer[gk]=!collapseGer[gk];renderTable();}
+function toggleSup(c){}
 function toggleAll(){
   allCollapsed=!allCollapsed;
-  const dirs=buildData();
-  Object.keys(dirs).forEach(d=>collapseDir[d]=allCollapsed);
+  var dirs=buildData();
+  Object.keys(dirs).forEach(function(d){collapseDir[d]=allCollapsed;});
   renderTable();
-  document.querySelector('.btn-collapse').textContent=allCollapsed?'Expandir Tudo':'Recolher Tudo';
+  document.querySelector('.btn-collapse').lastChild.textContent=allCollapsed?' Expandir Tudo':' Recolher Tudo';
 }
 
 renderTable();
