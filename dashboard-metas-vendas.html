@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestão Comercial – Meta &amp; Vendas 2026 — Cabral &amp; Sousa</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gestão Comercial – Meta & Vendas 2026 — Cabral & Sousa</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -11,7 +11,7 @@
   --r:#D93025;--r2:#B71C1C;
   --bg:#F4F5F7;--card:#FFF;--bd:#E0E4EA;
   --gr:#1B7F3E;--yw:#C87A00;--re:#C0392B;--bl:#1565C0;
-  --or:#E65100;--cy:#0077B6;
+  --or:#E65100;--cy:#0077B6;--pu:#6A1B9A;
   --tx:#1A1A2E;--mu:#6B7280;
   --fn:'Roboto',system-ui,sans-serif;
   --sh:0 1px 4px rgba(0,0,0,.07);
@@ -23,15 +23,15 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fn);min-height:100vh
 ::-webkit-scrollbar-track{background:#E8EAED;}
 ::-webkit-scrollbar-thumb{background:var(--r);border-radius:3px;}
 
-/* ── PORTAL NAV ── */
+/* PORTAL NAV */
 #cs-portal-nav{position:fixed;top:0;left:0;right:0;z-index:9999;height:40px;background:#B71C1C;display:flex;align-items:center;padding:0 18px;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,.25);}
-.cs-pnav-home{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:.7rem;font-weight:700;padding:4px 13px;border-radius:20px;white-space:nowrap;transition:background .15s;}
-.cs-pnav-home:hover{background:rgba(255,255,255,.28);}
-.cs-pnav-sep{width:1px;height:18px;background:rgba(255,255,255,.25);flex-shrink:0;}
-.cs-pnav-crumb{display:flex;align-items:center;gap:6px;font-size:.68rem;color:rgba(255,255,255,.75);}
-.cs-pnav-crumb span{color:rgba(255,255,255,.45);}
+.pnav-home{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;transition:background .15s;}
+.pnav-home:hover{background:rgba(255,255,255,.28);}
+.pnav-sep{width:1px;height:18px;background:rgba(255,255,255,.25);flex-shrink:0;}
+.pnav-crumb{font-size:.67rem;color:rgba(255,255,255,.7);}
+.pnav-upd{margin-left:auto;font-size:.6rem;color:rgba(255,255,255,.55);white-space:nowrap;}
 
-/* ── HEADER ── */
+/* HEADER */
 .hdr{background:var(--r);padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:40px;z-index:300;height:62px;box-shadow:0 3px 12px rgba(183,28,28,.35);}
 .hl{display:flex;align-items:center;gap:14px;}
 .hlogo{height:34px;filter:brightness(0) invert(1);opacity:.95;}
@@ -39,104 +39,104 @@ body{background:var(--bg);color:var(--tx);font-family:var(--fn);min-height:100vh
 .htit{color:#fff;font-weight:700;font-size:.9rem;line-height:1.25;}
 .hsub{color:rgba(255,255,255,.6);font-size:.6rem;margin-top:2px;}
 .hr{display:flex;gap:8px;align-items:center;}
-.pill{font-size:.63rem;font-weight:600;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;}
+.pill{font-size:.63rem;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;}
 .pill-g{background:rgba(27,127,62,.65);border-color:rgba(165,214,167,.5);}
 .btn-ref{display:flex;align-items:center;gap:5px;font-size:.68rem;font-weight:700;padding:6px 13px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);color:#fff;cursor:pointer;font-family:var(--fn);transition:all .15s;}
 .btn-ref:hover{background:rgba(255,255,255,.25);}
 
-/* ── NAV ── */
+/* NAV */
 .nav{display:flex;background:var(--card);border-bottom:2px solid var(--r);padding:0 24px;box-shadow:0 2px 6px rgba(0,0,0,.06);position:sticky;top:102px;z-index:200;}
 .nt{display:flex;align-items:center;gap:6px;padding:11px 18px;font-size:.76rem;font-weight:500;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .15s;margin-bottom:-2px;}
 .nt:hover{color:var(--r);}
 .nt.on{color:var(--r);border-bottom-color:var(--r);font-weight:700;}
-.nt .nbdg{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:20px;background:#FDECEA;color:var(--r);}
+.nbdg{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:20px;background:#FDECEA;color:var(--r);}
 
-/* ── PAGE ── */
-.pg{display:none;padding:22px 24px 50px;}
+/* PAGE */
+.pg{display:none;padding:20px 24px 50px;}
 .pg.on{display:block;}
 
-/* ── HERO ── */
+/* HERO */
 .hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px;}
 @media(max-width:900px){.hero{grid-template-columns:1fr 1fr;}}
 @media(max-width:580px){.hero{grid-template-columns:1fr;}}
-.hero-card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px 22px;box-shadow:var(--sh2);position:relative;overflow:hidden;}
-.hero-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;border-radius:12px 12px 0 0;}
+.hcard{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px 22px;box-shadow:var(--sh2);position:relative;overflow:hidden;}
+.hcard::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;}
 .hc-r::before{background:linear-gradient(90deg,var(--r),#EF5350);}
 .hc-b::before{background:linear-gradient(90deg,var(--bl),#42A5F5);}
 .hc-g::before{background:linear-gradient(90deg,var(--gr),#43A047);}
-.hero-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
-.hico{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.hlbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--mu);margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.hico{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
 .hico-r{background:#FDECEA;color:var(--r);}
 .hico-b{background:#E3F2FD;color:var(--bl);}
 .hico-g{background:#E8F5E9;color:var(--gr);}
-.hero-val{font-size:1.9rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
-.hero-val.c-r{color:var(--r);}
-.hero-val.c-b{color:var(--bl);}
-.hero-val.c-g{color:var(--gr);}
-.hero-val.c-y{color:var(--yw);}
-.hero-sub{font-size:.68rem;color:var(--mu);margin-top:7px;}
-.hero-sub b{color:var(--tx);}
-.hero-row{display:flex;gap:8px;margin-top:14px;}
-.hero-mini{flex:1;background:#F7F8FA;border-radius:8px;padding:9px 11px;border:1px solid var(--bd);}
-.hero-mini .hm-lbl{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);margin-bottom:3px;}
-.hero-mini .hm-val{font-size:.95rem;font-weight:800;font-variant-numeric:tabular-nums;}
+.hval{font-size:1.85rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
+.hval.cr{color:var(--r);} .hval.cb{color:var(--bl);} .hval.cg{color:var(--gr);}
+.hsub2{font-size:.67rem;color:var(--mu);margin-top:7px;}
+.hsub2 b{color:var(--tx);}
+.hrow{display:flex;gap:8px;margin-top:14px;}
+.hmini{flex:1;background:#F7F8FA;border-radius:8px;padding:9px 11px;border:1px solid var(--bd);}
+.hmini .ml{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);margin-bottom:3px;}
+.hmini .mv{font-size:.92rem;font-weight:800;font-variant-numeric:tabular-nums;}
 
-/* ── SECTION HEADER ── */
+/* SEC HEADER */
 .sec-hdr{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);padding:5px 2px 9px;margin-top:4px;margin-bottom:12px;border-bottom:2px solid var(--bd);display:flex;align-items:center;gap:8px;}
 .sec-hdr::before{content:'';display:block;width:3px;height:14px;background:var(--r);border-radius:2px;flex-shrink:0;}
 
-/* ── TOOLBAR ── */
+/* TOOLBAR */
 .toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px;background:var(--card);padding:10px 14px;border-radius:10px;border:1px solid var(--bd);box-shadow:var(--sh);}
-.tb-lbl{font-size:.65rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
+.tblbl{font-size:.65rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;}
 .toolbar select,.toolbar input[type=text]{font-size:.72rem;padding:7px 11px;border:1px solid var(--bd);border-radius:8px;color:var(--tx);background:#fff;font-family:var(--fn);outline:none;transition:border-color .15s;}
 .toolbar select:focus,.toolbar input[type=text]:focus{border-color:var(--r);}
-.tb-sep{width:1px;height:22px;background:var(--bd);flex-shrink:0;}
-.btn-collapse{margin-left:auto;background:transparent;color:var(--r);border:1.5px solid var(--r);border-radius:8px;padding:6px 14px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap;}
-.btn-collapse:hover{background:var(--r);color:#fff;}
+.tbsep{width:1px;height:22px;background:var(--bd);flex-shrink:0;}
+.btn-col{margin-left:auto;background:transparent;color:var(--r);border:1.5px solid var(--r);border-radius:8px;padding:6px 14px;font-size:.7rem;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s;display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.btn-col:hover{background:var(--r);color:#fff;}
 
-/* ── TABLE ── */
+/* TABLE */
 .tw{background:var(--card);border:1px solid var(--bd);border-top:3px solid var(--r);border-radius:12px;overflow:hidden;box-shadow:var(--sh2);}
-.th2{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:linear-gradient(90deg,#FAFBFC,#F7F8FA);border-bottom:1px solid var(--bd);}
+.th2{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;background:linear-gradient(90deg,#FAFBFC,#F7F8FA);border-bottom:1px solid var(--bd);gap:10px;flex-wrap:wrap;}
 .th2 h3{font-size:.8rem;font-weight:700;color:var(--tx);}
+.th2-right{display:flex;align-items:center;gap:8px;}
 .tc2{font-size:.67rem;color:var(--mu);background:#F0F2F5;padding:3px 10px;border-radius:20px;font-weight:600;}
-.ts{overflow-x:auto;max-height:640px;overflow-y:auto;}
+.ts{overflow-x:auto;max-height:660px;overflow-y:auto;}
 table{width:100%;border-collapse:collapse;font-size:.72rem;}
-thead th{background:#F0F2F5;padding:9px 12px;text-align:right;font-size:.59rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);font-weight:700;border-bottom:2px solid #D0D5DD;white-space:nowrap;position:sticky;top:0;z-index:2;}
-thead th:first-child{text-align:left;padding-left:14px;}
-thead th.c-fat{color:var(--r);}
-thead th.c-dev{color:var(--or);}
-thead th.c-liq{color:var(--bl);}
-thead th.c-luc{color:var(--gr);}
-thead th.c-pct{color:var(--gr);}
+thead th{background:#F0F2F5;padding:9px 11px;text-align:right;font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mu);font-weight:700;border-bottom:2px solid #D0D5DD;white-space:nowrap;position:sticky;top:0;z-index:2;}
+thead th:first-child{text-align:left;padding-left:14px;min-width:260px;}
+thead th.cf{color:var(--r);} thead th.cd{color:var(--or);}
+thead th.cl{color:var(--bl);} thead th.cg{color:var(--gr);}
 tbody tr{border-bottom:1px solid #F0F2F5;transition:background .1s;}
 tbody tr:hover td{background:#F5F7FF;}
-tbody td{padding:8px 12px;text-align:right;white-space:nowrap;vertical-align:middle;font-variant-numeric:tabular-nums;}
+tbody td{padding:8px 11px;text-align:right;white-space:nowrap;vertical-align:middle;font-variant-numeric:tabular-nums;}
 tbody td:first-child{text-align:left;padding-left:14px;}
-tfoot tr td{padding:10px 12px;text-align:right;font-size:.72rem;font-weight:700;background:#F0F2F5;border-top:2px solid #D0D5DD;white-space:nowrap;font-variant-numeric:tabular-nums;}
-tfoot tr td:first-child{text-align:left;padding-left:14px;}
-.dir-row{cursor:pointer;}
-.dir-row td{font-weight:700;font-size:.72rem;color:#fff!important;padding-top:10px;padding-bottom:10px;}
-.ger-row{cursor:pointer;}
-.ger-row td{background:#EEF4FF;color:#1A3A6B;font-weight:600;font-size:.7rem;border-bottom:1px solid #D8E4F7;}
-.ger-row td:first-child{padding-left:26px;}
-.sup-row{cursor:pointer;}
-.sup-row td{background:#fff;font-weight:500;}
-.sup-row td:first-child{padding-left:40px;}
-.pct-ok{color:var(--gr);font-weight:700;}
-.pct-warn{color:var(--yw);font-weight:700;}
-.pct-bad{color:var(--re);font-weight:700;}
-.vl-pos{color:var(--gr);font-weight:600;}
-.vl-neg{color:var(--re);font-weight:600;}
+tfoot td{padding:10px 11px;text-align:right;font-size:.72rem;font-weight:700;background:#EAECF0;border-top:2px solid #C5CAD3;white-space:nowrap;font-variant-numeric:tabular-nums;}
+tfoot td:first-child{text-align:left;padding-left:14px;}
+
+/* ROW LEVELS */
+.r-dir{cursor:pointer;}
+.r-dir td{font-weight:700;font-size:.72rem;color:#fff!important;padding:9px 11px;}
+.r-ger{cursor:pointer;}
+.r-ger td{background:#EEF4FF;color:#1A3A6B;font-weight:600;font-size:.7rem;border-bottom:1px solid #D8E4F7;}
+.r-ger td:first-child{padding-left:26px;}
+.r-sup{cursor:pointer;}
+.r-sup td{background:#fff;font-weight:500;}
+.r-sup td:first-child{padding-left:42px;}
+.r-rca td{background:#FAFBFC;font-size:.68rem;color:#4B5563;border-bottom:1px solid #F5F5F5;}
+.r-rca td:first-child{padding-left:60px;color:var(--mu);font-weight:500;}
+
+/* helpers */
+.pos{color:var(--gr);font-weight:600;} .neg{color:var(--re);font-weight:600;}
+.pok{color:var(--gr);font-weight:700;} .pwrn{color:var(--yw);font-weight:700;} .pbad{color:var(--re);font-weight:700;}
 .tog{user-select:none;}
-.chevron{display:inline-block;transition:transform .2s;margin-right:5px;opacity:.6;font-size:.75em;}
+.ch{display:inline-block;transition:transform .18s;margin-right:4px;opacity:.55;font-size:.72em;}
+.badge-upd{display:inline-flex;align-items:center;gap:5px;font-size:.6rem;font-weight:600;padding:3px 9px;border-radius:20px;background:#E8F5E9;color:var(--gr);border:1px solid #A5D6A7;}
 </style>
 </head>
 <body>
 
 <nav id="cs-portal-nav">
-  <a class="cs-pnav-home" href="index.html">&#8962; Portal C&amp;S</a>
-  <div class="cs-pnav-sep"></div>
-  <div class="cs-pnav-crumb">Comercial <span>/</span> Meta &amp; Vendas</div>
+  <a class="pnav-home" href="index.html">&#8962; Portal C&amp;S</a>
+  <div class="pnav-sep"></div>
+  <span class="pnav-crumb">Comercial / Meta &amp; Vendas</span>
+  <span class="pnav-upd">&#128337; Atualizado em 06/04/2026 09:24</span>
 </nav>
 
 <header class="hdr">
@@ -149,10 +149,10 @@ tfoot tr td:first-child{text-align:left;padding-left:14px;}
     </div>
   </div>
   <div class="hr">
-    <span class="pill">Março/2026 — Mês encerrado</span>
-    <span class="pill pill-g">&#10003; 67 supervisores</span>
-    <span class="pill">Atualizado 31/03/2026</span>
-    <button class="btn-ref" onclick="showRefreshMsg()">
+    <span class="pill">Março/2026</span>
+    <span class="pill pill-g">&#10003; 67 supervisores · 351 RCAs</span>
+    <span class="pill" id="pill-upd">&#128337; 06/04/2026 09:24</span>
+    <button class="btn-ref" onclick="showToast('🔄 Para atualizar: execute o script de coleta Oracle e recarregue.')">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
       Atualizar
     </button>
@@ -168,60 +168,40 @@ tfoot tr td:first-child{text-align:left;padding-left:14px;}
   <div class="sec-hdr" style="margin-top:0">Resumo Financeiro — Março 2026</div>
 
   <div class="hero">
-    <div class="hero-card hc-r">
-      <div class="hero-lbl"><div class="hico hico-r">&#128200;</div>Venda Faturada</div>
-      <div class="hero-val c-r">R$ 78,2M</div>
-      <div class="hero-sub">Total faturado no mês (VP + VV)</div>
-      <div class="hero-row">
-        <div class="hero-mini">
-          <div class="hm-lbl">Devoluções</div>
-          <div class="hm-val" style="color:var(--or)">R$ 1,36M</div>
-        </div>
-        <div class="hero-mini">
-          <div class="hm-lbl">Part. Dev.</div>
-          <div class="hm-val" style="color:var(--or)">1,74%</div>
-        </div>
+    <div class="hcard hc-r">
+      <div class="hlbl"><div class="hico hico-r">&#128200;</div>Venda Faturada</div>
+      <div class="hval cr">R$ 78,08M</div>
+      <div class="hsub2">Total faturado no mês (VP + VV)</div>
+      <div class="hrow">
+        <div class="hmini"><div class="ml">Devoluções</div><div class="mv" style="color:var(--or)">R$ 1,36M</div></div>
+        <div class="hmini"><div class="ml">% Devol.</div><div class="mv" style="color:var(--or)">1.74%</div></div>
       </div>
     </div>
-
-    <div class="hero-card hc-b">
-      <div class="hero-lbl"><div class="hico hico-b">&#128176;</div>Venda Líquida</div>
-      <div class="hero-val c-b">R$ 76,8M</div>
-      <div class="hero-sub">Faturada menos Devoluções</div>
-      <div class="hero-row">
-        <div class="hero-mini">
-          <div class="hm-lbl">vs. Faturada</div>
-          <div class="hm-val" style="color:var(--bl)">-1,74%</div>
-        </div>
-        <div class="hero-mini">
-          <div class="hm-lbl">Diferença</div>
-          <div class="hm-val" style="color:var(--or)">-R$ 1,36M</div>
-        </div>
+    <div class="hcard hc-b">
+      <div class="hlbl"><div class="hico hico-b">&#128176;</div>Venda Líquida</div>
+      <div class="hval cb">R$ 76,72M</div>
+      <div class="hsub2">Faturada menos Devoluções (SR + DF)</div>
+      <div class="hrow">
+        <div class="hmini"><div class="ml">Diferença</div><div class="mv" style="color:var(--or)">-R$ 1,36M</div></div>
+        <div class="hmini"><div class="ml">vs. Faturada</div><div class="mv" style="color:var(--bl)">-1.74%</div></div>
       </div>
     </div>
-
-    <div class="hero-card hc-g">
-      <div class="hero-lbl"><div class="hico hico-g">&#9650;</div>Lucro Bruto</div>
-      <div class="hero-val c-g">R$ 3,28M</div>
-      <div class="hero-sub">Venda Faturada menos CMV</div>
-      <div class="hero-row">
-        <div class="hero-mini">
-          <div class="hm-lbl">% Lucro</div>
-          <div class="hm-val" style="color:var(--gr)">4,20%</div>
-        </div>
-        <div class="hero-mini">
-          <div class="hm-lbl">CMV Implícito</div>
-          <div class="hm-val" style="color:var(--mu)">95,80%</div>
-        </div>
+    <div class="hcard hc-g">
+      <div class="hlbl"><div class="hico hico-g">&#9650;</div>Lucro Bruto</div>
+      <div class="hval cg">R$ 5,13M</div>
+      <div class="hsub2">Venda Faturada menos CMV</div>
+      <div class="hrow">
+        <div class="hmini"><div class="ml">% Lucro</div><div class="mv" style="color:var(--gr)">6.56%</div></div>
+        <div class="hmini"><div class="ml">CMV impl.</div><div class="mv" style="color:var(--mu)">93.44%</div></div>
       </div>
     </div>
   </div>
 
-  <div class="sec-hdr">Detalhamento por Diretoria / Gerência / Supervisor</div>
+  <div class="sec-hdr">Detalhamento — Diretoria / Gerência / Supervisor / RCA</div>
 
   <div class="toolbar">
-    <span class="tb-lbl">Diretoria</span>
-    <select id="selDir" onchange="renderTable()">
+    <span class="tblbl">Diretoria</span>
+    <select id="selDir" onchange="render()">
       <option value="">Todas</option>
       <option>DIREÇÃO DISTRIBUIÇÃO</option>
       <option>DIREÇÃO MONDELEZ</option>
@@ -231,30 +211,33 @@ tfoot tr td:first-child{text-align:left;padding-left:14px;}
       <option>DIREÇÃO ATACADO ESPECIALIZADO</option>
       <option>DIREÇÃO SUPORTE</option>
     </select>
-    <div class="tb-sep"></div>
-    <span class="tb-lbl">&#128269;</span>
-    <input type="text" id="busca" placeholder="Nome do supervisor ou gerente..." style="width:240px" oninput="renderTable()">
-    <button class="btn-collapse" onclick="toggleAll()">
+    <div class="tbsep"></div>
+    <span class="tblbl">&#128269;</span>
+    <input type="text" id="busca" placeholder="Supervisor, Gerente ou RCA..." style="width:240px" oninput="render()">
+    <button class="btn-col" onclick="toggleAll()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="21 18 15 12 21 6"/></svg>
-      Recolher Tudo
+      <span id="btnTxt">Recolher Tudo</span>
     </button>
   </div>
 
   <div class="tw">
     <div class="th2">
-      <h3>&#128205; Resultado por Supervisor — Março/2026</h3>
-      <span class="tc2" id="tbl-count">carregando...</span>
+      <h3>&#128205; Resultado por Diretoria / Gerência / Supervisor / RCA — Março 2026</h3>
+      <div class="th2-right">
+        <span class="badge-upd">&#128337; 06/04/2026 09:24</span>
+        <span class="tc2" id="tblCount">carregando...</span>
+      </div>
     </div>
     <div class="ts">
       <table>
         <thead>
           <tr>
-            <th style="text-align:left;min-width:260px">Supervisor / Gerência / Diretoria</th>
-            <th class="c-fat">Venda Faturada</th>
-            <th class="c-dev">Devoluções</th>
-            <th class="c-liq">Venda Líquida</th>
-            <th class="c-luc">Lucro</th>
-            <th class="c-pct">% Lucro</th>
+            <th style="text-align:left;min-width:280px">Nível / Nome</th>
+            <th class="cf">Venda Faturada</th>
+            <th class="cd">Devoluções</th>
+            <th class="cl">Venda Líquida</th>
+            <th class="cg">Lucro</th>
+            <th class="cg">% Lucro</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -266,11 +249,10 @@ tfoot tr td:first-child{text-align:left;padding-left:14px;}
 </div>
 
 <script>
-function showRefreshMsg(){
+function showToast(msg){
   var t=document.createElement('div');
-  t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1A1A2E;color:#fff;padding:12px 24px;border-radius:10px;font-size:.78rem;font-weight:600;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,.3);';
-  t.textContent='🔄 Para atualizar: execute o script de coleta Oracle e recarregue a página.';
-  document.body.appendChild(t);
+  t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1A1A2E;color:#fff;padding:12px 22px;border-radius:10px;font-size:.78rem;font-weight:600;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,.3);';
+  t.textContent=msg; document.body.appendChild(t);
   setTimeout(function(){t.style.transition='opacity .5s';t.style.opacity='0';setTimeout(function(){t.remove();},500);},3000);
 }
 </script>
@@ -300,9 +282,7 @@ const DIRETORIA_MAP={
   129:'DIREÇÃO BAHIA FORT',131:'DIREÇÃO MONDELEZ',133:'DIREÇÃO DISTRIBUIÇÃO',
   134:'DIREÇÃO CMA',135:'DIREÇÃO CMA',136:'DIREÇÃO DISTRIBUIÇÃO',137:'DIREÇÃO MONDELEZ'
 };
-
 const GERENTE_MAP = {128:{g:0,n:"SEM GERENTE"},129:{g:16,n:"BAHIA FORT - BOEHRINGER"},3:{g:6,n:"GERENCIA DIST. SUDOESTE"},4:{g:6,n:"GERENCIA DIST. SUDOESTE"},5:{g:24,n:"GERENCIA LOJA"},131:{g:13,n:"GERENCIA MDLZ T.D. SSA"},135:{g:44,n:"CMA - GERENCIA DIST. BAUDUCCO"},8:{g:24,n:"GERENCIA LOJA"},136:{g:33,n:"GERENCIA DIST. NORTE"},134:{g:44,n:"CMA - GERENCIA DIST. BAUDUCCO"},137:{g:20,n:"GERENCIA MDLZ P.E. NORTE"},12:{g:9,n:"GERENCIA DIST. SUL/EXTREMO SUL"},13:{g:4,n:"GERENCIA DIST. MASTER"},14:{g:6,n:"GERENCIA DIST. SUDOESTE"},9:{g:24,n:"GERENCIA LOJA"},16:{g:42,n:"GERENCIA ATACADO ESPECIALIZADO"},18:{g:37,n:"GERENCIA DIST. BEBIDAS"},19:{g:5,n:"GERENCIA MDLZ P.E. INTERIOR"},21:{g:5,n:"GERENCIA MDLZ P.E. INTERIOR"},23:{g:43,n:"GERENCIA DIST. MUCURI"},24:{g:27,n:"GERENCIA DIST. OESTE"},133:{g:6,n:"GERENCIA DIST. SUDOESTE"},34:{g:17,n:"GERENCIA DIST. SUDOESTE EXCLUSIVA"},41:{g:7,n:"GERENCIA MDLZ T.D. INTERIOR"},42:{g:7,n:"GERENCIA MDLZ T.D. INTERIOR"},43:{g:7,n:"GERENCIA MDLZ T.D. INTERIOR"},48:{g:4,n:"GERENCIA DIST. MASTER"},50:{g:9,n:"GERENCIA DIST. SUL/EXTREMO SUL"},52:{g:25,n:"GERENCIA DIST. ON TRADE SUL"},58:{g:1,n:"LOJA DE FESTA/CHECK-OUT"},59:{g:8,n:"GERENTE PROMOTORES - SERGIO"},60:{g:19,n:"GERENCIA MDLZ P.E. SSA"},61:{g:13,n:"GERENCIA MDLZ T.D. SSA"},65:{g:4,n:"GERENCIA DIST. MASTER"},66:{g:22,n:"GERENCIA DIST. SSA"},71:{g:15,n:"GERENCIA MDLZ T.D. NORTE"},72:{g:15,n:"GERENCIA MDLZ T.D. NORTE"},73:{g:20,n:"GERENCIA MDLZ P.E. NORTE"},76:{g:15,n:"GERENCIA MDLZ T.D. NORTE"},77:{g:10,n:"GERENCIA DIST. ON TRADE SSA"},80:{g:4,n:"GERENCIA DIST. MASTER"},82:{g:20,n:"GERENCIA MDLZ P.E. NORTE"},84:{g:17,n:"GERENCIA DIST. SUDOESTE EXCLUSIVA"},86:{g:7,n:"GERENCIA MDLZ T.D. INTERIOR"},88:{g:10,n:"GERENCIA DIST. ON TRADE SSA"},91:{g:35,n:"BAHIA FORT - PET"},93:{g:36,n:"BAHIA FORT - GRANDES"},96:{g:27,n:"GERENCIA DIST. OESTE"},99:{g:16,n:"BAHIA FORT - BOEHRINGER"},100:{g:6,n:"GERENCIA DIST. SUDOESTE"},101:{g:0,n:"SEM GERENTE"},102:{g:4,n:"GERENCIA DIST. MASTER"},104:{g:34,n:"GERENCIA TELEVENDAS"},105:{g:33,n:"GERENCIA DIST. NORTE"},106:{g:37,n:"GERENCIA DIST. BEBIDAS"},107:{g:22,n:"GERENCIA DIST. SSA"},111:{g:10,n:"GERENCIA DIST. ON TRADE SSA"},112:{g:40,n:"MDLZ GRANDES REDES"},113:{g:35,n:"BAHIA FORT - PET"},114:{g:4,n:"GERENCIA DIST. MASTER"},115:{g:19,n:"GERENCIA MDLZ P.E. SSA"},117:{g:11,n:"GERENCIA DIST. EXPRESS PROPRIA"},118:{g:20,n:"GERENCIA MDLZ P.E. NORTE"},120:{g:11,n:"GERENCIA DIST. EXPRESS PROPRIA"},121:{g:11,n:"GERENCIA DIST. EXPRESS PROPRIA"},122:{g:11,n:"GERENCIA DIST. EXPRESS PROPRIA"},125:{g:5,n:"GERENCIA MDLZ P.E. INTERIOR"},126:{g:5,n:"GERENCIA MDLZ P.E. INTERIOR"},127:{g:5,n:"GERENCIA MDLZ P.E. INTERIOR"}};
-
 const DIR_COLORS={
   'DIREÇÃO DISTRIBUIÇÃO':'#1565C0','DIREÇÃO MONDELEZ':'#7B1FA2',
   'DIREÇÃO BAHIA FORT':'#E65100','DIREÇÃO MASTER':'#2E7D32',
@@ -310,145 +290,154 @@ const DIR_COLORS={
   'DIREÇÃO SUPORTE':'#795548'
 };
 
-const SUPS = [{"cod":16,"sup":"CELSO NUNES DE SOUZA","vv":24705554.35,"dev":1354426.82,"vliq":23351127.53,"lucro":-1408722.65,"perc":-5.7},{"cod":66,"sup":"WATILA SANTOS DE OLIVEIRA","vv":4055230.34,"dev":0,"vliq":4055230.34,"lucro":196605.07,"perc":4.85},{"cod":13,"sup":"JOAO CARLOS DIAS LIBARINO","vv":3670241.32,"dev":937.77,"vliq":3669303.55,"lucro":42409.52,"perc":1.16},{"cod":114,"sup":"EDGAR FERNANDES CAMPOS","vv":3038466.06,"dev":0,"vliq":3038466.06,"lucro":-233220.52,"perc":-7.68},{"cod":4,"sup":"ARLETE SILVA SOUSA DE OLIVEIRA","vv":1881767.26,"dev":0,"vliq":1881767.26,"lucro":245720.56,"perc":13.06},{"cod":5,"sup":"MAISA SOUSA","vv":1794378.77,"dev":0,"vliq":1794378.77,"lucro":117998.67,"perc":6.58},{"cod":43,"sup":"SOSTENES MOAN BRITO ALMEIDA","vv":1724667.05,"dev":0,"vliq":1724667.05,"lucro":277365.66,"perc":16.08},{"cod":34,"sup":"TATIANA DE SOUSA MENDES ANDRADE","vv":1656752.59,"dev":0,"vliq":1656752.59,"lucro":278402.38,"perc":16.8},{"cod":107,"sup":"DIACUI OLIVEIRA LEAO","vv":1583400.0,"dev":0,"vliq":1583400.0,"lucro":96152.17,"perc":6.07},{"cod":8,"sup":"FRANCISCO DE ASSIS ALVES DE CARVALHO","vv":1461390.82,"dev":0,"vliq":1461390.82,"lucro":256657.62,"perc":17.56},{"cod":42,"sup":"VENDEDOR INDENIZACAO","vv":1432233.32,"dev":0,"vliq":1432233.32,"lucro":177277.44,"perc":12.38},{"cod":3,"sup":"ELIZEU JOSE PEREIRA","vv":1312741.79,"dev":0,"vliq":1312741.79,"lucro":170172.47,"perc":12.96},{"cod":96,"sup":"DERVAL SOUZA CORREA","vv":1310949.06,"dev":0,"vliq":1310949.06,"lucro":62098.9,"perc":4.74},{"cod":61,"sup":"JACKSON SOARES PEREIRA","vv":1297009.21,"dev":0,"vliq":1297009.21,"lucro":219753.53,"perc":16.94},{"cod":71,"sup":"ERIVALDO ROMANO TEIXEIRA BORGES","vv":1281855.15,"dev":0,"vliq":1281855.15,"lucro":130076.67,"perc":10.15},{"cod":84,"sup":"LUIZ CLAUDIO FREITAS SOBRAL","vv":1277839.26,"dev":0,"vliq":1277839.26,"lucro":30462.09,"perc":2.38},{"cod":12,"sup":"GIVANILDO OLIVEIRA SANTOS","vv":1275145.78,"dev":0,"vliq":1275145.78,"lucro":46340.57,"perc":3.63},{"cod":50,"sup":"JOALDO GARCIA DOS SANTOS","vv":1258939.9,"dev":0,"vliq":1258939.9,"lucro":85835.06,"perc":6.82},{"cod":76,"sup":"NELIO SANTOS SANTANA","vv":1203766.93,"dev":0,"vliq":1203766.93,"lucro":101081.11,"perc":8.4},{"cod":72,"sup":"MARIO DE JESUS FERREIRA","vv":1158245.29,"dev":0,"vliq":1158245.29,"lucro":78306.06,"perc":6.76},{"cod":112,"sup":"ADILDO BALIEIRO SILVA","vv":1091549.32,"dev":0,"vliq":1091549.32,"lucro":38575.39,"perc":3.53},{"cod":120,"sup":"VALDINO ANDRADE SANTOS","vv":1065200.71,"dev":0,"vliq":1065200.71,"lucro":203668.0,"perc":19.12},{"cod":130,"sup":"ELIVALDO FELIPE","vv":950284.39,"dev":0,"vliq":950284.39,"lucro":60070.08,"perc":6.32},{"cod":135,"sup":"JAILTON SANTOS DA SILVA","vv":947469.77,"dev":0,"vliq":947469.77,"lucro":-14249.43,"perc":-1.5},{"cod":14,"sup":"BRUNO CABRAL","vv":920672.44,"dev":0,"vliq":920672.44,"lucro":138738.45,"perc":15.07},{"cod":126,"sup":"HONORIO DE QUEIROZ SANTOS","vv":911572.56,"dev":0,"vliq":911572.56,"lucro":180173.94,"perc":19.77},{"cod":24,"sup":"JOSE AUGUSTO SILVA JUNIOR","vv":873995.0,"dev":0,"vliq":873995.0,"lucro":92903.5,"perc":10.63},{"cod":99,"sup":"JOILSON CORREIA DA SILVA","vv":860569.38,"dev":0,"vliq":860569.38,"lucro":164195.0,"perc":19.08},{"cod":60,"sup":"RCA INEXISTENTE","vv":844743.05,"dev":0,"vliq":844743.05,"lucro":171820.4,"perc":20.34},{"cod":125,"sup":"IRAN BARROS COQUEIRO","vv":808950.33,"dev":0,"vliq":808950.33,"lucro":147359.31,"perc":18.22},{"cod":41,"sup":"JOELMA BARBOSA GASPAR","vv":785818.05,"dev":0,"vliq":785818.05,"lucro":99948.9,"perc":12.72},{"cod":122,"sup":"HEBER ROCHA PINTO","vv":774659.06,"dev":0,"vliq":774659.06,"lucro":118176.51,"perc":15.26},{"cod":117,"sup":"ALA SANDRO FARIAS BASTOS","vv":736886.83,"dev":0,"vliq":736886.83,"lucro":97711.86,"perc":13.26},{"cod":105,"sup":"JULIO CESAR AZEVEDO","vv":687203.6,"dev":0,"vliq":687203.6,"lucro":66724.97,"perc":9.71},{"cod":115,"sup":"JOILSON BATISTA SILVA","vv":644938.98,"dev":0,"vliq":644938.98,"lucro":48130.49,"perc":7.46},{"cod":121,"sup":"DAISY GOMES OLIVEIRA","vv":639436.2,"dev":0,"vliq":639436.2,"lucro":103655.92,"perc":16.21},{"cod":134,"sup":"MAURICIO DA CRUZ SANTOS","vv":625730.14,"dev":0,"vliq":625730.14,"lucro":35621.42,"perc":5.69},{"cod":127,"sup":"WILDMAN DE OLIVEIRA","vv":594006.92,"dev":0,"vliq":594006.92,"lucro":116463.66,"perc":19.61},{"cod":77,"sup":"MOYSES RAMOS MOREIRA","vv":537384.91,"dev":0,"vliq":537384.91,"lucro":53950.37,"perc":10.04},{"cod":131,"sup":"ROMILDO DE JESUS","vv":478794.98,"dev":0,"vliq":478794.98,"lucro":68252.73,"perc":14.26},{"cod":118,"sup":"RODRIGO SILVA","vv":441617.37,"dev":0,"vliq":441617.37,"lucro":72949.18,"perc":16.52},{"cod":137,"sup":"JOSELINO PEREIRA DOS SANTOS","vv":419701.59,"dev":0,"vliq":419701.59,"lucro":72969.23,"perc":17.39},{"cod":93,"sup":"CARLOS ALBERTO DE SOUZA","vv":412356.49,"dev":0,"vliq":412356.49,"lucro":64774.57,"perc":15.71},{"cod":21,"sup":"GILMAR GOMES DA SILVA","vv":374228.58,"dev":0,"vliq":374228.58,"lucro":81634.8,"perc":21.81},{"cod":65,"sup":"CAIQUE THAILAN SOUZA DA SILVA","vv":323857.04,"dev":0,"vliq":323857.04,"lucro":22047.36,"perc":6.81},{"cod":52,"sup":"CLAUDIORLAN DA SILVA DIAS","vv":311962.31,"dev":0,"vliq":311962.31,"lucro":-15856.68,"perc":-5.08},{"cod":102,"sup":"JORGE LUIS DA SILVA","vv":264750.0,"dev":0,"vliq":264750.0,"lucro":-10644.05,"perc":-4.02},{"cod":136,"sup":"CLEUDSON MOREIRA SANTOS","vv":222926.08,"dev":0,"vliq":222926.08,"lucro":23392.73,"perc":10.49},{"cod":111,"sup":"HILARINO BARRETO DOS SANTOS","vv":209559.04,"dev":0,"vliq":209559.04,"lucro":32567.09,"perc":15.54},{"cod":73,"sup":"RUBENS RODRIGUES DOS SANTOS","vv":187931.74,"dev":0,"vliq":187931.74,"lucro":42021.24,"perc":22.36},{"cod":91,"sup":"MARCOS SOUZA SANTOS","vv":182037.73,"dev":0,"vliq":182037.73,"lucro":18760.54,"perc":10.31},{"cod":9,"sup":"GILBERTO PEREIRA DE JESUS","vv":169910.6,"dev":0,"vliq":169910.6,"lucro":35348.94,"perc":20.8},{"cod":104,"sup":"HERLAN MARTINS DA SILVA","vv":105752.94,"dev":0,"vliq":105752.94,"lucro":17459.74,"perc":16.51},{"cod":129,"sup":"MARCONE RAMOS GARCIA","vv":102544.09,"dev":0,"vliq":102544.09,"lucro":26731.27,"perc":26.07},{"cod":19,"sup":"VANDERLEI DUTRA SILVA","vv":83372.08,"dev":0,"vliq":83372.08,"lucro":18577.42,"perc":22.28},{"cod":86,"sup":"MARCELO SANTOS DIAS","vv":77109.5,"dev":0,"vliq":77109.5,"lucro":-82681.14,"perc":-107.23},{"cod":82,"sup":"LUSSIEDE BASTOS DOS SANTOS SILVA","vv":60753.65,"dev":0,"vliq":60753.65,"lucro":11233.67,"perc":18.49},{"cod":113,"sup":"CARLOS ALBERTO DE JESUS","vv":48122.51,"dev":0,"vliq":48122.51,"lucro":1215.54,"perc":2.53},{"cod":58,"sup":"LUCIANO SANTOS DE JESUS","vv":5160.31,"dev":0,"vliq":5160.31,"lucro":974.44,"perc":18.88},{"cod":106,"sup":"VALDECK GONCALVES MAFRA","vv":1191.12,"dev":0,"vliq":1191.12,"lucro":-68470.1,"perc":-5748.38},{"cod":18,"sup":"VINICIUS BRANDAO DOS SANTOS","vv":429.7,"dev":0,"vliq":429.7,"lucro":-4716.06,"perc":-1097.52},{"cod":59,"sup":"HILDEBERTO WAGNER DE JESUS VIEIRA","vv":120.93,"dev":0,"vliq":120.93,"lucro":24.65,"perc":20.38},{"cod":88,"sup":"EDVALDO AGUIAR DUTRA","vv":0,"dev":0,"vliq":0,"lucro":-1.22,"perc":null},{"cod":101,"sup":"SEM RCA","vv":0,"dev":376.23,"vliq":-376.23,"lucro":0,"perc":null},{"cod":133,"sup":"ORISVALDO GOMES PEREIRA JUNIOR","vv":0,"dev":0,"vliq":0,"lucro":-19492.03,"perc":null},{"cod":100,"sup":"RUBEM RIBEIRO CIDREIRA","vv":0,"dev":0,"vliq":0,"lucro":-23586.24,"perc":null},{"cod":92,"sup":"CELIO BRANDAO DE MATOS","vv":0,"dev":1750.61,"vliq":-1750.61,"lucro":0,"perc":null}];
+const SUPS=[{"cod":16,"sup":"CELSO NUNES DE SOUZA","vv":24705554.35,"dev":1354426.82,"vliq":23351127.53,"lucro":-1402031.11,"perc":-5.67},{"cod":66,"sup":"WATILA SANTOS DE OLIVEIRA","vv":4050914.36,"dev":0,"vliq":4050914.36,"lucro":488189.44,"perc":12.05},{"cod":13,"sup":"JOAO CARLOS DIAS LIBARINO","vv":3670241.32,"dev":937.77,"vliq":3669303.55,"lucro":358874.26,"perc":9.78},{"cod":114,"sup":"EDGAR FERNANDES CAMPOS","vv":3038466.06,"dev":0,"vliq":3038466.06,"lucro":-233220.52,"perc":-7.68},{"cod":4,"sup":"ARLETE SILVA SOUSA DE OLIVEIRA","vv":1881767.26,"dev":0,"vliq":1881767.26,"lucro":292455.39,"perc":15.54},{"cod":5,"sup":"MAISA SOUSA","vv":1794378.77,"dev":0,"vliq":1794378.77,"lucro":121605.7,"perc":6.78},{"cod":43,"sup":"SOSTENES MOAN BRITO ALMEIDA","vv":1722017.47,"dev":0,"vliq":1722017.47,"lucro":298743.35,"perc":17.35},{"cod":34,"sup":"TATIANA DE SOUSA MENDES ANDRADE","vv":1653404.22,"dev":0,"vliq":1653404.22,"lucro":276043.64,"perc":16.7},{"cod":107,"sup":"DIACUI OLIVEIRA LEAO","vv":1583400.0,"dev":0,"vliq":1583400.0,"lucro":96152.17,"perc":6.07},{"cod":8,"sup":"FRANCISCO DE ASSIS ALVES DE CARVALHO","vv":1461206.19,"dev":0,"vliq":1461206.19,"lucro":259671.4,"perc":17.77},{"cod":42,"sup":"VENDEDOR INDENIZACAO","vv":1431227.12,"dev":0,"vliq":1431227.12,"lucro":234344.07,"perc":16.37},{"cod":3,"sup":"ELIZEU JOSE PEREIRA","vv":1312741.79,"dev":0,"vliq":1312741.79,"lucro":198160.82,"perc":15.1},{"cod":96,"sup":"DERVAL SOUZA CORREA","vv":1308612.06,"dev":0,"vliq":1308612.06,"lucro":160369.36,"perc":12.25},{"cod":84,"sup":"LUIZ CLAUDIO FREITAS SOBRAL","vv":1277716.38,"dev":0,"vliq":1277716.38,"lucro":30339.29,"perc":2.37},{"cod":12,"sup":"GIVANILDO OLIVEIRA SANTOS","vv":1275145.78,"dev":0,"vliq":1275145.78,"lucro":140423.91,"perc":11.01},{"cod":71,"sup":"ERIVALDO ROMANO TEIXEIRA BORGES","vv":1270921.0,"dev":0,"vliq":1270921.0,"lucro":147494.0,"perc":11.61},{"cod":61,"sup":"JACKSON SOARES PEREIRA","vv":1267698.86,"dev":0,"vliq":1267698.86,"lucro":190443.18,"perc":15.02},{"cod":50,"sup":"JOALDO GARCIA DOS SANTOS","vv":1258939.9,"dev":0,"vliq":1258939.9,"lucro":159097.31,"perc":12.64},{"cod":76,"sup":"NELIO SANTOS SANTANA","vv":1203407.41,"dev":0,"vliq":1203407.41,"lucro":150721.21,"perc":12.52},{"cod":72,"sup":"MARIO DE JESUS FERREIRA","vv":1157033.65,"dev":0,"vliq":1157033.65,"lucro":143569.07,"perc":12.41},{"cod":112,"sup":"ADILDO BALIEIRO SILVA","vv":1091549.32,"dev":0,"vliq":1091549.32,"lucro":106486.08,"perc":9.76},{"cod":120,"sup":"VALDINO ANDRADE SANTOS","vv":1064718.44,"dev":0,"vliq":1064718.44,"lucro":211909.63,"perc":19.9},{"cod":130,"sup":"ELIVALDO FELIPE","vv":948459.93,"dev":0,"vliq":948459.93,"lucro":58245.62,"perc":6.14},{"cod":135,"sup":"JAILTON SANTOS DA SILVA","vv":946969.14,"dev":0,"vliq":946969.14,"lucro":-14684.23,"perc":-1.55},{"cod":14,"sup":"BRUNO CABRAL","vv":920672.44,"dev":0,"vliq":920672.44,"lucro":160462.57,"perc":17.43},{"cod":126,"sup":"HONORIO DE QUEIROZ SANTOS","vv":908830.37,"dev":0,"vliq":908830.37,"lucro":219028.84,"perc":24.1},{"cod":24,"sup":"JOSE AUGUSTO SILVA JUNIOR","vv":871790.0,"dev":0,"vliq":871790.0,"lucro":104178.0,"perc":11.95},{"cod":60,"sup":"RCA INEXISTENTE","vv":844743.05,"dev":0,"vliq":844743.05,"lucro":205438.41,"perc":24.32},{"cod":99,"sup":"JOILSON CORREIA DA SILVA","vv":842849.58,"dev":0,"vliq":842849.58,"lucro":232374.57,"perc":27.57},{"cod":125,"sup":"IRAN BARROS COQUEIRO","vv":808308.24,"dev":0,"vliq":808308.24,"lucro":199398.07,"perc":24.67},{"cod":41,"sup":"JOELMA BARBOSA GASPAR","vv":781291.6,"dev":0,"vliq":781291.6,"lucro":107868.88,"perc":13.81},{"cod":122,"sup":"HEBER ROCHA PINTO","vv":774659.06,"dev":0,"vliq":774659.06,"lucro":129942.33,"perc":16.77},{"cod":117,"sup":"ALA SANDRO FARIAS BASTOS","vv":736886.83,"dev":0,"vliq":736886.83,"lucro":139210.67,"perc":18.89},{"cod":105,"sup":"JULIO CESAR AZEVEDO","vv":685288.4,"dev":0,"vliq":685288.4,"lucro":104656.31,"perc":15.27},{"cod":115,"sup":"JOILSON BATISTA SILVA","vv":644814.04,"dev":0,"vliq":644814.04,"lucro":48283.57,"perc":7.49},{"cod":121,"sup":"DAISY GOMES OLIVEIRA","vv":638609.78,"dev":0,"vliq":638609.78,"lucro":129772.32,"perc":20.32},{"cod":134,"sup":"MAURICIO DA CRUZ SANTOS","vv":622953.57,"dev":0,"vliq":622953.57,"lucro":36012.24,"perc":5.78},{"cod":127,"sup":"WILDMAN DE OLIVEIRA","vv":594006.92,"dev":0,"vliq":594006.92,"lucro":116463.66,"perc":19.61},{"cod":77,"sup":"MOYSES RAMOS MOREIRA","vv":534784.71,"dev":0,"vliq":534784.71,"lucro":65277.44,"perc":12.21},{"cod":131,"sup":"ROMILDO DE JESUS","vv":472401.45,"dev":0,"vliq":472401.45,"lucro":61859.2,"perc":13.09},{"cod":118,"sup":"RODRIGO SILVA","vv":439536.19,"dev":0,"vliq":439536.19,"lucro":101795.86,"perc":23.16},{"cod":137,"sup":"JOSELINO PEREIRA DOS SANTOS","vv":419701.59,"dev":0,"vliq":419701.59,"lucro":78159.07,"perc":18.62},{"cod":93,"sup":"CARLOS ALBERTO DE SOUZA","vv":411238.25,"dev":0,"vliq":411238.25,"lucro":65023.05,"perc":15.81},{"cod":21,"sup":"GILMAR GOMES DA SILVA","vv":374228.58,"dev":0,"vliq":374228.58,"lucro":93543.26,"perc":25.0},{"cod":65,"sup":"CAIQUE THAILAN SOUZA DA SILVA","vv":321268.04,"dev":0,"vliq":321268.04,"lucro":27558.41,"perc":8.58},{"cod":52,"sup":"CLAUDIORLAN DA SILVA DIAS","vv":311962.31,"dev":0,"vliq":311962.31,"lucro":13063.4,"perc":4.19},{"cod":102,"sup":"JORGE LUIS DA SILVA","vv":282469.8,"dev":0,"vliq":282469.8,"lucro":-7559.24,"perc":-2.68},{"cod":136,"sup":"CLEUDSON MOREIRA SANTOS","vv":222926.08,"dev":0,"vliq":222926.08,"lucro":39031.22,"perc":17.51},{"cod":111,"sup":"HILARINO BARRETO DOS SANTOS","vv":209559.04,"dev":0,"vliq":209559.04,"lucro":33511.33,"perc":15.99},{"cod":73,"sup":"RUBENS RODRIGUES DOS SANTOS","vv":187931.74,"dev":0,"vliq":187931.74,"lucro":47095.84,"perc":25.06},{"cod":91,"sup":"MARCOS SOUZA SANTOS","vv":183155.97,"dev":0,"vliq":183155.97,"lucro":18512.05,"perc":10.11},{"cod":9,"sup":"GILBERTO PEREIRA DE JESUS","vv":169910.6,"dev":0,"vliq":169910.6,"lucro":35348.94,"perc":20.8},{"cod":104,"sup":"HERLAN MARTINS DA SILVA","vv":105752.94,"dev":0,"vliq":105752.94,"lucro":18373.9,"perc":17.37},{"cod":129,"sup":"MARCONE RAMOS GARCIA","vv":102544.09,"dev":0,"vliq":102544.09,"lucro":29738.73,"perc":29.0},{"cod":19,"sup":"VANDERLEI DUTRA SILVA","vv":83372.08,"dev":0,"vliq":83372.08,"lucro":20753.25,"perc":24.89},{"cod":86,"sup":"MARCELO SANTOS DIAS","vv":77109.5,"dev":0,"vliq":77109.5,"lucro":-18839.5,"perc":-24.43},{"cod":82,"sup":"LUSSIEDE BASTOS DOS SANTOS SILVA","vv":60753.65,"dev":0,"vliq":60753.65,"lucro":15143.43,"perc":24.93},{"cod":113,"sup":"CARLOS ALBERTO DE JESUS","vv":48122.51,"dev":0,"vliq":48122.51,"lucro":1215.54,"perc":2.53},{"cod":58,"sup":"LUCIANO SANTOS DE JESUS","vv":5160.31,"dev":0,"vliq":5160.31,"lucro":974.44,"perc":18.88},{"cod":106,"sup":"VALDECK GONCALVES MAFRA","vv":1191.12,"dev":0,"vliq":1191.12,"lucro":-80.2,"perc":-6.73},{"cod":18,"sup":"VINICIUS BRANDAO DOS SANTOS","vv":429.7,"dev":0,"vliq":429.7,"lucro":-742.51,"perc":-172.8},{"cod":59,"sup":"HILDEBERTO WAGNER DE JESUS VIEIRA","vv":120.93,"dev":0,"vliq":120.93,"lucro":24.65,"perc":20.38},{"cod":88,"sup":"EDVALDO AGUIAR DUTRA","vv":0,"dev":0,"vliq":0,"lucro":-1.22,"perc":null},{"cod":101,"sup":"SEM RCA","vv":0,"dev":376.23,"vliq":-376.23,"lucro":0,"perc":null},{"cod":133,"sup":"ORISVALDO GOMES PEREIRA JUNIOR","vv":0,"dev":0,"vliq":0,"lucro":-14354.25,"perc":null},{"cod":100,"sup":"RUBEM RIBEIRO CIDREIRA","vv":0,"dev":0,"vliq":0,"lucro":-5771.01,"perc":null},{"cod":92,"sup":"CELIO BRANDAO DE MATOS","vv":0,"dev":1750.61,"vliq":-1750.61,"lucro":0,"perc":null}];
+const RCA={"16":[{"c":650,"n":"RCA BRUNO BH","vv":13651533.32,"dev":0,"vliq":13651533.32,"lucro":-1427683.57,"perc":-10.46},{"c":7,"n":"LOURILSON CABRAL SANTOS DE SOUZA","vv":7919504.16,"dev":0,"vliq":7919504.16,"lucro":-861407.51,"perc":-10.88},{"c":2060,"n":"RCA ASSIS - SP","vv":1853727.48,"dev":0,"vliq":1853727.48,"lucro":-40934.36,"perc":-2.21},{"c":64,"n":"CABRAL E SOUSA LTDA","vv":992489.39,"dev":1307232.96,"vliq":-314743.57,"lucro":991999.89,"perc":99.95},{"c":2061,"n":"RCA VIANA - SP","vv":288300,"dev":0,"vliq":288300,"lucro":-64005.56,"perc":-22.2},{"c":283,"n":"FORNECEDOR","vv":0,"dev":47193.86,"vliq":-47193.86,"lucro":0,"perc":null}],"114":[{"c":769,"n":"RCA MASTER","vv":3038466.06,"dev":0,"vliq":3038466.06,"lucro":-233220.52,"perc":-7.68}],"66":[{"c":2262,"n":"OSVALDO NERI LIMA","vv":2459014.8,"dev":0,"vliq":2459014.8,"lucro":252819.28,"perc":10.28},{"c":1360,"n":"ISABELA DA SILVA DE JESUS - GERENTE","vv":830666.32,"dev":0,"vliq":830666.32,"lucro":40278.18,"perc":4.85},{"c":2208,"n":"RYAN SOUZA DOS SANTOS","vv":367072.21,"dev":0,"vliq":367072.21,"lucro":112586.2,"perc":30.67},{"c":1361,"n":"PATRICIA SOUZA ANSELMO","vv":175834.08,"dev":0,"vliq":175834.08,"lucro":49205.61,"perc":27.98},{"c":1516,"n":"JULIANA SOUZA SANTANA","vv":147549.46,"dev":0,"vliq":147549.46,"lucro":32358.43,"perc":21.93},{"c":2210,"n":"JOAO PAULO FEITOSA DA SILVA","vv":44197.76,"dev":0,"vliq":44197.76,"lucro":17310.39,"perc":39.17},{"c":2087,"n":"RAFAEL MORAES PINHO","vv":30011.19,"dev":0,"vliq":30011.19,"lucro":1288.57,"perc":4.29},{"c":2180,"n":"ANTONIO FERNANDES - RCA SUPERVISOR","vv":-3431.46,"dev":0,"vliq":-3431.46,"lucro":-17657.22,"perc":514.57}],"107":[{"c":2070,"n":"ISABELA DA SILVA DE JESUS - SUP","vv":1583400,"dev":0,"vliq":1583400,"lucro":96152.17,"perc":6.07}],"8":[{"c":150,"n":"AUTO ATENDIMENTO","vv":1457499.6,"dev":0,"vliq":1457499.6,"lucro":258546.02,"perc":17.74},{"c":156,"n":"QUIOSQUE","vv":3706.59,"dev":0,"vliq":3706.59,"lucro":1125.38,"perc":30.36}],"13":[{"c":2028,"n":"LAFAETE DIORGENES OLIVEIRA DANTAS - SUP","vv":1121029.45,"dev":0,"vliq":1121029.45,"lucro":131146.46,"perc":11.7},{"c":620,"n":"ANTONIO AUGUSTO DE ARAUJO","vv":751694.37,"dev":0,"vliq":751694.37,"lucro":33516.68,"perc":4.46},{"c":2230,"n":"WATILA SANTOS DE OLIVEIRA","vv":467495.98,"dev":0,"vliq":467495.98,"lucro":141920.15,"perc":30.36},{"c":232,"n":"WANDERLEY RODRIGUES DA SILVA","vv":342674.78,"dev":0,"vliq":342674.78,"lucro":23524.1,"perc":6.86},{"c":877,"n":"RINALDO SOUSA DO NASCIMENTO","vv":306431.62,"dev":0,"vliq":306431.62,"lucro":31064.02,"perc":10.14},{"c":607,"n":"MARCIO VINICIUS COSTA BRITO","vv":287881.97,"dev":0,"vliq":287881.97,"lucro":35677.19,"perc":12.39},{"c":1181,"n":"RCA IVE","vv":283803.88,"dev":0,"vliq":283803.88,"lucro":48604.11,"perc":17.13},{"c":2374,"n":"CLAUDIO QUEIROZ SANTOS","vv":127943.87,"dev":0,"vliq":127943.87,"lucro":12464.17,"perc":9.74},{"c":2067,"n":"RCA COMPRAS - EXPOSITOR","vv":0,"dev":0,"vliq":0,"lucro":-1783.95,"perc":null},{"c":522,"n":"ARLETE  SILVA SOUSA OLIVEIRA","vv":-113.88,"dev":0,"vliq":-113.88,"lucro":-61998.91,"perc":54442.32},{"c":651,"n":"CABRAL E SOUSA LTDA","vv":-18600.72,"dev":937.77,"vliq":-19538.49,"lucro":-35259.76,"perc":189.56}],"130":[{"c":1246,"n":"IVANA SILVA CANARIO","vv":948459.93,"dev":0,"vliq":948459.93,"lucro":58245.62,"perc":6.14}],"112":[{"c":2350,"n":"MARLO JORGE VIDAL CHASTINET","vv":724034.67,"dev":0,"vliq":724034.67,"lucro":98434.34,"perc":13.6},{"c":2340,"n":"FABIO SOARES DOS SANTOS","vv":367514.65,"dev":0,"vliq":367514.65,"lucro":55486.9,"perc":15.1},{"c":1923,"n":"CRISTINA REIS SANTOS OLIVEIRA","vv":0,"dev":0,"vliq":0,"lucro":-47435.16,"perc":null}],"50":[{"c":975,"n":"JABES ALCANTARA DE FRANCA","vv":584183.26,"dev":0,"vliq":584183.26,"lucro":62468.85,"perc":10.69},{"c":2294,"n":"LUDIMAN DOS SANTOS COELHO","vv":217449.92,"dev":0,"vliq":217449.92,"lucro":27444.76,"perc":12.62},{"c":2331,"n":"DAVID MATOS SILVA","vv":140327.03,"dev":0,"vliq":140327.03,"lucro":24438.9,"perc":17.42},{"c":603,"n":"ROBERTO MARTINS PEREIRA","vv":103543.61,"dev":0,"vliq":103543.61,"lucro":16548.18,"perc":15.98},{"c":1313,"n":"BRENO PORTO NEVES","vv":96310.91,"dev":0,"vliq":96310.91,"lucro":13761.97,"perc":14.29},{"c":2085,"n":"FLAVIO HENRIQUE JESUS DOS SANTOS","vv":80583.1,"dev":0,"vliq":80583.1,"lucro":10956.19,"perc":13.6},{"c":2427,"n":"BRISA SANTANA NOBRE","vv":36542.07,"dev":0,"vliq":36542.07,"lucro":6704.16,"perc":18.35},{"c":842,"n":"JOSE HEITOR - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-3225.7,"perc":null}],"5":[{"c":3,"n":"ELIZEU JOSE PEREIRA","vv":492580.93,"dev":0,"vliq":492580.93,"lucro":38327.43,"perc":7.78},{"c":2,"n":"AGENOR FERREIRA DOS SANTOS","vv":392277.32,"dev":0,"vliq":392277.32,"lucro":9109.18,"perc":2.32},{"c":6,"n":"JOSE VALDELIRIO DE SOUSA","vv":352566.82,"dev":0,"vliq":352566.82,"lucro":38725.05,"perc":10.98},{"c":9,"n":"GILBERTO PEREIRA DE JESUS","vv":346155.42,"dev":0,"vliq":346155.42,"lucro":13054.89,"perc":3.77},{"c":8,"n":"FRANCISCO DE ASSIS ALVES DE CARVALHO","vv":210798.28,"dev":0,"vliq":210798.28,"lucro":22389.15,"perc":10.62}],"42":[{"c":700,"n":"DURVALDINO DE SOUZA DA SILVA","vv":465278.66,"dev":0,"vliq":465278.66,"lucro":93896.07,"perc":20.18},{"c":1172,"n":"ADILIO ALVES DOS SANTOS","vv":308255.83,"dev":0,"vliq":308255.83,"lucro":52840.09,"perc":17.14},{"c":939,"n":"CASSIO SANTANA DOS SANTOS","vv":282591.3,"dev":0,"vliq":282591.3,"lucro":45008.74,"perc":15.93},{"c":1201,"n":"FERNANDO BARBOSA MARQUES","vv":185016,"dev":0,"vliq":185016,"lucro":29798.85,"perc":16.11},{"c":927,"n":"FABIA FROTA TRINDADE","vv":172855.61,"dev":0,"vliq":172855.61,"lucro":26755.54,"perc":15.48},{"c":2080,"n":"ALAN VIEIRA PALSIKOWSKI- SUPERVISOR","vv":17229.72,"dev":0,"vliq":17229.72,"lucro":-13955.22,"perc":-81}],"61":[{"c":2362,"n":"FABIANA DE OLIVEIRA DE CARVALHO","vv":447583.86,"dev":0,"vliq":447583.86,"lucro":74417.42,"perc":16.63},{"c":1327,"n":"IGOR SANTANA LIMA JUNIOR","vv":260385.68,"dev":0,"vliq":260385.68,"lucro":42603.13,"perc":16.36},{"c":2380,"n":"JOVANIO SANTOS DE OLIVEIRA","vv":236234.44,"dev":0,"vliq":236234.44,"lucro":41057.84,"perc":17.38},{"c":1245,"n":"GILVA CAPISTRANO SILVA","vv":179071.1,"dev":0,"vliq":179071.1,"lucro":14516.82,"perc":8.11},{"c":1250,"n":"ELLEN ADRINE JESUS SANTOS","vv":145257.81,"dev":0,"vliq":145257.81,"lucro":33169.26,"perc":22.83},{"c":2069,"n":"MARCELA DE ABREU AMADO - SUPERVISORA","vv":-834.03,"dev":0,"vliq":-834.03,"lucro":-15321.29,"perc":1837.02}],"4":[{"c":750,"n":"ANTONIO MARCIO DA SILVA BITENCOURT","vv":435595.63,"dev":0,"vliq":435595.63,"lucro":90716.63,"perc":20.83},{"c":803,"n":"TIAGO AGUIAR RIBEIRO","vv":380184.98,"dev":0,"vliq":380184.98,"lucro":71342.1,"perc":18.77},{"c":207,"n":"RICARDO TEIXEIRA SANTOS","vv":304942.98,"dev":0,"vliq":304942.98,"lucro":34284.01,"perc":11.24},{"c":457,"n":"LUCIO LEITE COQUEIRO","vv":248757.28,"dev":0,"vliq":248757.28,"lucro":26855.71,"perc":10.8},{"c":984,"n":"NOBERTO DE SOUZA COSTA","vv":202753.25,"dev":0,"vliq":202753.25,"lucro":27671.09,"perc":13.65},{"c":913,"n":"LUCIANO SANTOS DE JESUS","vv":123718.4,"dev":0,"vliq":123718.4,"lucro":22206.26,"perc":17.95},{"c":69,"n":"UILTON SANTANA LEAL","vv":115412.05,"dev":0,"vliq":115412.05,"lucro":18048.09,"perc":15.64},{"c":12,"n":"GIVANILDO OLIVEIRA SANTOS","vv":70402.69,"dev":0,"vliq":70402.69,"lucro":12256.7,"perc":17.41},{"c":2385,"n":"JOAO PEDRO BONFIM - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-10925.2,"perc":null}],"12":[{"c":1144,"n":"MARCELO SANTOS DE JESUS","vv":409219.37,"dev":0,"vliq":409219.37,"lucro":55329.74,"perc":13.52},{"c":149,"n":"JOSE ROBERTO DOS SANTOS OLIVEIRA","vv":234040.44,"dev":0,"vliq":234040.44,"lucro":33107.93,"perc":14.15},{"c":65,"n":"CAIQUE THAILAN SOUZA DA SILVA","vv":158028.49,"dev":0,"vliq":158028.49,"lucro":24768.56,"perc":15.67},{"c":1619,"n":"THIAGO GONZAGA MACEDO","vv":151741.36,"dev":0,"vliq":151741.36,"lucro":21965.88,"perc":14.48},{"c":932,"n":"JULIO CESAR SOARES SOUZA","vv":126079.51,"dev":0,"vliq":126079.51,"lucro":21791.11,"perc":17.28},{"c":2293,"n":"MAENNYSON EROM ALVES VIEIRA","vv":115970.93,"dev":0,"vliq":115970.93,"lucro":15005.68,"perc":12.94},{"c":2292,"n":"SIDNEI SILVA DE OLIVEIRA","vv":80065.68,"dev":0,"vliq":80065.68,"lucro":12887.78,"perc":16.1},{"c":1213,"n":"THARCIO HAFNER - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-44432.77,"perc":null}],"99":[{"c":2204,"n":"GEOVANE BRITO SILVA - BAHIA FORT","vv":404123.51,"dev":0,"vliq":404123.51,"lucro":110173.23,"perc":27.26},{"c":2224,"n":"ENZO MONTENEGRO CINTRA CASTRO","vv":253146.02,"dev":0,"vliq":253146.02,"lucro":68452.34,"perc":27.04},{"c":2207,"n":"ALBERTO NASCIMENTO DE ANDRADE","vv":100589.74,"dev":0,"vliq":100589.74,"lucro":33888.88,"perc":33.69},{"c":2202,"n":"PEDRO MOURA LOPES","vv":62686.39,"dev":0,"vliq":62686.39,"lucro":20792.47,"perc":33.17},{"c":2339,"n":"JOAO VICTOR LACERDA SANTOS","vv":22303.92,"dev":0,"vliq":22303.92,"lucro":8293.14,"perc":37.18},{"c":2188,"n":"ANDRE TRINDADE CABRAL","vv":0,"dev":0,"vliq":0,"lucro":-9225.49,"perc":null}],"3":[{"c":635,"n":"DOUGLAS RODRIGUES DE PONTES","vv":381155.72,"dev":0,"vliq":381155.72,"lucro":49374.44,"perc":12.95},{"c":252,"n":"JOAO NETO GUSMAO DE SOUZA","vv":255678.9,"dev":0,"vliq":255678.9,"lucro":39794.3,"perc":15.56},{"c":647,"n":"FABRICIO MOITINHO OLIVEIRA","vv":231180.71,"dev":0,"vliq":231180.71,"lucro":46989.06,"perc":20.33},{"c":1355,"n":"DIEGO RAMOS BORBA","vv":148412.66,"dev":0,"vliq":148412.66,"lucro":25023.69,"perc":16.86},{"c":2295,"n":"PATRICK SANTANA BRAGA","vv":135248.04,"dev":0,"vliq":135248.04,"lucro":24209.33,"perc":17.9},{"c":429,"n":"SISINIO CALDEIRA DA SILVA FILHO","vv":94021.9,"dev":0,"vliq":94021.9,"lucro":16246.31,"perc":17.28},{"c":26,"n":"JOSELITO SANTOS OLIVEIRA","vv":49123.86,"dev":0,"vliq":49123.86,"lucro":9338.94,"perc":19.01},{"c":739,"n":"PAULO CRISTIANO OLIVEIRA SAMPAIO","vv":17920,"dev":0,"vliq":17920,"lucro":-686.43,"perc":-3.83},{"c":843,"n":"ISRAEL PEDRO - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-12128.82,"perc":null}],"135":[{"c":66,"n":"WATILA SANTOS DE OLIVEIRA","vv":358496.39,"dev":0,"vliq":358496.39,"lucro":27928.48,"perc":7.79},{"c":2402,"n":"ISLAN LIMA BARROS","vv":227667.01,"dev":0,"vliq":227667.01,"lucro":-67005.45,"perc":-29.43},{"c":2420,"n":"ALVARO DE JESUS SANTOS","vv":104315.62,"dev":0,"vliq":104315.62,"lucro":13613.95,"perc":13.05},{"c":2399,"n":"CARLOS LUCAS MORAES SOUZA","vv":86318.17,"dev":0,"vliq":86318.17,"lucro":13662.06,"perc":15.83},{"c":2414,"n":"ENOCK OLIVEIRA SANTOS","vv":76118.49,"dev":0,"vliq":76118.49,"lucro":11349.42,"perc":14.91},{"c":2424,"n":"ERIVELTON MOREIRA SILVA","vv":57756.98,"dev":0,"vliq":57756.98,"lucro":9125.27,"perc":15.8},{"c":2406,"n":"ZAMAEL BORGES COSTA","vv":18796.43,"dev":0,"vliq":18796.43,"lucro":2892.72,"perc":15.39},{"c":2408,"n":"ISAAC ANDRADE - SUPERVISOR CMA","vv":17500.05,"dev":0,"vliq":17500.05,"lucro":-26250.68,"perc":-150}],"43":[{"c":983,"n":"LUANDERSON COSTA VIEIRA","vv":343643.71,"dev":0,"vliq":343643.71,"lucro":59821.39,"perc":17.41},{"c":1145,"n":"JOBIS QUEIROZ MARTINS","vv":280557.29,"dev":0,"vliq":280557.29,"lucro":55835.94,"perc":19.9},{"c":980,"n":"ALTIELI OLIVEIRA SOUZA","vv":271749.17,"dev":0,"vliq":271749.17,"lucro":52136.29,"perc":19.19},{"c":2225,"n":"BRENO BORGES DOS SANTOS","vv":222507.04,"dev":0,"vliq":222507.04,"lucro":41827.73,"perc":18.8},{"c":950,"n":"MARCOS ALEX BONFIM SILVA","vv":194689.36,"dev":0,"vliq":194689.36,"lucro":39408.71,"perc":20.24},{"c":959,"n":"FRANCISLAINE FERNANDES OLIVEIRA","vv":164780.8,"dev":0,"vliq":164780.8,"lucro":29636.34,"perc":17.99},{"c":2388,"n":"NADSON SENA NEVES JUNIOR","vv":124782.79,"dev":0,"vliq":124782.79,"lucro":21958.58,"perc":17.6},{"c":1520,"n":"CARLOS EDUARDO DOS SANTOS SOUSA","vv":77494.72,"dev":0,"vliq":77494.72,"lucro":10383.99,"perc":13.4},{"c":883,"n":"ISMAR PESSOA FERRAZ- RCA SUPERVISOR","vv":41812.59,"dev":0,"vliq":41812.59,"lucro":-12265.62,"perc":-29.33}],"96":[{"c":693,"n":"ADENILTON CORREIA SILVA","vv":330867.2,"dev":0,"vliq":330867.2,"lucro":67209.19,"perc":20.31},{"c":1345,"n":"ARISON ROCHA DE CASTRO","vv":297704.52,"dev":0,"vliq":297704.52,"lucro":33772.29,"perc":11.34},{"c":2287,"n":"MARLENE ROSA RAMOS","vv":292330.02,"dev":0,"vliq":292330.02,"lucro":26065.66,"perc":8.92},{"c":1168,"n":"MURYLLO RIBEIRO DA SILVA","vv":247438.25,"dev":0,"vliq":247438.25,"lucro":27384.24,"perc":11.07},{"c":1271,"n":"PAULO RICARDO DE SOUZA","vv":136292.04,"dev":0,"vliq":136292.04,"lucro":18472.23,"perc":13.55},{"c":1478,"n":"ROBERTO CORDEIRO JAQUEIRA","vv":2536.85,"dev":0,"vliq":2536.85,"lucro":-5319.47,"perc":-209.69},{"c":1287,"n":"MATHEUS SANTOS DE CASTRO","vv":1443.18,"dev":0,"vliq":1443.18,"lucro":225.73,"perc":15.64},{"c":1625,"n":"JORGE RICARDO DOS ANJOS - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-7440.51,"perc":null}],"65":[{"c":1306,"n":"ANTONIO CARLOS DIAS DE ANDRADE","vv":321268.04,"dev":0,"vliq":321268.04,"lucro":27558.41,"perc":8.58}],"105":[{"c":2286,"n":"PATRICK OLIVEIRA BARRETO","vv":302158.04,"dev":0,"vliq":302158.04,"lucro":62456.21,"perc":20.67},{"c":2256,"n":"CRISTIANO DAMASCENO DA SILVA","vv":81401.51,"dev":0,"vliq":81401.51,"lucro":11632.71,"perc":14.29},{"c":2244,"n":"ANA PAULA DA SILVA QUADROS","vv":73381.72,"dev":0,"vliq":73381.72,"lucro":9683.41,"perc":13.2},{"c":2238,"n":"PEDRO HENRIQUE DE OLIVEIRA LOPES","vv":58815.29,"dev":0,"vliq":58815.29,"lucro":5594.37,"perc":9.51},{"c":2387,"n":"EDER SANTOS NUNES MACHADO","vv":55967.92,"dev":0,"vliq":55967.92,"lucro":3572.11,"perc":6.38},{"c":2243,"n":"DANIEL BASTOS PRIMO","vv":53592.75,"dev":0,"vliq":53592.75,"lucro":6505.91,"perc":12.14},{"c":2322,"n":"ROSILENE MOREIRA TELES","vv":40970.31,"dev":0,"vliq":40970.31,"lucro":6803.88,"perc":16.61},{"c":2419,"n":"ALICIA PEREIRA SANTOS","vv":12233.84,"dev":0,"vliq":12233.84,"lucro":737.12,"perc":6.03},{"c":2560,"n":"JOAO VITOR SANTANA SANTOS SOUZA","vv":6133.68,"dev":0,"vliq":6133.68,"lucro":249.34,"perc":4.07},{"c":2284,"n":"WELLINGTON DA SILVA NARCISO SANTOS","vv":633.34,"dev":0,"vliq":633.34,"lucro":138.07,"perc":21.8},{"c":2378,"n":"MAURICIO SANTOS CERQUEIRA","vv":0,"dev":0,"vliq":0,"lucro":-2716.82,"perc":null}],"84":[{"c":1608,"n":"GILBERTO TRINDADE CABRAL","vv":287877.18,"dev":0,"vliq":287877.18,"lucro":4978.47,"perc":1.73},{"c":1602,"n":"WALLAS VIEIRA LEITE","vv":278794.78,"dev":0,"vliq":278794.78,"lucro":-6763.21,"perc":-2.43},{"c":1604,"n":"ALEX MILLER DE OLIVEIRA SILVA","vv":183084.89,"dev":0,"vliq":183084.89,"lucro":11283.04,"perc":6.16},{"c":1620,"n":"LUAN CARLOS DA SILVA","vv":181572.33,"dev":0,"vliq":181572.33,"lucro":18901.62,"perc":10.41},{"c":2400,"n":"HITALOAN SILVA RIQUEZA","vv":175474.71,"dev":0,"vliq":175474.71,"lucro":18536.95,"perc":10.56},{"c":1606,"n":"FLAVIO DE JESUS SALES","vv":169944.43,"dev":0,"vliq":169944.43,"lucro":10703.82,"perc":6.3},{"c":1603,"n":"YAN MONTEIRO FERNANDES","vv":1221.48,"dev":0,"vliq":1221.48,"lucro":149.96,"perc":12.28},{"c":1607,"n":"CASSIO MURILO - RCA SUPERVISOR","vv":-253.42,"dev":0,"vliq":-253.42,"lucro":-27451.36,"perc":10832.36}],"102":[{"c":2221,"n":"LAFAETE DIORGENES - VENDAS INTERNA","vv":282469.8,"dev":0,"vliq":282469.8,"lucro":-7559.24,"perc":-2.68}],"115":[{"c":1347,"n":"ISAAC DE LIMA BARRETO - MDLZ PE EXPRESS","vv":270318.43,"dev":0,"vliq":270318.43,"lucro":-21692.42,"perc":-8.02},{"c":2418,"n":"DANELLE LORENA - MDLZ PE EXPRESS","vv":87017.07,"dev":0,"vliq":87017.07,"lucro":19483.31,"perc":22.39},{"c":2341,"n":"WILSON NERI RAMOS - MDLZ PE EXPRESS","vv":80804.69,"dev":0,"vliq":80804.69,"lucro":17524.96,"perc":21.69},{"c":1507,"n":"LUIS CARLOS REIS SILVA - MDLZ PE EXPRESS","vv":76699.14,"dev":0,"vliq":76699.14,"lucro":12526.77,"perc":16.33},{"c":2423,"n":"MAGDO BARBOSA - MDLZ PE EXPRESS","vv":54821.7,"dev":0,"vliq":54821.7,"lucro":14866.61,"perc":27.12},{"c":2375,"n":"ANDERSON DOS SANTOS - MDLZ PE EXPRESS","vv":51392.53,"dev":0,"vliq":51392.53,"lucro":1245.04,"perc":2.42},{"c":2431,"n":"LEONARDO DA SILVA ARAO - MDLZ PE EXPRESS","vv":14792.92,"dev":0,"vliq":14792.92,"lucro":2345.51,"perc":15.86},{"c":2370,"n":"KAYC DE MATOS SOUZA - MDLZ PE EXPRESS","vv":8967.56,"dev":0,"vliq":8967.56,"lucro":1983.79,"perc":22.12}],"72":[{"c":1379,"n":"UARLIS DE JESUS COELHO","vv":261643.49,"dev":0,"vliq":261643.49,"lucro":48520.68,"perc":18.54},{"c":2337,"n":"ECLISMAR DE JESUS SANTOS","vv":224194.83,"dev":0,"vliq":224194.83,"lucro":44753.69,"perc":19.96},{"c":2201,"n":"PAULO SANTOS CARNEIRO","vv":201435.68,"dev":0,"vliq":201435.68,"lucro":45102.83,"perc":22.39},{"c":2211,"n":"SERGIO RENNAN MENDES DE OLIVEIRA","vv":166893.68,"dev":0,"vliq":166893.68,"lucro":33544.84,"perc":20.1},{"c":2384,"n":"RHENAN LUIZ ARRUDA DE SIQUEIRA","vv":136166.2,"dev":0,"vliq":136166.2,"lucro":21868.53,"perc":16.06},{"c":2212,"n":"CARLLOS CHISTTIAN GONCALVES DE ARAUJO","vv":97530,"dev":0,"vliq":97530,"lucro":13928.6,"perc":14.28},{"c":1434,"n":"JONATAS REIS","vv":69762.57,"dev":0,"vliq":69762.57,"lucro":14114.47,"perc":20.23},{"c":1391,"n":"UELITON LOPES - RCA SUPERVISOR","vv":-592.8,"dev":0,"vliq":-592.8,"lucro":-78264.57,"perc":13202.53}],"14":[{"c":968,"n":"TIAGO JOSE DOS SANTOS","vv":253986.64,"dev":0,"vliq":253986.64,"lucro":45808.79,"perc":18.04},{"c":143,"n":"CELINIO SALUSTIANO PEREIRA NETO","vv":187747.76,"dev":0,"vliq":187747.76,"lucro":33042.35,"perc":17.6},{"c":508,"n":"ELTON SANTOS FERREIRA","vv":183715.77,"dev":0,"vliq":183715.77,"lucro":34257.34,"perc":18.65},{"c":1334,"n":"ORLANDO MATOS DOS SANTOS","vv":97852.99,"dev":0,"vliq":97852.99,"lucro":17872.19,"perc":18.26},{"c":1303,"n":"CLEITON DE JESUS PEREIRA","vv":89625.29,"dev":0,"vliq":89625.29,"lucro":10659,"perc":11.89},{"c":1519,"n":"ANDRE LUIS DE JESUS COUTINHO","vv":60036.11,"dev":0,"vliq":60036.11,"lucro":9923.12,"perc":16.53},{"c":2430,"n":"VALDEIR SILVA BRANDAO","vv":47707.88,"dev":0,"vliq":47707.88,"lucro":8899.78,"perc":18.65}],"76":[{"c":1383,"n":"RAMON FELIPE DE SOUSA DUTRA","vv":248518.99,"dev":0,"vliq":248518.99,"lucro":39301.73,"perc":15.81},{"c":1440,"n":"JOSE DOMINGOS DA SOLIDADE SANTOS","vv":229828.59,"dev":0,"vliq":229828.59,"lucro":36257.55,"perc":15.78},{"c":1378,"n":"MARIA HELENA ALVES DE JESUS","vv":221476.29,"dev":0,"vliq":221476.29,"lucro":36183.92,"perc":16.34},{"c":1382,"n":"KLEBER MOURA BORGES","vv":202198.4,"dev":0,"vliq":202198.4,"lucro":31409.13,"perc":15.53},{"c":1618,"n":"CARMO COSTA RAMOS","vv":142418.11,"dev":0,"vliq":142418.11,"lucro":25290,"perc":17.76},{"c":1381,"n":"JOSE FELIPE FRANCA DA SILVA","vv":92265.98,"dev":0,"vliq":92265.98,"lucro":16271.98,"perc":17.64},{"c":1409,"n":"MARCOS ANTONIO ALVES GOMES","vv":67060.57,"dev":0,"vliq":67060.57,"lucro":14295.64,"perc":21.32},{"c":2361,"n":"RENAN INES GUIMARAES","vv":0,"dev":0,"vliq":0,"lucro":-363.68,"perc":null},{"c":2372,"n":"JONATHAN COSTA DO NASCIMENTO","vv":-359.52,"dev":0,"vliq":-359.52,"lucro":-47925.06,"perc":13330.29}],"120":[{"c":778,"n":"EVERTON CARVALHO DA SILVA - DIST EXPRESS","vv":231287.78,"dev":0,"vliq":231287.78,"lucro":45298.55,"perc":19.59},{"c":1011,"n":"DANYELLE SILVA BARBOSA - DIST EXPRESS","vv":122344.48,"dev":0,"vliq":122344.48,"lucro":25254.83,"perc":20.64},{"c":1225,"n":"CHARLES AGUIAR - DIST EXPRESS","vv":121744.13,"dev":0,"vliq":121744.13,"lucro":26053.1,"perc":21.4},{"c":967,"n":"ELIAS SANTOS AGUIAR - DIST EXPRESS","vv":115782.41,"dev":0,"vliq":115782.41,"lucro":22558.67,"perc":19.48},{"c":958,"n":"JOSE DOS SANTOS LIMA - DIST EXPRESS","vv":109119.82,"dev":0,"vliq":109119.82,"lucro":19422.72,"perc":17.8},{"c":905,"n":"LUIS HENRIQUE OLIVEIRA - DIST EXPRESS","vv":108168.05,"dev":0,"vliq":108168.05,"lucro":21805.27,"perc":20.16},{"c":1279,"n":"LUCAS CERQUEIRA SANTOS - DIST EXPRESS","vv":102966.05,"dev":0,"vliq":102966.05,"lucro":21430.5,"perc":20.81},{"c":585,"n":"WAGNER PAULO LEDO - DIST EXPRESS","vv":101964.61,"dev":0,"vliq":101964.61,"lucro":19296.77,"perc":18.92},{"c":2083,"n":"ALEX REIS BRITO - DIST EXPRESS","vv":51341.11,"dev":0,"vliq":51341.11,"lucro":10789.22,"perc":21.01}],"41":[{"c":780,"n":"MARIA DE FATIMA FARIAS DOS SANTOS","vv":224114.44,"dev":0,"vliq":224114.44,"lucro":40108.13,"perc":17.9},{"c":988,"n":"VINICIUS GALVAO CARNEIRO","vv":184772.33,"dev":0,"vliq":184772.33,"lucro":25933.25,"perc":14.04},{"c":714,"n":"DIEGO MIRANDA NASCIMENTO","vv":176780.7,"dev":0,"vliq":176780.7,"lucro":27986.63,"perc":15.83},{"c":749,"n":"ADAILTON GONÇALVES DE SOUZA","vv":92477.78,"dev":0,"vliq":92477.78,"lucro":8949.28,"perc":9.68},{"c":1515,"n":"ICARO DIEGO SA TELES FERREIRA","vv":75447.83,"dev":0,"vliq":75447.83,"lucro":16259.76,"perc":21.55},{"c":2332,"n":"LUIS FELIPE OLIVEIRA ANDRADE","vv":12714.83,"dev":0,"vliq":12714.83,"lucro":3559.48,"perc":27.99},{"c":773,"n":"DANIEL DIAS FERREIRA","vv":11450.95,"dev":0,"vliq":11450.95,"lucro":-2626.1,"perc":-22.93},{"c":2058,"n":"DARLY FERNANDES - RCA SUPERVISOR","vv":3532.74,"dev":0,"vliq":3532.74,"lucro":-12301.55,"perc":-348.22}],"34":[{"c":744,"n":"TAILISON MACEDO BONFIM","vv":215839.53,"dev":0,"vliq":215839.53,"lucro":33096.55,"perc":15.33},{"c":720,"n":"GUSTAVO LOPES SOUZA","vv":191021.38,"dev":0,"vliq":191021.38,"lucro":37167.48,"perc":19.46},{"c":480,"n":"DIEGO FERREIRA LIMA","vv":181652.09,"dev":0,"vliq":181652.09,"lucro":39492.61,"perc":21.74},{"c":479,"n":"JONAS DOS SANTOS SOUZA","vv":179263.66,"dev":0,"vliq":179263.66,"lucro":36307.49,"perc":20.25},{"c":685,"n":"SAMUEL DE SOUZA SANTOS","vv":164307.36,"dev":0,"vliq":164307.36,"lucro":35524.43,"perc":21.62},{"c":489,"n":"ADENILTON SANTOS BRAGA","vv":160035.52,"dev":0,"vliq":160035.52,"lucro":36074.01,"perc":22.54},{"c":895,"n":"SCHEUBER SILVA ROCHA","vv":159043.6,"dev":0,"vliq":159043.6,"lucro":22854.96,"perc":14.37},{"c":972,"n":"ANGELO GABRIEL LEITE MEIRA","vv":132175.73,"dev":0,"vliq":132175.73,"lucro":24237.73,"perc":18.34},{"c":1922,"n":"JOAO CARLOS RIBEIRO DOS SANTOS","vv":92968.97,"dev":0,"vliq":92968.97,"lucro":19194.1,"perc":20.65},{"c":721,"n":"PABLO HYANN SOUZA NOVAIS","vv":77093.11,"dev":0,"vliq":77093.11,"lucro":15901.88,"perc":20.63},{"c":2395,"n":"MARCOS TULIO SANTOS BRITO","vv":59345.6,"dev":0,"vliq":59345.6,"lucro":13343.11,"perc":22.48},{"c":866,"n":"GIVANILDO AMARAL NASCIMENTO - SUPERVISOR","vv":40657.67,"dev":0,"vliq":40657.67,"lucro":-24707.38,"perc":-60.77},{"c":2351,"n":"VICTOR LAZARO OLIVEIRA - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-12443.33,"perc":null}],"111":[{"c":1623,"n":"SHEILA PATRICIA LIMA BATISTA SALES","vv":209559.04,"dev":0,"vliq":209559.04,"lucro":33511.33,"perc":15.99}],"24":[{"c":1171,"n":"ROBERTO FELIPE PEREIRA BARREIROS","vv":207676.82,"dev":0,"vliq":207676.82,"lucro":25856.9,"perc":12.45},{"c":1222,"n":"JOSEILTON DA CRUZ FERREIRA","vv":177112.35,"dev":0,"vliq":177112.35,"lucro":21322.4,"perc":12.04},{"c":639,"n":"ELICA MARIA DA CRUZ","vv":166340.02,"dev":0,"vliq":166340.02,"lucro":22550.35,"perc":13.56},{"c":75,"n":"ALLYSSON TEIXEIRA VIEIRA DE SOUZA","vv":119685.23,"dev":0,"vliq":119685.23,"lucro":12407.47,"perc":10.37},{"c":961,"n":"FREDSON HENRIQUE DA SILVA BATISTA","vv":114973.56,"dev":0,"vliq":114973.56,"lucro":14742.32,"perc":12.82},{"c":2220,"n":"VITOR CAMPOS DOS ANJOS","vv":86337.22,"dev":0,"vliq":86337.22,"lucro":12911.9,"perc":14.96},{"c":23,"n":"DYOGO GOMES - RCA SUPERVISOR","vv":-335.2,"dev":0,"vliq":-335.2,"lucro":-5613.34,"perc":1674.62}],"71":[{"c":1624,"n":"RENAN DE ALMEIDA NERIS","vv":205825.67,"dev":0,"vliq":205825.67,"lucro":44146.45,"perc":21.45},{"c":1384,"n":"MARCOS UILLIANS CRUZ DE JESUS","vv":201575.34,"dev":0,"vliq":201575.34,"lucro":3376.85,"perc":1.68},{"c":1388,"n":"MICAELEN COSTA OLIVEIRA","vv":197736.94,"dev":0,"vliq":197736.94,"lucro":31000.08,"perc":15.68},{"c":1387,"n":"ANTONIO CRISPIM ALMEIDA AMORIM","vv":191495.43,"dev":0,"vliq":191495.43,"lucro":20145.75,"perc":10.52},{"c":1385,"n":"ALAN FERREIRA LIMA SANTANA","vv":173574.26,"dev":0,"vliq":173574.26,"lucro":21204.01,"perc":12.22},{"c":1464,"n":"CAMILA SOUZA OLIVEIRA","vv":120452.44,"dev":0,"vliq":120452.44,"lucro":25305.42,"perc":21.01},{"c":2407,"n":"MARCOS PEREIRA DA SILVA","vv":97389.64,"dev":0,"vliq":97389.64,"lucro":14580.96,"perc":14.97},{"c":1421,"n":"MOISES PINHEIRO DOS SANTOS","vv":84754.22,"dev":0,"vliq":84754.22,"lucro":12926.16,"perc":15.25},{"c":1376,"n":"WALDEAN MATA CERQUEIRA- RCA SUPERVISOR","vv":-1882.94,"dev":0,"vliq":-1882.94,"lucro":-25191.68,"perc":1337.89}],"117":[{"c":1463,"n":"DANIEL GOMES DE MOURA - DIST EXPRESS","vv":179961.58,"dev":0,"vliq":179961.58,"lucro":34288.67,"perc":19.05},{"c":1365,"n":"RENATO ARAUJO DE JESUS - DIST EXPRESS","vv":161974.44,"dev":0,"vliq":161974.44,"lucro":39642.19,"perc":24.47},{"c":1471,"n":"DIEGO BASTOS SANTOS - DIST EXPRESS","vv":148003.89,"dev":0,"vliq":148003.89,"lucro":24439.46,"perc":16.51},{"c":1462,"n":"ANDRE LUIS REIS - DIST EXPRESS","vv":128857.43,"dev":0,"vliq":128857.43,"lucro":28089.18,"perc":21.8},{"c":2390,"n":"NILSON JOSE GOMES - DIST EXPRESS","vv":86881.41,"dev":0,"vliq":86881.41,"lucro":9036.5,"perc":10.4},{"c":1510,"n":"JILMAR SANTOS SILVA - DIST EXPRESS","vv":31208.08,"dev":0,"vliq":31208.08,"lucro":3777.38,"perc":12.1},{"c":1377,"n":"DANILO - RCA SUP - DIST EXPRESS","vv":0,"dev":0,"vliq":0,"lucro":-62.71,"perc":null}],"121":[{"c":2086,"n":"WERITON FREITAS - DIST EXPRESS","vv":163605.77,"dev":0,"vliq":163605.77,"lucro":37618.12,"perc":22.99},{"c":1226,"n":"ANISIO NEPOMUCENO - DIST EXPRESS","vv":115294.11,"dev":0,"vliq":115294.11,"lucro":19450.1,"perc":16.87},{"c":1626,"n":"SIDNEI BONDEZAN - DIST EXPRESS","vv":111129.98,"dev":0,"vliq":111129.98,"lucro":22940.14,"perc":20.64},{"c":1277,"n":"ADEMILSON DA ROCHA PINTO - DIST EXPRESS","vv":91606.92,"dev":0,"vliq":91606.92,"lucro":18357.04,"perc":20.04},{"c":1227,"n":"ALEX SANTOS SILVA - DIST EXPRESS","vv":79801.31,"dev":0,"vliq":79801.31,"lucro":16994.92,"perc":21.3},{"c":1275,"n":"MARCOS VINICIUS SANTOS - DIST EXPRESS","vv":77171.69,"dev":0,"vliq":77171.69,"lucro":14412,"perc":18.68}],"134":[{"c":2412,"n":"JOSENILTO ALVES DE ARAUJO","vv":139835.96,"dev":0,"vliq":139835.96,"lucro":14298.4,"perc":10.23},{"c":2398,"n":"TIAGO DA CONCEIÇÃO NOVAES","vv":114899.52,"dev":0,"vliq":114899.52,"lucro":8665.28,"perc":7.54},{"c":2413,"n":"IONALDO ROBSON DE ARAUJO FELIX","vv":112549.4,"dev":0,"vliq":112549.4,"lucro":-4495.08,"perc":-3.99},{"c":2397,"n":"DEIBSON MOURA BARBOSA","vv":95256.87,"dev":0,"vliq":95256.87,"lucro":7765.69,"perc":8.15},{"c":2409,"n":"JOCIMAR WAGNER","vv":88074.13,"dev":0,"vliq":88074.13,"lucro":10116.6,"perc":11.49},{"c":2415,"n":"CLEARDES DE SOUZA RIBEIRO","vv":42853.63,"dev":0,"vliq":42853.63,"lucro":1689.63,"perc":3.94},{"c":2396,"n":"SANDOVAL NUNES PEREIRA - RCA SUPERVISOR","vv":29484.06,"dev":0,"vliq":29484.06,"lucro":-2028.28,"perc":-6.88}],"52":[{"c":2369,"n":"LAYRA VITORIA DA SILVA MOTA","vv":138494.72,"dev":0,"vliq":138494.72,"lucro":13739.53,"perc":9.92},{"c":2260,"n":"ULDARICO SALES DANTAS JUNIOR","vv":54220.79,"dev":0,"vliq":54220.79,"lucro":9362.45,"perc":17.27},{"c":2328,"n":"ANTONIO DELFINO NETO","vv":44277.09,"dev":0,"vliq":44277.09,"lucro":9520.35,"perc":21.5},{"c":1269,"n":"JAIRO VINICIUS DE JESUS SANTOS","vv":43742.08,"dev":0,"vliq":43742.08,"lucro":2142.38,"perc":4.9},{"c":846,"n":"MARIA VANUZA - RCA SUPERVISORA","vv":31227.63,"dev":0,"vliq":31227.63,"lucro":-21701.31,"perc":-69.49}],"60":[{"c":1242,"n":"FLAVIO ALVES LIMA","vv":136680.18,"dev":0,"vliq":136680.18,"lucro":31311.27,"perc":22.91},{"c":1241,"n":"VAGNER ARAUJO DOS SANTOS CONCEICAO","vv":134153.35,"dev":0,"vliq":134153.35,"lucro":32595.67,"perc":24.3},{"c":1239,"n":"IVAN SOUZA SANTOS","vv":130574.43,"dev":0,"vliq":130574.43,"lucro":32846.46,"perc":25.16},{"c":1273,"n":"TARCISIO DE SOUZA ALMEIDA","vv":126705.3,"dev":0,"vliq":126705.3,"lucro":36095.12,"perc":28.49},{"c":1238,"n":"CLAUDIO MARCUS BARBOSA QUEIROZ BRITO","vv":113301.49,"dev":0,"vliq":113301.49,"lucro":30304.88,"perc":26.75},{"c":2422,"n":"ANTONIO CARLOS BARBOSA NETO","vv":77800.37,"dev":0,"vliq":77800.37,"lucro":19741.13,"perc":25.37},{"c":1304,"n":"JEFERSON PEREIRA SANTOS","vv":66008.73,"dev":0,"vliq":66008.73,"lucro":15229.57,"perc":23.07},{"c":1233,"n":"DOUGLAS REIS DE SOUSA","vv":59519.2,"dev":0,"vliq":59519.2,"lucro":7314.31,"perc":12.29}],"77":[{"c":1479,"n":"LUCIVALDO PINTO DE SA - SUPERVISOR","vv":134689.93,"dev":0,"vliq":134689.93,"lucro":2530.16,"perc":1.88},{"c":1614,"n":"JONATAS DE SOUZA BITENCOURT","vv":92183.64,"dev":0,"vliq":92183.64,"lucro":-8284.02,"perc":-8.99},{"c":1615,"n":"JOSE SANTOS","vv":86074.31,"dev":0,"vliq":86074.31,"lucro":23560.12,"perc":27.37},{"c":2326,"n":"CLAUDIO DA SILVA RIBEIRO","vv":79068.23,"dev":0,"vliq":79068.23,"lucro":15878.02,"perc":20.08},{"c":1330,"n":"CAROLINA LOPEZ PRATA","vv":54720.71,"dev":0,"vliq":54720.71,"lucro":13978.26,"perc":25.54},{"c":1329,"n":"BRUNO SILVA SANTIAGO","vv":47020.62,"dev":0,"vliq":47020.62,"lucro":8964.64,"perc":19.07},{"c":1491,"n":"MARIA ALICE GONCALVES","vv":41027.27,"dev":0,"vliq":41027.27,"lucro":8650.26,"perc":21.08}],"122":[{"c":1350,"n":"ADENILDE ALVES FERREIRA - DIST EXPRESS","vv":134209.92,"dev":0,"vliq":134209.92,"lucro":21867.63,"perc":16.29},{"c":942,"n":"GEFERSON ALEXANDRE PRATES - DIST EXPRESS","vv":129779.39,"dev":0,"vliq":129779.39,"lucro":26695.28,"perc":20.57},{"c":2363,"n":"MARIANA DOS SANTOS - DIST EXPRESS","vv":113611.09,"dev":0,"vliq":113611.09,"lucro":21421.05,"perc":18.85},{"c":1475,"n":"THALES NERY DA SILVA - DIST EXPRESS","vv":104970.6,"dev":0,"vliq":104970.6,"lucro":14974.44,"perc":14.27},{"c":1341,"n":"ANDREILTON OLIVEIRA - DIST EXPRESS","vv":101399.06,"dev":0,"vliq":101399.06,"lucro":19026.04,"perc":18.76},{"c":1278,"n":"JEOVANE DO CARMO SANTOS - DIST EXPRESS","vv":96225.55,"dev":0,"vliq":96225.55,"lucro":13423.05,"perc":13.95},{"c":636,"n":"REBECA CAROLINE FERNANDES - DIST EXPRESS","vv":94463.45,"dev":0,"vliq":94463.45,"lucro":12534.84,"perc":13.27}],"131":[{"c":1247,"n":"BRUNO SANTOS DA CONCEICAO","vv":133003.33,"dev":0,"vliq":133003.33,"lucro":36529.24,"perc":27.46},{"c":1252,"n":"JAILSON GABRIEL CRUZ DA SILVA","vv":97159.29,"dev":0,"vliq":97159.29,"lucro":14290.18,"perc":14.71},{"c":1243,"n":"ALAN NONATO DOS SANTOS DO NASCIMENTO","vv":87859.14,"dev":0,"vliq":87859.14,"lucro":10600.9,"perc":12.07},{"c":2432,"n":"MARIA CELESTE GUIMARAES ANDRADE BRANDAO","vv":72838.09,"dev":0,"vliq":72838.09,"lucro":9781.89,"perc":13.43},{"c":1244,"n":"GISLANE COUTO SALA","vv":66512.87,"dev":0,"vliq":66512.87,"lucro":11852.17,"perc":17.82},{"c":2556,"n":"THAYS FERREIRA DA SILVA","vv":12808.92,"dev":0,"vliq":12808.92,"lucro":2787.3,"perc":21.76},{"c":1921,"n":"MARCIO DE FREITAS DANTAS - SUPERVISOR","vv":1309.69,"dev":0,"vliq":1309.69,"lucro":-24321.32,"perc":-1857.03},{"c":2383,"n":"SEM RCA","vv":910.12,"dev":0,"vliq":910.12,"lucro":338.84,"perc":37.23}],"127":[{"c":1352,"n":"JOSE UOSHINGTON - MDLZ VENDA EXPRESS","vv":132606.19,"dev":0,"vliq":132606.19,"lucro":18897.45,"perc":14.25},{"c":520,"n":"CASSIO HAFNER - MDLZ VENDA EXPRESS","vv":112702.56,"dev":0,"vliq":112702.56,"lucro":24295.93,"perc":21.56},{"c":911,"n":"RAFAEL BEZERRA - MDLZ VENDA EXPRESS","vv":111639.05,"dev":0,"vliq":111639.05,"lucro":24388.19,"perc":21.85},{"c":921,"n":"PAULO ROBERTO - MDLZ VENDA EXPRESS","vv":98579.99,"dev":0,"vliq":98579.99,"lucro":20336.32,"perc":20.63},{"c":2366,"n":"JORGE CLAUDIO - MDLZ VENDA EXPRESS","vv":74794.28,"dev":0,"vliq":74794.28,"lucro":15193.34,"perc":20.31},{"c":1164,"n":"WANDERSON SANTANA - MDLZ VENDA EXPRESS","vv":63684.85,"dev":0,"vliq":63684.85,"lucro":13352.43,"perc":20.97}],"136":[{"c":2237,"n":"FABIO HENRIQUE ALVES DE MELO NEVES","vv":129238.86,"dev":0,"vliq":129238.86,"lucro":20290.97,"perc":15.7},{"c":2389,"n":"ANE KARINE VARGAS FEITOSA ALVES","vv":71428.4,"dev":0,"vliq":71428.4,"lucro":15066.96,"perc":21.09},{"c":2245,"n":"JONALDO DE SOUSA CARVALHO","vv":18521.44,"dev":0,"vliq":18521.44,"lucro":2747.24,"perc":14.83},{"c":2425,"n":"THAINA SOUZA DA SILVA","vv":3737.38,"dev":0,"vliq":3737.38,"lucro":926.05,"perc":24.78}],"93":[{"c":2156,"n":"GILDASIO RODRIGUES DOS SANTOS","vv":119889.28,"dev":0,"vliq":119889.28,"lucro":22787.77,"perc":19.01},{"c":2349,"n":"CARLOS MAGNO QUEIROZ DE MEZEZES","vv":101104.54,"dev":0,"vliq":101104.54,"lucro":10607.63,"perc":10.49},{"c":2343,"n":"JOAO VICTOR LARCEDA SANTOS","vv":98328.87,"dev":0,"vliq":98328.87,"lucro":11486.81,"perc":11.68},{"c":2281,"n":"DANILO TAVARES DO SACRAMENTO","vv":58075.29,"dev":0,"vliq":58075.29,"lucro":16893.78,"perc":29.09},{"c":2336,"n":"NATHAN DE SOUZA SANTOS BULHOES","vv":33840.27,"dev":0,"vliq":33840.27,"lucro":3474.73,"perc":10.27},{"c":2092,"n":"RUDSLEY GLAUCO SANTANA ZIMMER","vv":0,"dev":0,"vliq":0,"lucro":-227.67,"perc":null}],"126":[{"c":220,"n":"WAGNER BARBOSA - MDLZ VENDA EXPRESS","vv":118800.61,"dev":0,"vliq":118800.61,"lucro":31668.41,"perc":26.66},{"c":889,"n":"RIRLLAN MEIRA - MDLZ VENDA EXPRESS","vv":104974.08,"dev":0,"vliq":104974.08,"lucro":25201.68,"perc":24.01},{"c":977,"n":"CARLITO REIS - MDLZ VENDA EXPRESS","vv":101825.49,"dev":0,"vliq":101825.49,"lucro":24888.21,"perc":24.44},{"c":856,"n":"ANDRE LUIZ OLIVEIRA - MDLZ VENDA EXPRESS","vv":99389.77,"dev":0,"vliq":99389.77,"lucro":18773.35,"perc":18.89},{"c":631,"n":"SONIVALDO NOLASCO - MDLZ VENDA EXPRESS","vv":88842.23,"dev":0,"vliq":88842.23,"lucro":19074.05,"perc":21.47},{"c":458,"n":"MAURICIO NOVAIS - MDLZ VENDA EXPRESS","vv":84200.85,"dev":0,"vliq":84200.85,"lucro":16944.46,"perc":20.12},{"c":912,"n":"DEVANEI DE JESUS - MDLZ VENDA EXPRESS","vv":78060.52,"dev":0,"vliq":78060.52,"lucro":20985.36,"perc":26.88},{"c":1342,"n":"JOAO MARCOS SANTOS - MDLZ VENDA EXPRESS","vv":68469.57,"dev":0,"vliq":68469.57,"lucro":19033.81,"perc":27.8},{"c":814,"n":"DOUGLAS SANTOS - MDLZ VENDA EXPRESS","vv":61724.26,"dev":0,"vliq":61724.26,"lucro":14111.6,"perc":22.86},{"c":2435,"n":"EDUARDO OLIVEIRA - MDLZ VENDA EXPRESS","vv":58154.99,"dev":0,"vliq":58154.99,"lucro":14373.33,"perc":24.72},{"c":945,"n":"DANIEL JESUS - MDLZ VENDA EXPRESS","vv":44388,"dev":0,"vliq":44388,"lucro":13974.58,"perc":31.48}],"21":[{"c":370,"n":"GILBERTO SOUZA MOTA","vv":116879.84,"dev":0,"vliq":116879.84,"lucro":29943.72,"perc":25.62},{"c":270,"n":"EDUARDO RAFAEL PEIXOTO","vv":112264.04,"dev":0,"vliq":112264.04,"lucro":27852.82,"perc":24.81},{"c":1165,"n":"DAVI RODRIGUES CAMPOS","vv":108525.79,"dev":0,"vliq":108525.79,"lucro":26701.27,"perc":24.6},{"c":1493,"n":"DARSAIED DE FREITAS SILVA","vv":36558.91,"dev":0,"vliq":36558.91,"lucro":9045.45,"perc":24.74}],"125":[{"c":1351,"n":"CLARISSE ALVES - MDLZ VENDA EXPRESS","vv":114466.73,"dev":0,"vliq":114466.73,"lucro":31790.58,"perc":27.77},{"c":981,"n":"KAROLINE FILIPE - MDLZ VENDA EXPRESS","vv":110450.05,"dev":0,"vliq":110450.05,"lucro":31277.44,"perc":28.32},{"c":218,"n":"JAILTON RODRIGUES - MDLZ VENDA EXPRESS","vv":110122.42,"dev":0,"vliq":110122.42,"lucro":23664.93,"perc":21.49},{"c":239,"n":"ROBERTO BOTELHO - MDLZ VENDA EXPRESS","vv":107485.7,"dev":0,"vliq":107485.7,"lucro":22741.77,"perc":21.16},{"c":500,"n":"JULIO CESAR - MDLZ VENDA EXPRESS","vv":102406.03,"dev":0,"vliq":102406.03,"lucro":26135.55,"perc":25.52},{"c":973,"n":"HEBERT MOTA BRAGA - MDLZ VENDA EXPRESS","vv":96429.91,"dev":0,"vliq":96429.91,"lucro":29623.06,"perc":30.72},{"c":2344,"n":"JILMARA LOPES - MDLZ VENDA EXPRESS","vv":90846.14,"dev":0,"vliq":90846.14,"lucro":15450.37,"perc":17.01},{"c":2421,"n":"JAKSON ALEX PRATES - MDLZ VENDA EXPRESS","vv":76089.43,"dev":0,"vliq":76089.43,"lucro":18712.31,"perc":24.59},{"c":709,"n":"CRISTIANO TESTE RCA","vv":11.83,"dev":0,"vliq":11.83,"lucro":2.06,"perc":17.41}],"104":[{"c":1600,"n":"EDUARDA SILVA OLIVEIRA","vv":105752.94,"dev":0,"vliq":105752.94,"lucro":18373.9,"perc":17.37}],"118":[{"c":1498,"n":"KAIO OLIVEIRA - MDLZ PE EXPRESS","vv":101606.41,"dev":0,"vliq":101606.41,"lucro":30930.66,"perc":30.44},{"c":1394,"n":"RAFAEL PIEDADE - MDLZ PE EXPRESS","vv":89185.84,"dev":0,"vliq":89185.84,"lucro":20271.62,"perc":22.73},{"c":2376,"n":"TANIO SULAMITO - MDLZ PE EXPRESS","vv":78144.21,"dev":0,"vliq":78144.21,"lucro":12982.58,"perc":16.61},{"c":1407,"n":"PABLO MICHEL SILVA - MDLZ PE EXPRESS","vv":71338.9,"dev":0,"vliq":71338.9,"lucro":17440.21,"perc":24.45},{"c":2355,"n":"LUCAS LIMA CARNEIRO - MDLZ PE EXPRESS","vv":70789.42,"dev":0,"vliq":70789.42,"lucro":13893.65,"perc":19.63},{"c":2417,"n":"RICARDO RAMOS - MDLZ PE EXPRESS","vv":28471.41,"dev":0,"vliq":28471.41,"lucro":6277.14,"perc":22.05}],"73":[{"c":1404,"n":"JORGE DO ESPIRITO SANTO DE JESUS","vv":100605.94,"dev":0,"vliq":100605.94,"lucro":24968.02,"perc":24.82},{"c":1497,"n":"VINICIUS RAMOS DOS PASSOS","vv":87325.8,"dev":0,"vliq":87325.8,"lucro":22127.82,"perc":25.34}],"9":[{"c":2023,"n":"VENDAS WHATSAPP","vv":98633.42,"dev":0,"vliq":98633.42,"lucro":20790.01,"perc":21.08},{"c":2077,"n":"VENDAS B2C","vv":71277.18,"dev":0,"vliq":71277.18,"lucro":14558.93,"perc":20.43}],"137":[{"c":2214,"n":"RAIMUNDO VICTOR MIRANDA- MDLZ PE EXPRESS","vv":95313.54,"dev":0,"vliq":95313.54,"lucro":14384,"perc":15.09},{"c":1402,"n":"ROBERVAN SILVA - MDLZ PE EXPRESS","vv":93828.05,"dev":0,"vliq":93828.05,"lucro":15424.98,"perc":16.44},{"c":2411,"n":"CRISTIAN ALMEIDA - MDLZ PE EXPRESS","vv":83412.16,"dev":0,"vliq":83412.16,"lucro":18239.73,"perc":21.87},{"c":1393,"n":"THIAGO DE SANTANA - MDLZ PE EXPRESS","vv":74665.34,"dev":0,"vliq":74665.34,"lucro":14082.36,"perc":18.86},{"c":1395,"n":"NAELTON GONCALVES - MDLZ PE EXPRESS","vv":72482.5,"dev":0,"vliq":72482.5,"lucro":16028,"perc":22.11}],"19":[{"c":1162,"n":"EDIMAR MARQUES LOPES","vv":81926.69,"dev":0,"vliq":81926.69,"lucro":20965.91,"perc":25.59},{"c":559,"n":"ROMARIO MIRANDA SOUZA","vv":1445.39,"dev":0,"vliq":1445.39,"lucro":-212.66,"perc":-14.71}],"86":[{"c":2367,"n":"JOBSON LUIS SANTOS PATRICIO","vv":77109.5,"dev":0,"vliq":77109.5,"lucro":-18839.5,"perc":-24.43}],"129":[{"c":2270,"n":"IGOR DA PAIXAO DE REZENDE","vv":75402.08,"dev":0,"vliq":75402.08,"lucro":22139.03,"perc":29.36},{"c":1367,"n":"DOMENIQUE SILVA (PROMOTOR TÉCNICO)","vv":27142.01,"dev":0,"vliq":27142.01,"lucro":7599.7,"perc":28}],"82":[{"c":1446,"n":"VINICIOS CUNHA SOUSA","vv":60753.65,"dev":0,"vliq":60753.65,"lucro":15143.43,"perc":24.93}],"113":[{"c":2352,"n":"GUSTAVO HENRIQUE NUNES RUIZ","vv":48122.51,"dev":0,"vliq":48122.51,"lucro":1215.54,"perc":2.53}],"91":[{"c":2338,"n":"JOAO CARLOS LOPES DA CRUZ DA GUIA","vv":39103.01,"dev":0,"vliq":39103.01,"lucro":8942.7,"perc":22.87},{"c":2184,"n":"PABLO ARAUJO GUIMARAES","vv":37047.52,"dev":0,"vliq":37047.52,"lucro":7965.01,"perc":21.5},{"c":2273,"n":"ROSALVO MOREIRA DOS SANTOS JUNIOR","vv":36896.09,"dev":0,"vliq":36896.09,"lucro":5034.06,"perc":13.64},{"c":2196,"n":"MAYARA MACIEL DA CRUZ","vv":25335.08,"dev":0,"vliq":25335.08,"lucro":4043.73,"perc":15.96},{"c":2272,"n":"EDVA TEIXEIRA SANTOS","vv":22278.71,"dev":0,"vliq":22278.71,"lucro":4059.38,"perc":18.22},{"c":2330,"n":"IANCA SANTOS DE JESUS FREIRE","vv":14953.91,"dev":0,"vliq":14953.91,"lucro":3315.05,"perc":22.17},{"c":2274,"n":"GEFERSON LIMA DA SILVA","vv":6838.49,"dev":0,"vliq":6838.49,"lucro":148.2,"perc":2.17},{"c":2197,"n":"GEORGE BISPO DOS SANTOS","vv":703.16,"dev":0,"vliq":703.16,"lucro":-14996.08,"perc":-2132.67}],"58":[{"c":2391,"n":"HANNA EVELYN ROCHA DE OLIVEIRA","vv":5160.31,"dev":0,"vliq":5160.31,"lucro":974.44,"perc":18.88}],"106":[{"c":2255,"n":"TIAGO JESUS SOUSA","vv":1191.12,"dev":0,"vliq":1191.12,"lucro":374.54,"perc":31.44},{"c":2347,"n":"HELYNILDA RAMOS DE ALCANTARA","vv":0,"dev":0,"vliq":0,"lucro":-454.74,"perc":null}],"18":[{"c":1322,"n":"TAIANE MEIRA PINTO - RCA SUPERVISOR","vv":429.7,"dev":0,"vliq":429.7,"lucro":-742.51,"perc":-172.8}],"59":[{"c":2045,"n":"ALEX DE JESUS - VENDEDOR EXPOSITOR","vv":120.93,"dev":0,"vliq":120.93,"lucro":24.65,"perc":20.38}],"88":[{"c":1466,"n":"EDVANIA GERMANO RIBEIRO DA SILVA - GE","vv":0,"dev":0,"vliq":0,"lucro":-1.22,"perc":null}],"92":[{"c":2104,"n":"LUIZ RICARDO VIEIRA ALVES  - BAHIA FORT","vv":0,"dev":1750.61,"vliq":-1750.61,"lucro":0,"perc":null}],"101":[{"c":1924,"n":"TRANSFERENCIAS INTERNAS FILIAIS","vv":0,"dev":376.23,"vliq":-376.23,"lucro":0,"perc":null}],"100":[{"c":1477,"n":"JOSE CARLOS JUNIOR DUARTE - RCA GERENTE","vv":0,"dev":0,"vliq":0,"lucro":-5771.01,"perc":null}],"133":[{"c":884,"n":"EMERSON LEVI - RCA SUPERVISOR","vv":0,"dev":0,"vliq":0,"lucro":-14354.25,"perc":null}]};
 
-const collapseDir={};
-const collapseGer={};
-const collapseSup={};
-let allCollapsed=false;
+const cDir={},cGer={},cSup={};
+let allColl=false;
 
-function fmtM(v){
-  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
-  if(Math.abs(v)>=1e6)return'R$ '+(v/1e6).toFixed(2)+'M';
-  if(Math.abs(v)>=1e3)return'R$ '+(v/1e3).toFixed(0)+'K';
+function fM(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#bbb">—</span>';
+  var a=Math.abs(v);
+  if(a>=1e6)return'R$ '+(v/1e6).toFixed(2).replace('.',',')+'M';
+  if(a>=1e3)return'R$ '+(v/1e3).toFixed(1).replace('.',',')+'K';
   return'R$ '+v.toFixed(0);
 }
-function fmtP(v){
-  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
-  var c=v>=15?'pct-ok':v>=5?'pct-warn':'pct-bad';
-  return'<span class="'+c+'">'+v.toFixed(2)+'%</span>';
+function fV(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#bbb">—</span>';
+  var cl=v>0?'pos':v<0?'neg':'';
+  return cl?'<span class="'+cl+'">'+fM(v)+'</span>':fM(v);
 }
-function fmtV(v){
-  if(v===null||v===undefined||isNaN(v))return'<span style="color:#999">—</span>';
-  var cls=v>0?'vl-pos':v<0?'vl-neg':'';
-  return cls?'<span class="'+cls+'">'+fmtM(v)+'</span>':fmtM(v);
+function fP(v){
+  if(v===null||v===undefined||isNaN(v))return'<span style="color:#bbb">—</span>';
+  var cl=v>=15?'pok':v>=5?'pwrn':'pbad';
+  return'<span class="'+cl+'">'+v.toFixed(2).replace('.',',')+'%</span>';
 }
 function esc(k){return(k||'').replace(/[^a-zA-Z0-9]/g,'_');}
 
-function buildData(){
+function buildTree(){
   var dirs={};
   SUPS.forEach(function(s){
     var d=DIRETORIA_MAP[s.cod]||'SEM DIRETORIA';
     var gi=GERENTE_MAP[s.cod]||{g:0,n:'SEM GERENTE'};
-    var gk=d+'__'+gi.n;
+    var gk=d+'||'+gi.n;
     if(!dirs[d])dirs[d]={name:d,gers:{},vv:0,dev:0,vliq:0,lucro:0,n:0};
-    if(!dirs[d].gers[gk])dirs[d].gers[gk]={name:gi.n,sups:[],vv:0,dev:0,vliq:0,lucro:0,n:0};
-    dirs[d].vv+=(s.vv||0);dirs[d].dev+=(s.dev||0);
-    dirs[d].vliq+=(s.vliq||0);dirs[d].lucro+=(s.lucro||0);dirs[d].n++;
-    dirs[d].gers[gk].vv+=(s.vv||0);dirs[d].gers[gk].dev+=(s.dev||0);
-    dirs[d].gers[gk].vliq+=(s.vliq||0);dirs[d].gers[gk].lucro+=(s.lucro||0);dirs[d].gers[gk].n++;
-    dirs[d].gers[gk].sups.push(s);
+    var dobj=dirs[d];
+    if(!dobj.gers[gk])dobj.gers[gk]={name:gi.n,sups:[],vv:0,dev:0,vliq:0,lucro:0,n:0};
+    var gobj=dobj.gers[gk];
+    dobj.vv+=(s.vv||0);dobj.dev+=(s.dev||0);dobj.vliq+=(s.vliq||0);dobj.lucro+=(s.lucro||0);dobj.n++;
+    gobj.vv+=(s.vv||0);gobj.dev+=(s.dev||0);gobj.vliq+=(s.vliq||0);gobj.lucro+=(s.lucro||0);gobj.n++;
+    gobj.sups.push(s);
   });
   return dirs;
 }
 
-function renderTable(){
-  var filterDir=document.getElementById('selDir').value;
-  var busca=(document.getElementById('busca').value||'').toLowerCase();
-  var dirs=buildData();
+function matchRCA(r,b){return r.n.toLowerCase().includes(b);}
+function matchSup(s,b){
+  if(s.sup.toLowerCase().includes(b))return true;
+  return(RCA[String(s.cod)]||[]).some(function(r){return matchRCA(r,b);});
+}
+function matchGer(g,b){return g.name.toLowerCase().includes(b)||g.sups.some(function(s){return matchSup(s,b);});}
+function matchDir(d,dobj,b){return d.toLowerCase().includes(b)||Object.values(dobj.gers).some(function(g){return matchGer(g,b);});}
+
+function render(){
+  var fd=document.getElementById('selDir').value;
+  var b=(document.getElementById('busca').value||'').toLowerCase().trim();
+  var tree=buildTree();
   var rows=[];
-  var totVV=0,totDev=0,totVliq=0,totLucro=0,supCount=0;
+  var tVV=0,tDev=0,tLiq=0,tLuc=0,nSup=0,nRCA=0;
 
-  Object.entries(dirs).sort(function(a,b){return b[1].vv-a[1].vv;}).forEach(function(entry){
-    var dname=entry[0],ddata=entry[1];
-    if(filterDir&&dname!==filterDir)return;
-    var matchD=!busca||dname.toLowerCase().includes(busca)||
-      Object.values(ddata.gers).some(function(g){
-        return g.name.toLowerCase().includes(busca)||
-          g.sups.some(function(s){return s.sup.toLowerCase().includes(busca);});
-      });
-    if(!matchD)return;
+  Object.entries(tree).sort(function(a,b2){return b2[1].vv-a[1].vv;}).forEach(function(de){
+    var dn=de[0],dobj=de[1];
+    if(fd&&dn!==fd)return;
+    if(b&&!matchDir(dn,dobj,b))return;
+    tVV+=dobj.vv;tDev+=dobj.dev;tLiq+=dobj.vliq;tLuc+=dobj.lucro;
 
-    totVV+=ddata.vv;totDev+=ddata.dev;totVliq+=ddata.vliq;totLucro+=ddata.lucro;
-    supCount+=ddata.n;
+    var col=DIR_COLORS[dn]||'#37474F';
+    var dk=esc(dn);
+    var dPL=dobj.vv?dobj.lucro/dobj.vv*100:0;
+    var isCD=cDir[dn]||false;
+    rows.push('<tr class="r-dir tog" style="background:'+col+'" onclick="tDir(''+dn+'')">'+
+      '<td><span class="ch" id="cd_'+dk+'">'+(isCD?'▶':'▼')+'</span>&#128196; '+dn+'</td>'+
+      '<td>'+fM(dobj.vv)+'</td>'+
+      '<td>'+(dobj.dev?'<span style="color:#FFCC80">'+fM(dobj.dev)+'</span>':'<span style="opacity:.3">—</span>')+'</td>'+
+      '<td>'+fM(dobj.vliq)+'</td>'+
+      '<td>'+fV(dobj.lucro)+'</td>'+
+      '<td>'+fP(dPL)+'</td></tr>');
+    if(isCD)return;
 
-    var col=DIR_COLORS[dname]||'#37474F';
-    var dk=esc(dname);
-    var pLuc=ddata.vv?ddata.lucro/ddata.vv*100:0;
-    var isCollDir=collapseDir[dname]||false;
-    rows.push('<tr class="dir-row tog" style="background:'+col+'" onclick="toggleDir(''+dname+'')">'+
-      '<td><span class="chevron" id="chd_'+dk+'">'+(isCollDir?'▶':'▼')+'</span> '+dname+'</td>'+
-      '<td>'+fmtM(ddata.vv)+'</td>'+
-      '<td>'+(ddata.dev?'<span style="color:#FFCC80">'+fmtM(ddata.dev)+'</span>':'<span style="opacity:.35">—</span>')+'</td>'+
-      '<td>'+fmtM(ddata.vliq)+'</td>'+
-      '<td>'+fmtV(ddata.lucro)+'</td>'+
-      '<td>'+fmtP(pLuc)+'</td>'+
-    '</tr>');
+    Object.entries(dobj.gers).sort(function(a,b2){return b2[1].vv-a[1].vv;}).forEach(function(ge){
+      var gk=ge[0],gobj=ge[1];
+      if(b&&!matchGer(gobj,b))return;
+      var gke=esc(gk);
+      var gPL=gobj.vv?gobj.lucro/gobj.vv*100:0;
+      var isCG=cGer[gk]||false;
+      rows.push('<tr class="r-ger tog" onclick="tGer(''+gke+'',''+gk+'')">'+
+        '<td><span class="ch" id="cg_'+gke+'">'+(isCG?'▶':'▼')+'</span>&#128101; '+gobj.name+'</td>'+
+        '<td>'+fM(gobj.vv)+'</td>'+
+        '<td>'+(gobj.dev?'<span style="color:var(--or)">'+fM(gobj.dev)+'</span>':'—')+'</td>'+
+        '<td>'+fM(gobj.vliq)+'</td>'+
+        '<td>'+fV(gobj.lucro)+'</td>'+
+        '<td>'+fP(gPL)+'</td></tr>');
+      if(isCG)return;
 
-    if(isCollDir)return;
+      gobj.sups.sort(function(a,b2){return(b2.vv||0)-(a.vv||0);}).forEach(function(s){
+        if(b&&!matchSup(s,b))return;
+        nSup++;
+        var sPL=s.vv?s.lucro/s.vv*100:(s.perc||0);
+        var isCS=cSup[s.cod]||false;
+        var rcaList=RCA[String(s.cod)]||[];
+        rows.push('<tr class="r-sup tog" onclick="tSup('+s.cod+')">'+
+          '<td><span class="ch" id="cs_'+s.cod+'">'+(isCS||!rcaList.length?'●':'▼')+'</span>&#128100; ['+s.cod+'] '+s.sup+'</td>'+
+          '<td>'+fM(s.vv)+'</td>'+
+          '<td>'+(s.dev?'<span style="color:var(--or)">'+fM(s.dev)+'</span>':'—')+'</td>'+
+          '<td>'+fM(s.vliq)+'</td>'+
+          '<td>'+fV(s.lucro)+'</td>'+
+          '<td>'+fP(sPL)+'</td></tr>');
+        if(isCS||!rcaList.length)return;
 
-    Object.entries(ddata.gers).sort(function(a,b){return b[1].vv-a[1].vv;}).forEach(function(gentry){
-      var gk=gentry[0],gdata=gentry[1];
-      var matchG=!busca||gdata.name.toLowerCase().includes(busca)||
-        gdata.sups.some(function(s){return s.sup.toLowerCase().includes(busca);});
-      if(!matchG)return;
-      var gkesc=esc(gk);
-      var gPLuc=gdata.vv?gdata.lucro/gdata.vv*100:0;
-      var isCollGer=collapseGer[gk]||false;
-      rows.push('<tr class="ger-row tog" onclick="toggleGer(''+gkesc+'',''+gk+'')">'+
-        '<td style="padding-left:26px"><span class="chevron" id="chg_'+gkesc+'">'+(isCollGer?'▶':'▼')+'</span> '+gdata.name+'</td>'+
-        '<td>'+fmtM(gdata.vv)+'</td>'+
-        '<td>'+(gdata.dev?'<span style="color:var(--or)">'+fmtM(gdata.dev)+'</span>':'—')+'</td>'+
-        '<td>'+fmtM(gdata.vliq)+'</td>'+
-        '<td>'+fmtV(gdata.lucro)+'</td>'+
-        '<td>'+fmtP(gPLuc)+'</td>'+
-      '</tr>');
-      if(isCollGer)return;
-      gdata.sups.sort(function(a,b){return(b.vv||0)-(a.vv||0);}).forEach(function(s){
-        var matchS=!busca||s.sup.toLowerCase().includes(busca);
-        if(!matchS)return;
-        var sPLuc=s.vv?s.lucro/s.vv*100:(s.perc||0);
-        rows.push('<tr class="sup-row tog" onclick="toggleSup('+s.cod+')">'+
-          '<td style="padding-left:40px">['+s.cod+'] '+s.sup+'</td>'+
-          '<td>'+fmtM(s.vv)+'</td>'+
-          '<td>'+(s.dev?'<span style="color:var(--or)">'+fmtM(s.dev)+'</span>':'—')+'</td>'+
-          '<td>'+fmtM(s.vliq)+'</td>'+
-          '<td>'+fmtV(s.lucro)+'</td>'+
-          '<td>'+fmtP(sPLuc)+'</td>'+
-        '</tr>');
+        rcaList.forEach(function(r){
+          if(b&&!matchRCA(r,b))return;
+          nRCA++;
+          var rPL=r.perc;
+          rows.push('<tr class="r-rca">'+
+            '<td>&#8627; ['+r.c+'] '+r.n+'</td>'+
+            '<td>'+fM(r.vv)+'</td>'+
+            '<td>'+(r.dev?'<span style="color:var(--or)">'+fM(r.dev)+'</span>':'—')+'</td>'+
+            '<td>'+fM(r.vliq)+'</td>'+
+            '<td>'+fV(r.lucro)+'</td>'+
+            '<td>'+fP(rPL)+'</td></tr>');
+        });
       });
     });
   });
 
   document.getElementById('tbody').innerHTML=rows.join('');
-
-  var el=document.getElementById('tbl-count');
-  if(el)el.textContent=supCount+' supervisores';
-
-  var totPLuc=totVV?totLucro/totVV*100:0;
+  var el=document.getElementById('tblCount');
+  if(el)el.textContent=nSup+' supervisores · '+nRCA+' RCAs';
+  var tPL=tVV?tLuc/tVV*100:0;
   var tf=document.getElementById('tfoot');
   if(tf)tf.innerHTML='<tr>'+
-    '<td>&#931; TOTAL GERAL</td>'+
-    '<td>'+fmtM(totVV)+'</td>'+
-    '<td><span style="color:var(--or)">'+fmtM(totDev)+'</span></td>'+
-    '<td>'+fmtM(totVliq)+'</td>'+
-    '<td>'+fmtV(totLucro)+'</td>'+
-    '<td>'+fmtP(totPLuc)+'</td>'+
-  '</tr>';
+    '<td><strong>&#931; TOTAL GERAL</strong></td>'+
+    '<td>'+fM(tVV)+'</td>'+
+    '<td><span style="color:var(--or)">'+fM(tDev)+'</span></td>'+
+    '<td>'+fM(tLiq)+'</td>'+
+    '<td>'+fV(tLuc)+'</td>'+
+    '<td>'+fP(tPL)+'</td></tr>';
 }
 
-function toggleDir(d){collapseDir[d]=!collapseDir[d];renderTable();}
-function toggleGer(ge,gk){collapseGer[gk]=!collapseGer[gk];renderTable();}
-function toggleSup(c){}
+function tDir(d){cDir[d]=!cDir[d];render();}
+function tGer(ge,gk){cGer[gk]=!cGer[gk];render();}
+function tSup(c){cSup[c]=!cSup[c];render();}
 function toggleAll(){
-  allCollapsed=!allCollapsed;
-  var dirs=buildData();
-  Object.keys(dirs).forEach(function(d){collapseDir[d]=allCollapsed;});
-  renderTable();
-  document.querySelector('.btn-collapse').lastChild.textContent=allCollapsed?' Expandir Tudo':' Recolher Tudo';
+  allColl=!allColl;
+  var tree=buildTree();
+  Object.keys(tree).forEach(function(d){cDir[d]=allColl;});
+  render();
+  document.getElementById('btnTxt').textContent=allColl?'Expandir Tudo':'Recolher Tudo';
 }
 
-renderTable();
+render();
 </script>
 </body>
 </html>
